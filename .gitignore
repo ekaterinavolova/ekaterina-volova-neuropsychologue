@@ -1,0 +1,41 @@
+# Build output
+dist/
+.output/
+
+# Dependencies
+node_modules/
+.yarn/cache
+.yarn/install-state.gz
+.yarn/build-state.yml
+.pnp.*
+
+# Astro
+.astro/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Local Netlify/Vercel/Wrangler
+.netlify/
+.vercel/
+.wrangler/

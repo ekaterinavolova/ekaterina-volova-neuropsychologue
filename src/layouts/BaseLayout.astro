@@ -1,0 +1,63 @@
+---
+import "~/styles/global.css";
+import { getLangFromUrl, useTranslations, getAlternateUrls } from "~/i18n/utils";
+import type { Lang } from "~/i18n/ui";
+import { ui } from "~/i18n/ui";
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Chemin canonique relatif (sans préfixe de langue), ex: "/contact" ou "/" */
+  canonicalPath?: string;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const pageTitle = Astro.props.title ?? ui[lang]["site.title"];
+const pageDescription = Astro.props.description ?? ui[lang]["site.description"];
+const canonicalPath = Astro.props.canonicalPath ?? "/";
+
+const alternates = getAlternateUrls(canonicalPath, Astro.site!);
+const canonical = alternates[lang];
+
+const htmlLangAttr: Record<Lang, string> = {
+  fr: "fr-FR",
+  ru: "ru-RU",
+  en: "en-US",
+};
+---
+
+<!doctype html>
+<html lang={htmlLangAttr[lang]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="fr-FR" href={alternates.fr} />
+    <link rel="alternate" hreflang="ru-RU" href={alternates.ru} />
+    <link rel="alternate" hreflang="en-US" href={alternates.en} />
+    <link rel="alternate" hreflang="x-default" href={alternates.fr} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={htmlLangAttr[lang].replace("-", "_")} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#fafaf8" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>
