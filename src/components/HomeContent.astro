@@ -1,0 +1,193 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Button from "./Button.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const services = [
+  {
+    title: t("home.services.s1_title"),
+    desc: t("home.services.s1_desc"),
+    price: t("home.services.s1_price"),
+  },
+  {
+    title: t("home.services.s2_title"),
+    desc: t("home.services.s2_desc"),
+    price: t("home.services.s2_price"),
+  },
+  {
+    title: t("home.services.s3_title"),
+    desc: t("home.services.s3_desc"),
+    price: t("home.services.s3_price"),
+  },
+  {
+    title: t("home.services.s4_title"),
+    desc: t("home.services.s4_desc"),
+    price: t("home.services.s4_price"),
+    note: t("home.services.note_supervised"),
+  },
+];
+
+const processSteps = [
+  { title: t("home.process.step1_title"), desc: t("home.process.step1_desc") },
+  { title: t("home.process.step2_title"), desc: t("home.process.step2_desc") },
+  { title: t("home.process.step3_title"), desc: t("home.process.step3_desc") },
+  { title: t("home.process.step4_title"), desc: t("home.process.step4_desc") },
+];
+---
+
+{/* Banner ouverture future */}
+<div class="bg-[var(--color-paper-deep)] border-b border-[var(--color-rule-soft)]">
+  <Container width="wide">
+    <p class="py-2.5 text-center text-[0.8125rem] text-[var(--color-ink-soft)] tracking-tight">
+      {t("home.banner")}
+    </p>
+  </Container>
+</div>
+
+{/* Hero */}
+<Section tone="paper" spacing="loose" as="header">
+  <Container width="content">
+    <h1 class="font-serif">{t("home.h1")}</h1>
+    <p class="mt-8 text-lg sm:text-xl text-[var(--color-ink-soft)] leading-relaxed max-w-[42rem]">
+      {t("home.lede")}
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <Button href={getLocalizedPath("/contact", lang)} variant="primary" size="lg">
+        {t("home.cta_primary")}
+      </Button>
+      <Button href={getLocalizedPath("/prestations", lang)} variant="secondary" size="lg">
+        {t("home.cta_secondary")}
+      </Button>
+    </div>
+  </Container>
+</Section>
+
+{/* Pour qui */}
+<Section tone="warm" spacing="normal" as="section" id="who">
+  <Container width="content">
+    <h2 class="font-serif">{t("home.who.title")}</h2>
+    <p class="mt-6 text-[var(--color-ink-soft)] max-w-[44rem]">{t("home.who.intro")}</p>
+
+    <div class="mt-10 max-w-[44rem]">
+      <p class="text-[0.6875rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)] mb-3">
+        {t("home.who.indications_title")}
+      </p>
+      <p class="text-[var(--color-ink-soft)] leading-relaxed">{t("home.who.indications")}</p>
+    </div>
+
+    <p class="mt-8 text-sm text-[var(--color-ink-muted)] max-w-[44rem] italic">
+      {t("home.who.note")}
+    </p>
+  </Container>
+</Section>
+
+{/* Prestations */}
+<Section tone="paper" spacing="normal" as="section" id="services">
+  <Container width="wide">
+    <h2 class="font-serif">{t("home.services.title")}</h2>
+
+    <div class="mt-12 grid gap-px bg-[var(--color-rule-soft)] sm:grid-cols-2 border border-[var(--color-rule-soft)]">
+      {services.map((s) => (
+        <article class="bg-[var(--color-paper)] p-8 sm:p-10 flex flex-col">
+          <div class="flex items-baseline justify-between gap-4 mb-3">
+            <h3 class="font-serif text-[var(--color-ink)]">{s.title}</h3>
+            <span class="shrink-0 text-sm font-medium tabular-nums text-[var(--color-accent-deep)]">
+              {s.price}
+            </span>
+          </div>
+          <p class="text-[var(--color-ink-soft)] leading-relaxed flex-1">{s.desc}</p>
+          {s.note && (
+            <p class="mt-4 text-xs uppercase tracking-wider text-[var(--color-ink-muted)]">
+              {s.note}
+            </p>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-10">
+      <a
+        href={getLocalizedPath("/prestations", lang)}
+        class="text-[var(--color-ink)] text-[0.9375rem] decoration-[var(--color-rule)] hover:decoration-[var(--color-accent)]"
+      >
+        {t("home.services.cta")} →
+      </a>
+    </div>
+  </Container>
+</Section>
+
+{/* Process */}
+<Section tone="warm" spacing="normal" as="section" id="process">
+  <Container width="content">
+    <h2 class="font-serif">{t("home.process.title")}</h2>
+
+    <ol class="mt-12 space-y-10">
+      {processSteps.map((step, idx) => (
+        <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
+          <span class="font-serif text-2xl text-[var(--color-accent-deep)] tabular-nums">
+            {String(idx + 1).padStart(2, "0")}
+          </span>
+          <div>
+            <h3 class="font-serif">{step.title}</h3>
+            <p class="mt-2 text-[var(--color-ink-soft)] leading-relaxed">{step.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </Container>
+</Section>
+
+{/* Langues */}
+<Section tone="paper" spacing="normal" as="section" id="languages">
+  <Container width="content">
+    <h2 class="font-serif">{t("home.languages.title")}</h2>
+
+    <ul class="mt-10 space-y-6 max-w-[42rem]">
+      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
+        <span class="font-serif text-lg text-[var(--color-ink)]" lang="fr">Français</span>
+        <span class="text-[var(--color-ink-soft)]">{t("home.languages.fr").replace(/^Français — /, "").replace(/^Français - /, "")}</span>
+      </li>
+      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
+        <span class="font-serif text-lg text-[var(--color-ink)]" lang="ru">Русский</span>
+        <span class="text-[var(--color-ink-soft)]">{t("home.languages.ru").replace(/^Русский — /, "").replace(/^Русский - /, "")}</span>
+      </li>
+      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
+        <span class="font-serif text-lg text-[var(--color-ink)]" lang="en">English</span>
+        <span class="text-[var(--color-ink-soft)]">{t("home.languages.en").replace(/^English — /, "").replace(/^English - /, "")}</span>
+      </li>
+    </ul>
+  </Container>
+</Section>
+
+{/* Prescripteurs + CTA finale */}
+<Section tone="deep" spacing="normal" as="section" id="prescribers">
+  <Container width="content">
+    <div class="grid gap-12 md:grid-cols-2 items-start">
+      <div>
+        <h2 class="font-serif">{t("home.prescribers.title")}</h2>
+        <p class="mt-4 text-[var(--color-ink-soft)]">{t("home.prescribers.desc")}</p>
+        <div class="mt-6">
+          <Button href={getLocalizedPath("/contact", lang)} variant="secondary">
+            {t("home.prescribers.cta")}
+          </Button>
+        </div>
+      </div>
+
+      <div class="md:border-l md:border-[var(--color-rule)] md:pl-12">
+        <p class="text-[0.6875rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)] mb-3">
+          {t("footer.cabinet_label")}
+        </p>
+        <address class="not-italic text-[var(--color-ink-soft)] leading-relaxed">
+          Cabinet Via SANA Parmentier<br />
+          4 rue Pierre Levée<br />
+          75011 Paris
+        </address>
+        <p class="mt-6 text-sm text-[var(--color-ink-muted)]">{t("footer.opening_note")}</p>
+      </div>
+    </div>
+  </Container>
+</Section>
