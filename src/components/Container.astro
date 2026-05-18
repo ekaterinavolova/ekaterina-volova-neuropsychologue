@@ -1,0 +1,21 @@
+---
+type Width = "prose" | "content" | "wide";
+
+interface Props {
+  width?: Width;
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+}
+
+const { width = "content", as: Tag = "div", class: className = "" } = Astro.props;
+
+const widthClass: Record<Width, string> = {
+  prose: "max-w-[var(--container-prose)]",
+  content: "max-w-[var(--container-content)]",
+  wide: "max-w-[var(--container-wide)]",
+};
+---
+
+<Tag class={`mx-auto px-6 sm:px-8 ${widthClass[width]} ${className}`}>
+  <slot />
+</Tag>

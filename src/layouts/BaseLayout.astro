@@ -3,12 +3,16 @@ import "~/styles/global.css";
 import { getLangFromUrl, useTranslations, getAlternateUrls } from "~/i18n/utils";
 import type { Lang } from "~/i18n/ui";
 import { ui } from "~/i18n/ui";
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
 
 interface Props {
   title?: string;
   description?: string;
   /** Chemin canonique relatif (sans préfixe de langue), ex: "/contact" ou "/" */
   canonicalPath?: string;
+  /** Cache le header/footer (pour pages d'erreur ou layout custom) */
+  bare?: boolean;
 }
 
 const lang = getLangFromUrl(Astro.url);
@@ -17,6 +21,7 @@ const t = useTranslations(lang);
 const pageTitle = Astro.props.title ?? ui[lang]["site.title"];
 const pageDescription = Astro.props.description ?? ui[lang]["site.description"];
 const canonicalPath = Astro.props.canonicalPath ?? "/";
+const bare = Astro.props.bare ?? false;
 
 const alternates = getAlternateUrls(canonicalPath, Astro.site!);
 const canonical = alternates[lang];
@@ -58,6 +63,8 @@ const htmlLangAttr: Record<Lang, string> = {
     <meta name="theme-color" content="#fafaf8" />
   </head>
   <body class="min-h-screen flex flex-col">
+    {!bare && <Header />}
     <slot />
+    {!bare && <Footer />}
   </body>
 </html>

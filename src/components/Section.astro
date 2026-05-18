@@ -1,0 +1,36 @@
+---
+type Tone = "paper" | "warm" | "deep";
+type Spacing = "compact" | "normal" | "loose";
+
+interface Props {
+  tone?: Tone;
+  spacing?: Spacing;
+  as?: keyof HTMLElementTagNameMap;
+  id?: string;
+  class?: string;
+}
+
+const {
+  tone = "paper",
+  spacing = "normal",
+  as: Tag = "section",
+  id,
+  class: className = "",
+} = Astro.props;
+
+const toneClass: Record<Tone, string> = {
+  paper: "bg-[var(--color-paper)]",
+  warm: "bg-[var(--color-paper-warm)]",
+  deep: "bg-[var(--color-paper-deep)]",
+};
+
+const spacingClass: Record<Spacing, string> = {
+  compact: "py-[var(--spacing-section-sm)]",
+  normal: "py-[var(--spacing-section)]",
+  loose: "py-[var(--spacing-section-lg)]",
+};
+---
+
+<Tag id={id} class={`${toneClass[tone]} ${spacingClass[spacing]} ${className}`}>
+  <slot />
+</Tag>

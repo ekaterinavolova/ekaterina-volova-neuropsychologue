@@ -1,0 +1,64 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-auto bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8 py-12 sm:py-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div>
+        <p class="font-serif text-lg text-[var(--color-ink)]">
+          Ekaterina Volova
+        </p>
+        <p class="text-sm text-[var(--color-ink-soft)] mt-1">
+          {t("footer.profession")}
+        </p>
+        <p class="text-xs text-[var(--color-ink-muted)] mt-3 font-mono tabular-nums tracking-tight">
+          {t("footer.rpps")}
+        </p>
+      </div>
+
+      <div>
+        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
+          {t("footer.cabinet_label")}
+        </p>
+        <address class="not-italic text-sm text-[var(--color-ink-soft)] leading-relaxed">
+          Cabinet Via SANA Parmentier<br />
+          4 rue Pierre Levée<br />
+          75011 Paris
+        </address>
+        <p class="text-xs text-[var(--color-ink-muted)] mt-3">
+          {t("footer.opening_note")}
+        </p>
+      </div>
+
+      <div>
+        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
+          {t("footer.contact_label")}
+        </p>
+        <a
+          href={getLocalizedPath("/contact", lang)}
+          class="text-sm text-[var(--color-ink)] hover:text-[var(--color-accent-deep)]"
+        >
+          {t("cta.contact")}
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-[var(--color-rule-soft)] flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-ink-muted)]">
+      <p>
+        © {currentYear} Ekaterina Volova
+      </p>
+      <a
+        href={getLocalizedPath("/mentions-legales", lang)}
+        class="hover:text-[var(--color-ink)] transition-colors"
+      >
+        {t("footer.legal_link")}
+      </a>
+    </div>
+  </div>
+</footer>

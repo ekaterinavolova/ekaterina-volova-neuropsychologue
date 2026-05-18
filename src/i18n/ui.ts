@@ -37,7 +37,15 @@ export const ui = {
 
     "lang.switch_to": "Changer de langue",
 
-    "site.title": "Ekaterina Volova — Neuropsychologue à Paris 11e",
+    "header.tagline": "Neuropsychologue à Paris",
+    "header.menu_open": "Ouvrir le menu",
+    "header.menu_close": "Fermer le menu",
+
+    "footer.cabinet_label": "Cabinet",
+    "footer.contact_label": "Prendre rendez-vous",
+    "footer.opening_note": "Ouverture du cabinet le 15 juin 2026",
+
+    "site.title": "Ekaterina Volova - Neuropsychologue à Paris 11e",
     "site.description":
       "Cabinet de neuropsychologie à Paris 11e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 6 mois. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
   },
@@ -61,7 +69,15 @@ export const ui = {
 
     "lang.switch_to": "Сменить язык",
 
-    "site.title": "Екатерина Волова — Нейропсихолог в Париже, 11 округ",
+    "header.tagline": "Нейропсихолог в Париже",
+    "header.menu_open": "Открыть меню",
+    "header.menu_close": "Закрыть меню",
+
+    "footer.cabinet_label": "Кабинет",
+    "footer.contact_label": "Записаться на приём",
+    "footer.opening_note": "Открытие кабинета 15 июня 2026 года",
+
+    "site.title": "Екатерина Волова - Нейропсихолог в Париже, 11 округ",
     "site.description":
       "Кабинет нейропсихологии в 11 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 6 месяцев. Взрослые с 16 лет, приём на французском, русском и английском языках.",
   },
@@ -85,7 +101,15 @@ export const ui = {
 
     "lang.switch_to": "Change language",
 
-    "site.title": "Ekaterina Volova — Neuropsychologist in Paris 11th",
+    "header.tagline": "Neuropsychologist in Paris",
+    "header.menu_open": "Open menu",
+    "header.menu_close": "Close menu",
+
+    "footer.cabinet_label": "Office",
+    "footer.contact_label": "Book an appointment",
+    "footer.opening_note": "Office opens on 15 June 2026",
+
+    "site.title": "Ekaterina Volova - Neuropsychologist in Paris 11th",
     "site.description":
       "Neuropsychology practice in Paris 11th. Diagnostic assessments, cognitive remediation and stimulation, 6-month follow-up. Adults 16 and older, consultations in French, Russian and English.",
   },

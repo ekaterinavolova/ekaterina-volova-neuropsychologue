@@ -1,0 +1,56 @@
+---
+import { languages, type Lang, defaultLang } from "~/i18n/ui";
+import { getLangFromUrl } from "~/i18n/utils";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+const currentLang = getLangFromUrl(Astro.url);
+
+/**
+ * Strip the language prefix from the current path to get the "clean" path.
+ * Example: "/ru/a-propos" -> "/a-propos", "/contact" -> "/contact".
+ */
+const cleanPath = Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/";
+
+/**
+ * Build the target path for a given language, preserving the current page.
+ */
+function pathForLang(lang: Lang): string {
+  if (lang === defaultLang) {
+    return cleanPath;
+  }
+  return cleanPath === "/" ? `/${lang}/` : `/${lang}${cleanPath}`;
+}
+
+const langOrder: Lang[] = ["fr", "ru", "en"];
+---
+
+<nav aria-label="Langue / Language / Язык" class={`flex items-center gap-1 text-[0.8125rem] ${className}`}>
+  {
+    langOrder.map((lang, idx) => {
+      const isActive = lang === currentLang;
+      return (
+        <>
+          {idx > 0 && <span class="text-[var(--color-ink-faint)] select-none" aria-hidden="true">·</span>}
+          <a
+            href={pathForLang(lang)}
+            class:list={[
+              "px-1.5 py-1 no-underline uppercase tracking-wider transition-colors",
+              isActive
+                ? "text-[var(--color-ink)] font-medium"
+                : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
+            ]}
+            aria-current={isActive ? "true" : "false"}
+            lang={lang}
+            hreflang={lang}
+          >
+            {lang === "fr" ? "FR" : lang === "ru" ? "RU" : "EN"}
+          </a>
+        </>
+      );
+    })
+  }
+</nav>

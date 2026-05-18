@@ -1,0 +1,129 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import LangSwitcher from "./LangSwitcher.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentPath = Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/";
+
+const navItems = [
+  { href: "/", label: t("nav.home") },
+  { href: "/a-propos", label: t("nav.about") },
+  { href: "/prestations", label: t("nav.services") },
+  { href: "/cabinet", label: t("nav.office") },
+  { href: "/contact", label: t("nav.contact") },
+];
+
+function isActive(href: string): boolean {
+  if (href === "/") return currentPath === "/";
+  return currentPath === href || currentPath.startsWith(href + "/");
+}
+
+const homeHref = getLocalizedPath("/", lang);
+---
+
+<header class="sticky top-0 z-40 bg-[var(--color-paper)]/85 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
+  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+      <a
+        href={homeHref}
+        class="flex flex-col leading-none no-underline group"
+        aria-label="Ekaterina Volova"
+      >
+        <span class="font-serif text-lg sm:text-xl tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent-deep)] transition-colors">
+          Ekaterina Volova
+        </span>
+        <span class="hidden sm:block text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mt-1">
+          {t("header.tagline")}
+        </span>
+      </a>
+
+      <nav aria-label={t("nav.home")} class="hidden lg:flex items-center gap-1">
+        {
+          navItems.map((item) => {
+            const href = getLocalizedPath(item.href, lang);
+            const active = isActive(item.href);
+            return (
+              <a
+                href={href}
+                class:list={[
+                  "px-3 py-2 text-[0.9375rem] no-underline transition-colors rounded-[var(--radius-sm)]",
+                  active
+                    ? "text-[var(--color-ink)] font-medium"
+                    : "text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]",
+                ]}
+                aria-current={active ? "page" : "false"}
+              >
+                {item.label}
+              </a>
+            );
+          })
+        }
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <LangSwitcher class="hidden sm:flex" />
+        <button
+          type="button"
+          id="menu-toggle"
+          class="lg:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-[var(--color-ink)]"
+          aria-label={t("header.menu_open")}
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="7" x2="19" y2="7" id="menu-line-top"></line>
+            <line x1="3" y1="11" x2="19" y2="11" id="menu-line-mid"></line>
+            <line x1="3" y1="15" x2="19" y2="15" id="menu-line-bot"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="lg:hidden hidden border-t border-[var(--color-rule-soft)] py-4"
+      aria-hidden="true"
+    >
+      <nav aria-label={t("nav.home")} class="flex flex-col gap-1">
+        {
+          navItems.map((item) => {
+            const href = getLocalizedPath(item.href, lang);
+            const active = isActive(item.href);
+            return (
+              <a
+                href={href}
+                class:list={[
+                  "px-3 py-3 text-base no-underline transition-colors rounded-[var(--radius-sm)]",
+                  active
+                    ? "text-[var(--color-ink)] font-medium bg-[var(--color-paper-warm)]"
+                    : "text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-warm)]",
+                ]}
+                aria-current={active ? "page" : "false"}
+              >
+                {item.label}
+              </a>
+            );
+          })
+        }
+        <div class="sm:hidden pt-3 mt-2 border-t border-[var(--color-rule-soft)]">
+          <LangSwitcher class="px-3" />
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      menu.setAttribute("aria-hidden", String(isOpen));
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>
