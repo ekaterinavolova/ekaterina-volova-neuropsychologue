@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
 import LangSwitcher from "./LangSwitcher.astro";
+import Button from "./Button.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -20,69 +21,54 @@ function isActive(href: string): boolean {
 }
 
 const homeHref = getLocalizedPath("/", lang);
+const contactHref = getLocalizedPath("/contact", lang);
 ---
 
-<header class="sticky top-0 z-40 bg-[var(--color-paper)]/85 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
-  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8">
-    <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
+<header class="sticky top-0 z-40 bg-[var(--color-paper)]/90 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
+  <div class="max-w-[var(--container-wide)] mx-auto px-4 sm:px-8">
+    <div class="grid grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-3 sm:gap-6">
+
+      {/* Gauche : bouton burger (visible partout) */}
+      <button
+        type="button"
+        id="menu-toggle"
+        class="inline-flex items-center justify-center w-10 h-10 -ml-2 text-[var(--color-ink)] hover:text-[var(--color-accent-deep)] transition-colors"
+        aria-label={t("header.menu_open")}
+        aria-expanded="false"
+        aria-controls="site-menu"
+      >
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="19" y2="7"></line>
+          <line x1="3" y1="11" x2="19" y2="11"></line>
+          <line x1="3" y1="15" x2="19" y2="15"></line>
+        </svg>
+      </button>
+
+      {/* Centre : nom (lien vers accueil) */}
       <a
         href={homeHref}
-        class="flex flex-col leading-none no-underline group"
+        class="justify-self-center no-underline group"
         aria-label="Ekaterina Volova"
       >
-        <span class="font-serif text-lg sm:text-xl tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent-deep)] transition-colors">
+        <span class="font-serif italic text-base sm:text-lg md:text-xl tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent-deep)] transition-colors">
           Ekaterina Volova
-        </span>
-        <span class="hidden sm:block text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mt-1">
-          {t("header.tagline")}
         </span>
       </a>
 
-      <nav aria-label={t("nav.home")} class="hidden lg:flex items-center gap-1">
-        {
-          navItems.map((item) => {
-            const href = getLocalizedPath(item.href, lang);
-            const active = isActive(item.href);
-            return (
-              <a
-                href={href}
-                class:list={[
-                  "px-3 py-2 text-[0.9375rem] no-underline transition-colors rounded-[var(--radius-sm)]",
-                  active
-                    ? "text-[var(--color-ink)] font-medium"
-                    : "text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]",
-                ]}
-                aria-current={active ? "page" : "false"}
-              >
-                {item.label}
-              </a>
-            );
-          })
-        }
-      </nav>
-
-      <div class="flex items-center gap-4">
+      {/* Droite : langues (sm+) + bouton "Réserver" */}
+      <div class="flex items-center gap-3 sm:gap-5 justify-self-end">
         <LangSwitcher class="hidden sm:flex" />
-        <button
-          type="button"
-          id="menu-toggle"
-          class="lg:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-[var(--color-ink)]"
-          aria-label={t("header.menu_open")}
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <line x1="3" y1="7" x2="19" y2="7" id="menu-line-top"></line>
-            <line x1="3" y1="11" x2="19" y2="11" id="menu-line-mid"></line>
-            <line x1="3" y1="15" x2="19" y2="15" id="menu-line-bot"></line>
-          </svg>
-        </button>
+        <Button href={contactHref} variant="secondary" size="md" class="!px-4 sm:!px-5 !py-2 text-[0.8125rem] sm:text-[0.9375rem]">
+          <span class="sm:hidden">{t("cta.book_short")}</span>
+          <span class="hidden sm:inline">{t("cta.book")}</span>
+        </Button>
       </div>
     </div>
 
+    {/* Drawer : nav links + langues (mobile) */}
     <div
-      id="mobile-menu"
-      class="lg:hidden hidden border-t border-[var(--color-rule-soft)] py-4"
+      id="site-menu"
+      class="hidden border-t border-[var(--color-rule-soft)] py-4"
       aria-hidden="true"
     >
       <nav aria-label={t("nav.home")} class="flex flex-col gap-1">
@@ -116,7 +102,7 @@ const homeHref = getLocalizedPath("/", lang);
 
 <script>
   const toggle = document.getElementById("menu-toggle");
-  const menu = document.getElementById("mobile-menu");
+  const menu = document.getElementById("site-menu");
 
   if (toggle && menu) {
     toggle.addEventListener("click", () => {

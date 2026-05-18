@@ -28,10 +28,20 @@
   --color-paper-warm: oklch(0.965 0.012 70);   /* Sections alternées */
   --color-paper-deep: oklch(0.93 0.008 80);    /* Cartes, encarts */
 
-  /* Accent : bleu profond, presque ardoise, pas de saturation criarde */
-  --color-accent: oklch(0.42 0.07 230);
-  --color-accent-soft: oklch(0.92 0.025 230);
-  --color-accent-deep: oklch(0.32 0.08 230);
+  /* Accent principal : bleu ciel foncé, cerulean / azur profond */
+  --color-accent: oklch(0.55 0.14 235);
+  --color-accent-soft: oklch(0.93 0.04 235);
+  --color-accent-deep: oklch(0.42 0.16 240);
+
+  /* Accent secondaire : rose poudré (Regency / Bridgerton, détails délicats) */
+  --color-rose: oklch(0.86 0.05 18);
+  --color-rose-soft: oklch(0.95 0.02 18);
+  --color-rose-deep: oklch(0.58 0.10 18);
+
+  /* Accent tertiaire : jaune beurre / vieil or (touches très parcimonieuses) */
+  --color-gold: oklch(0.88 0.06 85);
+  --color-gold-soft: oklch(0.96 0.03 85);
+  --color-gold-deep: oklch(0.65 0.10 80);
 
   /* Séparateurs */
   --color-rule: oklch(0.88 0.005 250);
@@ -87,44 +97,49 @@ body {
   letter-spacing: -0.005em;
 }
 
-/* === Hiérarchie typographique === */
+/* === Hiérarchie typographique ===
+ * Placée dans @layer base pour que les utilitaires Tailwind
+ * (text-sm, text-lg, etc.) puissent les surcharger localement.
+ */
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  color: var(--color-ink);
-  text-wrap: balance;
-}
+@layer base {
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+    text-wrap: balance;
+  }
 
-h1 {
-  font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem);
-  line-height: 1.05;
-  letter-spacing: -0.022em;
-  font-weight: 400;
-}
+  h1 {
+    font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+  }
 
-h2 {
-  font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.018em;
-}
+  h2 {
+    font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+  }
 
-h3 {
-  font-size: clamp(1.25rem, 1vw + 0.875rem, 1.625rem);
-  line-height: 1.25;
-  letter-spacing: -0.012em;
-}
+  h3 {
+    font-size: clamp(1.25rem, 1vw + 0.875rem, 1.625rem);
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+  }
 
-h4 {
-  font-size: 1.125rem;
-  line-height: 1.4;
-  letter-spacing: -0.008em;
-  font-weight: 500;
-}
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    letter-spacing: -0.008em;
+    font-weight: 500;
+  }
 
-p {
-  text-wrap: pretty;
+  p {
+    text-wrap: pretty;
+  }
 }
 
 /* === Liens === */
@@ -162,6 +177,19 @@ hr {
   border: none;
   border-top: 1px solid var(--color-rule);
   margin: 3rem 0;
+}
+
+/* === Buchstabe initial (style Regency, abdomen de chapitre) === */
+
+.regency-dropcap::first-letter {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3.4em;
+  line-height: 0.85;
+  float: left;
+  padding: 0.1em 0.12em 0 0;
+  color: var(--color-rose-deep);
+  font-weight: 400;
 }
 
 /* Réduit la sur-stimulation visuelle au scroll (cabinet santé) */

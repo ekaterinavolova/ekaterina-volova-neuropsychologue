@@ -1,0 +1,164 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Button from "./Button.astro";
+import Ornament from "./Ornament.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const steps = [
+  {
+    title: t("about.section2_step1_title"),
+    desc: t("about.section2_step1_desc"),
+  },
+  {
+    title: t("about.section2_step2_title"),
+    desc: t("about.section2_step2_desc"),
+  },
+  {
+    title: t("about.section2_step3_title"),
+    desc: t("about.section2_step3_desc"),
+  },
+];
+
+const timeline = [
+  {
+    dates: t("about.timeline_1_dates"),
+    title: t("about.timeline_1_title"),
+    desc: t("about.timeline_1_desc"),
+  },
+  {
+    dates: t("about.timeline_2_dates"),
+    title: t("about.timeline_2_title"),
+    desc: t("about.timeline_2_desc"),
+  },
+  {
+    dates: t("about.timeline_3_dates"),
+    title: t("about.timeline_3_title"),
+    desc: t("about.timeline_3_desc"),
+  },
+];
+---
+
+{/* Hero / page header */}
+<Section tone="paper" spacing="loose" as="header">
+  <Container width="wide">
+    <div class="grid gap-10 md:grid-cols-[22rem_1fr] md:gap-14 items-center">
+      {/* Emplacement photo */}
+      <div
+        class="aspect-[3/4] w-full max-w-[22rem] mx-auto md:mx-0 bg-[var(--color-paper-deep)] border border-[var(--color-rule-soft)] rounded-[var(--radius-sm)]"
+        aria-hidden="true"
+      ></div>
+
+      <div>
+        <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-3">
+          {t("about.eyebrow")}
+        </p>
+        <h1 class="font-serif italic text-[var(--color-accent-deep)] md:whitespace-nowrap">
+          {t("home.h1")}
+        </h1>
+        <div class="mt-6 flex items-center gap-4">
+          <span class="block h-px w-6 bg-[var(--color-rose-deep)] shrink-0" aria-hidden="true"></span>
+          <p class="font-serif italic text-lg sm:text-xl text-[var(--color-ink-soft)] leading-relaxed md:whitespace-nowrap">
+            {t("home.lede")}
+          </p>
+          <span class="block h-px w-6 bg-[var(--color-rose-deep)] shrink-0" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+{/* Neuropsychologie + bilan : regroupés en une seule section */}
+<Section tone="warm" spacing="normal" as="section" id="discipline">
+  <Container width="content">
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
+
+    {/* Sous-section 1 : qu'est-ce que la neuropsychologie ? */}
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section1_title")}
+    </h2>
+
+    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section1_p1")}</p>
+    </div>
+
+    {/* Sous-section 2 : qu'est-ce qu'un bilan neuropsychologique ? */}
+    <h2 class="mt-10 font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section2_title")}
+    </h2>
+
+    <div class="mt-6 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section2_p1")}</p>
+      <p>{t("about.section2_p2")}</p>
+    </div>
+
+    <div class="mt-12 max-w-[44rem] mx-auto">
+      <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-6">
+        {t("about.section2_steps_intro")}
+      </p>
+      <ol class="space-y-8">
+        {steps.map((step, idx) => (
+          <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
+            <span class="font-serif italic text-3xl text-[var(--color-rose-deep)] tabular-nums">
+              {String(idx + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h3 class="font-serif">{step.title}</h3>
+              <p class="mt-2 text-[var(--color-ink-soft)] leading-relaxed">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <p class="mt-12 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      {t("about.section2_p3")}
+    </p>
+  </Container>
+</Section>
+
+{/* Formation et parcours */}
+<Section tone="warm" spacing="normal" as="section" id="parcours">
+  <Container width="content">
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
+    <h2 class="font-serif italic text-center">{t("about.section3_title")}</h2>
+
+    <p class="mt-10 max-w-[44rem] mx-auto text-sm text-[var(--color-ink-muted)] italic leading-relaxed text-center">
+      {t("about.section3_intro")}
+    </p>
+
+    <ol class="mt-14 max-w-[44rem] mx-auto space-y-8">
+      {timeline.map((entry) => (
+        <li class="grid sm:grid-cols-[10rem_1fr] gap-2 sm:gap-8 items-baseline">
+          <span class="font-serif italic text-[var(--color-accent-deep)] tabular-nums text-[0.9375rem] tracking-tight">
+            {entry.dates}
+          </span>
+          <div>
+            <h3 class="font-serif text-lg">{entry.title}</h3>
+            <p class="mt-1 text-[var(--color-ink-soft)] leading-relaxed">{entry.desc}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <p class="mt-14 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-center italic">
+      {t("about.languages_note")}
+    </p>
+  </Container>
+</Section>
+
+{/* CTA finale */}
+<Section tone="paper" spacing="normal" as="section">
+  <Container width="content">
+    <Ornament tone="gold" spacing="sm" class="!mt-0 !mb-10" />
+    <div class="text-center">
+      <Button href={getLocalizedPath("/contact", lang)} variant="secondary" size="lg">
+        {t("about.cta")}
+      </Button>
+    </div>
+    <Ornament tone="rose" spacing="md" class="!mb-0" />
+  </Container>
+</Section>

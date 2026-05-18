@@ -1,0 +1,49 @@
+---
+/**
+ * Виньетка-разделитель в духе английского книжного орнамента.
+ * Тонкая линия + ромб + точка + ромб + линия по центру.
+ *
+ * Используется между секциями главной (и при желании других страниц).
+ */
+type Tone = "accent" | "rose" | "gold" | "muted";
+
+interface Props {
+  tone?: Tone;
+  spacing?: "sm" | "md" | "lg";
+  class?: string;
+}
+
+const { tone = "rose", spacing = "md", class: className = "" } = Astro.props;
+
+const colorMap: Record<Tone, string> = {
+  accent: "var(--color-accent-deep)",
+  rose: "var(--color-rose-deep)",
+  gold: "var(--color-gold-deep)",
+  muted: "var(--color-ink-faint)",
+};
+
+const spacingMap: Record<NonNullable<Props["spacing"]>, string> = {
+  sm: "my-8",
+  md: "my-14",
+  lg: "my-20",
+};
+---
+
+<div
+  class={`flex items-center justify-center ${spacingMap[spacing]} ${className}`}
+  aria-hidden="true"
+>
+  <svg
+    width="220"
+    height="14"
+    viewBox="0 0 220 14"
+    fill="none"
+    style={`color: ${colorMap[tone]}`}
+  >
+    <line x1="0" y1="7" x2="88" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.7" />
+    <path d="M96 3 L104 7 L96 11 Z" fill="currentColor" opacity="0.85" />
+    <circle cx="110" cy="7" r="1.6" fill="currentColor" />
+    <path d="M124 3 L116 7 L124 11 Z" fill="currentColor" opacity="0.85" />
+    <line x1="132" y1="7" x2="220" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.7" />
+  </svg>
+</div>

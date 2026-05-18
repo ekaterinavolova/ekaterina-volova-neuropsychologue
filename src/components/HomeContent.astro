@@ -3,6 +3,7 @@ import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils"
 import Container from "./Container.astro";
 import Section from "./Section.astro";
 import Button from "./Button.astro";
+import Ornament from "./Ornament.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -39,29 +40,31 @@ const processSteps = [
 ];
 ---
 
-{/* Banner ouverture future */}
-<div class="bg-[var(--color-paper-deep)] border-b border-[var(--color-rule-soft)]">
-  <Container width="wide">
-    <p class="py-2.5 text-center text-[0.8125rem] text-[var(--color-ink-soft)] tracking-tight">
-      {t("home.banner")}
-    </p>
-  </Container>
-</div>
-
 {/* Hero */}
 <Section tone="paper" spacing="loose" as="header">
-  <Container width="content">
-    <h1 class="font-serif">{t("home.h1")}</h1>
-    <p class="mt-8 text-lg sm:text-xl text-[var(--color-ink-soft)] leading-relaxed max-w-[42rem]">
-      {t("home.lede")}
-    </p>
-    <div class="mt-10 flex flex-wrap gap-3">
-      <Button href={getLocalizedPath("/contact", lang)} variant="primary" size="lg">
-        {t("home.cta_primary")}
-      </Button>
-      <Button href={getLocalizedPath("/prestations", lang)} variant="secondary" size="lg">
-        {t("home.cta_secondary")}
-      </Button>
+  <Container width="wide">
+    <div class="grid gap-10 md:grid-cols-[22rem_1fr] md:gap-14 items-center">
+      {/* Emplacement photo - à remplacer par <img> quand le portrait sera fourni */}
+      <div
+        class="aspect-[3/4] w-full max-w-[22rem] mx-auto md:mx-0 bg-[var(--color-paper-deep)] border border-[var(--color-rule-soft)] rounded-[var(--radius-sm)]"
+        aria-hidden="true"
+      ></div>
+
+      <div>
+        <h1 class="font-serif italic text-[var(--color-accent-deep)] md:whitespace-nowrap">{t("home.h1")}</h1>
+        <div class="mt-6 flex items-center gap-4">
+          <span class="block h-px w-6 bg-[var(--color-rose-deep)] shrink-0" aria-hidden="true"></span>
+          <p class="font-serif italic text-lg sm:text-xl text-[var(--color-ink-soft)] leading-relaxed md:whitespace-nowrap">
+            {t("home.lede")}
+          </p>
+          <span class="block h-px w-6 bg-[var(--color-rose-deep)] shrink-0" aria-hidden="true"></span>
+        </div>
+        <div class="mt-10">
+          <Button href={getLocalizedPath("/contact", lang)} variant="secondary" size="lg">
+            {t("home.cta_secondary")}
+          </Button>
+        </div>
+      </div>
     </div>
   </Container>
 </Section>
@@ -69,17 +72,20 @@ const processSteps = [
 {/* Pour qui */}
 <Section tone="warm" spacing="normal" as="section" id="who">
   <Container width="content">
-    <h2 class="font-serif">{t("home.who.title")}</h2>
-    <p class="mt-6 text-[var(--color-ink-soft)] max-w-[44rem]">{t("home.who.intro")}</p>
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
+    <h2 class="font-serif italic text-center">{t("home.who.title")}</h2>
+    <p class="mt-8 text-[var(--color-ink-soft)] max-w-[44rem] mx-auto regency-dropcap">
+      {t("home.who.intro")}
+    </p>
 
-    <div class="mt-10 max-w-[44rem]">
-      <p class="text-[0.6875rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)] mb-3">
+    <div class="mt-10 max-w-[44rem] mx-auto">
+      <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-3">
         {t("home.who.indications_title")}
       </p>
       <p class="text-[var(--color-ink-soft)] leading-relaxed">{t("home.who.indications")}</p>
     </div>
 
-    <p class="mt-8 text-sm text-[var(--color-ink-muted)] max-w-[44rem] italic">
+    <p class="mt-8 text-sm text-[var(--color-ink-muted)] max-w-[44rem] mx-auto italic">
       {t("home.who.note")}
     </p>
   </Container>
@@ -88,7 +94,8 @@ const processSteps = [
 {/* Prestations */}
 <Section tone="paper" spacing="normal" as="section" id="services">
   <Container width="wide">
-    <h2 class="font-serif">{t("home.services.title")}</h2>
+    <Ornament tone="gold" spacing="sm" class="!mt-0 !mb-12" />
+    <h2 class="font-serif italic text-center">{t("home.services.title")}</h2>
 
     <div class="mt-12 grid gap-px bg-[var(--color-rule-soft)] sm:grid-cols-2 border border-[var(--color-rule-soft)]">
       {services.map((s) => (
@@ -101,7 +108,7 @@ const processSteps = [
           </div>
           <p class="text-[var(--color-ink-soft)] leading-relaxed flex-1">{s.desc}</p>
           {s.note && (
-            <p class="mt-4 text-xs uppercase tracking-wider text-[var(--color-ink-muted)]">
+            <p class="mt-4 font-serif italic text-xs tracking-wider text-[var(--color-rose-deep)]">
               {s.note}
             </p>
           )}
@@ -109,7 +116,7 @@ const processSteps = [
       ))}
     </div>
 
-    <div class="mt-10">
+    <div class="mt-10 text-center">
       <a
         href={getLocalizedPath("/prestations", lang)}
         class="text-[var(--color-ink)] text-[0.9375rem] decoration-[var(--color-rule)] hover:decoration-[var(--color-accent)]"
@@ -123,12 +130,13 @@ const processSteps = [
 {/* Process */}
 <Section tone="warm" spacing="normal" as="section" id="process">
   <Container width="content">
-    <h2 class="font-serif">{t("home.process.title")}</h2>
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
+    <h2 class="font-serif italic text-center">{t("home.process.title")}</h2>
 
-    <ol class="mt-12 space-y-10">
+    <ol class="mt-14 space-y-10">
       {processSteps.map((step, idx) => (
         <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
-          <span class="font-serif text-2xl text-[var(--color-accent-deep)] tabular-nums">
+          <span class="font-serif italic text-3xl text-[var(--color-rose-deep)] tabular-nums">
             {String(idx + 1).padStart(2, "0")}
           </span>
           <div>
@@ -144,19 +152,20 @@ const processSteps = [
 {/* Langues */}
 <Section tone="paper" spacing="normal" as="section" id="languages">
   <Container width="content">
-    <h2 class="font-serif">{t("home.languages.title")}</h2>
+    <Ornament tone="gold" spacing="sm" class="!mt-0 !mb-12" />
+    <h2 class="font-serif italic text-center">{t("home.languages.title")}</h2>
 
-    <ul class="mt-10 space-y-6 max-w-[42rem]">
+    <ul class="mt-12 space-y-6 max-w-[42rem] mx-auto">
       <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif text-lg text-[var(--color-ink)]" lang="fr">Français</span>
+        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="fr">Français</span>
         <span class="text-[var(--color-ink-soft)]">{t("home.languages.fr").replace(/^Français — /, "").replace(/^Français - /, "")}</span>
       </li>
       <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif text-lg text-[var(--color-ink)]" lang="ru">Русский</span>
+        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="ru">Русский</span>
         <span class="text-[var(--color-ink-soft)]">{t("home.languages.ru").replace(/^Русский — /, "").replace(/^Русский - /, "")}</span>
       </li>
       <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif text-lg text-[var(--color-ink)]" lang="en">English</span>
+        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="en">English</span>
         <span class="text-[var(--color-ink-soft)]">{t("home.languages.en").replace(/^English — /, "").replace(/^English - /, "")}</span>
       </li>
     </ul>
@@ -166,9 +175,10 @@ const processSteps = [
 {/* Prescripteurs + CTA finale */}
 <Section tone="deep" spacing="normal" as="section" id="prescribers">
   <Container width="content">
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
     <div class="grid gap-12 md:grid-cols-2 items-start">
       <div>
-        <h2 class="font-serif">{t("home.prescribers.title")}</h2>
+        <h2 class="font-serif italic">{t("home.prescribers.title")}</h2>
         <p class="mt-4 text-[var(--color-ink-soft)]">{t("home.prescribers.desc")}</p>
         <div class="mt-6">
           <Button href={getLocalizedPath("/contact", lang)} variant="secondary">
@@ -177,8 +187,8 @@ const processSteps = [
         </div>
       </div>
 
-      <div class="md:border-l md:border-[var(--color-rule)] md:pl-12">
-        <p class="text-[0.6875rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)] mb-3">
+      <div class="md:border-l md:border-[var(--color-rose)] md:pl-12">
+        <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-3">
           {t("footer.cabinet_label")}
         </p>
         <address class="not-italic text-[var(--color-ink-soft)] leading-relaxed">
@@ -186,8 +196,9 @@ const processSteps = [
           4 rue Pierre Levée<br />
           75011 Paris
         </address>
-        <p class="mt-6 text-sm text-[var(--color-ink-muted)]">{t("footer.opening_note")}</p>
+        <p class="mt-6 text-sm text-[var(--color-ink-muted)] italic">{t("footer.opening_note")}</p>
       </div>
     </div>
+    <Ornament tone="gold" spacing="md" class="!mb-0" />
   </Container>
 </Section>
