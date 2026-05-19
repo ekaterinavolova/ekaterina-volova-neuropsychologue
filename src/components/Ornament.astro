@@ -1,49 +1,83 @@
 ---
 /**
- * Виньетка-разделитель в духе английского книжного орнамента.
- * Тонкая линия + ромб + точка + ромб + линия по центру.
+ * Ornements typographiques au trait fin, esprit gravure ancienne / colophon.
  *
- * Используется между секциями главной (и при желании других страниц).
+ * Trois variants :
+ *  - "compact"  : fleuron seul (losange + point + losange) — fin de section calme
+ *  - "long"     : filet + fleuron + filet, pleine largeur — séparateur de chapitre
+ *  - "terminal" : marque de fin ❦ stylisée, esprit "fin du livre"
+ *
+ * Toujours `aria-hidden` — c'est de la décoration pure.
  */
-type Tone = "accent" | "rose" | "gold" | "muted";
+type Variant = "compact" | "long" | "terminal";
+type Tone = "ink" | "accent" | "paper";
 
 interface Props {
+  variant?: Variant;
   tone?: Tone;
   spacing?: "sm" | "md" | "lg";
   class?: string;
 }
 
-const { tone = "rose", spacing = "md", class: className = "" } = Astro.props;
+const {
+  variant = "compact",
+  tone = "ink",
+  spacing = "md",
+  class: className = "",
+} = Astro.props;
 
 const colorMap: Record<Tone, string> = {
+  ink: "var(--color-ink-faint)",
   accent: "var(--color-accent-deep)",
-  rose: "var(--color-rose-deep)",
-  gold: "var(--color-gold-deep)",
-  muted: "var(--color-ink-faint)",
+  paper: "rgb(245 239 227 / 0.45)",
 };
 
 const spacingMap: Record<NonNullable<Props["spacing"]>, string> = {
-  sm: "my-8",
-  md: "my-14",
-  lg: "my-20",
+  sm: "my-10",
+  md: "my-16",
+  lg: "my-24",
 };
 ---
 
 <div
   class={`flex items-center justify-center ${spacingMap[spacing]} ${className}`}
   aria-hidden="true"
+  style={`color: ${colorMap[tone]}`}
 >
-  <svg
-    width="220"
-    height="14"
-    viewBox="0 0 220 14"
-    fill="none"
-    style={`color: ${colorMap[tone]}`}
-  >
-    <line x1="0" y1="7" x2="88" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.7" />
-    <path d="M96 3 L104 7 L96 11 Z" fill="currentColor" opacity="0.85" />
-    <circle cx="110" cy="7" r="1.6" fill="currentColor" />
-    <path d="M124 3 L116 7 L124 11 Z" fill="currentColor" opacity="0.85" />
-    <line x1="132" y1="7" x2="220" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.7" />
-  </svg>
+  {variant === "compact" && (
+    <svg width="64" height="12" viewBox="0 0 64 12" fill="none">
+      <path d="M20 3 L26 6 L20 9 Z" fill="currentColor" opacity="0.7" />
+      <circle cx="32" cy="6" r="1.4" fill="currentColor" />
+      <path d="M44 3 L38 6 L44 9 Z" fill="currentColor" opacity="0.7" />
+    </svg>
+  )}
+
+  {variant === "long" && (
+    <svg width="260" height="12" viewBox="0 0 260 12" fill="none">
+      <line x1="0" y1="6" x2="108" y2="6" stroke="currentColor" stroke-width="0.5" opacity="0.55" />
+      <path d="M120 3 L126 6 L120 9 Z" fill="currentColor" opacity="0.75" />
+      <circle cx="132" cy="6" r="1.4" fill="currentColor" />
+      <path d="M144 3 L138 6 L144 9 Z" fill="currentColor" opacity="0.75" />
+      <line x1="152" y1="6" x2="260" y2="6" stroke="currentColor" stroke-width="0.5" opacity="0.55" />
+    </svg>
+  )}
+
+  {variant === "terminal" && (
+    <svg width="42" height="32" viewBox="0 0 42 32" fill="none">
+      {/* Fleuron stylisé évoquant un ❦ (aldus leaf) au trait fin */}
+      <path
+        d="M21 4
+           C 15 8, 11 12, 14 18
+           C 16 22, 19 22, 21 19
+           C 23 22, 26 22, 28 18
+           C 31 12, 27 8, 21 4 Z"
+        stroke="currentColor"
+        stroke-width="0.7"
+        fill="none"
+        opacity="0.75"
+      />
+      <line x1="21" y1="19" x2="21" y2="28" stroke="currentColor" stroke-width="0.7" opacity="0.75" />
+      <circle cx="21" cy="29.5" r="0.9" fill="currentColor" opacity="0.85" />
+    </svg>
+  )}
 </div>

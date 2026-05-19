@@ -1,5 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import { Image } from "astro:assets";
+import portraitEkaterina from "~/assets/portrait-ekaterina.png";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -35,23 +37,17 @@ const processSteps = [
   { title: t("home.process.step4_title"), desc: t("home.process.step4_desc") },
 ];
 
-const portraitLabel: Record<string, string> = {
-  fr: "Portrait à venir",
-  ru: "Портрет",
-  en: "Portrait forthcoming",
-};
-
 type CabinetLabels = {
   roomTitle: string;
   entryTitle: string;
   accessTitle: string;
   metro: string;
   bus: string;
-  bike: string;
   pmr: string;
-  metroValue: string;
-  busValue: string;
-  bikeValue: string;
+  metroStation: string;
+  metroTime: string;
+  busStop: string;
+  busTime: string;
   pmrValue: string;
 };
 
@@ -62,12 +58,12 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     accessTitle: "Accès",
     metro: "Métro",
     bus: "Bus",
-    bike: "Vélib'",
     pmr: "Accessibilité",
-    metroValue: "Passy (ligne 6) — 5 min",
-    busValue: "32 — arrêt Jean Bologne — 2 min",
-    bikeValue: "—",
-    pmrValue: "Rez-de-chaussée",
+    metroStation: "Passy",
+    metroTime: "5 min à pied",
+    busStop: "arrêt Jean Bologne",
+    busTime: "2 min à pied",
+    pmrValue: "Cabinet en rez-de-chaussée",
   },
   ru: {
     roomTitle: "Зал обследования",
@@ -75,12 +71,12 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     accessTitle: "Доступ",
     metro: "Метро",
     bus: "Автобус",
-    bike: "Vélib'",
     pmr: "Доступность",
-    metroValue: "Passy (линия 6) — 5 мин",
-    busValue: "32 — Jean Bologne — 2 мин",
-    bikeValue: "—",
-    pmrValue: "Первый этаж",
+    metroStation: "Passy",
+    metroTime: "5 мин пешком",
+    busStop: "остановка Jean Bologne",
+    busTime: "2 мин пешком",
+    pmrValue: "Кабинет на первом этаже",
   },
   en: {
     roomTitle: "Assessment room",
@@ -88,12 +84,12 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     accessTitle: "Access",
     metro: "Metro",
     bus: "Bus",
-    bike: "Vélib'",
     pmr: "Accessibility",
-    metroValue: "Passy (line 6) — 5 min",
-    busValue: "32 — Jean Bologne stop — 2 min",
-    bikeValue: "—",
-    pmrValue: "Ground floor",
+    metroStation: "Passy",
+    metroTime: "5 min walk",
+    busStop: "Jean Bologne stop",
+    busTime: "2 min walk",
+    pmrValue: "Ground-floor practice",
   },
 };
 
@@ -105,36 +101,30 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 
 {/* ─────────── HERO — direction Cahier ─────────── */}
 <header class="bg-[var(--color-paper)]">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 pt-10 sm:pt-14 pb-20 sm:pb-28">
-
-    {/* Eyebrow : libellé typographique discret, langue de la page */}
-    <p class="font-sans text-[0.8125rem] sm:text-sm uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-12 sm:mb-16">
-      <span class="text-[var(--color-accent-deep)]">№ 01</span>
-      <span class="mx-3 text-[var(--color-rule)]">·</span>
-      Passy
-      <span class="mx-3 text-[var(--color-rule)]">·</span>
-      Paris XVI<sup class="text-[0.55em]">e</sup>
-    </p>
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 pt-14 sm:pt-20 pb-20 sm:pb-28">
 
     {/* Bloc principal : portrait + titre, asymétrique */}
     <div class="grid gap-10 md:gap-16 md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] items-end">
 
-      {/* Portrait placeholder éditorial — bloc Wedgwood typographié */}
+      {/* Portrait éditorial — passe-partout ivoire (mat-board crème) + filet
+          double sépia, esprit tirage encadré de musée traditionnel. */}
       <figure class="relative">
-        <div class="aspect-[3/4] w-full bg-[var(--color-accent-deep)] text-[var(--color-paper)] relative overflow-hidden">
-          {/* Filet intérieur double, esprit page de titre */}
-          <div class="absolute inset-3 border border-[var(--color-paper)]/25"></div>
-          <div class="absolute inset-[14px] border border-[var(--color-paper)]/15"></div>
+        <div class="aspect-[3/4] w-full relative bg-[var(--color-paper-deep)] p-[20px]">
+          {/* Filets intérieurs doubles, en sépia clair (var(--color-rule)) */}
+          <div class="absolute inset-[10px] border border-[var(--color-rule)] pointer-events-none"></div>
+          <div class="absolute inset-[14px] border border-[var(--color-rule-soft)] pointer-events-none"></div>
 
-          {/* Petit cartouche typographique central */}
-          <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <p class="font-sans text-[0.75rem] uppercase tracking-[0.22em] text-[var(--color-paper)]/60">
-              {portraitLabel[lang] ?? portraitLabel.fr}
-            </p>
-            <div class="mt-4 mb-4 h-px w-12 bg-[var(--color-paper)]/30"></div>
-            <p class="font-serif italic text-[var(--color-paper)]/80 text-lg">
-              E. V.
-            </p>
+          {/* Photo */}
+          <div class="relative h-full w-full overflow-hidden">
+            <Image
+              src={portraitEkaterina}
+              alt="Ekaterina Volova, psychologue spécialisée en neuropsychologie"
+              widths={[400, 600, 900, 1200]}
+              sizes="(min-width: 768px) 38rem, 22rem"
+              format="webp"
+              quality={88}
+              class="h-full w-full object-cover"
+            />
           </div>
         </div>
         <figcaption class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
@@ -417,21 +407,65 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           </figure>
         </div>
 
-        {/* Accès — blueprint en attendant le contenu réel */}
+        {/* Accès — pastilles RATP officielles (convention universelle seniors parisiens)
+            + texte serif lisible. M6 vert clair officiel (#79BB92), Bus 32 orange RATP. */}
         <div class="mt-14 pt-10 border-t border-[var(--color-rule)]">
-          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-6">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-8">
             {cab.accessTitle}
           </p>
-          <dl class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-8 gap-y-3 items-baseline">
-            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.metro}</dt>
-            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.metroValue}</dd>
-            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bus}</dt>
-            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.busValue}</dd>
-            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bike}</dt>
-            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">{cab.bikeValue}</dd>
-            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.pmr}</dt>
-            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.pmrValue}</dd>
-          </dl>
+
+          <ul class="space-y-6">
+
+            {/* Métro ligne 6 */}
+            <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+              <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-full bg-[#79BB92] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                    aria-label={`${cab.metro} 6`}>
+                6
+              </span>
+              <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+                <span class="italic text-[var(--color-ink-muted)]">{cab.metro}</span>
+                <span class="mx-2 text-[var(--color-rule)]">·</span>
+                <span>{cab.metroStation}</span>
+                <span class="mx-2 text-[var(--color-rule)]">·</span>
+                <span class="text-[var(--color-ink-soft)]">{cab.metroTime}</span>
+              </div>
+            </li>
+
+            {/* Bus 32 */}
+            <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+              <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-[2px] bg-[#E1A700] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                    aria-label={`${cab.bus} 32`}>
+                32
+              </span>
+              <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+                <span class="italic text-[var(--color-ink-muted)]">{cab.bus}</span>
+                <span class="mx-2 text-[var(--color-rule)]">·</span>
+                <span>{cab.busStop}</span>
+                <span class="mx-2 text-[var(--color-rule)]">·</span>
+                <span class="text-[var(--color-ink-soft)]">{cab.busTime}</span>
+              </div>
+            </li>
+
+            {/* Accessibilité */}
+            <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+              <span class="w-9 h-9 rounded-full bg-[var(--color-accent-deep)] inline-flex items-center justify-center text-white translate-y-[0.15em]"
+                    aria-label={cab.pmr}>
+                {/* Picto fauteuil ISA (International Symbol of Access), simplifié */}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="10" cy="4" r="1.5" fill="currentColor" stroke="none" />
+                  <path d="M10 7 v6 h6" />
+                  <circle cx="11" cy="17" r="4" />
+                  <path d="M14 13 l3 4" />
+                </svg>
+              </span>
+              <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+                <span class="italic text-[var(--color-ink-muted)]">{cab.pmr}</span>
+                <span class="mx-2 text-[var(--color-rule)]">·</span>
+                <span class="text-[var(--color-ink-soft)]">{cab.pmrValue}</span>
+              </div>
+            </li>
+
+          </ul>
         </div>
       </div>
     </div>
