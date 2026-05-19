@@ -5,60 +5,77 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const currentYear = new Date().getFullYear();
+const contactHref = getLocalizedPath("/contact", lang);
+const legalHref = getLocalizedPath("/mentions-legales", lang);
 ---
 
-<footer class="mt-auto bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
-  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8 py-12 sm:py-16">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+<footer class="mt-auto bg-[var(--color-paper-warm)] border-t border-[var(--color-rule)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-16 sm:py-20">
+    <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+
+      {/* Colonne 1 : signature praticienne */}
       <div>
-        <p class="font-serif text-lg text-[var(--color-ink)]">
+        <p class="font-serif italic text-xl text-[var(--color-ink)] tracking-tight">
           Ekaterina Volova
         </p>
-        <p class="text-sm text-[var(--color-ink-soft)] mt-1">
+        <p class="mt-2 font-sans text-[0.8125rem] text-[var(--color-ink-soft)] leading-relaxed">
           {t("footer.profession")}
         </p>
-        <p class="text-xs text-[var(--color-ink-muted)] mt-3 font-mono tabular-nums tracking-tight">
+        <p class="mt-5 font-mono text-[0.6875rem] tabular-nums tracking-tight text-[var(--color-ink-muted)]">
           {t("footer.rpps")}
         </p>
       </div>
 
+      {/* Colonne 2 : cabinet */}
       <div>
-        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
+        <p class="font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)] mb-4">
           {t("footer.cabinet_label")}
         </p>
-        <address class="not-italic text-sm text-[var(--color-ink-soft)] leading-relaxed">
+        <address class="not-italic font-serif text-[var(--color-ink)] leading-relaxed">
           Cabinet Via SANA Parmentier<br />
           4 rue Pierre Levée<br />
           75011 Paris
         </address>
-        <p class="text-xs text-[var(--color-ink-muted)] mt-3">
+        <p class="mt-4 font-serif italic text-[0.9375rem] text-[var(--color-ink-muted)]">
           {t("footer.opening_note")}
         </p>
       </div>
 
+      {/* Colonne 3 : prise de contact */}
       <div>
-        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
+        <p class="font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)] mb-4">
           {t("footer.contact_label")}
         </p>
         <a
-          href={getLocalizedPath("/contact", lang)}
-          class="text-sm text-[var(--color-ink)] hover:text-[var(--color-accent-deep)]"
+          href={contactHref}
+          class="font-serif italic text-lg text-[var(--color-ink)] no-underline border-b border-[var(--color-ink)] pb-0.5 hover:text-[var(--color-accent-deep)] hover:border-[var(--color-accent-deep)] transition-colors"
         >
           {t("cta.contact")}
         </a>
       </div>
     </div>
 
-    <div class="mt-12 pt-6 border-t border-[var(--color-rule-soft)] flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-ink-muted)]">
-      <p>
-        © {currentYear} Ekaterina Volova
+    {/* Colophon de livre — discret, langue-agnostique */}
+    <div class="mt-16 sm:mt-20 pt-6 border-t border-[var(--color-rule)]">
+      <p class="text-center font-serif italic text-[0.8125rem] text-[var(--color-ink-faint)] tracking-tight">
+        Paris
+        <span class="mx-2.5 text-[var(--color-rule)]">·</span>
+        Source Serif 4 &amp; Inter
+        <span class="mx-2.5 text-[var(--color-rule)]">·</span>
+        <span class="tabular-nums">MMXXVI</span>
       </p>
-      <a
-        href={getLocalizedPath("/mentions-legales", lang)}
-        class="hover:text-[var(--color-ink)] transition-colors"
-      >
-        {t("footer.legal_link")}
-      </a>
+
+      <div class="mt-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.6875rem] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+        <p>
+          © {currentYear} Ekaterina Volova
+        </p>
+        <a
+          href={legalHref}
+          class="no-underline hover:text-[var(--color-ink)] transition-colors"
+        >
+          {t("footer.legal_link")}
+        </a>
+      </div>
     </div>
   </div>
 </footer>

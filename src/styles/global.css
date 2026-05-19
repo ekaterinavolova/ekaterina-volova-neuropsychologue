@@ -11,41 +11,40 @@
 @import "tailwindcss";
 
 /*
- * Design tokens — palette sobre cabinet santé haut de gamme.
- * Esprit : sérieux clinique + chaleureux humain. Pas de pop, pas de gradient.
+ * Design tokens — esprit "Cahier" : magazine éditorial moderne
+ * (Gentlewoman / Apartamento / Cabana). Ivoire chaud, sépia, bleu Wedgwood
+ * unique accent froid. Jamais de noir pur, jamais de gradient.
  */
 @theme {
-  /* --- Couleurs : noir-ivoire avec un bleu profond accent --- */
+  /* --- Encre : sépia chaud, 4 niveaux pour hiérarchie de texte --- */
+  --color-ink: oklch(0.24 0.018 60);           /* Titres, texte principal — sépia profond */
+  --color-ink-soft: oklch(0.38 0.015 60);      /* Texte courant */
+  --color-ink-muted: oklch(0.56 0.012 60);     /* Texte secondaire, méta */
+  --color-ink-faint: oklch(0.74 0.010 65);     /* Texte très discret */
 
-  /* Encre : 4 niveaux pour hiérarchie de texte */
-  --color-ink: oklch(0.18 0.012 250);          /* Titres, texte principal */
-  --color-ink-soft: oklch(0.32 0.008 250);     /* Texte courant */
-  --color-ink-muted: oklch(0.52 0.005 250);    /* Texte secondaire, méta */
-  --color-ink-faint: oklch(0.72 0.003 250);    /* Texte très discret */
+  /* --- Papier : ivoire chaud, 3 niveaux --- */
+  --color-paper: oklch(0.965 0.018 80);        /* Fond principal — ivoire ~#F5EFE3 */
+  --color-paper-warm: oklch(0.935 0.024 80);   /* Sections alternées — crème ~#EDE4D2 */
+  --color-paper-deep: oklch(0.895 0.028 78);   /* Cartes, encarts — crème soutenu */
 
-  /* Papier : 3 niveaux pour fond et nuances */
-  --color-paper: oklch(0.985 0.004 80);        /* Fond principal, ivoire chaud */
-  --color-paper-warm: oklch(0.965 0.012 70);   /* Sections alternées */
-  --color-paper-deep: oklch(0.93 0.008 80);    /* Cartes, encarts */
+  /* --- Accent unique : Bleu Wedgwood profond (~#2E4A6B) --- */
+  --color-accent: oklch(0.40 0.075 245);
+  --color-accent-soft: oklch(0.90 0.022 245);
+  --color-accent-deep: oklch(0.30 0.080 248);
 
-  /* Accent principal : bleu ciel foncé, cerulean / azur profond */
-  --color-accent: oklch(0.55 0.14 235);
-  --color-accent-soft: oklch(0.93 0.04 235);
-  --color-accent-deep: oklch(0.42 0.16 240);
+  /* --- Tokens historiques conservés en interne (Ornament.astro, page À propos),
+   *     redirigés vers la nouvelle famille pour éviter les fausses notes.       */
+  --color-rose: oklch(0.88 0.018 60);
+  --color-rose-soft: oklch(0.94 0.012 60);
+  --color-rose-deep: oklch(0.45 0.030 60);
 
-  /* Accent secondaire : rose poudré (Regency / Bridgerton, détails délicats) */
-  --color-rose: oklch(0.86 0.05 18);
-  --color-rose-soft: oklch(0.95 0.02 18);
-  --color-rose-deep: oklch(0.58 0.10 18);
+  --color-gold: oklch(0.86 0.030 80);
+  --color-gold-soft: oklch(0.94 0.020 80);
+  --color-gold-deep: oklch(0.58 0.060 78);
 
-  /* Accent tertiaire : jaune beurre / vieil or (touches très parcimonieuses) */
-  --color-gold: oklch(0.88 0.06 85);
-  --color-gold-soft: oklch(0.96 0.03 85);
-  --color-gold-deep: oklch(0.65 0.10 80);
-
-  /* Séparateurs */
-  --color-rule: oklch(0.88 0.005 250);
-  --color-rule-soft: oklch(0.94 0.003 250);
+  /* --- Séparateurs : filets papier --- */
+  --color-rule: oklch(0.82 0.025 78);
+  --color-rule-soft: oklch(0.90 0.020 78);
 
   /* États sémantiques (rarement utilisés sur site vitrine) */
   --color-success: oklch(0.55 0.10 150);
