@@ -27,7 +27,7 @@ export const ui = {
 
     "footer.rpps": "RPPS 10111377833",
     "footer.profession": "Psychologue spécialisée en neuropsychologie",
-    "footer.office_address": "Cabinet Via SANA Parmentier, 4 rue Pierre Levée, 75011 Paris",
+    "footer.office_address": "14 rue Nicolo, 75116 Paris",
     "footer.copyright": "© 2026 Ekaterina Volova. Tous droits réservés.",
     "footer.legal_link": "Mentions légales & politique de confidentialité",
 
@@ -46,9 +46,9 @@ export const ui = {
     "footer.contact_label": "Prendre rendez-vous",
     "footer.opening_note": "Ouverture du cabinet le 15 juin 2026",
 
-    "site.title": "Ekaterina Volova - Neuropsychologue à Paris 11e",
+    "site.title": "Ekaterina Volova - Neuropsychologue à Paris 16e",
     "site.description":
-      "Cabinet de neuropsychologie à Paris 11e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 6 mois. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
+      "Cabinet de neuropsychologie à Paris 16e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 6 mois. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Psychologue spécialisée en neuropsychologie",
@@ -173,7 +173,7 @@ export const ui = {
 
     "footer.rpps": "RPPS 10111377833",
     "footer.profession": "Психолог, специалист по нейропсихологии",
-    "footer.office_address": "Кабинет Via SANA Parmentier, 4 rue Pierre Levée, 75011 Paris",
+    "footer.office_address": "14 rue Nicolo, 75116 Paris",
     "footer.copyright": "© 2026 Екатерина Волова. Все права защищены.",
     "footer.legal_link": "Правовая информация и политика конфиденциальности",
 
@@ -192,9 +192,9 @@ export const ui = {
     "footer.contact_label": "Записаться на приём",
     "footer.opening_note": "Открытие кабинета 15 июня 2026 года",
 
-    "site.title": "Екатерина Волова - Нейропсихолог в Париже, 11 округ",
+    "site.title": "Екатерина Волова - Нейропсихолог в Париже, 16 округ",
     "site.description":
-      "Кабинет нейропсихологии в 11 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 6 месяцев. Взрослые с 16 лет, приём на французском, русском и английском языках.",
+      "Кабинет нейропсихологии в 16 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 6 месяцев. Взрослые с 16 лет, приём на французском, русском и английском языках.",
 
     "home.h1": "Екатерина Волова",
     "home.lede": "Нейропсихолог",
@@ -319,7 +319,7 @@ export const ui = {
 
     "footer.rpps": "RPPS 10111377833",
     "footer.profession": "Psychologist specialising in neuropsychology",
-    "footer.office_address": "Via SANA Parmentier office, 4 rue Pierre Levée, 75011 Paris",
+    "footer.office_address": "14 rue Nicolo, 75116 Paris",
     "footer.copyright": "© 2026 Ekaterina Volova. All rights reserved.",
     "footer.legal_link": "Legal notice and privacy policy",
 
@@ -338,9 +338,9 @@ export const ui = {
     "footer.contact_label": "Book an appointment",
     "footer.opening_note": "Office opens on 15 June 2026",
 
-    "site.title": "Ekaterina Volova - Neuropsychologist in Paris 11th",
+    "site.title": "Ekaterina Volova - Neuropsychologist in Paris 16th",
     "site.description":
-      "Neuropsychology practice in Paris 11th. Diagnostic assessments, cognitive remediation and stimulation, 6-month follow-up. Adults 16 and older, consultations in French, Russian and English.",
+      "Neuropsychology practice in Paris 16th. Diagnostic assessments, cognitive remediation and stimulation, 6-month follow-up. Adults 16 and older, consultations in French, Russian and English.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Neuropsychologist",

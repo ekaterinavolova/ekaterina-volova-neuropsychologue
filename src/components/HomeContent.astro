@@ -49,6 +49,10 @@ type CabinetLabels = {
   bus: string;
   bike: string;
   pmr: string;
+  metroValue: string;
+  busValue: string;
+  bikeValue: string;
+  pmrValue: string;
 };
 
 const cabinetLabels: Record<string, CabinetLabels> = {
@@ -60,6 +64,10 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     bus: "Bus",
     bike: "Vélib'",
     pmr: "Accessibilité",
+    metroValue: "Passy (ligne 6) — 5 min",
+    busValue: "32 — arrêt Jean Bologne — 2 min",
+    bikeValue: "—",
+    pmrValue: "Rez-de-chaussée",
   },
   ru: {
     roomTitle: "Зал обследования",
@@ -69,6 +77,10 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     bus: "Автобус",
     bike: "Vélib'",
     pmr: "Доступность",
+    metroValue: "Passy (линия 6) — 5 мин",
+    busValue: "32 — Jean Bologne — 2 мин",
+    bikeValue: "—",
+    pmrValue: "Первый этаж",
   },
   en: {
     roomTitle: "Assessment room",
@@ -78,6 +90,10 @@ const cabinetLabels: Record<string, CabinetLabels> = {
     bus: "Bus",
     bike: "Vélib'",
     pmr: "Accessibility",
+    metroValue: "Passy (line 6) — 5 min",
+    busValue: "32 — Jean Bologne stop — 2 min",
+    bikeValue: "—",
+    pmrValue: "Ground floor",
   },
 };
 
@@ -95,9 +111,9 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
     <p class="font-sans text-[0.8125rem] sm:text-sm uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-12 sm:mb-16">
       <span class="text-[var(--color-accent-deep)]">№ 01</span>
       <span class="mx-3 text-[var(--color-rule)]">·</span>
-      Cabinet Via SANA Parmentier
+      Passy
       <span class="mx-3 text-[var(--color-rule)]">·</span>
-      Paris XI<sup class="text-[0.55em]">e</sup>
+      Paris XVI<sup class="text-[0.55em]">e</sup>
     </p>
 
     {/* Bloc principal : portrait + titre, asymétrique */}
@@ -350,9 +366,8 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
       <div class="max-w-[42rem]">
         {/* Adresse */}
         <address class="not-italic font-serif text-[1.5rem] sm:text-[1.75rem] leading-[1.4] text-[var(--color-ink)] tracking-[-0.012em]">
-          Cabinet Via SANA Parmentier<br />
-          4 rue Pierre Levée<br />
-          75011 Paris
+          14 rue Nicolo<br />
+          75116 Paris
         </address>
         <p class="mt-4 font-serif italic text-[var(--color-ink-muted)]">
           {t("footer.opening_note")}
@@ -409,13 +424,13 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           </p>
           <dl class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-8 gap-y-3 items-baseline">
             <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.metro}</dt>
-            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.metroValue}</dd>
             <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bus}</dt>
-            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.busValue}</dd>
             <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bike}</dt>
-            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">{cab.bikeValue}</dd>
             <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.pmr}</dt>
-            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dd class="font-serif text-[var(--color-ink-soft)] text-base">{cab.pmrValue}</dd>
           </dl>
         </div>
       </div>
