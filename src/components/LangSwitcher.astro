@@ -28,7 +28,7 @@ function pathForLang(lang: Lang): string {
 const langOrder: Lang[] = ["fr", "ru", "en"];
 ---
 
-<nav aria-label="Langue / Language / Язык" class={`flex items-center gap-1 text-[0.8125rem] ${className}`}>
+<nav aria-label="Langue / Language / Язык" class={`flex items-center gap-1 text-[0.875rem] ${className}`}>
   {
     langOrder.map((lang, idx) => {
       const isActive = lang === currentLang;
@@ -38,7 +38,7 @@ const langOrder: Lang[] = ["fr", "ru", "en"];
           <a
             href={pathForLang(lang)}
             class:list={[
-              "px-1.5 py-1 no-underline uppercase tracking-wider transition-colors",
+              "px-2 py-2 no-underline uppercase tracking-wider transition-colors",
               isActive
                 ? "text-[var(--color-ink)] font-medium"
                 : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",

@@ -90,8 +90,8 @@ html {
 }
 
 body {
-  font-size: 1.0625rem;       /* 17px */
-  line-height: 1.7;
+  font-size: 1.125rem;        /* 18px — base lisible pour public 16+ dont patients âgés */
+  line-height: 1.65;
   font-weight: 400;
   letter-spacing: -0.005em;
 }

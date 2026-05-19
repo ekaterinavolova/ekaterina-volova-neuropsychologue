@@ -41,6 +41,48 @@ const portraitLabel: Record<string, string> = {
   en: "Portrait forthcoming",
 };
 
+type CabinetLabels = {
+  roomTitle: string;
+  entryTitle: string;
+  accessTitle: string;
+  metro: string;
+  bus: string;
+  bike: string;
+  pmr: string;
+};
+
+const cabinetLabels: Record<string, CabinetLabels> = {
+  fr: {
+    roomTitle: "Salle de bilan",
+    entryTitle: "Entrée du cabinet",
+    accessTitle: "Accès",
+    metro: "Métro",
+    bus: "Bus",
+    bike: "Vélib'",
+    pmr: "Accessibilité",
+  },
+  ru: {
+    roomTitle: "Зал обследования",
+    entryTitle: "Вход в кабинет",
+    accessTitle: "Доступ",
+    metro: "Метро",
+    bus: "Автобус",
+    bike: "Vélib'",
+    pmr: "Доступность",
+  },
+  en: {
+    roomTitle: "Assessment room",
+    entryTitle: "Entrance",
+    accessTitle: "Access",
+    metro: "Metro",
+    bus: "Bus",
+    bike: "Vélib'",
+    pmr: "Accessibility",
+  },
+};
+
+const cab = cabinetLabels[lang] ?? cabinetLabels.fr;
+
 const contactHref = getLocalizedPath("/contact", lang);
 const aboutHref = getLocalizedPath("/a-propos", lang);
 ---
@@ -50,7 +92,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 pt-10 sm:pt-14 pb-20 sm:pb-28">
 
     {/* Eyebrow : libellé typographique discret, langue de la page */}
-    <p class="font-sans text-[0.6875rem] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-ink-muted)] mb-12 sm:mb-16">
+    <p class="font-sans text-[0.8125rem] sm:text-sm uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-12 sm:mb-16">
       <span class="text-[var(--color-accent-deep)]">№ 01</span>
       <span class="mx-3 text-[var(--color-rule)]">·</span>
       Cabinet Via SANA Parmentier
@@ -70,7 +112,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 
           {/* Petit cartouche typographique central */}
           <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <p class="font-sans text-[0.625rem] uppercase tracking-[0.32em] text-[var(--color-paper)]/60">
+            <p class="font-sans text-[0.75rem] uppercase tracking-[0.22em] text-[var(--color-paper)]/60">
               {portraitLabel[lang] ?? portraitLabel.fr}
             </p>
             <div class="mt-4 mb-4 h-px w-12 bg-[var(--color-paper)]/30"></div>
@@ -79,14 +121,14 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
             </p>
           </div>
         </div>
-        <figcaption class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.18em] text-[var(--color-ink-muted)]">
+        <figcaption class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
           Pl. I
           <span class="mx-2 text-[var(--color-rule)]">—</span>
           Ekaterina Volova
         </figcaption>
       </figure>
 
-      {/* Bloc titre : saut d'échelle brutal, Gentlewoman-style */}
+      {/* Bloc titre + lede explicative — lisibilité prioritaire pour patients âgés */}
       <div class="md:pb-2">
         <h1
           class="font-serif italic text-[var(--color-ink)] leading-[0.95] tracking-[-0.025em]"
@@ -95,25 +137,36 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           {t("home.h1")}
         </h1>
 
-        <p class="mt-8 sm:mt-10 font-sans text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.24em] text-[var(--color-ink-soft)] leading-relaxed">
+        {/* Identifiant professionnel — petit mais lisible (sentence case, pas uppercase agressif) */}
+        <p class="mt-7 font-serif italic text-[var(--color-ink-soft)] text-xl sm:text-2xl leading-snug">
           {t("home.lede")}
         </p>
 
-        <p class="mt-3 font-sans text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.24em] text-[var(--color-ink-muted)]">
+        {/* Lede explicative — paragraphe clair, sentence case, taille confortable
+           pour lecture par patients âgés ou en plainte cognitive. Utilise site.description
+           déjà validée par Kate en FR / RU / EN. */}
+        <p class="mt-8 font-serif text-[var(--color-ink)] leading-[1.55] max-w-[34rem]"
+           style="font-size: clamp(1.0625rem, 0.45vw + 0.95rem, 1.1875rem);">
+          {t("site.description")}
+        </p>
+
+        {/* Trio des langues — serif lisible, plus de uppercase agressif */}
+        <p class="mt-7 font-serif italic text-[var(--color-ink-muted)] text-lg">
           Français
-          <span class="mx-2 text-[var(--color-rule)]">·</span>
+          <span class="mx-2.5 text-[var(--color-rule)]">·</span>
           Русский
-          <span class="mx-2 text-[var(--color-rule)]">·</span>
+          <span class="mx-2.5 text-[var(--color-rule)]">·</span>
           English
         </p>
 
-        <div class="mt-10 sm:mt-14 flex items-center">
+        {/* CTA principal — taille augmentée pour accessibilité tactile, libellé universel */}
+        <div class="mt-10 sm:mt-12">
           <a
             href={contactHref}
-            class="group inline-flex items-baseline gap-3 font-serif italic text-lg sm:text-xl text-[var(--color-ink)] no-underline border-b border-[var(--color-ink)] pb-1 hover:text-[var(--color-accent-deep)] hover:border-[var(--color-accent-deep)] transition-colors"
+            class="group inline-flex items-baseline gap-3 font-serif italic text-xl sm:text-2xl text-[var(--color-ink)] no-underline border-b border-[var(--color-ink)] pb-1.5 hover:text-[var(--color-accent-deep)] hover:border-[var(--color-accent-deep)] transition-colors"
           >
-            <span>{t("home.cta_secondary")}</span>
-            <span class="font-sans not-italic text-base translate-y-[-0.05em] transition-transform group-hover:translate-x-1">→</span>
+            <span>{t("home.cta_primary")}</span>
+            <span class="font-sans not-italic text-lg translate-y-[-0.05em] transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
       </div>
@@ -130,7 +183,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           02
         </p>
-        <p class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.who.title")}
         </p>
       </aside>
@@ -141,7 +194,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         </p>
 
         <div class="mt-12 pt-10 border-t border-[var(--color-rule)]">
-          <p class="font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)] mb-5">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-5">
             {t("home.who.indications_title")}
           </p>
           <p
@@ -170,7 +223,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           03
         </p>
-        <p class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.services.title")}
         </p>
       </aside>
@@ -216,7 +269,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           04
         </p>
-        <p class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.process.title")}
         </p>
       </aside>
@@ -251,7 +304,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           05
         </p>
-        <p class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.languages.title")}
         </p>
       </aside>
@@ -280,54 +333,132 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
   </div>
 </section>
 
-{/* ─────────── 06 — Prescripteurs + adresse ─────────── */}
+{/* ─────────── 06 — Cabinet ─────────── */}
+<section id="cabinet" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          06
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          {t("footer.cabinet_label")}
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        {/* Adresse */}
+        <address class="not-italic font-serif text-[1.5rem] sm:text-[1.75rem] leading-[1.4] text-[var(--color-ink)] tracking-[-0.012em]">
+          Cabinet Via SANA Parmentier<br />
+          4 rue Pierre Levée<br />
+          75011 Paris
+        </address>
+        <p class="mt-4 font-serif italic text-[var(--color-ink-muted)]">
+          {t("footer.opening_note")}
+        </p>
+
+        {/* Photos placeholder — planches de livre */}
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+
+          <figure>
+            <div class="relative aspect-[4/5] bg-[var(--color-paper-deep)]">
+              <div class="absolute inset-3 border border-[var(--color-rule)]"></div>
+              <div class="absolute inset-[14px] border border-[var(--color-rule-soft)]"></div>
+              <p class="absolute top-5 left-5 font-sans text-[0.75rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+                Pl. II
+              </p>
+              <div class="absolute inset-0 flex items-center justify-center text-[var(--color-ink-faint)]" aria-hidden="true">
+                <svg width="44" height="14" viewBox="0 0 44 14" fill="none" stroke="currentColor">
+                  <line x1="0" y1="7" x2="16" y2="7" stroke-width="0.5" />
+                  <circle cx="22" cy="7" r="1.4" fill="currentColor" />
+                  <line x1="28" y1="7" x2="44" y2="7" stroke-width="0.5" />
+                </svg>
+              </div>
+            </div>
+            <figcaption class="mt-3 font-sans text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+              {cab.roomTitle}
+            </figcaption>
+          </figure>
+
+          <figure>
+            <div class="relative aspect-[4/5] bg-[var(--color-paper-deep)]">
+              <div class="absolute inset-3 border border-[var(--color-rule)]"></div>
+              <div class="absolute inset-[14px] border border-[var(--color-rule-soft)]"></div>
+              <p class="absolute top-5 left-5 font-sans text-[0.75rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+                Pl. III
+              </p>
+              <div class="absolute inset-0 flex items-center justify-center text-[var(--color-ink-faint)]" aria-hidden="true">
+                <svg width="44" height="14" viewBox="0 0 44 14" fill="none" stroke="currentColor">
+                  <line x1="0" y1="7" x2="16" y2="7" stroke-width="0.5" />
+                  <circle cx="22" cy="7" r="1.4" fill="currentColor" />
+                  <line x1="28" y1="7" x2="44" y2="7" stroke-width="0.5" />
+                </svg>
+              </div>
+            </div>
+            <figcaption class="mt-3 font-sans text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+              {cab.entryTitle}
+            </figcaption>
+          </figure>
+        </div>
+
+        {/* Accès — blueprint en attendant le contenu réel */}
+        <div class="mt-14 pt-10 border-t border-[var(--color-rule)]">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-6">
+            {cab.accessTitle}
+          </p>
+          <dl class="grid grid-cols-[7rem_minmax(0,1fr)] gap-x-8 gap-y-3 items-baseline">
+            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.metro}</dt>
+            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bus}</dt>
+            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.bike}</dt>
+            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+            <dt class="font-serif italic text-[var(--color-ink)] text-base">{cab.pmr}</dt>
+            <dd class="font-serif italic text-[var(--color-ink-faint)] text-base">&mdash;</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ─────────── 07 — Prescripteurs (finale) ─────────── */}
 <section id="prescribers" class="bg-[var(--color-accent-deep)] text-[var(--color-paper)] border-t border-[var(--color-accent-deep)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
       <aside class="md:pt-3">
         <p class="font-serif italic text-[var(--color-paper)] text-5xl sm:text-6xl leading-none tracking-tight opacity-70">
-          06
+          07
         </p>
-        <p class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-paper)]/55">
-          {t("footer.cabinet_label")}
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-paper)]/55">
+          {t("home.prescribers.cta")}
         </p>
       </aside>
 
-      <div class="grid gap-12 md:grid-cols-2">
+      <div class="max-w-[42rem]">
+        <h2 class="font-serif italic text-[var(--color-paper)] leading-[1.05] tracking-[-0.018em]"
+            style="font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem);">
+          {t("home.prescribers.title")}
+        </h2>
 
-        <div>
-          <h2 class="font-serif italic text-3xl sm:text-4xl leading-tight text-[var(--color-paper)]">
-            {t("home.prescribers.title")}
-          </h2>
-          <p class="mt-5 font-sans text-[var(--color-paper)]/80 leading-relaxed">
-            {t("home.prescribers.desc")}
-          </p>
+        <p class="mt-8 font-sans text-[var(--color-paper)]/80 leading-relaxed text-lg max-w-[36rem]">
+          {t("home.prescribers.desc")}
+        </p>
+
+        <div class="mt-12 flex flex-col sm:flex-row items-start sm:items-baseline gap-6 sm:gap-10">
           <a
             href={contactHref}
-            class="mt-7 inline-flex items-baseline gap-3 font-serif italic text-lg text-[var(--color-paper)] no-underline border-b border-[var(--color-paper)]/70 pb-1 hover:border-[var(--color-paper)] transition-colors"
+            class="group inline-flex items-baseline gap-3 font-serif italic text-xl sm:text-2xl text-[var(--color-paper)] no-underline border-b border-[var(--color-paper)]/70 pb-1.5 hover:border-[var(--color-paper)] transition-colors"
           >
             <span>{t("home.prescribers.cta")}</span>
-            <span class="font-sans not-italic text-base">→</span>
+            <span class="font-sans not-italic text-lg transition-transform group-hover:translate-x-1">→</span>
           </a>
-        </div>
-
-        <div class="md:border-l md:border-[var(--color-paper)]/20 md:pl-12">
-          <p class="font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-paper)]/55 mb-4">
-            {t("footer.cabinet_label")}
-          </p>
-          <address class="not-italic font-serif text-xl leading-relaxed text-[var(--color-paper)]">
-            Cabinet Via SANA Parmentier<br />
-            4 rue Pierre Levée<br />
-            75011 Paris
-          </address>
-          <p class="mt-6 font-serif italic text-[var(--color-paper)]/65">
-            {t("footer.opening_note")}
-          </p>
 
           <a
             href={aboutHref}
-            class="mt-10 inline-flex items-baseline gap-3 font-sans text-[0.8125rem] uppercase tracking-[0.18em] text-[var(--color-paper)]/80 no-underline hover:text-[var(--color-paper)] transition-colors"
+            class="inline-flex items-baseline gap-3 font-sans text-[0.875rem] uppercase tracking-[0.14em] text-[var(--color-paper)]/75 no-underline hover:text-[var(--color-paper)] transition-colors py-1"
           >
             <span>{t("nav.about")}</span>
             <span>→</span>

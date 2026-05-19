@@ -37,8 +37,8 @@ const homeHref = getLocalizedPath("/", lang);
         </span>
       </a>
 
-      {/* Nav desktop — uppercase tracking, sans bouton CTA */}
-      <nav aria-label={t("nav.home")} class="hidden lg:flex items-center gap-7 text-[0.6875rem] uppercase tracking-[0.18em]">
+      {/* Nav desktop — uppercase tracking modéré, touch target élargi */}
+      <nav aria-label={t("nav.home")} class="hidden lg:flex items-center gap-6 text-[0.8125rem] uppercase tracking-[0.14em]">
         {
           navItems.map((item) => {
             const href = getLocalizedPath(item.href, lang);
@@ -47,7 +47,7 @@ const homeHref = getLocalizedPath("/", lang);
               <a
                 href={href}
                 class:list={[
-                  "no-underline transition-colors",
+                  "py-2 px-1 no-underline transition-colors",
                   active
                     ? "text-[var(--color-ink)]"
                     : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
@@ -95,7 +95,7 @@ const homeHref = getLocalizedPath("/", lang);
               <a
                 href={href}
                 class:list={[
-                  "px-2 py-2.5 text-[0.8125rem] uppercase tracking-[0.18em] no-underline transition-colors",
+                  "px-2 py-3.5 text-[0.875rem] uppercase tracking-[0.14em] no-underline transition-colors",
                   active
                     ? "text-[var(--color-ink)]"
                     : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
