@@ -9,53 +9,82 @@ const contactHref = getLocalizedPath("/contact", lang);
 const legalHref = getLocalizedPath("/mentions-legales", lang);
 ---
 
-<footer class="mt-auto bg-[var(--color-paper-warm)] border-t border-[var(--color-rule)]">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-16 sm:py-20">
+<footer class="mt-auto dark-surface bg-[var(--color-accent-deep)] border-t border-white/10">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-20 sm:py-28">
+
+    {/* Monogramme centre */}
+    <div class="text-center mb-16">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-12 h-12 mx-auto opacity-40" aria-hidden="true">
+        <g fill="currentColor" stroke="none">
+          <rect x="4" y="4" width="72" height="72" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <rect x="8" y="8" width="64" height="64" fill="none" stroke="currentColor" stroke-width="0.5" />
+          <rect x="15" y="20" width="4" height="40" />
+          <polygon points="13,20 15,20 15,21.2 13,21.2" />
+          <polygon points="13,58.8 15,58.8 15,60 13,60" />
+          <rect x="15" y="20" width="17" height="1" />
+          <polygon points="32,20 32,22.5 31,22.5" />
+          <rect x="15" y="39.5" width="13.5" height="0.9" />
+          <rect x="15" y="59" width="17.5" height="1" />
+          <polygon points="32.5,57.5 32.5,60 31.5,60" />
+          <circle cx="39" cy="40" r="1.8" />
+          <polygon points="46,20 50,20 57.5,60 54.5,60" />
+          <polygon points="66,20 67.2,20 58.5,60 57,60" />
+          <polygon points="44,20 46,20 46,21.2 44,21.2" />
+          <rect x="46" y="20" width="5" height="1" />
+          <rect x="64" y="20" width="5" height="1" />
+          <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
+        </g>
+      </svg>
+      <p class="mt-4 font-serif small-caps tracking-[0.08em] text-sm opacity-50">
+        Ekaterina Volova
+      </p>
+    </div>
+
     <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
 
       {/* Colonne 1 : signature praticienne */}
       <div>
-        <p class="font-serif italic text-xl text-[var(--color-ink)] tracking-tight">
+        <p class="font-serif italic text-xl tracking-tight">
           Ekaterina Volova
         </p>
-        <p class="mt-2 font-sans text-[0.8125rem] text-[var(--color-ink-soft)] leading-relaxed">
+        <p class="mt-2 font-sans text-[0.8125rem] opacity-70 leading-relaxed">
           {t("footer.profession")}
         </p>
-        <p class="mt-5 font-mono text-[0.8125rem] tabular-nums tracking-tight text-[var(--color-ink-muted)]">
+        <p class="mt-5 font-mono text-[0.8125rem] tabular-nums tracking-tight opacity-50">
           {t("footer.rpps")}
         </p>
       </div>
 
       {/* Colonne 2 : cabinet */}
       <div>
-        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-4">
+        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] opacity-50 mb-4">
           {t("footer.cabinet_label")}
         </p>
-        <address class="not-italic font-serif text-[var(--color-ink)] leading-relaxed">
+        <address class="not-italic font-serif leading-relaxed">
           14 rue Nicolo<br />
           75116 Paris
         </address>
-        <p class="mt-4 font-serif italic text-[0.9375rem] text-[var(--color-ink-muted)]">
+        <p class="mt-4 font-serif italic text-[0.9375rem] opacity-50">
           {t("footer.opening_note")}
         </p>
-        <p class="mt-2 font-serif text-[0.9375rem] text-[var(--color-ink-soft)]">
+        <p class="mt-2 font-serif text-[0.9375rem] opacity-70">
           {t("cabinet.hours")}
         </p>
       </div>
 
       {/* Colonne 3 : prise de contact */}
       <div>
-        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-4">
+        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] opacity-50 mb-4">
           {t("footer.contact_label")}
         </p>
-        <div class="font-serif text-[var(--color-ink)] leading-relaxed space-y-2">
+        <div class="font-serif leading-relaxed space-y-2">
           <p>
-            <a href="tel:+33666074254" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">
+            <a href="tel:+33666074254" class="no-underline hover:opacity-70 transition-opacity">
               06 66 07 42 54
             </a>
           </p>
           <p>
-            <a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">
+            <a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:opacity-70 transition-opacity">
               volova.neuropsy@gmail.com
             </a>
           </p>
@@ -63,14 +92,14 @@ const legalHref = getLocalizedPath("/mentions-legales", lang);
       </div>
     </div>
 
-    <div class="mt-16 sm:mt-20 pt-6 border-t border-[var(--color-rule)]">
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+    <div class="mt-16 sm:mt-20 pt-6 border-t border-white/15">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] opacity-40">
         <p>
           &copy; {currentYear} Ekaterina Volova
         </p>
         <a
           href={legalHref}
-          class="no-underline hover:text-[var(--color-ink)] transition-colors"
+          class="no-underline hover:opacity-70 transition-opacity"
         >
           {t("footer.legal_link")}
         </a>

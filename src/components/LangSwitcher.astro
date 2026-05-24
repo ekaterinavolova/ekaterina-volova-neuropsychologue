@@ -4,20 +4,14 @@ import { getLangFromUrl } from "~/i18n/utils";
 
 interface Props {
   class?: string;
+  tone?: "light" | "dark";
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className = "", tone = "dark" } = Astro.props;
 const currentLang = getLangFromUrl(Astro.url);
 
-/**
- * Strip the language prefix from the current path to get the "clean" path.
- * Example: "/ru/a-propos" -> "/a-propos", "/contact" -> "/contact".
- */
 const cleanPath = Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/";
 
-/**
- * Build the target path for a given language, preserving the current page.
- */
 function pathForLang(lang: Lang): string {
   if (lang === defaultLang) {
     return cleanPath;
@@ -26,6 +20,21 @@ function pathForLang(lang: Lang): string {
 }
 
 const langOrder: Lang[] = ["fr", "ru", "en"];
+
+const styles = {
+  dark: {
+    sep: "text-white/30",
+    active: "text-white font-medium",
+    inactive: "text-white/50 hover:text-white",
+  },
+  light: {
+    sep: "text-[var(--color-ink-faint)]",
+    active: "text-[var(--color-accent-deep)] font-medium",
+    inactive: "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
+  },
+};
+
+const s = styles[tone];
 ---
 
 <nav aria-label="Langue / Language / Язык" class={`flex items-center gap-1 text-[0.875rem] ${className}`}>
@@ -34,16 +43,14 @@ const langOrder: Lang[] = ["fr", "ru", "en"];
       const isActive = lang === currentLang;
       return (
         <>
-          {idx > 0 && <span class="text-[var(--color-ink-faint)] select-none" aria-hidden="true">·</span>}
+          {idx > 0 && <span class={`${s.sep} select-none`} aria-hidden="true">&middot;</span>}
           <a
             href={pathForLang(lang)}
             class:list={[
               "px-2 py-2 no-underline uppercase tracking-wider transition-colors",
-              isActive
-                ? "text-[var(--color-ink)] font-medium"
-                : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
+              isActive ? s.active : s.inactive,
             ]}
-            aria-current={isActive ? "true" : "false"}
+            aria-current={isActive ? "true" : undefined}
             lang={lang}
             hreflang={lang}
           >

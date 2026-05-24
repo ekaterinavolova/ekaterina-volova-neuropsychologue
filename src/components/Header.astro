@@ -22,79 +22,97 @@ function isActive(href: string): boolean {
 const homeHref = getLocalizedPath("/", lang);
 ---
 
-<header class="sticky top-0 z-40 bg-[var(--color-paper)]/95 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8">
-    <div class="flex items-center justify-between h-16 sm:h-20 gap-6">
+<header class="sticky top-0 z-40">
+  {/* Top bar - dark */}
+  <div class="dark-surface bg-[var(--color-accent-deep)] border-b border-white/10">
+    <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8">
+      <div class="flex items-center justify-between h-10 sm:h-11 text-[0.75rem]">
 
-      {/* Nom — signature de livre */}
-      <a
-        href={homeHref}
-        class="no-underline group shrink-0 flex items-center gap-2"
-        aria-label="Ekaterina Volova"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-7 h-7 shrink-0" aria-hidden="true">
-          <g fill="currentColor" stroke="none">
-            <rect x="4" y="4" width="72" height="72" fill="none" stroke="currentColor" stroke-width="1.8" />
-            <rect x="8" y="8" width="64" height="64" fill="none" stroke="currentColor" stroke-width="0.5" />
-            <rect x="15" y="20" width="4" height="40" />
-            <polygon points="13,20 15,20 15,21.2 13,21.2" />
-            <polygon points="13,58.8 15,58.8 15,60 13,60" />
-            <rect x="15" y="20" width="17" height="1" />
-            <polygon points="32,20 32,22.5 31,22.5" />
-            <rect x="15" y="39.5" width="13.5" height="0.9" />
-            <rect x="15" y="59" width="17.5" height="1" />
-            <polygon points="32.5,57.5 32.5,60 31.5,60" />
-            <circle cx="39" cy="40" r="1.8" />
-            <polygon points="46,20 50,20 57.5,60 54.5,60" />
-            <polygon points="66,20 67.2,20 58.5,60 57,60" />
-            <polygon points="44,20 46,20 46,21.2 44,21.2" />
-            <rect x="46" y="20" width="5" height="1" />
-            <rect x="64" y="20" width="5" height="1" />
-            <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
-          </g>
-        </svg>
-        <span class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent-deep)] transition-colors">
-          Ekaterina Volova
-        </span>
-      </a>
-
-      {/* Nav desktop — uppercase tracking modéré, touch target élargi */}
-      <nav aria-label={t("nav.home")} class="hidden lg:flex items-center gap-6 text-[0.8125rem] uppercase tracking-[0.14em]">
-        {
-          navItems.map((item) => {
-            const href = getLocalizedPath(item.href, lang);
-            const active = isActive(item.href);
-            return (
-              <a
-                href={href}
-                class:list={[
-                  "py-2 px-1 no-underline transition-colors",
-                  active
-                    ? "text-[var(--color-ink)]"
-                    : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
-                ]}
-                aria-current={active ? "page" : "false"}
-              >
-                {item.label}
-              </a>
-            );
-          })
-        }
-      </nav>
-
-      {/* Téléphone + Lang switcher + burger */}
-      <div class="flex items-center gap-5 shrink-0">
+        {/* Left: phone */}
         <a
           href="tel:+33666074254"
-          class="hidden sm:inline-flex items-center gap-2 font-sans text-[0.8125rem] text-[var(--color-ink-muted)] hover:text-[var(--color-accent-deep)] no-underline transition-colors"
+          class="inline-flex items-center gap-2 no-underline text-white/70 hover:text-white transition-colors"
           aria-label="Appeler le cabinet"
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
-          <span class="tabular-nums tracking-tight">06 66 07 42 54</span>
+          <span class="hidden sm:inline tabular-nums tracking-tight">06 66 07 42 54</span>
         </a>
-        <LangSwitcher class="hidden sm:flex" />
+
+        {/* Center: address */}
+        <span class="hidden md:block font-sans text-[0.6875rem] uppercase tracking-[0.15em] text-white/50">
+          14 rue Nicolo, 75116 Paris
+        </span>
+
+        {/* Right: lang switcher */}
+        <LangSwitcher tone="dark" class="text-[0.75rem]" />
+      </div>
+    </div>
+  </div>
+
+  {/* Nav bar - light */}
+  <div class="bg-[var(--color-paper)]/95 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
+    <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8">
+      <div class="flex items-center justify-between h-14 sm:h-16">
+
+        {/* Logo + name */}
+        <a
+          href={homeHref}
+          class="no-underline group shrink-0 flex items-center gap-2"
+          aria-label="Ekaterina Volova"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-7 h-7 shrink-0" aria-hidden="true">
+            <g fill="var(--color-accent-deep)" stroke="none">
+              <rect x="4" y="4" width="72" height="72" fill="none" stroke="var(--color-accent-deep)" stroke-width="1.8" />
+              <rect x="8" y="8" width="64" height="64" fill="none" stroke="var(--color-accent-deep)" stroke-width="0.5" />
+              <rect x="15" y="20" width="4" height="40" />
+              <polygon points="13,20 15,20 15,21.2 13,21.2" />
+              <polygon points="13,58.8 15,58.8 15,60 13,60" />
+              <rect x="15" y="20" width="17" height="1" />
+              <polygon points="32,20 32,22.5 31,22.5" />
+              <rect x="15" y="39.5" width="13.5" height="0.9" />
+              <rect x="15" y="59" width="17.5" height="1" />
+              <polygon points="32.5,57.5 32.5,60 31.5,60" />
+              <circle cx="39" cy="40" r="1.8" />
+              <polygon points="46,20 50,20 57.5,60 54.5,60" />
+              <polygon points="66,20 67.2,20 58.5,60 57,60" />
+              <polygon points="44,20 46,20 46,21.2 44,21.2" />
+              <rect x="46" y="20" width="5" height="1" />
+              <rect x="64" y="20" width="5" height="1" />
+              <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
+            </g>
+          </svg>
+          <span class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-accent-deep)] group-hover:text-[var(--color-ink)] transition-colors">
+            Ekaterina Volova
+          </span>
+        </a>
+
+        {/* Desktop nav */}
+        <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-6 text-[0.8125rem] uppercase tracking-[0.14em]">
+          {
+            navItems.map((item) => {
+              const href = getLocalizedPath(item.href, lang);
+              const active = isActive(item.href);
+              return (
+                <a
+                  href={href}
+                  class:list={[
+                    "py-2 px-1 no-underline transition-colors",
+                    active
+                      ? "text-[var(--color-accent-deep)]"
+                      : "text-[var(--color-ink-muted)] hover:text-[var(--color-accent-deep)]",
+                  ]}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              );
+            })
+          }
+        </nav>
+
+        {/* Mobile burger */}
         <button
           type="button"
           id="menu-toggle"
@@ -109,39 +127,39 @@ const homeHref = getLocalizedPath("/", lang);
           </svg>
         </button>
       </div>
-    </div>
 
-    {/* Drawer mobile/tablette : nav verticale + langs */}
-    <div
-      id="site-menu"
-      class="hidden lg:hidden border-t border-[var(--color-rule-soft)] py-5"
-      aria-hidden="true"
-    >
-      <nav aria-label={t("nav.home")} class="flex flex-col gap-1">
-        {
-          navItems.map((item) => {
-            const href = getLocalizedPath(item.href, lang);
-            const active = isActive(item.href);
-            return (
-              <a
-                href={href}
-                class:list={[
-                  "px-2 py-3.5 text-[0.875rem] uppercase tracking-[0.14em] no-underline transition-colors",
-                  active
-                    ? "text-[var(--color-ink)]"
-                    : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
-                ]}
-                aria-current={active ? "page" : "false"}
-              >
-                {item.label}
-              </a>
-            );
-          })
-        }
-        <div class="sm:hidden pt-4 mt-3 border-t border-[var(--color-rule-soft)]">
-          <LangSwitcher class="px-2" />
-        </div>
-      </nav>
+      {/* Mobile drawer */}
+      <div
+        id="site-menu"
+        class="hidden lg:hidden border-t border-[var(--color-rule-soft)] py-5"
+        aria-hidden="true"
+      >
+        <nav aria-label="Navigation principale" class="flex flex-col gap-1">
+          {
+            navItems.map((item) => {
+              const href = getLocalizedPath(item.href, lang);
+              const active = isActive(item.href);
+              return (
+                <a
+                  href={href}
+                  class:list={[
+                    "px-2 py-3.5 text-[0.875rem] uppercase tracking-[0.14em] no-underline transition-colors",
+                    active
+                      ? "text-[var(--color-accent-deep)]"
+                      : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
+                  ]}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              );
+            })
+          }
+          <div class="sm:hidden pt-4 mt-3 border-t border-[var(--color-rule-soft)]">
+            <LangSwitcher tone="light" class="px-2" />
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
 </header>

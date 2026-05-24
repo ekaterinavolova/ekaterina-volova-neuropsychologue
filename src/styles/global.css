@@ -202,6 +202,42 @@ hr {
   font-weight: 400;
 }
 
+/* === Dark surface utility === */
+
+.dark-surface {
+  color: var(--color-paper);
+}
+
+.dark-surface a {
+  color: inherit;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark-surface a:hover {
+  text-decoration-color: rgba(255, 255, 255, 0.7);
+}
+
+.dark-surface h1, .dark-surface h2, .dark-surface h3, .dark-surface h4, .dark-surface h5 {
+  color: inherit;
+}
+
+/* === Hero background texture === */
+
+.hero-texture {
+  background-image:
+    radial-gradient(ellipse at 30% 50%, oklch(0.35 0.080 248) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, oklch(0.25 0.060 248) 0%, transparent 50%),
+    linear-gradient(180deg, oklch(0.28 0.080 248) 0%, oklch(0.32 0.080 248) 100%);
+  background-color: var(--color-accent-deep);
+}
+
+/* === Small caps === */
+
+.small-caps {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
 /* Réduit la sur-stimulation visuelle au scroll (cabinet santé) */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

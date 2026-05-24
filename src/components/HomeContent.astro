@@ -169,86 +169,121 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 ---
 
 {/* ─────────── HERO ─────────── */}
-<header class="bg-[var(--color-paper)] min-h-[90vh] flex items-center">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 lg:px-12 py-16 sm:py-24 w-full">
+<header class="hero-texture dark-surface flex flex-col items-center justify-center text-center relative" style="min-height: calc(100vh - 6.5rem);">
+  <div class="absolute inset-6 sm:inset-10 border border-white/8 pointer-events-none"></div>
+  <div class="px-6 sm:px-8 py-20 sm:py-28 w-full flex flex-col items-center relative z-10">
 
-    <div class="grid gap-12 md:gap-16 lg:gap-24 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] items-center">
+    {/* Monogramme */}
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-24 h-24 sm:w-32 sm:h-32 opacity-90" aria-hidden="true">
+      <g fill="#F5EFE3" stroke="none">
+        <rect x="4" y="4" width="72" height="72" fill="none" stroke="#F5EFE3" stroke-width="1.2" />
+        <rect x="8" y="8" width="64" height="64" fill="none" stroke="#F5EFE3" stroke-width="0.4" />
+        <rect x="15" y="20" width="4" height="40" />
+        <polygon points="13,20 15,20 15,21.2 13,21.2" />
+        <polygon points="13,58.8 15,58.8 15,60 13,60" />
+        <rect x="15" y="20" width="17" height="1" />
+        <polygon points="32,20 32,22.5 31,22.5" />
+        <rect x="15" y="39.5" width="13.5" height="0.9" />
+        <rect x="15" y="59" width="17.5" height="1" />
+        <polygon points="32.5,57.5 32.5,60 31.5,60" />
+        <circle cx="39" cy="40" r="1.8" />
+        <polygon points="46,20 50,20 57.5,60 54.5,60" />
+        <polygon points="66,20 67.2,20 58.5,60 57,60" />
+        <polygon points="44,20 46,20 46,21.2 44,21.2" />
+        <rect x="46" y="20" width="5" height="1" />
+        <rect x="64" y="20" width="5" height="1" />
+        <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
+      </g>
+    </svg>
 
-      {/* Portrait */}
-      <figure class="relative">
-        <div class="aspect-[3/4] w-full relative bg-[var(--color-paper-deep)] p-[18px] sm:p-[22px]">
+    {/* Profession - small caps */}
+    <p class="mt-6 sm:mt-8 font-serif small-caps text-[0.9375rem] sm:text-[1.0625rem] tracking-[0.12em]">
+      {t("home.lede")}
+    </p>
+
+    {/* Nom */}
+    <h1
+      class="mt-4 sm:mt-5 font-serif leading-[0.95] tracking-[-0.02em]"
+      style="font-size: clamp(3.5rem, 9vw + 1rem, 8rem); font-weight: 300;"
+    >
+      {t("home.h1")}
+    </h1>
+
+    {/* Lieu */}
+    <p class="mt-6 sm:mt-8 font-sans text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.25em] opacity-60">
+      Paris XVI<sup class="text-[0.5rem]">e</sup>
+      <span class="mx-3">&bull;</span>
+      Sur rendez-vous
+    </p>
+
+    {/* CTA - bouton plein, haute visibilite */}
+    <a
+      href={contactHref}
+      class="mt-10 sm:mt-12 inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.18em] no-underline px-12 py-5 bg-white hover:bg-white/90 transition-all duration-300"
+      style="color: #1E3A5F;"
+    >
+      {t("home.cta_primary")}
+    </a>
+
+  </div>
+</header>
+
+{/* ─────────── Post-hero intro ─────────── */}
+<section class="bg-[var(--color-paper)]">
+  <div class="mx-auto max-w-[var(--container-prose)] px-6 sm:px-8 py-20 sm:py-28 text-center">
+    <h2 class="font-serif small-caps text-[var(--color-accent-deep)] tracking-[0.04em]"
+        style="font-size: clamp(1.5rem, 2vw + 0.75rem, 2rem); font-weight: 400;">
+      Ekaterina Volova
+    </h2>
+    <div class="flex justify-center my-8" aria-hidden="true">
+      <svg width="64" height="12" viewBox="0 0 64 12" fill="none">
+        <line x1="0" y1="6" x2="26" y2="6" stroke="var(--color-accent-deep)" stroke-width="0.5" opacity="0.4" />
+        <circle cx="32" cy="6" r="2" fill="var(--color-accent-deep)" opacity="0.5" />
+        <line x1="38" y1="6" x2="64" y2="6" stroke="var(--color-accent-deep)" stroke-width="0.5" opacity="0.4" />
+      </svg>
+    </div>
+    <p class="font-serif text-[var(--color-ink-soft)] leading-[1.9]"
+       style="font-size: clamp(1rem, 0.3vw + 0.9rem, 1.125rem);">
+      {t("site.description")}
+    </p>
+    <p class="mt-8 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
+      Français
+      <span class="mx-2 text-[var(--color-rule)]">&bull;</span>
+      Русский
+      <span class="mx-2 text-[var(--color-rule)]">&bull;</span>
+      English
+    </p>
+  </div>
+</section>
+
+{/* ─────────── Portrait ─────────── */}
+<section class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-content)] px-6 sm:px-8 py-16 sm:py-24">
+    <div class="flex justify-center">
+      <figure class="relative max-w-[22rem]">
+        <div class="aspect-[3/4] w-full relative bg-[var(--color-paper-deep)] p-[18px]">
           <div class="absolute inset-[10px] border border-[var(--color-ink)]/10 pointer-events-none"></div>
           <div class="relative h-full w-full overflow-hidden">
             <Image
               src={portraitEkaterina}
               alt="Ekaterina Volova, psychologue spécialisée en neuropsychologie"
-              widths={[400, 600, 900, 1200]}
-              sizes="(min-width: 768px) 38rem, 22rem"
+              widths={[400, 600, 900]}
+              sizes="22rem"
               format="webp"
               quality={88}
               class="h-full w-full object-cover"
             />
           </div>
         </div>
-        <figcaption class="mt-5 font-sans text-[0.6875rem] uppercase tracking-[0.2em] text-[var(--color-ink-faint)]">
+        <figcaption class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.2em] text-[var(--color-ink-faint)] text-center">
           Pl. I
           <span class="mx-2.5 text-[var(--color-rule-soft)]">&mdash;</span>
           Ekaterina Volova
         </figcaption>
       </figure>
-
-      {/* Texte */}
-      <div class="flex flex-col">
-
-        <p class="font-sans text-[0.625rem] sm:text-[0.6875rem] uppercase tracking-[0.3em] text-[var(--color-ink-faint)]">
-          Paris XVI<sup class="text-[0.5rem] ml-px">e</sup>
-          <span class="mx-3 text-[var(--color-rule-soft)]">&bull;</span>
-          Sur rendez-vous
-        </p>
-
-        <h1
-          class="mt-8 sm:mt-10 font-serif italic text-[var(--color-accent-deep)] leading-[0.88] tracking-[-0.025em]"
-          style="font-size: clamp(3rem, 7vw + 1rem, 7rem);"
-        >
-          {t("home.h1")}
-        </h1>
-
-        <div class="mt-10 sm:mt-14 w-8 h-px bg-[var(--color-ink-faint)]/50" aria-hidden="true"></div>
-
-        <p class="mt-8 sm:mt-10 font-serif italic text-[var(--color-ink-muted)] text-[1.125rem] sm:text-[1.25rem] leading-relaxed">
-          {t("home.lede")}
-        </p>
-
-        <p class="mt-8 sm:mt-10 font-serif text-[var(--color-ink-soft)] leading-[1.8] max-w-[30rem]"
-           style="font-size: clamp(0.9375rem, 0.3vw + 0.875rem, 1.0625rem);">
-          {t("site.description")}
-        </p>
-
-        <div class="mt-10 sm:mt-14 flex items-center gap-8">
-          <p class="font-sans text-[0.625rem] uppercase tracking-[0.25em] text-[var(--color-ink-faint)]">
-            Fr
-            <span class="mx-1.5 text-[var(--color-rule-soft)]">/</span>
-            Ру
-            <span class="mx-1.5 text-[var(--color-rule-soft)]">/</span>
-            En
-          </p>
-          <div class="w-px h-3 bg-[var(--color-rule-soft)]" aria-hidden="true"></div>
-          <a
-            href={contactHref}
-            class="group inline-flex items-center gap-3 no-underline"
-          >
-            <span class="font-serif italic text-[0.9375rem] sm:text-[1.0625rem] text-[var(--color-accent-deep)] border-b border-[var(--color-accent-deep)]/25 pb-0.5 group-hover:border-[var(--color-accent-deep)]/60 transition-all duration-300">{t("home.cta_primary")}</span>
-            <svg width="20" height="6" viewBox="0 0 20 6" fill="none" stroke="var(--color-accent-deep)" stroke-width="0.6" stroke-linecap="round" class="opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" aria-hidden="true">
-              <line x1="0" y1="3" x2="16" y2="3" />
-              <polyline points="14,0.5 17.5,3 14,5.5" />
-            </svg>
-          </a>
-        </div>
-
-      </div>
     </div>
   </div>
-</header>
+</section>
 
 {/* ─────────── 02 — Pour qui ─────────── */}
 <section id="who" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
@@ -334,13 +369,9 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         <div class="mt-14 pt-10 border-t border-[var(--color-rule-soft)]">
           <a
             href={contactHref}
-            class="group inline-flex items-center gap-3 no-underline"
+            class="inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.16em] no-underline px-10 py-4 transition-all duration-300 bg-[var(--color-accent-deep)] text-white hover:bg-[var(--color-ink)] "
           >
-            <span class="font-serif italic text-[1.0625rem] text-[var(--color-accent-deep)] border-b border-[var(--color-accent-deep)]/25 pb-1 group-hover:border-[var(--color-accent-deep)]/60 transition-all duration-300">{t("home.cta_primary")}</span>
-            <svg width="20" height="6" viewBox="0 0 20 6" fill="none" stroke="var(--color-accent-deep)" stroke-width="0.6" stroke-linecap="round" class="opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" aria-hidden="true">
-              <line x1="0" y1="3" x2="16" y2="3" />
-              <polyline points="14,0.5 17.5,3 14,5.5" />
-            </svg>
+            {t("home.cta_primary")}
           </a>
         </div>
 
@@ -381,18 +412,14 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
         ))}
       </ol>
 
-      <div class="mt-14 pt-10 border-t border-[var(--color-rule-soft)]">
-        <a
-          href={contactHref}
-          class="group inline-flex items-center gap-3 no-underline"
-        >
-          <span class="font-serif italic text-[1.0625rem] text-[var(--color-accent-deep)] border-b border-[var(--color-accent-deep)]/25 pb-1 group-hover:border-[var(--color-accent-deep)]/60 transition-all duration-300">{t("home.cta_primary")}</span>
-          <svg width="20" height="6" viewBox="0 0 20 6" fill="none" stroke="var(--color-accent-deep)" stroke-width="0.6" stroke-linecap="round" class="opacity-50 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-1" aria-hidden="true">
-            <line x1="0" y1="3" x2="16" y2="3" />
-            <polyline points="14,0.5 17.5,3 14,5.5" />
-          </svg>
-        </a>
-      </div>
+      <div class="mt-14 pt-10 border-t border-[var(--color-rule-soft)] md:col-start-2">
+          <a
+            href={contactHref}
+            class="inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.16em] no-underline px-10 py-4 transition-all duration-300 bg-[var(--color-accent-deep)] text-white hover:bg-[var(--color-ink)] "
+          >
+            {t("home.cta_primary")}
+          </a>
+        </div>
     </div>
   </div>
 </section>
@@ -776,7 +803,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 </section>
 
 {/* ─────────── 07 — Prescripteurs (finale) ─────────── */}
-<section id="prescribers" class="bg-[var(--color-accent-deep)] text-[var(--color-paper)] border-t border-[var(--color-accent-deep)]">
+<section id="prescribers" class="dark-surface bg-[var(--color-accent-deep)] border-t border-[var(--color-accent-deep)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
