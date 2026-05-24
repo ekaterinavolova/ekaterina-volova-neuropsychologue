@@ -11,15 +11,16 @@
 @import "tailwindcss";
 
 /*
- * Design tokens — esprit "Cahier" : magazine éditorial moderne
- * (Gentlewoman / Apartamento / Cabana). Ivoire chaud, sépia, bleu Wedgwood
- * unique accent froid. Jamais de noir pur, jamais de gradient.
+ * Design tokens — palette "Cahier" : ivoire chaud, sépia, Bleu Wedgwood
+ * en accent unique. Direction éditoriale Gentlewoman / Persephone / Buly.
+ * Le bleu est SIGNATURE et présent partout en accents, mais le fond reste
+ * ivoire pour préserver la lisibilité du public 16+ (seniors, plainte cognitive).
  */
 @theme {
   /* --- Encre : sépia chaud, 4 niveaux pour hiérarchie de texte --- */
   --color-ink: oklch(0.24 0.018 60);           /* Titres, texte principal — sépia profond */
   --color-ink-soft: oklch(0.38 0.015 60);      /* Texte courant */
-  --color-ink-muted: oklch(0.56 0.012 60);     /* Texte secondaire, méta */
+  --color-ink-muted: oklch(0.48 0.014 60);     /* Texte secondaire, méta (WCAG AA sur ivoire) */
   --color-ink-faint: oklch(0.74 0.010 65);     /* Texte très discret */
 
   /* --- Papier : ivoire chaud, 3 niveaux --- */
@@ -27,16 +28,21 @@
   --color-paper-warm: oklch(0.935 0.024 80);   /* Sections alternées — crème ~#EDE4D2 */
   --color-paper-deep: oklch(0.895 0.028 78);   /* Cartes, encarts — crème soutenu */
 
-  /* --- Accent unique : Bleu Wedgwood profond (~#2E4A6B) --- */
-  --color-accent: oklch(0.40 0.075 245);
-  --color-accent-soft: oklch(0.90 0.022 245);
-  --color-accent-deep: oklch(0.30 0.080 248);
+  /* --- Accent : Bleu Wedgwood, 3 nuances, signature unique du site --- */
+  /* "Soft" (голубой Wedgwood-Gjel pâle) : pour fonds décoratifs */
+  --color-accent-soft: oklch(0.78 0.05 250);   /* #A8BCD4 */
+  /* "Medium" : pour titres principaux et accents qui doivent dire visiblement
+     "BLEU" à toutes les tailles (sinon ça lit noir à petit). Très saturé. */
+  --color-accent: oklch(0.48 0.20 250);        /* ~ #0E63CA bleu de France vif */
+  /* "Deep" : pour les fonds pleins de section (07 Prescripteurs), où il faut
+     un fond très sombre avec texte ivoire dessus. WCAG AAA garanti. */
+  --color-accent-deep: oklch(0.30 0.080 248);  /* #1E3A5F Bleu Wedgwood profond */
 
-  /* --- Tokens historiques conservés en interne (Ornament.astro, page À propos),
-   *     redirigés vers la nouvelle famille pour éviter les fausses notes.       */
-  --color-rose: oklch(0.88 0.018 60);
-  --color-rose-soft: oklch(0.94 0.012 60);
-  --color-rose-deep: oklch(0.45 0.030 60);
+  /* --- Tokens historiques conservés (compatibilité Ornament.astro), redirigés
+   *     vers la famille bleue pour cohérence sans casser les usages existants. */
+  --color-rose: oklch(0.78 0.05 250);
+  --color-rose-soft: oklch(0.94 0.020 80);
+  --color-rose-deep: oklch(0.45 0.085 250);
 
   --color-gold: oklch(0.86 0.030 80);
   --color-gold-soft: oklch(0.94 0.020 80);
@@ -139,7 +145,12 @@ body {
   p {
     text-wrap: pretty;
   }
+
+  .font-serif {
+    font-feature-settings: "onum" 1, "liga" 1, "kern" 1;
+  }
 }
+
 
 /* === Liens === */
 
@@ -148,8 +159,8 @@ a {
   text-decoration-color: var(--color-rule);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
-  transition: text-decoration-color var(--duration-short) var(--ease-out),
-              color var(--duration-short) var(--ease-out);
+  transition: text-decoration-color var(--duration-medium) var(--ease-out),
+              color var(--duration-medium) var(--ease-out);
 }
 
 a:hover {

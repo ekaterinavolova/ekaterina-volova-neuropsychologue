@@ -38,6 +38,9 @@ const legalHref = getLocalizedPath("/mentions-legales", lang);
         <p class="mt-4 font-serif italic text-[0.9375rem] text-[var(--color-ink-muted)]">
           {t("footer.opening_note")}
         </p>
+        <p class="mt-2 font-serif text-[0.9375rem] text-[var(--color-ink-soft)]">
+          {t("cabinet.hours")}
+        </p>
       </div>
 
       {/* Colonne 3 : prise de contact */}
@@ -45,28 +48,25 @@ const legalHref = getLocalizedPath("/mentions-legales", lang);
         <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-4">
           {t("footer.contact_label")}
         </p>
-        <a
-          href={contactHref}
-          class="font-serif italic text-lg text-[var(--color-ink)] no-underline border-b border-[var(--color-ink)] pb-0.5 hover:text-[var(--color-accent-deep)] hover:border-[var(--color-accent-deep)] transition-colors"
-        >
-          {t("cta.contact")}
-        </a>
+        <div class="font-serif text-[var(--color-ink)] leading-relaxed space-y-2">
+          <p>
+            <a href="tel:+33666074254" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">
+              06 66 07 42 54
+            </a>
+          </p>
+          <p>
+            <a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">
+              volova.neuropsy@gmail.com
+            </a>
+          </p>
+        </div>
       </div>
     </div>
 
-    {/* Colophon de livre — discret, langue-agnostique */}
     <div class="mt-16 sm:mt-20 pt-6 border-t border-[var(--color-rule)]">
-      <p class="text-center font-serif italic text-[0.8125rem] text-[var(--color-ink-faint)] tracking-tight">
-        Paris
-        <span class="mx-2.5 text-[var(--color-rule)]">·</span>
-        Source Serif 4 &amp; Inter
-        <span class="mx-2.5 text-[var(--color-rule)]">·</span>
-        <span class="tabular-nums">MMXXVI</span>
-      </p>
-
-      <div class="mt-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] text-[var(--color-ink-muted)]">
         <p>
-          © {currentYear} Ekaterina Volova
+          &copy; {currentYear} Ekaterina Volova
         </p>
         <a
           href={legalHref}

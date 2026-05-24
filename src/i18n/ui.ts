@@ -45,10 +45,15 @@ export const ui = {
     "footer.cabinet_label": "Cabinet",
     "footer.contact_label": "Prendre rendez-vous",
     "footer.opening_note": "Ouverture du cabinet le 15 juin 2026",
+    "cabinet.hours_label": "Horaires",
+    "cabinet.hours": "Tous les jours (y compris le week-end), 09h30 - 18h30",
+    "cabinet.contact_label": "Contact",
+    "cabinet.reimbursement_label": "Remboursement",
+    "cabinet.reimbursement": "Les consultations en cabinet libéral ne sont pas prises en charge par la Sécurité sociale. Certaines mutuelles remboursent partiellement les bilans neuropsychologiques : renseignez-vous auprès de votre complémentaire santé.",
 
     "site.title": "Ekaterina Volova - Neuropsychologue à Paris 16e",
     "site.description":
-      "Cabinet de neuropsychologie à Paris 16e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 6 mois. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
+      "Cabinet de neuropsychologie à Paris 16e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 1 an. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Psychologue spécialisée en neuropsychologie",
@@ -64,19 +69,23 @@ export const ui = {
     "home.who.note":
       "Le cabinet ne propose pas de suivi psychothérapeutique long et n'exerce pas en pédiatrie générale francophone. Une exception est faite pour les bilans d'enfants russophones, ce segment étant peu couvert en Île-de-France.",
 
-    "home.services.title": "Quatre prestations",
+    "home.services.title": "Cinq prestations",
+    "home.services.s0_title": "Première consultation",
+    "home.services.s0_desc":
+      "Entretien initial pour recueillir la demande, comprendre le contexte clinique et orienter vers le bilan ou l'accompagnement le plus adapté.",
+    "home.services.s0_price": "70 €",
     "home.services.s1_title": "Bilan diagnostique",
     "home.services.s1_desc":
       "Évaluation neuropsychologique approfondie, du recueil clinique à la restitution écrite et orale. Comprend un entretien initial, la passation des tests, l'analyse des résultats et un compte rendu détaillé transmis au médecin prescripteur.",
     "home.services.s1_price": "450 à 600 €",
-    "home.services.s2_title": "Bilan de suivi à 6 mois",
+    "home.services.s2_title": "Bilan de suivi à 1 an",
     "home.services.s2_desc":
       "Réévaluation des fonctions cognitives à distance du bilan initial. Mêmes outils que le bilan diagnostique, focus sur l'évolution.",
     "home.services.s2_price": "200 €",
     "home.services.s3_title": "Remédiation et stimulation cognitive",
     "home.services.s3_desc":
       "Séances individuelles ciblant la mémoire, l'attention, les fonctions exécutives ou le langage. Indications conformes aux recommandations HAS : post-AVC chronique, TDAH adulte, traumatismes crâniens légers, troubles neurocognitifs liés au vieillissement.",
-    "home.services.s3_price": "60 à 70 € par séance",
+    "home.services.s3_price": "60 € par séance",
     "home.services.s4_title": "Thérapies cognitivo-comportementales",
     "home.services.s4_desc":
       "Approche TCC en supervision à partir d'avril 2027, dans le cadre de la formation accélérée à l'AFTCC. Indications : anxiété, dépression, troubles post-traumatiques, troubles du comportement alimentaire, addictions, TDAH adulte.",
@@ -191,10 +200,15 @@ export const ui = {
     "footer.cabinet_label": "Кабинет",
     "footer.contact_label": "Записаться на приём",
     "footer.opening_note": "Открытие кабинета 15 июня 2026 года",
+    "cabinet.hours_label": "Часы работы",
+    "cabinet.hours": "Ежедневно (включая выходные), 09:30 - 18:30",
+    "cabinet.contact_label": "Контакт",
+    "cabinet.reimbursement_label": "Возмещение расходов",
+    "cabinet.reimbursement": "Консультации в частном кабинете не покрываются обязательным медицинским страхованием (Securite sociale). Некоторые дополнительные страховки (mutuelles) частично компенсируют нейропсихологические обследования: уточните у вашей страховой компании.",
 
     "site.title": "Екатерина Волова - Нейропсихолог в Париже, 16 округ",
     "site.description":
-      "Кабинет нейропсихологии в 16 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 6 месяцев. Взрослые с 16 лет, приём на французском, русском и английском языках.",
+      "Кабинет нейропсихологии в 16 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 1 год. Взрослые с 16 лет, приём на французском, русском и английском языках.",
 
     "home.h1": "Екатерина Волова",
     "home.lede": "Нейропсихолог",
@@ -210,19 +224,23 @@ export const ui = {
     "home.who.note":
       "Кабинет не проводит длительную психотерапевтическую работу и не специализируется на детской франкоязычной практике. Исключение составляют обследования русскоязычных детей, так как этот сегмент мало охвачен в регионе Иль-де-Франс.",
 
-    "home.services.title": "Четыре направления",
+    "home.services.title": "Пять направлений",
+    "home.services.s0_title": "Первичная консультация",
+    "home.services.s0_desc":
+      "Первичная беседа для уточнения запроса, понимания клинического контекста и определения наиболее подходящего обследования или сопровождения.",
+    "home.services.s0_price": "70 €",
     "home.services.s1_title": "Диагностическое обследование",
     "home.services.s1_desc":
       "Углублённая нейропсихологическая оценка от клинического сбора данных до устного и письменного заключения. Включает начальное интервью, проведение тестов, анализ результатов и подробный отчёт, передаваемый направляющему врачу.",
     "home.services.s1_price": "450–600 €",
-    "home.services.s2_title": "Контрольное обследование через 6 месяцев",
+    "home.services.s2_title": "Контрольное обследование через 1 год",
     "home.services.s2_desc":
       "Повторная оценка когнитивных функций через определённое время после первичного обследования. Используются те же инструменты, акцент на динамике.",
     "home.services.s2_price": "200 €",
     "home.services.s3_title": "Когнитивная реабилитация и стимуляция",
     "home.services.s3_desc":
       "Индивидуальные занятия, направленные на память, внимание, исполнительные функции или речь. Показания согласно рекомендациям HAS: хронический постинсультный период, СДВГ у взрослых, лёгкие черепно-мозговые травмы, возрастные когнитивные нарушения.",
-    "home.services.s3_price": "60–70 € за сеанс",
+    "home.services.s3_price": "60 € за сеанс",
     "home.services.s4_title": "Когнитивно-поведенческая терапия",
     "home.services.s4_desc":
       "Подход КПТ с супервизией с апреля 2027 года, в рамках ускоренного обучения в AFTCC. Показания: тревога, депрессия, посттравматические расстройства, расстройства пищевого поведения, зависимости, СДВГ у взрослых.",
@@ -337,10 +355,15 @@ export const ui = {
     "footer.cabinet_label": "Office",
     "footer.contact_label": "Book an appointment",
     "footer.opening_note": "Office opens on 15 June 2026",
+    "cabinet.hours_label": "Hours",
+    "cabinet.hours": "Every day (including weekends), 09:30 - 18:30",
+    "cabinet.contact_label": "Contact",
+    "cabinet.reimbursement_label": "Reimbursement",
+    "cabinet.reimbursement": "Private practice consultations are not covered by the French national health insurance (Securite sociale). Some complementary insurance plans (mutuelles) partially cover neuropsychological assessments: please check with your provider.",
 
     "site.title": "Ekaterina Volova - Neuropsychologist in Paris 16th",
     "site.description":
-      "Neuropsychology practice in Paris 16th. Diagnostic assessments, cognitive remediation and stimulation, 6-month follow-up. Adults 16 and older, consultations in French, Russian and English.",
+      "Neuropsychology practice in Paris 16th. Diagnostic assessments, cognitive remediation and stimulation, 1-year follow-up. Adults 16 and older, consultations in French, Russian and English.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Neuropsychologist",
@@ -356,19 +379,23 @@ export const ui = {
     "home.who.note":
       "The practice does not offer long-term psychotherapeutic follow-up and does not work in general French-speaking paediatrics. An exception is made for Russian-speaking children, as this segment is poorly served in the Île-de-France region.",
 
-    "home.services.title": "Four offerings",
+    "home.services.title": "Five offerings",
+    "home.services.s0_title": "Initial consultation",
+    "home.services.s0_desc":
+      "Introductory session to understand your concerns, review the clinical context and determine the most appropriate assessment or support.",
+    "home.services.s0_price": "€70",
     "home.services.s1_title": "Diagnostic assessment",
     "home.services.s1_desc":
       "In-depth neuropsychological evaluation, from clinical history-taking to written and oral feedback. Includes an initial interview, test administration, analysis of results and a detailed report sent to the referring physician.",
     "home.services.s1_price": "€450 to €600",
-    "home.services.s2_title": "6-month follow-up assessment",
+    "home.services.s2_title": "1-year follow-up assessment",
     "home.services.s2_desc":
       "Re-evaluation of cognitive function some time after the initial assessment. Same tools as the diagnostic assessment, focus on evolution.",
     "home.services.s2_price": "€200",
     "home.services.s3_title": "Cognitive remediation and stimulation",
     "home.services.s3_desc":
       "Individual sessions targeting memory, attention, executive function or language. Indications follow French HAS recommendations: chronic post-stroke, adult ADHD, mild traumatic brain injury, age-related neurocognitive disorders.",
-    "home.services.s3_price": "€60 to €70 per session",
+    "home.services.s3_price": "€60 per session",
     "home.services.s4_title": "Cognitive behavioural therapy",
     "home.services.s4_desc":
       "CBT approach under supervision from April 2027, as part of the AFTCC accelerated training. Indications: anxiety, depression, post-traumatic disorders, eating disorders, addictions, adult ADHD.",
