@@ -1,0 +1,8 @@
+# Redirect all secondary domains to the primary domain (301 permanent)
+https://volova-neuropsy.com/* https://ekaterina-volova.com/:splat 301
+https://www.volova-neuropsy.com/* https://ekaterina-volova.com/:splat 301
+https://ekaterina-volova.fr/* https://ekaterina-volova.com/:splat 301
+https://www.ekaterina-volova.fr/* https://ekaterina-volova.com/:splat 301
+https://volova-neuropsy.fr/* https://ekaterina-volova.com/:splat 301
+https://www.volova-neuropsy.fr/* https://ekaterina-volova.com/:splat 301
+https://www.ekaterina-volova.com/* https://ekaterina-volova.com/:splat 301
