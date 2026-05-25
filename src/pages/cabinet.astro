@@ -1,0 +1,16 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import CabinetContent from "~/components/CabinetContent.astro";
+import { useTranslations, getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  canonicalPath="/cabinet"
+  title={t("cabinet.title")}
+  description={t("cabinet.description")}
+>
+  <CabinetContent />
+</BaseLayout>

@@ -1,0 +1,510 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+type CabinetLabels = {
+  accessTitle: string;
+  metro: string;
+  bus: string;
+  pmr: string;
+  metroStation: string;
+  metroTime: string;
+  metro9Station: string;
+  metro9Time: string;
+  busStop: string;
+  busTime: string;
+  bus52Stop: string;
+  bus52Time: string;
+  parking: string;
+  parkingName: string;
+  parkingTime: string;
+  parking2Name: string;
+  parking2Time: string;
+  parking2Note: string;
+  velib: string;
+  velibStation: string;
+  velibTime: string;
+  onSiteTitle: string;
+  onSiteInterphone: string;
+  onSiteDirections: string;
+  pmrValue: string;
+};
+
+const cabinetLabels: Record<string, CabinetLabels> = {
+  fr: {
+    accessTitle: "Acces",
+    metro: "Metro",
+    bus: "Bus",
+    pmr: "Accessibilite",
+    metroStation: "Passy",
+    metroTime: "450 m",
+    metro9Station: "La Muette",
+    metro9Time: "500 m",
+    busStop: "arret Jean Bologne",
+    busTime: "50 m",
+    bus52Stop: "arret La Muette-Boulainvilliers",
+    bus52Time: "450 m",
+    parking: "Parking",
+    parkingName: "19 rue de Passy",
+    parkingTime: "250 m",
+    parking2Name: "Indigo Passy, 80 rue de Passy",
+    parking2Time: "500 m",
+    parking2Note: "24h/24",
+    velib: "Velib'",
+    velibStation: "Passy - Place du Costa Rica",
+    velibTime: "300 m",
+    onSiteTitle: "Sur place",
+    onSiteInterphone: "Interphone « Ekaterina Volova »",
+    onSiteDirections: "A gauche apres la porte d'entree, seconde porte apres le hall.",
+    pmrValue: "Cabinet en rez-de-chaussee, accessible PMR",
+  },
+  ru: {
+    accessTitle: "Доступ",
+    metro: "Метро",
+    bus: "Автобус",
+    pmr: "Доступность",
+    metroStation: "Passy",
+    metroTime: "450 м",
+    metro9Station: "La Muette",
+    metro9Time: "500 м",
+    busStop: "остановка Jean Bologne",
+    busTime: "50 м",
+    bus52Stop: "остановка La Muette-Boulainvilliers",
+    bus52Time: "450 м",
+    parking: "Парковка",
+    parkingName: "19 rue de Passy",
+    parkingTime: "250 м",
+    parking2Name: "Indigo Passy, 80 rue de Passy",
+    parking2Time: "500 м",
+    parking2Note: "24ч/24ч",
+    velib: "Velib'",
+    velibStation: "Passy - Place du Costa Rica",
+    velibTime: "300 м",
+    onSiteTitle: "На месте",
+    onSiteInterphone: "Домофон « Ekaterina Volova »",
+    onSiteDirections: "Налево после входной двери, вторая дверь после холла.",
+    pmrValue: "Кабинет на первом этаже, доступен для МГН",
+  },
+  en: {
+    accessTitle: "Access",
+    metro: "Metro",
+    bus: "Bus",
+    pmr: "Accessibility",
+    metroStation: "Passy",
+    metroTime: "450 m",
+    metro9Station: "La Muette",
+    metro9Time: "500 m",
+    busStop: "Jean Bologne stop",
+    busTime: "50 m",
+    bus52Stop: "La Muette-Boulainvilliers stop",
+    bus52Time: "450 m",
+    parking: "Parking",
+    parkingName: "19 rue de Passy",
+    parkingTime: "250 m",
+    parking2Name: "Indigo Passy, 80 rue de Passy",
+    parking2Time: "500 m",
+    parking2Note: "24/7",
+    velib: "Velib'",
+    velibStation: "Passy - Place du Costa Rica",
+    velibTime: "300 m",
+    onSiteTitle: "On site",
+    onSiteInterphone: "Intercom 'Ekaterina Volova'",
+    onSiteDirections: "Turn left after the entrance door, second door past the hall.",
+    pmrValue: "Ground-floor practice, wheelchair accessible",
+  },
+};
+
+const cab = cabinetLabels[lang] ?? cabinetLabels.fr;
+const contactHref = getLocalizedPath("/contact", lang);
+---
+
+{/* ─────────── HERO ─────────── */}
+<header class="bg-[var(--color-paper)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 pt-10 sm:pt-14 pb-20 sm:pb-24">
+
+    <p class="font-sans text-[0.8125rem] sm:text-sm uppercase tracking-[0.14em] text-[var(--color-accent)] mb-12 sm:mb-16">
+      {t("footer.cabinet_label")}
+    </p>
+
+    <div class="max-w-[52rem]">
+      <address class="not-italic">
+        <h1
+          class="font-serif italic text-[var(--color-ink)] leading-[0.98] tracking-[-0.025em]"
+          style="font-size: clamp(2.75rem, 6vw + 1rem, 5.5rem);"
+        >
+          14 rue Nicolo
+        </h1>
+        <p class="mt-4 font-serif italic text-xl sm:text-2xl text-[var(--color-ink-soft)]">
+          75116 Paris
+        </p>
+      </address>
+
+      <p class="mt-8 font-serif italic text-[var(--color-ink-muted)]">
+        {t("footer.opening_note")}
+      </p>
+    </div>
+  </div>
+</header>
+
+{/* ─────────── 01 — Informations pratiques ─────────── */}
+<section id="infos" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          01
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          Infos
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        {/* Horaires */}
+        <div>
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            {t("cabinet.hours_label")}
+          </p>
+          <p class="mt-2 font-serif text-lg text-[var(--color-ink-soft)]">
+            {t("cabinet.hours")}
+          </p>
+        </div>
+
+        {/* Contact */}
+        <div class="mt-8">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            {t("cabinet.contact_label")}
+          </p>
+          <div class="mt-2 font-serif text-lg text-[var(--color-ink-soft)] space-y-1">
+            <p>
+              <a href="tel:+33666074254" class="no-underline text-[var(--color-ink)] hover:text-[var(--color-accent-deep)] transition-colors">
+                06 66 07 42 54
+              </a>
+            </p>
+            <p>
+              <a href="mailto:volova.neuropsy@gmail.com" class="no-underline text-[var(--color-ink)] hover:text-[var(--color-accent-deep)] transition-colors">
+                volova.neuropsy@gmail.com
+              </a>
+            </p>
+          </div>
+        </div>
+
+        {/* Remboursement */}
+        <div class="mt-8">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            {t("cabinet.reimbursement_label")}
+          </p>
+          <p class="mt-2 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("cabinet.reimbursement")}
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div class="mt-10">
+          <a
+            href={contactHref}
+            class="inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.16em] no-underline px-10 py-4 bg-[#3A5A72] text-white hover:bg-[#2E4A62] transition-colors"
+          >
+            {t("cta.book")}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ─────────── 02 — Carte ─────────── */}
+<section id="carte" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          02
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          Carte
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        <div class="relative aspect-[16/9] sm:aspect-[2/1] border border-[var(--color-rule)] bg-[var(--color-paper-deep)]">
+          <div id="cabinet-map" class="absolute inset-0 w-full h-full z-0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ─────────── 03 — Acces ─────────── */}
+<section id="acces" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          03
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          {cab.accessTitle}
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        <ul class="space-y-6">
+
+          {/* Accessibilite */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="w-9 h-9 rounded-full bg-[var(--color-accent-deep)] inline-flex items-center justify-center text-white translate-y-[0.15em]"
+                  aria-label={cab.pmr}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="10" cy="4" r="1.5" fill="currentColor" stroke="none" />
+                <path d="M10 7 v6 h6" />
+                <circle cx="11" cy="17" r="4" />
+                <path d="M14 13 l3 4" />
+              </svg>
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.pmr}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.pmrValue}</span>
+            </div>
+          </li>
+
+          {/* Metro ligne 6 */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-full bg-[#79BB92] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={`${cab.metro} 6`}>
+              6
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.metro}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.metroStation}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.metroTime}</span>
+            </div>
+          </li>
+
+          {/* Metro ligne 9 */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-full bg-[#CDC932] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={`${cab.metro} 9`}>
+              9
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.metro}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.metro9Station}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.metro9Time}</span>
+            </div>
+          </li>
+
+          {/* Bus 32 */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-[2px] bg-[#E1A700] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={`${cab.bus} 32`}>
+              32
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.bus}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.busStop}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.busTime}</span>
+            </div>
+          </li>
+
+          {/* Bus 52 */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-[2px] bg-[#E1A700] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={`${cab.bus} 52`}>
+              52
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.bus}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.bus52Stop}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.bus52Time}</span>
+            </div>
+          </li>
+
+          {/* Parking */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-bold text-[var(--color-accent-deep)] text-[0.9375rem] w-9 h-9 rounded-[2px] border-2 border-[var(--color-accent-deep)] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={cab.parking}>
+              P
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.parking}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.parkingName}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.parkingTime}</span>
+            </div>
+          </li>
+
+          {/* Parking Indigo */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="font-sans font-bold text-[var(--color-accent-deep)] text-[0.9375rem] w-9 h-9 rounded-[2px] border-2 border-[var(--color-accent-deep)] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
+                  aria-label={cab.parking}>
+              P
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.parking}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.parking2Name}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.parking2Time}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-muted)] italic">{cab.parking2Note}</span>
+            </div>
+          </li>
+
+          {/* Velib' */}
+          <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
+            <span class="w-9 h-9 rounded-full bg-[#7fba4c] inline-flex items-center justify-center text-white translate-y-[0.15em]"
+                  aria-label={cab.velib}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="5.5" cy="17.5" r="3.5" />
+                <circle cx="18.5" cy="17.5" r="3.5" />
+                <path d="M12 2 l-3 15.5" />
+                <path d="M9 17.5 L15 7 h3" />
+                <path d="M5.5 17.5 L12 2" />
+              </svg>
+            </span>
+            <div class="font-serif text-[var(--color-ink)] text-lg leading-snug">
+              <span class="italic text-[var(--color-ink-muted)]">{cab.velib}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span>{cab.velibStation}</span>
+              <span class="mx-2 text-[var(--color-rule)]">·</span>
+              <span class="text-[var(--color-ink-soft)]">{cab.velibTime}</span>
+            </div>
+          </li>
+
+        </ul>
+
+        {/* Sur place */}
+        <div class="mt-10 pt-8 border-t border-[var(--color-rule-soft)]">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-5">
+            {cab.onSiteTitle}
+          </p>
+          <div class="font-serif text-[var(--color-ink)] text-lg leading-relaxed space-y-2">
+            <p>{cab.onSiteInterphone}</p>
+            <p class="text-[var(--color-ink-soft)]">{cab.onSiteDirections}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  var mapEl = document.getElementById('cabinet-map');
+  if (!mapEl) return;
+
+  var loaded = false;
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !loaded) {
+      loaded = true;
+      observer.disconnect();
+      initMap();
+    }
+  }, { rootMargin: '200px' });
+  observer.observe(mapEl);
+
+  function initMap() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    var script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = function() { buildMap(); };
+    document.head.appendChild(script);
+  }
+
+  function buildMap() {
+    var L = window.L;
+    var map = L.map('cabinet-map', {
+      scrollWheelZoom: false,
+      attributionControl: false
+    }).setView([48.85824, 2.27980], 16);
+
+    L.control.attribution({
+      prefix: '<a href="https://leafletjs.com" target="_blank">Leaflet</a>'
+    }).addTo(map);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19
+    }).addTo(map);
+
+    function badge(color, label, shape, textColor) {
+      var radius = shape === 'square' ? '3px' : '50%';
+      var tc = textColor || '#2c2c2c';
+      return L.divIcon({
+        className: '',
+        html: '<div style="' +
+          'width:30px;height:30px;border-radius:' + radius + ';' +
+          'background:' + color + ';color:' + tc + ';' +
+          'display:flex;align-items:center;justify-content:center;' +
+          'font-family:Inter,sans-serif;font-weight:700;font-size:12px;' +
+          'box-shadow:0 2px 6px rgba(0,0,0,.35);border:2.5px solid #2c2c2c;' +
+          '">' + label + '</div>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
+      });
+    }
+
+    var cabinetIcon = L.divIcon({
+      className: '',
+      html: '<div style="position:relative;width:44px;height:58px;">' +
+        '<svg width="44" height="58" viewBox="0 0 44 58" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<filter id="pin-shadow"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.35"/></filter>' +
+          '<path d="M22 56 C22 56 42 34 42 20 A20 20 0 0 0 2 20 C2 34 22 56 22 56Z" fill="#C0392B" stroke="#fff" stroke-width="2.5" filter="url(#pin-shadow)"/>' +
+          '<text x="22" y="27" text-anchor="middle" fill="#fff" font-family="serif" font-size="22" font-weight="400">&Psi;</text>' +
+        '</svg>' +
+      '</div>',
+      iconSize: [44, 58],
+      iconAnchor: [22, 56]
+    });
+    L.marker([48.85874, 2.28036], { icon: cabinetIcon })
+      .addTo(map)
+      .bindPopup('<b>Cabinet</b><br>14 rue Nicolo');
+
+    L.marker([48.85752, 2.28583], { icon: badge('#79BB92', '6', 'circle') })
+      .addTo(map).bindPopup('<b>Metro 6</b><br>Passy');
+    L.marker([48.85809, 2.27412], { icon: badge('#CDC932', '9', 'circle') })
+      .addTo(map).bindPopup('<b>Metro 9</b><br>La Muette');
+    L.marker([48.85773, 2.28024], { icon: badge('#E1A700', '32', 'square') })
+      .addTo(map).bindPopup('<b>Bus 32</b><br>Jean Bologne');
+    L.marker([48.85857, 2.27490], { icon: badge('#E1A700', '52', 'square') })
+      .addTo(map).bindPopup('<b>Bus 52</b><br>La Muette-Boulainvilliers');
+
+    var parkingIcon = L.divIcon({
+      className: '',
+      html: '<div style="' +
+        'width:30px;height:30px;border-radius:3px;' +
+        'background:#3b82f6;color:#fff;' +
+        'display:flex;align-items:center;justify-content:center;' +
+        'font-family:Inter,sans-serif;font-weight:700;font-size:14px;' +
+        'box-shadow:0 2px 6px rgba(0,0,0,.35);border:2.5px solid #2c2c2c;' +
+        '">P</div>',
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+    L.marker([48.8581, 2.2828], { icon: parkingIcon })
+      .addTo(map).bindPopup('<b>Parking</b><br>19 rue de Passy');
+    L.marker([48.8582, 2.2752], { icon: parkingIcon })
+      .addTo(map).bindPopup('<b>Indigo Passy</b><br>80 rue de Passy<br>24h/24');
+  }
+})();
+</script>

@@ -1,9 +1,9 @@
 /**
- * Dictionnaires de traduction pour les éléments UI globaux
- * (navigation, footer, boutons, libellés génériques).
+ * Dictionnaires de traduction pour les elements UI globaux
+ * (navigation, footer, boutons, libelles generiques).
  *
  * Le contenu de chaque page (textes longs, prestations, etc.) est dans des
- * fichiers Markdown séparés sous `src/content/`.
+ * fichiers Markdown separes sous `src/content/`.
  */
 
 export const languages = {
@@ -31,6 +31,9 @@ export const ui = {
     "footer.copyright": "© 2026 Ekaterina Volova. Tous droits réservés.",
     "footer.legal_link": "Mentions légales & politique de confidentialité",
 
+    "contact.title": "Contact - Ekaterina Volova, neuropsychologue à Paris 16e",
+    "contact.description": "Prenez rendez-vous avec Ekaterina Volova, psychologue specialisee en neuropsychologie. Cabinet au 14 rue Nicolo, 75116 Paris. Telephone, email et Doctolib.",
+
     "cta.book": "Réserver une consultation",
     "cta.book_short": "Réserver",
     "cta.contact": "Me contacter",
@@ -45,6 +48,8 @@ export const ui = {
     "footer.cabinet_label": "Cabinet",
     "footer.contact_label": "Prendre rendez-vous",
     "footer.opening_note": "Ouverture du cabinet le 15 juin 2026",
+    "cabinet.title": "Cabinet - Ekaterina Volova, neuropsychologue à Paris 16e",
+    "cabinet.description": "Adresse, horaires et acces du cabinet de neuropsychologie d'Ekaterina Volova, 14 rue Nicolo, 75116 Paris. Metro Passy (ligne 6) et La Muette (ligne 9).",
     "cabinet.hours_label": "Horaires",
     "cabinet.hours": "Tous les jours (y compris le week-end), 09h30 - 18h30",
     "cabinet.contact_label": "Contact",
@@ -53,7 +58,7 @@ export const ui = {
 
     "site.title": "Ekaterina Volova - Neuropsychologue à Paris 16e",
     "site.description":
-      "Cabinet de neuropsychologie à Paris 16e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 1 an. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
+      "Psychologue spécialisée en neuropsychologie à Paris 16e, Ekaterina Volova réalise des bilans neuropsychologiques, de la remédiation et de la stimulation cognitive pour les adultes à partir de 16 ans, en français, russe et anglais.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Psychologue spécialisée en neuropsychologie",
@@ -62,33 +67,60 @@ export const ui = {
 
     "home.who.title": "Pour qui je consulte",
     "home.who.intro":
-      "Le cabinet accueille principalement une population adulte, à partir de 16 ans, dans le cadre de bilans neuropsychologiques diagnostiques et d'un accompagnement de remédiation ou de stimulation cognitive.",
+      "Le cabinet accueille principalement une population adulte, à partir de 16 ans, dans le cadre de bilans neuropsychologiques et d'un accompagnement de remédiation ou de stimulation cognitive.",
     "home.who.indications_title": "Indications principales",
     "home.who.indications":
       "Maladies neurodégénératives (maladie d'Alzheimer, maladie de Parkinson, maladie à corps de Lewy, dégénérescence fronto-temporale, etc.). Pathologies neurologiques (sclérose en plaques, épilepsie, séquelles d'AVC, traumatismes crâniens). Troubles psychiatriques avec ou sans impact cognitif (dépression, anxiété, troubles post-traumatiques, troubles du comportement alimentaire, addictions). TDAH adulte.",
-    "home.who.note":
-      "Le cabinet ne propose pas de suivi psychothérapeutique long et n'exerce pas en pédiatrie générale francophone. Une exception est faite pour les bilans d'enfants russophones, ce segment étant peu couvert en Île-de-France.",
+    "home.who.note": "",
 
-    "home.services.title": "Cinq prestations",
-    "home.services.s0_title": "Première consultation",
+    "home.remediation.title": "Qu'est-ce qu'une remédiation et stimulation cognitive ?",
+    "home.remediation.desc": "La remédiation et la stimulation cognitives sont des prises en charge visant à travailler différentes fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou le langage à l'aide d'exercices adaptés au profil du patient. Elles ont pour objectif de renforcer les capacités préservées, développer des stratégies de compensation et favoriser le maintien de l'autonomie au quotidien.",
+
+    "prestations.title": "Prestations et tarifs - Ekaterina Volova, neuropsychologue",
+    "prestations.description": "Tarifs des bilans neuropsychologiques, remédiation cognitive et thérapies cognitivo-comportementales. Cabinet de neuropsychologie à Paris 16e.",
+
+    "prestations.entretien_title": "Premier entretien clinique (obligatoire)",
+    "prestations.entretien_desc": "Première consultation permettant de recueillir l'histoire clinique du patient (les antécédents médicaux et familiaux), le motif de consultation et les difficultés rencontrées au quotidien afin d'orienter l'évaluation neuropsychologique.",
+    "prestations.entretien_price": "70 €",
+
+    "prestations.bilans_title": "Bilans neuropsychologiques pour les adultes (> 16 ans)",
+    "prestations.bilan_1": "Bilan neuropsychologique complet",
+    "prestations.bilan_1_desc": "Evaluation approfondie du fonctionnement cognitif réalisée à l'aide de différentes épreuves neuropsychologiques standardisées permettant d'explorer la mémoire, l'attention, les fonctions exécutives, le langage, les capacités visuoconstructives, visuospatiales, visuoperceptives, praxiques ainsi que la cognition sociale. Cette évaluation vise à objectiver et caractériser les difficultés rapportées par le patient et à préciser le profil cognitif observé.",
+    "prestations.bilan_1_price": "450 €",
+    "prestations.bilan_2": "Bilan neuropsychologique QI",
+    "prestations.bilan_2_desc": "Evaluation du fonctionnement intellectuel global à l'aide d'outils standardisés tels que la WAIS-IV, permettant d'explorer différents indices cognitifs : compréhension verbale, raisonnement perceptif, mémoire de travail et vitesse de traitement. Ce bilan peut être réalisé dans le cadre d'un questionnement sur le haut potentiel intellectuel, ainsi qu'en présence de difficultés cognitives.",
+    "prestations.bilan_2_price": "550 €",
+    "prestations.bilan_3": "Bilan attentionnel dans un contexte TDA/H",
+    "prestations.bilan_3_desc": "Evaluation des fonctions attentionnelles et exécutives réalisée à l'aide d'épreuves neuropsychologiques standardisées et d'échelles cliniques validées, dans le cadre d'une suspicion de trouble du déficit de l'attention avec ou sans hyperactivité (TDAH) chez l'adolescent à partir de 16 ans et l'adulte.",
+    "prestations.bilan_3_price": "550 €",
+    "prestations.bilan_4": "Bilan de suivi",
+    "prestations.bilan_4_desc": "Evaluation réalisée à distance d'un premier bilan neuropsychologique (minimum 1 an) afin d'apprécier l'évolution du fonctionnement cognitif au cours du temps. Le bilan de suivi permet de comparer les performances aux évaluations précédentes, d'objectiver une éventuelle évolution des troubles et d'adapter les recommandations de prise en charge en fonction du profil cognitif observé.",
+    "prestations.bilan_4_price": "200 €",
+
+    "prestations.remediation_title": "Remédiation et stimulation cognitive",
+    "prestations.remediation_desc": "Séances de 45 minutes visant à travailler et stimuler certaines fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou la vitesse de traitement à l'aide d'exercices adaptés au profil et aux difficultés du patient. La prise en charge a pour objectif de renforcer les capacités cognitives préservées, développer des stratégies de compensation et améliorer le fonctionnement au quotidien.",
+    "prestations.remediation_price": "65 €",
+
+    "home.services.title": "Prestations",
+    "home.services.s0_title": "Premier entretien clinique",
     "home.services.s0_desc":
-      "Entretien initial pour recueillir la demande, comprendre le contexte clinique et orienter vers le bilan ou l'accompagnement le plus adapté.",
+      "Recueil de l'histoire clinique, du motif de consultation et des difficultés au quotidien afin d'orienter l'évaluation.",
     "home.services.s0_price": "70 €",
-    "home.services.s1_title": "Bilan diagnostique",
+    "home.services.s1_title": "Bilan neuropsychologique",
     "home.services.s1_desc":
-      "Évaluation neuropsychologique approfondie, du recueil clinique à la restitution écrite et orale. Comprend un entretien initial, la passation des tests, l'analyse des résultats et un compte rendu détaillé transmis au médecin prescripteur.",
+      "Evaluation approfondie du fonctionnement cognitif (mémoire, attention, fonctions exécutives, langage, cognition sociale) avec compte rendu détaillé.",
     "home.services.s1_price": "450 à 600 €",
-    "home.services.s2_title": "Bilan de suivi à 1 an",
+    "home.services.s2_title": "Bilan de suivi",
     "home.services.s2_desc":
-      "Réévaluation des fonctions cognitives à distance du bilan initial. Mêmes outils que le bilan diagnostique, focus sur l'évolution.",
+      "Réévaluation à distance du bilan initial (minimum 1 an) pour mesurer l'évolution du fonctionnement cognitif.",
     "home.services.s2_price": "200 €",
     "home.services.s3_title": "Remédiation et stimulation cognitive",
     "home.services.s3_desc":
-      "Séances individuelles ciblant la mémoire, l'attention, les fonctions exécutives ou le langage. Indications conformes aux recommandations HAS : post-AVC chronique, TDAH adulte, traumatismes crâniens légers, troubles neurocognitifs liés au vieillissement.",
-    "home.services.s3_price": "60 € par séance",
+      "Séances de 45 minutes pour travailler la mémoire, l'attention, les fonctions exécutives ou la vitesse de traitement.",
+    "home.services.s3_price": "65 € par séance",
     "home.services.s4_title": "Thérapies cognitivo-comportementales",
     "home.services.s4_desc":
-      "Approche TCC en supervision à partir d'avril 2027, dans le cadre de la formation accélérée à l'AFTCC. Indications : anxiété, dépression, troubles post-traumatiques, troubles du comportement alimentaire, addictions, TDAH adulte.",
+      "Approche TCC pour l'anxiété, la dépression, les troubles post-traumatiques, les troubles du comportement alimentaire, les addictions et le TDAH adulte.",
     "home.services.s4_price": "75 € par séance",
     "home.services.note_supervised":
       "Pratique supervisée à compter d'avril 2027",
@@ -109,9 +141,9 @@ export const ui = {
       "Une séance d'une heure pour vous présenter les résultats. Un compte rendu écrit détaillé est adressé au médecin prescripteur, avec votre accord.",
 
     "home.languages.title": "Trois langues d'accueil",
-    "home.languages.fr": "Français — langue principale du cabinet et de la rédaction des comptes rendus.",
-    "home.languages.ru": "Русский — langue maternelle de la praticienne, accueil et passation possibles.",
-    "home.languages.en": "English — entretiens et bilans en anglais possibles sur demande.",
+    "home.languages.fr": "Français - langue principale du cabinet et de la rédaction des comptes rendus.",
+    "home.languages.ru": "Русский - langue maternelle de la praticienne, accueil et passation possibles.",
+    "home.languages.en": "English - entretiens et bilans en anglais possibles sur demande.",
 
     "home.prescribers.title": "Vous êtes médecin ou prescripteur",
     "home.prescribers.desc":
@@ -127,31 +159,71 @@ export const ui = {
 
     "about.section1_title": "Qu'est-ce que la neuropsychologie ?",
     "about.section1_p1":
-      "La neuropsychologie est une discipline de la psychologie qui étudie les relations entre le cerveau et les fonctions mentales : mémoire, attention, langage, raisonnement, perception, émotions, comportement. Elle étudie les liens entre les troubles cognitifs, émotionnels et comportementaux et le dysfonctionnement des structures cérébrales.",
+      "La neuropsychologie est une discipline qui étudie les relations entre le cerveau, les fonctions cognitives et le comportement. Elle permet de mieux comprendre les difficultés mnésiques, attentionnelles, langagières, exécutives et émotionnelles, notamment dans le cadre de pathologies neurologiques, psychiatriques ou neurodéveloppementales.",
 
     "about.section2_title": "Qu'est-ce qu'un bilan neuropsychologique ?",
     "about.section2_p1":
-      "Le bilan neuropsychologique est une évaluation détaillée du fonctionnement cognitif, comportemental et émotionnel d'une personne, à un moment donné de sa vie. Il vise à répondre à une question clinique précise formulée par le médecin prescripteur : caractériser une plainte mnésique, objectiver l'impact d'une pathologie connue, orienter vers un diagnostic différentiel, évaluer l'évolution dans le temps.",
+      "Le bilan neuropsychologique est une évaluation détaillée du fonctionnement cognitif, comportemental et psycho-affectif d'une personne à un instant donné. Il vise à répondre à une question clinique précise : objectiver et caractériser une plainte cognitive, orienter vers un diagnostic différentiel, évaluer l'évolution des troubles ou identifier les répercussions fonctionnelles des difficultés observées. Il s'adresse aux adolescents à partir de 16 ans, aux adultes et aux personnes âgées présentant des troubles cognitifs, psycho-affectifs ou comportementaux, notamment dans le cadre de pathologies neurologiques, neurodéveloppementales ou psychiatriques, afin de mieux comprendre leur fonctionnement et d'orienter la prise en charge.",
     "about.section2_p2":
       "Il explore plusieurs domaines cognitifs : la mémoire (épisodique, de travail, sémantique), l'attention, les fonctions exécutives (planification, inhibition, flexibilité), le langage, les capacités visuoperceptives et visuoconstructives, la cognition sociale, ainsi que les aspects thymiques et comportementaux.",
 
-    "about.section2_steps_intro": "Le bilan se déroule en trois étapes :",
-    "about.section2_step1_title": "Entretien clinique initial",
+    "about.section2_steps_intro": "Les trois étapes du bilan neuropsychologique :",
+    "about.section2_step1_title": "Entretien clinique - <u>étape obligatoire</u>",
     "about.section2_step1_desc":
-      "Une séance d'environ une heure consacrée au recueil de l'anamnèse, des plaintes actuelles, du contexte de vie et de la demande.",
-    "about.section2_step2_title": "Passation des tests",
+      "Première consultation d'environ une heure permettant de recueillir l'histoire clinique du patient, le motif de consultation et les difficultés rencontrées au quotidien afin d'orienter l'évaluation neuropsychologique.",
+    "about.section2_step2_title": "Passation des épreuves",
     "about.section2_step2_desc":
-      "Trois à cinq heures de tests standardisés validés scientifiquement, sélectionnés selon les indications cliniques. La passation peut être divisée en deux séances en fonction de la fatigabilité.",
+      "Environ trois heures de passation de tests standardisés sélectionnés en fonction de la demande clinique, de l'âge et du niveau socioculturel du patient, afin d'obtenir une évaluation adaptée et approfondie du fonctionnement cognitif.",
     "about.section2_step3_title": "Restitution",
     "about.section2_step3_desc":
-      "Une séance dédiée à la présentation orale des résultats, puis un compte rendu écrit détaillé adressé au médecin prescripteur, avec recommandations cliniques concrètes.",
+      "Une consultation d'environ une heure permettant de présenter et d'expliquer les résultats du bilan neuropsychologique et de répondre aux questions. Un compte rendu écrit détaillé ainsi que des propositions de prise en charge sont remis à l'issue du bilan.",
 
     "about.section2_p3":
       "Le bilan neuropsychologique s'adresse à toute personne présentant une plainte cognitive, dans un contexte de pathologie neurologique ou psychiatrique, ou face à un changement subjectif inquiétant. Il peut également être proposé en suivi, pour mesurer l'évolution dans le temps.",
 
     "about.section3_title": "Formation et parcours",
     "about.section3_intro":
-      "Inscrite au répertoire national des professionnels de santé sous le numéro RPPS 10111377833. Profession réglementée par l'article 44 de la loi n° 85-772 du 25 juillet 1985 (titre de psychologue protégé).",
+      "Inscrite au répertoire national des professionnels de santé sous le numéro RPPS : 10111377833. Profession réglementée par l'article 44 de la loi n° 85-772 du 25 juillet 1985 (titre de psychologue protégé).",
+
+    "about.experience_title": "Expérience professionnelle",
+
+    "about.exp_1_dates": "Juillet 2025 - Juin 2026",
+    "about.exp_1_title": "Hôpital Fondation Adolphe de Rothschild, service de Neurologie",
+    "about.exp_1_desc": "Réalisation de bilans neuropsychologiques auprès de patients présentant des pathologies neurologiques diverses (maladie d'Alzheimer, maladie de Parkinson, dégénérescence lobaire fronto-temporale, maladie à corps de Lewy, sclérose en plaques, atrophie multisystématisée, épilepsie, paralysie supranucléaire progressive, AVC...) et participation aux réunions pluridisciplinaires.",
+
+    "about.exp_2_dates": "Octobre 2024 - Mai 2025",
+    "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, service de Neurologie (Stage de 500h)",
+    "about.exp_2_desc": "Réalisation de bilans neuropsychologiques, participation aux réunions pluridisciplinaires et aux ateliers d'éducation thérapeutique du patient.",
+
+    "about.exp_3_dates": "Février - Avril 2024",
+    "about.exp_3_title": "CH de Versailles, Hôpital Richaud, service d'Hôpital de Jour (Stage de 280h)",
+    "about.exp_3_desc": "Réalisation de bilans neuropsychologiques auprès de la population âgée (> 65 ans) présentant diverses pathologies (oncologie, troubles mnésiques, maladie de Parkinson, AVC, troubles de l'équilibre), animation d'ateliers de stimulation cognitive et participation aux réunions pluridisciplinaires.",
+
+    "about.exp_4_dates": "Février - Mars 2023",
+    "about.exp_4_title": "EHPAD L'Ensolelhada (Stage de 70h)",
+    "about.exp_4_desc": "Observation du travail du neuropsychologue auprès de personnes âgées atteintes de maladies neurodégénératives aux stades avancés et animation d'ateliers.",
+
+    "about.exp_5_dates": "Septembre - Décembre 2019",
+    "about.exp_5_title": "Fondations Malteser Hilfsdienst et Roditelsky Most (Stages)",
+    "about.exp_5_desc": "Assistance aux psychologues cliniciens lors d'entretiens avec des familles en crise.",
+
+    "about.education_title": "Formation",
+
+    "about.edu_1_dates": "2023 - 2025",
+    "about.edu_1_title": "Université Paris 8 Vincennes-Saint Denis - Master de psychologie, parcours Neuropsychologie",
+    "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Mémoire Master 2 : Changements du fonctionnement cognitif et de la qualité de vie chez les patients atteints de la maladie de Parkinson bénéficiant de la stimulation cérébrale profonde.</span></li><li><span style='color:var(--color-ink-soft)'>Mémoire Master 1 : Fonctions de la pensée future épisodique dans le vieillissement normal.</span></li></ul>",
+
+    "about.edu_2_dates": "2020 - 2023",
+    "about.edu_2_title": "Université Montpellier III Paul Valéry - Licence de psychologie",
+    "about.edu_2_desc": "",
+
+    "about.edu_3_dates": "2019 - 2020",
+    "about.edu_3_title": "Université d'État de Saint-Pétersbourg - Spécialité de Psychologie clinique",
+    "about.edu_3_desc": "",
+
+    "about.edu_4_dates": "2014 - 2018",
+    "about.edu_4_title": "Université d'État de Saint-Pétersbourg - Licence d'Économie",
+    "about.edu_4_desc": "",
 
     "about.timeline_1_dates": "2023 - 2025",
     "about.timeline_1_title": "Master 2 Neuropsychologie",
@@ -168,7 +240,7 @@ export const ui = {
       "AFTCC - Association Française de Thérapie Cognitive et Comportementale",
 
     "about.languages_note":
-      "Pratique du bilan en français, en russe (langue maternelle) et en anglais (niveau C1).",
+      "Pratique du bilan en français, en russe et en anglais.",
 
     "about.cta": "Réserver une consultation",
   },
@@ -186,6 +258,9 @@ export const ui = {
     "footer.copyright": "© 2026 Екатерина Волова. Все права защищены.",
     "footer.legal_link": "Правовая информация и политика конфиденциальности",
 
+    "contact.title": "Контакт - Екатерина Волова, нейропсихолог в 16 округе Парижа",
+    "contact.description": "Запишитесь на прием к Екатерине Воловой, психологу-нейропсихологу. Кабинет по адресу 14 rue Nicolo, 75116 Paris. Телефон, электронная почта и Doctolib.",
+
     "cta.book": "Записаться на консультацию",
     "cta.book_short": "Записаться",
     "cta.contact": "Связаться со мной",
@@ -200,6 +275,8 @@ export const ui = {
     "footer.cabinet_label": "Кабинет",
     "footer.contact_label": "Записаться на приём",
     "footer.opening_note": "Открытие кабинета 15 июня 2026 года",
+    "cabinet.title": "Кабинет - Екатерина Волова, нейропсихолог в 16 округе Парижа",
+    "cabinet.description": "Адрес, часы работы и доступ к кабинету нейропсихологии Екатерины Воловой, 14 rue Nicolo, 75116 Paris. Метро Passy (линия 6) и La Muette (линия 9).",
     "cabinet.hours_label": "Часы работы",
     "cabinet.hours": "Ежедневно (включая выходные), 09:30 - 18:30",
     "cabinet.contact_label": "Контакт",
@@ -208,7 +285,7 @@ export const ui = {
 
     "site.title": "Екатерина Волова - Нейропсихолог в Париже, 16 округ",
     "site.description":
-      "Кабинет нейропсихологии в 16 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 1 год. Взрослые с 16 лет, приём на французском, русском и английском языках.",
+      "Психолог, специалист по нейропсихологии в 16 округе Парижа. Екатерина Волова проводит нейропсихологические обследования, когнитивную реабилитацию и стимуляцию для взрослых с 16 лет, на французском, русском и английском языках.",
 
     "home.h1": "Екатерина Волова",
     "home.lede": "Нейропсихолог",
@@ -217,33 +294,61 @@ export const ui = {
 
     "home.who.title": "Кому я могу помочь",
     "home.who.intro":
-      "Кабинет принимает преимущественно взрослых пациентов с 16 лет в рамках диагностических нейропсихологических обследований и сопровождения по программам когнитивной реабилитации и стимуляции.",
+      "Кабинет принимает преимущественно взрослых пациентов с 16 лет в рамках нейропсихологических обследований и сопровождения по программам когнитивной реабилитации и стимуляции.",
     "home.who.indications_title": "Основные показания",
     "home.who.indications":
       "Нейродегенеративные заболевания (болезнь Альцгеймера, болезнь Паркинсона, болезнь с тельцами Леви, лобно-височная дегенерация и др.). Неврологические патологии (рассеянный склероз, эпилепсия, последствия инсульта, черепно-мозговые травмы). Психиатрические расстройства с когнитивным компонентом или без него (депрессия, тревожные расстройства, посттравматические расстройства, расстройства пищевого поведения, зависимости). СДВГ у взрослых.",
     "home.who.note":
-      "Кабинет не проводит длительную психотерапевтическую работу и не специализируется на детской франкоязычной практике. Исключение составляют обследования русскоязычных детей, так как этот сегмент мало охвачен в регионе Иль-де-Франс.",
+      "Кабинет также принимает русскоязычных детей для проведения нейропсихологических обследований, так как этот сегмент мало охвачен в регионе Иль-де-Франс.",
 
-    "home.services.title": "Пять направлений",
-    "home.services.s0_title": "Первичная консультация",
+    "home.remediation.title": "Что такое когнитивная реабилитация и стимуляция?",
+    "home.remediation.desc": "Когнитивная реабилитация и стимуляция - это виды помощи, направленные на тренировку различных когнитивных функций, таких как память, внимание, исполнительные функции или речь, с помощью упражнений, адаптированных к профилю пациента. Их цель - укрепить сохранные способности, выработать компенсаторные стратегии и способствовать поддержанию самостоятельности в повседневной жизни.",
+
+    "prestations.title": "Услуги и тарифы - Екатерина Волова, нейропсихолог",
+    "prestations.description": "Тарифы на нейропсихологические обследования, когнитивную реабилитацию и когнитивно-поведенческую терапию. Кабинет нейропсихологии в 16 округе Парижа.",
+
+    "prestations.entretien_title": "Первичное клиническое интервью (обязательно)",
+    "prestations.entretien_desc": "Первичная консультация, позволяющая собрать клиническую историю пациента (медицинский и семейный анамнез), причину обращения и повседневные трудности с целью определения направления нейропсихологической оценки.",
+    "prestations.entretien_price": "70 €",
+
+    "prestations.bilans_title": "Нейропсихологические обследования для взрослых (> 16 лет)",
+    "prestations.bilan_1": "Полное нейропсихологическое обследование",
+    "prestations.bilan_1_desc": "Углублённая оценка когнитивного функционирования с помощью различных стандартизированных нейропсихологических проб, позволяющая исследовать память, внимание, исполнительные функции, речь, зрительно-конструктивные, зрительно-пространственные, зрительно-перцептивные и праксические способности, а также социальное познание. Данная оценка направлена на объективизацию и характеристику трудностей, о которых сообщает пациент, и на уточнение наблюдаемого когнитивного профиля.",
+    "prestations.bilan_1_price": "450 €",
+    "prestations.bilan_2": "Нейропсихологическое обследование IQ",
+    "prestations.bilan_2_desc": "Оценка общего интеллектуального функционирования с помощью стандартизированных инструментов, таких как WAIS-IV, позволяющая исследовать различные когнитивные индексы: вербальное понимание, перцептивное мышление, рабочую память и скорость обработки информации. Данное обследование может быть проведено в рамках вопроса о высоком интеллектуальном потенциале, а также при наличии когнитивных трудностей.",
+    "prestations.bilan_2_price": "550 €",
+    "prestations.bilan_3": "Обследование внимания в контексте СДВГ",
+    "prestations.bilan_3_desc": "Оценка функций внимания и исполнительных функций с помощью стандартизированных нейропсихологических проб и валидированных клинических шкал в рамках подозрения на синдром дефицита внимания с гиперактивностью или без неё (СДВГ) у подростков с 16 лет и взрослых.",
+    "prestations.bilan_3_price": "550 €",
+    "prestations.bilan_4": "Контрольное обследование",
+    "prestations.bilan_4_desc": "Обследование, проводимое через определённое время после первичного нейропсихологического обследования (минимум 1 год) с целью оценки динамики когнитивного функционирования. Контрольное обследование позволяет сопоставить результаты с предыдущими оценками, объективизировать возможную эволюцию нарушений и адаптировать рекомендации по дальнейшему сопровождению в соответствии с наблюдаемым когнитивным профилем.",
+    "prestations.bilan_4_price": "200 €",
+
+    "prestations.remediation_title": "Когнитивная реабилитация и стимуляция",
+    "prestations.remediation_desc": "Сеансы продолжительностью 45 минут, направленные на тренировку и стимуляцию определённых когнитивных функций, таких как память, внимание, исполнительные функции или скорость обработки информации, с помощью упражнений, адаптированных к профилю и трудностям пациента. Цель сопровождения - укрепить сохранные когнитивные способности, выработать компенсаторные стратегии и улучшить повседневное функционирование.",
+    "prestations.remediation_price": "65 €",
+
+    "home.services.title": "Услуги",
+    "home.services.s0_title": "Первичное клиническое интервью",
     "home.services.s0_desc":
-      "Первичная беседа для уточнения запроса, понимания клинического контекста и определения наиболее подходящего обследования или сопровождения.",
+      "Сбор клинической истории, причины обращения и повседневных трудностей для определения направления обследования.",
     "home.services.s0_price": "70 €",
-    "home.services.s1_title": "Диагностическое обследование",
+    "home.services.s1_title": "Нейропсихологическое обследование",
     "home.services.s1_desc":
-      "Углублённая нейропсихологическая оценка от клинического сбора данных до устного и письменного заключения. Включает начальное интервью, проведение тестов, анализ результатов и подробный отчёт, передаваемый направляющему врачу.",
-    "home.services.s1_price": "450–600 €",
-    "home.services.s2_title": "Контрольное обследование через 1 год",
+      "Углублённая оценка когнитивного функционирования (память, внимание, исполнительные функции, речь, социальное познание) с подробным заключением.",
+    "home.services.s1_price": "450-600 €",
+    "home.services.s2_title": "Контрольное обследование",
     "home.services.s2_desc":
-      "Повторная оценка когнитивных функций через определённое время после первичного обследования. Используются те же инструменты, акцент на динамике.",
+      "Повторная оценка после первичного обследования (минимум 1 год) для отслеживания динамики когнитивного функционирования.",
     "home.services.s2_price": "200 €",
     "home.services.s3_title": "Когнитивная реабилитация и стимуляция",
     "home.services.s3_desc":
-      "Индивидуальные занятия, направленные на память, внимание, исполнительные функции или речь. Показания согласно рекомендациям HAS: хронический постинсультный период, СДВГ у взрослых, лёгкие черепно-мозговые травмы, возрастные когнитивные нарушения.",
-    "home.services.s3_price": "60 € за сеанс",
+      "Сеансы по 45 минут для тренировки памяти, внимания, исполнительных функций или скорости обработки информации.",
+    "home.services.s3_price": "65 € за сеанс",
     "home.services.s4_title": "Когнитивно-поведенческая терапия",
     "home.services.s4_desc":
-      "Подход КПТ с супервизией с апреля 2027 года, в рамках ускоренного обучения в AFTCC. Показания: тревога, депрессия, посттравматические расстройства, расстройства пищевого поведения, зависимости, СДВГ у взрослых.",
+      "Подход КПТ при тревоге, депрессии, посттравматических расстройствах, расстройствах пищевого поведения, зависимостях и СДВГ у взрослых.",
     "home.services.s4_price": "75 € за сеанс",
     "home.services.note_supervised":
       "Практика под супервизией с апреля 2027 года",
@@ -252,7 +357,7 @@ export const ui = {
     "home.process.title": "Как проходит обследование",
     "home.process.step1_title": "Первый контакт",
     "home.process.step1_desc":
-      "Вы связываетесь со мной для формулировки вашего запроса — через форму или по направлению врача. Предварительное общение позволяет уточнить причину обращения и спланировать соответствующее обследование.",
+      "Вы связываетесь со мной для формулировки вашего запроса - через форму или по направлению врача. Предварительное общение позволяет уточнить причину обращения и спланировать соответствующее обследование.",
     "home.process.step2_title": "Первичное интервью",
     "home.process.step2_desc":
       "Сеанс продолжительностью один час для сбора клинического анамнеза, текущих жалоб и контекста вашей жизни. Совместно определяем направления обследования.",
@@ -264,9 +369,9 @@ export const ui = {
       "Сеанс продолжительностью один час для представления результатов. Подробный письменный отчёт направляется лечащему врачу с вашего согласия.",
 
     "home.languages.title": "Три языка приёма",
-    "home.languages.fr": "Français — основной язык кабинета и составления заключений.",
-    "home.languages.ru": "Русский — родной язык практикующего специалиста, возможны приём и проведение тестов.",
-    "home.languages.en": "English — собеседования и обследования на английском возможны по запросу.",
+    "home.languages.fr": "Français - основной язык кабинета и составления заключений.",
+    "home.languages.ru": "Русский - родной язык практикующего специалиста, возможны приём и проведение тестов.",
+    "home.languages.en": "English - собеседования и обследования на английском возможны по запросу.",
 
     "home.prescribers.title": "Вы врач или направляющий специалист",
     "home.prescribers.desc":
@@ -282,31 +387,71 @@ export const ui = {
 
     "about.section1_title": "Что такое нейропсихология?",
     "about.section1_p1":
-      "Нейропсихология - раздел психологии, изучающий взаимосвязь между мозгом и психическими функциями: памятью, вниманием, речью, мышлением, восприятием, эмоциями и поведением. Она изучает связи между когнитивными, эмоциональными и поведенческими нарушениями и дисфункцией структур головного мозга.",
+      "Нейропсихология - это дисциплина, изучающая взаимосвязь между мозгом, когнитивными функциями и поведением. Она позволяет лучше понять мнестические, аттенционные, речевые, исполнительные и эмоциональные трудности, в частности при неврологических, психиатрических или нейроразвитийных патологиях.",
 
     "about.section2_title": "Что такое нейропсихологическое обследование?",
     "about.section2_p1":
-      "Нейропсихологическое обследование - это подробная оценка когнитивного, поведенческого и эмоционального функционирования человека в определённый момент его жизни. Оно направлено на ответ на конкретный клинический вопрос, сформулированный направляющим врачом: охарактеризовать жалобы на память, объективировать влияние известной патологии, помочь в дифференциальной диагностике, оценить динамику во времени.",
+      "Нейропсихологическое обследование - это подробная оценка когнитивного, поведенческого и психоэмоционального функционирования человека в определённый момент времени. Оно направлено на ответ на конкретный клинический вопрос: объективировать и охарактеризовать когнитивные жалобы, помочь в дифференциальной диагностике, оценить динамику нарушений или выявить функциональные последствия наблюдаемых трудностей. Оно предназначено для детей, подростков, взрослых и пожилых людей с когнитивными, психоэмоциональными или поведенческими нарушениями, в частности при неврологических, нейроразвитийных или психиатрических патологиях, с целью лучше понять их функционирование и определить направление помощи.",
     "about.section2_p2":
       "Оно охватывает несколько когнитивных областей: память (эпизодическую, рабочую, семантическую), внимание, исполнительные функции (планирование, торможение, гибкость), речь, зрительно-пространственные и зрительно-конструктивные способности, социальное познание, а также эмоциональные и поведенческие аспекты.",
 
-    "about.section2_steps_intro": "Обследование проходит в три этапа:",
-    "about.section2_step1_title": "Первичное клиническое интервью",
+    "about.section2_steps_intro": "Три этапа нейропсихологического обследования :",
+    "about.section2_step1_title": "Клиническое интервью - <u>обязательный этап</u>",
     "about.section2_step1_desc":
-      "Сеанс продолжительностью около часа, посвящённый сбору анамнеза, текущих жалоб, контекста жизни и формулировке запроса.",
+      "Первичная консультация продолжительностью около часа, позволяющая собрать клиническую историю пациента, причину обращения и повседневные трудности для определения направления нейропсихологической оценки.",
     "about.section2_step2_title": "Проведение тестов",
     "about.section2_step2_desc":
-      "От трёх до пяти часов тестирования стандартизированными и научно валидированными методиками, выбранными в соответствии с клиническими показаниями. Тестирование может быть разделено на два сеанса с учётом утомляемости.",
+      "Около трёх часов проведения стандартизированных тестов, подобранных с учётом клинического запроса, возраста и социокультурного уровня пациента, для получения адаптированной и углублённой оценки когнитивного функционирования.",
     "about.section2_step3_title": "Заключение",
     "about.section2_step3_desc":
-      "Сеанс, посвящённый устному представлению результатов, после чего направляющему врачу передаётся подробное письменное заключение с конкретными клиническими рекомендациями.",
+      "Консультация продолжительностью около часа, позволяющая представить и объяснить результаты нейропсихологического обследования и ответить на вопросы. По итогам обследования выдаётся подробное письменное заключение и предложения по дальнейшему сопровождению.",
 
     "about.section2_p3":
       "Нейропсихологическое обследование рекомендуется людям с когнитивными жалобами на фоне неврологической или психиатрической патологии, а также при появлении тревожных субъективных изменений. Оно также может быть предложено в виде контрольного обследования для оценки динамики.",
 
     "about.section3_title": "Образование и опыт",
     "about.section3_intro":
-      "Внесена в Национальный реестр специалистов здравоохранения Франции под номером RPPS 10111377833. Профессия регулируется статьёй 44 закона № 85-772 от 25 июля 1985 года (защищённое звание психолога).",
+      "Внесена в Национальный реестр специалистов здравоохранения Франции под номером RPPS : 10111377833. Профессия регулируется статьёй 44 закона № 85-772 от 25 июля 1985 года (защищённое звание психолога).",
+
+    "about.experience_title": "Профессиональный опыт",
+
+    "about.exp_1_dates": "Июль 2025 - июнь 2026",
+    "about.exp_1_title": "Больница Fondation Adolphe de Rothschild",
+    "about.exp_1_desc": "Проведение нейропсихологических обследований пациентов с различными неврологическими патологиями (болезнь Альцгеймера, болезнь Паркинсона, лобно-височная дегенерация, болезнь с тельцами Леви, рассеянный склероз, мультисистемная атрофия, эпилепсия, прогрессирующий супрануклеарный паралич, инсульт...) и участие в мультидисциплинарных совещаниях.",
+
+    "about.exp_2_dates": "Октябрь 2024 - май 2025",
+    "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, отделение неврологии (стажировка 500ч)",
+    "about.exp_2_desc": "Проведение нейропсихологических обследований, участие в мультидисциплинарных совещаниях и в программах терапевтического обучения пациентов.",
+
+    "about.exp_3_dates": "Февраль - апрель 2024",
+    "about.exp_3_title": "CH de Versailles, Hôpital Richaud, гериатрический дневной стационар (стажировка 280ч)",
+    "about.exp_3_desc": "Проведение нейропсихологических обследований пожилых пациентов (> 65 лет) с различными патологиями (онкология, нарушения памяти, болезнь Паркинсона, инсульт, нарушения равновесия), проведение занятий по когнитивной стимуляции и участие в мультидисциплинарных совещаниях.",
+
+    "about.exp_4_dates": "Февраль - март 2023",
+    "about.exp_4_title": "EHPAD L'Ensolelhada (стажировка 70ч)",
+    "about.exp_4_desc": "Наблюдение за работой нейропсихолога с пожилыми людьми с нейродегенеративными заболеваниями на поздних стадиях и проведение занятий.",
+
+    "about.exp_5_dates": "Сентябрь - декабрь 2019",
+    "about.exp_5_title": "Фонды Malteser Hilfsdienst и Родительский Мост (стажировки)",
+    "about.exp_5_desc": "Ассистирование клиническим психологам при проведении интервью с семьями в кризисных ситуациях.",
+
+    "about.education_title": "Образование",
+
+    "about.edu_1_dates": "2023 - 2025",
+    "about.edu_1_title": "Университет Paris 8 Vincennes-Saint Denis - Магистратура по психологии, направление Нейропсихология",
+    "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Диссертация Master 2 : Изменения когнитивного функционирования и качества жизни у пациентов с болезнью Паркинсона при глубокой стимуляции мозга.</span></li><li><span style='color:var(--color-ink-soft)'>Диссертация Master 1 : Функции эпизодического мышления о будущем при нормальном старении.</span></li></ul>",
+
+    "about.edu_2_dates": "2020 - 2023",
+    "about.edu_2_title": "Université Montpellier III Paul Valéry - Бакалавриат по психологии",
+    "about.edu_2_desc": "",
+
+    "about.edu_3_dates": "2019 - 2020",
+    "about.edu_3_title": "Санкт-Петербургский государственный университет - Специализация по клинической психологии",
+    "about.edu_3_desc": "",
+
+    "about.edu_4_dates": "2014 - 2018",
+    "about.edu_4_title": "Санкт-Петербургский государственный университет - Бакалавриат по экономике",
+    "about.edu_4_desc": "",
 
     "about.timeline_1_dates": "2023 - 2025",
     "about.timeline_1_title": "Магистратура (Master 2), Нейропсихология",
@@ -323,7 +468,7 @@ export const ui = {
       "AFTCC - Французская ассоциация когнитивно-поведенческой терапии",
 
     "about.languages_note":
-      "Обследование проводится на французском, русском (родной язык) и английском (уровень C1).",
+      "Обследование проводится на французском, русском и английском языках.",
 
     "about.cta": "Записаться на консультацию",
   },
@@ -341,6 +486,9 @@ export const ui = {
     "footer.copyright": "© 2026 Ekaterina Volova. All rights reserved.",
     "footer.legal_link": "Legal notice and privacy policy",
 
+    "contact.title": "Contact - Ekaterina Volova, neuropsychologist in Paris 16th",
+    "contact.description": "Book an appointment with Ekaterina Volova, psychologist specialising in neuropsychology. Practice at 14 rue Nicolo, 75116 Paris. Phone, email and Doctolib.",
+
     "cta.book": "Book a consultation",
     "cta.book_short": "Book",
     "cta.contact": "Get in touch",
@@ -355,6 +503,8 @@ export const ui = {
     "footer.cabinet_label": "Office",
     "footer.contact_label": "Book an appointment",
     "footer.opening_note": "Office opens on 15 June 2026",
+    "cabinet.title": "Office - Ekaterina Volova, neuropsychologist in Paris 16th",
+    "cabinet.description": "Address, hours and access to Ekaterina Volova's neuropsychology practice, 14 rue Nicolo, 75116 Paris. Metro Passy (line 6) and La Muette (line 9).",
     "cabinet.hours_label": "Hours",
     "cabinet.hours": "Every day (including weekends), 09:30 - 18:30",
     "cabinet.contact_label": "Contact",
@@ -363,7 +513,7 @@ export const ui = {
 
     "site.title": "Ekaterina Volova - Neuropsychologist in Paris 16th",
     "site.description":
-      "Neuropsychology practice in Paris 16th. Diagnostic assessments, cognitive remediation and stimulation, 1-year follow-up. Adults 16 and older, consultations in French, Russian and English.",
+      "Psychologist specialising in neuropsychology in Paris 16th. Ekaterina Volova provides neuropsychological assessments, cognitive remediation and stimulation for adults aged 16 and older, in French, Russian and English.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Neuropsychologist",
@@ -372,33 +522,60 @@ export const ui = {
 
     "home.who.title": "Who I see",
     "home.who.intro":
-      "The practice mainly welcomes an adult population, aged 16 and older, for diagnostic neuropsychological assessments and accompaniment in cognitive remediation or stimulation.",
+      "The practice mainly welcomes an adult population, aged 16 and older, for neuropsychological assessments and accompaniment in cognitive remediation or stimulation.",
     "home.who.indications_title": "Main indications",
     "home.who.indications":
       "Neurodegenerative diseases (Alzheimer's disease, Parkinson's disease, dementia with Lewy bodies, frontotemporal degeneration, etc.). Neurological conditions (multiple sclerosis, epilepsy, stroke sequelae, traumatic brain injury). Psychiatric disorders with or without cognitive impact (depression, anxiety, post-traumatic disorders, eating disorders, addictions). Adult ADHD.",
-    "home.who.note":
-      "The practice does not offer long-term psychotherapeutic follow-up and does not work in general French-speaking paediatrics. An exception is made for Russian-speaking children, as this segment is poorly served in the Île-de-France region.",
+    "home.who.note": "",
 
-    "home.services.title": "Five offerings",
-    "home.services.s0_title": "Initial consultation",
+    "home.remediation.title": "What is cognitive remediation and stimulation?",
+    "home.remediation.desc": "Cognitive remediation and stimulation are interventions aimed at exercising various cognitive functions such as memory, attention, executive functions or language, using exercises tailored to the patient's profile. Their goal is to strengthen preserved abilities, develop compensatory strategies and support the maintenance of everyday independence.",
+
+    "prestations.title": "Services and fees - Ekaterina Volova, neuropsychologist",
+    "prestations.description": "Fees for neuropsychological assessments, cognitive remediation and cognitive behavioural therapy. Neuropsychology practice in Paris 16th.",
+
+    "prestations.entretien_title": "Initial clinical interview (mandatory)",
+    "prestations.entretien_desc": "Initial consultation to gather the patient's clinical history (medical and family background), the reason for consultation and everyday difficulties in order to guide the neuropsychological assessment.",
+    "prestations.entretien_price": "€70",
+
+    "prestations.bilans_title": "Neuropsychological assessments for adults (> 16 years)",
+    "prestations.bilan_1": "Comprehensive neuropsychological assessment",
+    "prestations.bilan_1_desc": "In-depth assessment of cognitive functioning using various standardised neuropsychological tests exploring memory, attention, executive functions, language, visuoconstructive, visuospatial, visuoperceptive and praxic abilities, as well as social cognition. This assessment aims to objectify and characterise the difficulties reported by the patient and to clarify the observed cognitive profile.",
+    "prestations.bilan_1_price": "€450",
+    "prestations.bilan_2": "IQ neuropsychological assessment",
+    "prestations.bilan_2_desc": "Assessment of overall intellectual functioning using standardised tools such as the WAIS-IV, exploring different cognitive indices: verbal comprehension, perceptual reasoning, working memory and processing speed. This assessment can be carried out in the context of questions about high intellectual potential, as well as in the presence of cognitive difficulties.",
+    "prestations.bilan_2_price": "€550",
+    "prestations.bilan_3": "Attentional assessment in the context of ADHD",
+    "prestations.bilan_3_desc": "Assessment of attentional and executive functions using standardised neuropsychological tests and validated clinical scales, in the context of a suspected attention deficit hyperactivity disorder (ADHD) in adolescents aged 16 and over and adults.",
+    "prestations.bilan_3_price": "€550",
+    "prestations.bilan_4": "Follow-up assessment",
+    "prestations.bilan_4_desc": "Assessment carried out some time after an initial neuropsychological assessment (minimum 1 year) to evaluate the evolution of cognitive functioning over time. The follow-up assessment compares performance with previous evaluations, objectifies any changes in difficulties and adapts care recommendations based on the observed cognitive profile.",
+    "prestations.bilan_4_price": "€200",
+
+    "prestations.remediation_title": "Cognitive remediation and stimulation",
+    "prestations.remediation_desc": "45-minute sessions aimed at exercising and stimulating specific cognitive functions such as memory, attention, executive functions or processing speed, using exercises tailored to the patient's profile and difficulties. The goal is to strengthen preserved cognitive abilities, develop compensatory strategies and improve everyday functioning.",
+    "prestations.remediation_price": "€65",
+
+    "home.services.title": "Services",
+    "home.services.s0_title": "Initial clinical interview",
     "home.services.s0_desc":
-      "Introductory session to understand your concerns, review the clinical context and determine the most appropriate assessment or support.",
+      "Gathering the clinical history, reason for consultation and everyday difficulties to guide the assessment.",
     "home.services.s0_price": "€70",
-    "home.services.s1_title": "Diagnostic assessment",
+    "home.services.s1_title": "Neuropsychological assessment",
     "home.services.s1_desc":
-      "In-depth neuropsychological evaluation, from clinical history-taking to written and oral feedback. Includes an initial interview, test administration, analysis of results and a detailed report sent to the referring physician.",
+      "In-depth evaluation of cognitive functioning (memory, attention, executive functions, language, social cognition) with a detailed written report.",
     "home.services.s1_price": "€450 to €600",
-    "home.services.s2_title": "1-year follow-up assessment",
+    "home.services.s2_title": "Follow-up assessment",
     "home.services.s2_desc":
-      "Re-evaluation of cognitive function some time after the initial assessment. Same tools as the diagnostic assessment, focus on evolution.",
+      "Re-evaluation after the initial assessment (minimum 1 year) to track the evolution of cognitive functioning.",
     "home.services.s2_price": "€200",
     "home.services.s3_title": "Cognitive remediation and stimulation",
     "home.services.s3_desc":
-      "Individual sessions targeting memory, attention, executive function or language. Indications follow French HAS recommendations: chronic post-stroke, adult ADHD, mild traumatic brain injury, age-related neurocognitive disorders.",
-    "home.services.s3_price": "€60 per session",
+      "45-minute sessions targeting memory, attention, executive functions or processing speed.",
+    "home.services.s3_price": "€65 per session",
     "home.services.s4_title": "Cognitive behavioural therapy",
     "home.services.s4_desc":
-      "CBT approach under supervision from April 2027, as part of the AFTCC accelerated training. Indications: anxiety, depression, post-traumatic disorders, eating disorders, addictions, adult ADHD.",
+      "CBT approach for anxiety, depression, post-traumatic disorders, eating disorders, addictions and adult ADHD.",
     "home.services.s4_price": "€75 per session",
     "home.services.note_supervised":
       "Supervised practice from April 2027",
@@ -419,9 +596,9 @@ export const ui = {
       "A one-hour session to present the results. A detailed written report is sent to the referring physician with your consent.",
 
     "home.languages.title": "Three languages of practice",
-    "home.languages.fr": "Français — main language of the practice and of written reports.",
-    "home.languages.ru": "Русский — practitioner's native language, consultations and test administration possible.",
-    "home.languages.en": "English — interviews and assessments in English available on request.",
+    "home.languages.fr": "Français - main language of the practice and of written reports.",
+    "home.languages.ru": "Русский - practitioner's native language, consultations and test administration possible.",
+    "home.languages.en": "English - interviews and assessments in English available on request.",
 
     "home.prescribers.title": "You are a physician or referrer",
     "home.prescribers.desc":
@@ -437,35 +614,75 @@ export const ui = {
 
     "about.section1_title": "What is neuropsychology?",
     "about.section1_p1":
-      "Neuropsychology is a branch of psychology that studies the relationships between the brain and mental functions: memory, attention, language, reasoning, perception, emotion and behaviour. It studies the links between cognitive, emotional and behavioural disorders and dysfunction of cerebral structures.",
+      "Neuropsychology is a discipline that studies the relationships between the brain, cognitive functions and behaviour. It helps to better understand memory, attentional, language, executive and emotional difficulties, particularly in the context of neurological, psychiatric or neurodevelopmental conditions.",
 
     "about.section2_title": "What is a neuropsychological assessment?",
     "about.section2_p1":
-      "A neuropsychological assessment is a detailed evaluation of a person's cognitive, behavioural and emotional functioning at a specific moment in life. Its purpose is to answer a precise clinical question raised by the referring physician: characterising a memory complaint, objectifying the impact of a known condition, supporting differential diagnosis, or measuring change over time.",
+      "A neuropsychological assessment is a detailed evaluation of a person's cognitive, behavioural and psycho-affective functioning at a given point in time. It aims to answer a precise clinical question: objectifying and characterising a cognitive complaint, guiding differential diagnosis, tracking the evolution of difficulties or identifying the functional impact of observed problems. It is intended for adolescents aged 16 and over, adults and older people with cognitive, psycho-affective or behavioural difficulties, particularly in the context of neurological, neurodevelopmental or psychiatric conditions, in order to better understand their functioning and guide care.",
     "about.section2_p2":
       "It explores several cognitive domains: memory (episodic, working, semantic), attention, executive function (planning, inhibition, flexibility), language, visuoperceptual and visuoconstructive abilities, social cognition, as well as mood and behavioural aspects.",
 
-    "about.section2_steps_intro": "The assessment unfolds in three stages:",
-    "about.section2_step1_title": "Initial clinical interview",
+    "about.section2_steps_intro": "The three stages of the neuropsychological assessment:",
+    "about.section2_step1_title": "Clinical interview - <u>mandatory step</u>",
     "about.section2_step1_desc":
-      "A one-hour session dedicated to gathering the clinical history, current concerns, life context and specific request.",
+      "An initial consultation of approximately one hour to gather the patient's clinical history, the reason for referral and everyday difficulties in order to guide the neuropsychological assessment.",
     "about.section2_step2_title": "Test administration",
     "about.section2_step2_desc":
-      "Three to five hours of standardised, scientifically validated tests, selected according to the clinical indications. Testing can be split across two sessions depending on fatigue.",
+      "Approximately three hours of standardised tests selected according to the clinical question, the patient's age and sociocultural level, in order to obtain an adapted and thorough evaluation of cognitive functioning.",
     "about.section2_step3_title": "Feedback",
     "about.section2_step3_desc":
-      "A session dedicated to the oral presentation of the results, followed by a detailed written report sent to the referring physician with concrete clinical recommendations.",
+      "A consultation of approximately one hour to present and explain the results of the neuropsychological assessment and answer questions. A detailed written report along with care recommendations are provided at the end of the assessment.",
 
     "about.section2_p3":
       "A neuropsychological assessment is intended for anyone presenting a cognitive complaint, in the context of a neurological or psychiatric condition, or in response to a worrying subjective change. It can also be proposed as a follow-up to track evolution over time.",
 
     "about.section3_title": "Training and experience",
     "about.section3_intro":
-      "Listed in the French national directory of health professionals under RPPS number 10111377833. A regulated profession under article 44 of French law no. 85-772 of 25 July 1985 (protected title of psychologist).",
+      "Listed in the French national directory of health professionals under RPPS number: 10111377833. A regulated profession under article 44 of French law no. 85-772 of 25 July 1985 (protected title of psychologist).",
+
+    "about.experience_title": "Professional experience",
+
+    "about.exp_1_dates": "July 2025 - June 2026",
+    "about.exp_1_title": "Adolphe de Rothschild Foundation Hospital",
+    "about.exp_1_desc": "Neuropsychological assessments of patients with various neurological conditions (Alzheimer's disease, Parkinson's disease, frontotemporal lobar degeneration, Lewy body disease, multiple sclerosis, multiple system atrophy, epilepsy, progressive supranuclear palsy, stroke...) and participation in multidisciplinary meetings.",
+
+    "about.exp_2_dates": "October 2024 - May 2025",
+    "about.exp_2_title": "Hopital Fondation Adolphe de Rothschild, Department of Neurology (500h internship)",
+    "about.exp_2_desc": "Neuropsychological assessments, participation in multidisciplinary meetings and therapeutic patient education workshops.",
+
+    "about.exp_3_dates": "February - April 2024",
+    "about.exp_3_title": "CH de Versailles, Hopital Richaud, geriatric day hospital (280h internship)",
+    "about.exp_3_desc": "Neuropsychological assessments of elderly patients (> 65 years) with various conditions (oncology, memory disorders, Parkinson's disease, stroke, balance disorders), cognitive stimulation workshops and participation in multidisciplinary meetings.",
+
+    "about.exp_4_dates": "February - March 2023",
+    "about.exp_4_title": "EHPAD L'Ensolelhada (70h internship)",
+    "about.exp_4_desc": "Observation of neuropsychological work with elderly patients with advanced-stage neurodegenerative diseases and workshop facilitation.",
+
+    "about.exp_5_dates": "September - December 2019",
+    "about.exp_5_title": "Malteser Hilfsdienst and Roditelsky Most foundations (Internships)",
+    "about.exp_5_desc": "Assistance to clinical psychologists during interviews with families in crisis.",
+
+    "about.education_title": "Education",
+
+    "about.edu_1_dates": "2023 - 2025",
+    "about.edu_1_title": "Universite Paris 8 Vincennes-Saint Denis - Master's in Psychology, Neuropsychology track",
+    "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Master 2 thesis: Changes in cognitive functioning and quality of life in Parkinson's disease patients receiving deep brain stimulation.</span></li><li><span style='color:var(--color-ink-soft)'>Master 1 thesis: Functions of episodic future thinking in normal ageing.</span></li></ul>",
+
+    "about.edu_2_dates": "2020 - 2023",
+    "about.edu_2_title": "Universite Montpellier III Paul Valery - Bachelor's degree in Psychology",
+    "about.edu_2_desc": "",
+
+    "about.edu_3_dates": "2019 - 2020",
+    "about.edu_3_title": "Saint Petersburg State University - Specialisation in Clinical Psychology",
+    "about.edu_3_desc": "",
+
+    "about.edu_4_dates": "2014 - 2018",
+    "about.edu_4_title": "Saint Petersburg State University - Bachelor's degree in Economics",
+    "about.edu_4_desc": "",
 
     "about.timeline_1_dates": "2023 - 2025",
     "about.timeline_1_title": "Master's degree in Neuropsychology",
-    "about.timeline_1_desc": "Université Paris 8 Vincennes-Saint Denis",
+    "about.timeline_1_desc": "Universite Paris 8 Vincennes-Saint Denis",
 
     "about.timeline_2_dates": "2025 - 2026",
     "about.timeline_2_title": "Adolphe de Rothschild Foundation Hospital",
@@ -478,7 +695,7 @@ export const ui = {
       "AFTCC - French Association of Cognitive and Behavioural Therapy",
 
     "about.languages_note":
-      "Assessments are conducted in French, Russian (native language) and English (C1 level).",
+      "Assessments are conducted in French, Russian and English.",
 
     "about.cta": "Book a consultation",
   },

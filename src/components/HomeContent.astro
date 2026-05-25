@@ -169,123 +169,92 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 ---
 
 {/* ─────────── HERO ─────────── */}
-<header class="hero-bg flex flex-col items-center justify-center text-center relative" style="min-height: calc(100vh - 4.5rem);">
-  <div class="absolute inset-6 sm:inset-10 border border-white/10 pointer-events-none"></div>
-  <div class="px-6 sm:px-8 py-20 sm:py-28 w-full flex flex-col items-center relative z-10">
+<header class="bg-[var(--color-paper-warm)] border-b border-[var(--color-rule-soft)] relative" style="min-height: calc(100vh - 4.5rem);">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 relative z-10 flex items-center" style="min-height: calc(100vh - 4.5rem);">
+    <div class="w-full grid gap-10 md:gap-16 md:grid-cols-[minmax(0,1fr)_20rem] lg:grid-cols-[minmax(0,1fr)_24rem] items-center py-20 sm:py-28">
 
-    {/* Monogramme */}
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-24 h-24 sm:w-32 sm:h-32" aria-hidden="true">
-      <g fill="white" stroke="none">
-        <rect x="4" y="4" width="72" height="72" fill="none" stroke="white" stroke-width="1.2" />
-        <rect x="8" y="8" width="64" height="64" fill="none" stroke="white" stroke-width="0.4" />
-        <rect x="15" y="20" width="4" height="40" />
-        <polygon points="13,20 15,20 15,21.2 13,21.2" />
-        <polygon points="13,58.8 15,58.8 15,60 13,60" />
-        <rect x="15" y="20" width="17" height="1" />
-        <polygon points="32,20 32,22.5 31,22.5" />
-        <rect x="15" y="39.5" width="13.5" height="0.9" />
-        <rect x="15" y="59" width="17.5" height="1" />
-        <polygon points="32.5,57.5 32.5,60 31.5,60" />
-        <circle cx="39" cy="40" r="1.8" />
-        <polygon points="46,20 50,20 57.5,60 54.5,60" />
-        <polygon points="66,20 67.2,20 58.5,60 57,60" />
-        <polygon points="44,20 46,20 46,21.2 44,21.2" />
-        <rect x="46" y="20" width="5" height="1" />
-        <rect x="64" y="20" width="5" height="1" />
-        <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
-      </g>
-    </svg>
+      {/* Texte */}
+      <div>
+        <p class="font-serif small-caps text-[0.9375rem] sm:text-[1.0625rem] tracking-[0.12em] text-[var(--color-accent-deep)]">
+          {t("home.lede")}
+        </p>
 
-    {/* Profession */}
-    <p class="mt-6 sm:mt-8 font-serif small-caps text-[0.9375rem] sm:text-[1.0625rem] tracking-[0.12em] text-white/90">
-      {t("home.lede")}
-    </p>
+        <h1
+          class="mt-4 sm:mt-5 font-serif text-[var(--color-ink)] leading-[0.95] tracking-[-0.02em]"
+          style="font-size: clamp(3rem, 7vw + 1rem, 6.5rem); font-weight: 300;"
+        >
+          {t("home.h1")}
+        </h1>
 
-    {/* Nom */}
-    <h1
-      class="mt-4 sm:mt-5 font-serif text-white leading-[0.95] tracking-[-0.02em]"
-      style="font-size: clamp(3.5rem, 9vw + 1rem, 8rem); font-weight: 300;"
-    >
-      {t("home.h1")}
-    </h1>
+        {/* Photo mobile */}
+        <div class="mt-8 md:hidden flex justify-center">
+          <div class="w-40 aspect-[3/4] relative bg-[var(--color-paper-deep)] p-[8px]">
+            <div class="absolute inset-[4px] border border-[var(--color-ink)]/10 pointer-events-none"></div>
+            <div class="relative h-full w-full overflow-hidden">
+              <Image
+                src={portraitEkaterina}
+                alt="Ekaterina Volova, psychologue specialisee en neuropsychologie"
+                widths={[200, 400]}
+                sizes="10rem"
+                format="webp"
+                quality={88}
+                class="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
 
-    {/* Lieu */}
-    <p class="mt-6 sm:mt-8 font-sans text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.25em] text-white/60">
-      Paris XVI<sup class="text-[0.5rem]">e</sup>
-      <span class="mx-3">&bull;</span>
-      Sur rendez-vous
-    </p>
+        <p class="mt-6 sm:mt-8 font-sans text-[0.75rem] sm:text-[0.8125rem] uppercase tracking-[0.25em] text-[var(--color-ink-muted)]">
+          Paris XVI<sup class="text-[0.5rem]">e</sup>
+          <span class="mx-3">&bull;</span>
+          Sur rendez-vous
+        </p>
 
-    {/* CTA */}
-    <a
-      href={contactHref}
-      class="mt-10 sm:mt-12 inline-block font-sans text-[0.875rem] font-semibold uppercase tracking-[0.18em] no-underline px-14 py-5 bg-white text-[#2E4A62] hover:bg-gray-100 transition-all duration-300"
-    >
-      {t("home.cta_primary")}
-    </a>
+        <p class="mt-8 font-serif text-[var(--color-ink-soft)] leading-[1.8] max-w-[36rem]"
+           style="font-size: clamp(0.9375rem, 0.3vw + 0.85rem, 1.0625rem);">
+          {t("site.description")}
+        </p>
 
-  </div>
-</header>
+        <div class="mt-6 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-faint)]">
+          Français
+          <span class="mx-2">&bull;</span>
+          Русский
+          <span class="mx-2">&bull;</span>
+          English
+        </div>
 
-{/* ─────────── Post-hero intro ─────────── */}
-<section class="bg-[var(--color-paper)]">
-  <div class="mx-auto max-w-[var(--container-prose)] px-6 sm:px-8 py-20 sm:py-28 text-center">
-    <h2 class="font-serif small-caps text-[var(--color-accent-deep)] tracking-[0.04em]"
-        style="font-size: clamp(1.5rem, 2vw + 0.75rem, 2rem); font-weight: 400;">
-      Ekaterina Volova
-    </h2>
-    <div class="flex justify-center my-8" aria-hidden="true">
-      <svg width="64" height="12" viewBox="0 0 64 12" fill="none">
-        <line x1="0" y1="6" x2="26" y2="6" stroke="var(--color-accent-deep)" stroke-width="0.5" opacity="0.4" />
-        <circle cx="32" cy="6" r="2" fill="var(--color-accent-deep)" opacity="0.5" />
-        <line x1="38" y1="6" x2="64" y2="6" stroke="var(--color-accent-deep)" stroke-width="0.5" opacity="0.4" />
-      </svg>
-    </div>
-    <p class="font-serif text-[var(--color-ink-soft)] leading-[1.9]"
-       style="font-size: clamp(1rem, 0.3vw + 0.9rem, 1.125rem);">
-      {t("site.description")}
-    </p>
-    <p class="mt-8 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-[var(--color-ink-muted)]">
-      Français
-      <span class="mx-2 text-[var(--color-rule)]">&bull;</span>
-      Русский
-      <span class="mx-2 text-[var(--color-rule)]">&bull;</span>
-      English
-    </p>
-  </div>
-</section>
+        <a
+          href={contactHref}
+          class="mt-10 sm:mt-12 inline-block font-sans text-[0.8125rem] sm:text-[0.875rem] font-semibold uppercase tracking-[0.14em] sm:tracking-[0.18em] no-underline px-8 sm:px-14 py-4 sm:py-5 bg-[#3A5A72] text-white hover:bg-[#2E4A62] transition-all duration-300 text-center"
+        >
+          {t("cta.book")}
+        </a>
+      </div>
 
-{/* ─────────── Portrait ─────────── */}
-<section class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
-  <div class="mx-auto max-w-[var(--container-content)] px-6 sm:px-8 py-16 sm:py-24">
-    <div class="flex justify-center">
-      <figure class="relative max-w-[22rem]">
-        <div class="aspect-[3/4] w-full relative bg-[var(--color-paper-deep)] p-[18px]">
-          <div class="absolute inset-[10px] border border-[var(--color-ink)]/10 pointer-events-none"></div>
+      {/* Photo desktop */}
+      <div class="hidden md:block">
+        <div class="aspect-[3/4] w-full relative bg-[var(--color-paper-deep)] p-[12px]">
+          <div class="absolute inset-[6px] border border-[var(--color-ink)]/10 pointer-events-none"></div>
           <div class="relative h-full w-full overflow-hidden">
             <Image
               src={portraitEkaterina}
-              alt="Ekaterina Volova, psychologue spécialisée en neuropsychologie"
+              alt="Ekaterina Volova, psychologue specialisee en neuropsychologie"
               widths={[400, 600, 900]}
-              sizes="22rem"
+              sizes="24rem"
               format="webp"
               quality={88}
               class="h-full w-full object-cover"
             />
           </div>
         </div>
-        <figcaption class="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.2em] text-[var(--color-ink-faint)] text-center">
-          Pl. I
-          <span class="mx-2.5 text-[var(--color-rule-soft)]">&mdash;</span>
-          Ekaterina Volova
-        </figcaption>
-      </figure>
+      </div>
+
     </div>
   </div>
-</section>
+</header>
 
-{/* ─────────── 02 — Pour qui ─────────── */}
-<section id="who" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+{/* ─────────── 02 — Neuropsychologie ─────────── */}
+<section id="neuropsychologie" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
@@ -294,44 +263,116 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           02
         </p>
         <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-          {t("home.who.title")}
+          {t("about.section1_title").replace(/\s*\?$/, "")}
         </p>
       </aside>
 
       <div class="max-w-[42rem]">
-        <p class="font-serif text-[1.375rem] sm:text-[1.5rem] leading-[1.45] text-[var(--color-ink)] tracking-[-0.012em]">
-          {t("home.who.intro")}
+        <h2 class="font-serif italic text-[1.625rem] sm:text-3xl leading-tight text-[var(--color-ink)] tracking-[-0.012em]">
+          {t("about.section1_title")}
+        </h2>
+        <p
+          class="mt-6 font-sans text-[var(--color-ink-soft)] leading-[1.75] text-justify"
+          lang={lang}
+        >
+          {t("about.section1_p1")}
         </p>
 
-        <div class="mt-12 pt-10 border-t border-[var(--color-rule)]">
-          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-5">
-            {t("home.who.indications_title")}
+        <h2 class="mt-16 font-serif italic text-[1.625rem] sm:text-3xl leading-tight text-[var(--color-ink)] tracking-[-0.012em]">
+          {t("about.section2_title")}
+        </h2>
+        <p
+          class="mt-6 font-sans text-[var(--color-ink-soft)] leading-[1.75] text-justify"
+          lang={lang}
+        >
+          {t("about.section2_p1")}
+        </p>
+
+        <div class="mt-12">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-6">
+            {t("about.section2_steps_intro").replace(/\s*:$/, "")}
           </p>
-          <p
-            class="font-sans text-[var(--color-ink-soft)] leading-[1.75]"
-            style="text-align: justify; hyphens: auto;"
-            lang={lang}
-          >
-            {t("home.who.indications")}
-          </p>
+          <ol class="border-y border-[var(--color-rule)] divide-y divide-[var(--color-rule)]">
+            {[
+              { title: t("about.section2_step1_title"), desc: t("about.section2_step1_desc") },
+              { title: t("about.section2_step2_title"), desc: t("about.section2_step2_desc") },
+              { title: t("about.section2_step3_title"), desc: t("about.section2_step3_desc") },
+            ].map((step, idx) => (
+              <li class="py-6 grid grid-cols-[3rem_minmax(0,1fr)] gap-6 items-baseline">
+                <span class="font-serif italic text-[var(--color-ink-faint)] text-2xl tabular-nums">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 class="font-serif text-[1.125rem] text-[var(--color-ink)] tracking-[-0.01em]" set:html={step.title} />
+                  <p class="mt-2 font-sans text-[var(--color-ink-soft)] leading-relaxed">
+                    {step.desc}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
-
-        <p class="mt-10 font-serif italic text-[var(--color-ink-muted)] text-[0.9375rem] leading-relaxed border-l-2 border-[var(--color-rule)] pl-5 text-justify">
-          {t("home.who.note")}
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-{/* ─────────── 03 — Quatre prestations ─────────── */}
-<section id="services" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+{/* ─────────── 03 — Pour qui ─────────── */}
+<section id="who" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
       <aside class="md:pt-3">
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           03
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          {t("home.who.title")}
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        <h2 class="font-serif italic text-[1.625rem] sm:text-3xl leading-tight text-[var(--color-ink)] tracking-[-0.012em]">
+          {t("home.who.title")}
+        </h2>
+        <p
+          class="mt-6 font-sans text-[var(--color-ink-soft)] leading-[1.75] text-justify"
+          lang={lang}
+        >
+          {t("home.who.intro")}
+        </p>
+
+        <div class="mt-12">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-6">
+            {t("home.who.indications_title")}
+          </p>
+          <ul class="border-y border-[var(--color-rule)] divide-y divide-[var(--color-rule)]">
+            {t("home.who.indications").split(". ").filter(Boolean).map((indication) => (
+              <li class="py-4 font-sans text-[var(--color-ink-soft)] leading-relaxed">
+                {indication.replace(/\.$/, "")}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {t("home.who.note") && (
+          <p class="mt-10 font-serif italic text-[var(--color-ink-muted)] text-[0.9375rem] leading-relaxed border-l-2 border-[var(--color-rule)] pl-5 text-justify">
+            {t("home.who.note")}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ─────────── 04 — Prestations ─────────── */}
+<section id="services" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          04
         </p>
         <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.services.title")}
@@ -367,10 +408,11 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 
         <div class="mt-14">
           <a
-            href={contactHref}
-            class="inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.16em] no-underline px-10 py-4 transition-all duration-300 bg-[#3A5A72] text-white hover:bg-[#2E4A62]"
+            href={getLocalizedPath("/prestations", lang)}
+            class="group inline-flex items-baseline gap-3 font-serif italic text-xl sm:text-2xl text-[var(--color-accent-deep)] no-underline border-b border-[var(--color-accent-deep)]/40 pb-1.5 hover:border-[var(--color-accent-deep)] transition-colors"
           >
-            {t("home.cta_primary")}
+            <span>{t("home.services.cta")}</span>
+            <span class="font-sans not-italic text-lg transition-transform group-hover:translate-x-1">&#8594;</span>
           </a>
         </div>
 
@@ -379,58 +421,43 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
   </div>
 </section>
 
-{/* ─────────── 04 — Déroulé du bilan ─────────── */}
-<section id="process" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
-    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
-
-      <aside class="md:pt-3">
-        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
-          04
-        </p>
-        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
-          {t("home.process.title")}
-        </p>
-      </aside>
-
-      <ol class="space-y-12 max-w-[42rem]">
-        {processSteps.map((step, idx) => (
-          <li class="grid grid-cols-[4rem_minmax(0,1fr)] gap-6">
-            <span class="font-serif italic text-3xl text-[var(--color-accent-deep)] tabular-nums leading-none pt-1">
-              {String(idx + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <h3 class="font-serif text-[1.25rem] text-[var(--color-ink)] tracking-[-0.01em]">
-                {step.title}
-              </h3>
-              <p class="mt-2 font-sans text-[var(--color-ink-soft)] leading-relaxed text-justify">
-                {step.desc}
-              </p>
-            </div>
-          </li>
-        ))}
-      </ol>
-
-      <div class="mt-14 md:col-start-2">
-          <a
-            href={contactHref}
-            class="inline-block font-sans text-[0.8125rem] font-semibold uppercase tracking-[0.16em] no-underline px-10 py-4 transition-all duration-300 bg-[#3A5A72] text-white hover:bg-[#2E4A62]"
-          >
-            {t("home.cta_primary")}
-          </a>
-        </div>
-    </div>
-  </div>
-</section>
-
-{/* ─────────── 05 — Langues ─────────── */}
-<section id="languages" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+{/* ─────────── 05 — Remédiation cognitive ─────────── */}
+<section id="remediation" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
       <aside class="md:pt-3">
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
           05
+        </p>
+        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+          Remédiation
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem]">
+        <h2 class="font-serif italic text-[1.625rem] sm:text-3xl leading-tight text-[var(--color-ink)] tracking-[-0.012em]">
+          {t("home.remediation.title")}
+        </h2>
+        <p
+          class="mt-6 font-sans text-[var(--color-ink-soft)] leading-[1.75] text-justify"
+          lang={lang}
+        >
+          {t("home.remediation.desc")}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ─────────── 06 — Langues ─────────── */}
+<section id="languages" class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          06
         </p>
         <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("home.languages.title")}
@@ -461,14 +488,14 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
   </div>
 </section>
 
-{/* ─────────── 06 — Cabinet ─────────── */}
+{/* ─────────── 07 — Cabinet ─────────── */}
 <section id="cabinet" class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
     <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
 
       <aside class="md:pt-3">
         <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
-          06
+          07
         </p>
         <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
           {t("footer.cabinet_label")}
@@ -514,6 +541,16 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           </div>
         </div>
 
+        {/* Doctolib */}
+        <div class="mt-6">
+          <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
+            Doctolib
+          </p>
+          <p class="mt-2 font-serif text-lg text-[var(--color-ink-muted)] italic">
+            {lang === "ru" ? "Скоро" : lang === "en" ? "Coming soon" : "Bientot disponible"}
+          </p>
+        </div>
+
         {/* Remboursement */}
         <div class="mt-6">
           <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)]">
@@ -524,7 +561,12 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
           </p>
         </div>
 
-        {/* Accès — pastilles RATP officielles + texte serif lisible */}
+        {/* Carte Leaflet + OpenStreetMap */}
+        <div class="mt-14 relative aspect-[16/9] sm:aspect-[2/1] border border-[var(--color-rule)] bg-[var(--color-paper-deep)]">
+          <div id="cabinet-map" class="absolute inset-0 w-full h-full z-0"></div>
+        </div>
+
+        {/* Acces -- pastilles RATP officielles + texte serif lisible */}
         <div class="mt-14 pt-10 border-t border-[var(--color-rule)]">
           <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-[var(--color-ink-muted)] mb-8">
             {cab.accessTitle}
@@ -532,7 +574,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
 
           <ul class="space-y-6">
 
-            {/* Accessibilité */}
+            {/* Accessibilite */}
             <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
               <span class="w-9 h-9 rounded-full bg-[var(--color-accent-deep)] inline-flex items-center justify-center text-white translate-y-[0.15em]"
                     aria-label={cab.pmr}>
@@ -550,7 +592,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
               </div>
             </li>
 
-            {/* Métro ligne 6 */}
+            {/* Metro ligne 6 */}
             <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
               <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-full bg-[#79BB92] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
                     aria-label={`${cab.metro} 6`}>
@@ -565,7 +607,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
               </div>
             </li>
 
-            {/* Métro ligne 9 */}
+            {/* Metro ligne 9 */}
             <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
               <span class="font-sans font-semibold text-white text-[0.9375rem] tabular-nums w-9 h-9 rounded-full bg-[#CDC932] inline-flex items-center justify-center leading-none translate-y-[0.15em]"
                     aria-label={`${cab.metro} 9`}>
@@ -642,7 +684,7 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
               </div>
             </li>
 
-            {/* Vélib' */}
+            {/* Velib' */}
             <li class="grid grid-cols-[auto_minmax(0,1fr)] gap-5 items-baseline">
               <span class="w-9 h-9 rounded-full bg-[#7fba4c] inline-flex items-center justify-center text-white translate-y-[0.15em]"
                     aria-label={cab.velib}>
@@ -674,11 +716,6 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
               <p>{cab.onSiteInterphone}</p>
               <p class="text-[var(--color-ink-soft)]">{cab.onSiteDirections}</p>
             </div>
-          </div>
-
-          {/* Carte Leaflet + OpenStreetMap */}
-          <div class="mt-10 relative aspect-[16/9] sm:aspect-[2/1] border border-[var(--color-rule)] bg-[var(--color-paper-deep)]">
-            <div id="cabinet-map" class="absolute inset-0 w-full h-full z-0"></div>
           </div>
 
           <script is:inline>
@@ -801,48 +838,3 @@ const aboutHref = getLocalizedPath("/a-propos", lang);
   </div>
 </section>
 
-{/* ─────────── 07 — Prescripteurs (finale) ─────────── */}
-<section id="prescribers" class="bg-[#3A5A72] text-white border-t border-[#3A5A72]">
-  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
-    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
-
-      <aside class="md:pt-3">
-        <p class="font-serif italic text-white/70 text-5xl sm:text-6xl leading-none tracking-tight">
-          07
-        </p>
-        <p class="mt-4 font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-white/55">
-          {t("home.prescribers.cta")}
-        </p>
-      </aside>
-
-      <div class="max-w-[42rem]">
-        <h2 class="font-serif italic text-white leading-[1.05] tracking-[-0.018em]"
-            style="font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem);">
-          {t("home.prescribers.title")}
-        </h2>
-
-        <p class="mt-8 font-sans text-white/80 leading-relaxed text-lg max-w-[36rem] text-justify">
-          {t("home.prescribers.desc")}
-        </p>
-
-        <div class="mt-12 flex flex-col sm:flex-row items-start sm:items-baseline gap-6 sm:gap-10">
-          <a
-            href={contactHref}
-            class="group inline-flex items-baseline gap-3 font-serif italic text-xl sm:text-2xl text-white no-underline border-b border-white/70 pb-1.5 hover:border-white transition-colors"
-          >
-            <span>{t("home.prescribers.cta")}</span>
-            <span class="font-sans not-italic text-lg transition-transform group-hover:translate-x-1">→</span>
-          </a>
-
-          <a
-            href={aboutHref}
-            class="inline-flex items-baseline gap-3 font-sans text-[0.875rem] uppercase tracking-[0.14em] text-white/75 no-underline hover:text-white transition-colors py-1"
-          >
-            <span>{t("nav.about")}</span>
-            <span>→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
