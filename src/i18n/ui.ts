@@ -57,7 +57,7 @@ export const ui = {
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Psychologue spécialisée en neuropsychologie",
-    "home.cta_primary": "Prendre rendez-vous",
+    "home.cta_primary": "Doctolib",
     "home.cta_secondary": "Réserver une consultation",
 
     "home.who.title": "Pour qui je consulte",
@@ -212,7 +212,7 @@ export const ui = {
 
     "home.h1": "Екатерина Волова",
     "home.lede": "Нейропсихолог",
-    "home.cta_primary": "Записаться на приём",
+    "home.cta_primary": "Doctolib",
     "home.cta_secondary": "Записаться на консультацию",
 
     "home.who.title": "Кому я могу помочь",
@@ -367,7 +367,7 @@ export const ui = {
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Neuropsychologist",
-    "home.cta_primary": "Book an appointment",
+    "home.cta_primary": "Doctolib",
     "home.cta_secondary": "Book a consultation",
 
     "home.who.title": "Who I see",
