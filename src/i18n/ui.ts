@@ -89,6 +89,9 @@ export const ui = {
     "prestations.remediation_desc": "Séances de 45 minutes visant à travailler et stimuler certaines fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou la vitesse de traitement à l'aide d'exercices adaptés au profil et aux difficultés du patient. La prise en charge a pour objectif de renforcer les capacités cognitives préservées, développer des stratégies de compensation et améliorer le fonctionnement au quotidien.",
     "prestations.remediation_price": "65 €",
 
+    "home.remediation.title": "Qu'est-ce qu'une remédiation et stimulation cognitive ?",
+    "home.remediation.desc": "La remédiation et la stimulation cognitives sont des prises en charge visant à travailler différentes fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou le langage à l'aide d'exercices adaptés au profil du patient. Elles ont pour objectif de renforcer les capacités préservées, développer des stratégies de compensation et favoriser le maintien de l'autonomie au quotidien.",
+
     "home.services.title": "Prestations",
     "home.services.s1_title": "Bilan diagnostique",
     "home.services.s1_desc":
@@ -280,6 +283,9 @@ export const ui = {
     "prestations.remediation_desc": "Сеансы продолжительностью 45 минут, направленные на тренировку и стимуляцию определённых когнитивных функций, таких как память, внимание, исполнительные функции или скорость обработки информации, с помощью упражнений, адаптированных к профилю и трудностям пациента. Цель сопровождения - укрепить сохранные когнитивные способности, выработать компенсаторные стратегии и улучшить повседневное функционирование.",
     "prestations.remediation_price": "65 €",
 
+    "home.remediation.title": "Что такое когнитивная реабилитация и стимуляция?",
+    "home.remediation.desc": "Когнитивная реабилитация и стимуляция - это виды помощи, направленные на тренировку различных когнитивных функций, таких как память, внимание, исполнительные функции или речь, с помощью упражнений, адаптированных к профилю пациента. Их цель - укрепить сохранные способности, выработать компенсаторные стратегии и способствовать поддержанию самостоятельности в повседневной жизни.",
+
     "home.services.title": "Услуги",
     "home.services.s1_title": "Диагностическое обследование",
     "home.services.s1_desc":
@@ -470,6 +476,9 @@ export const ui = {
     "prestations.remediation_title": "Cognitive remediation and stimulation",
     "prestations.remediation_desc": "45-minute sessions aimed at exercising and stimulating specific cognitive functions such as memory, attention, executive functions or processing speed, using exercises tailored to the patient's profile and difficulties. The goal is to strengthen preserved cognitive abilities, develop compensatory strategies and improve everyday functioning.",
     "prestations.remediation_price": "€65",
+
+    "home.remediation.title": "What is cognitive remediation and stimulation?",
+    "home.remediation.desc": "Cognitive remediation and stimulation are interventions aimed at exercising various cognitive functions such as memory, attention, executive functions or language, using exercises tailored to the patient's profile. Their goal is to strengthen preserved abilities, develop compensatory strategies and support the maintenance of everyday independence.",
 
     "home.services.title": "Services",
     "home.services.s1_title": "Diagnostic assessment",
