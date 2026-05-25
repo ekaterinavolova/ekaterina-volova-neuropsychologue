@@ -1,0 +1,16 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import PrestationsContent from "~/components/PrestationsContent.astro";
+import { useTranslations, getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  canonicalPath="/prestations"
+  title={t("prestations.title")}
+  description={t("prestations.description")}
+>
+  <PrestationsContent />
+</BaseLayout>

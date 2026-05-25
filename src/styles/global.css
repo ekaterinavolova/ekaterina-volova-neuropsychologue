@@ -28,10 +28,10 @@
   --color-paper-warm: oklch(0.965 0.012 70);   /* Sections alternées */
   --color-paper-deep: oklch(0.93 0.008 80);    /* Cartes, encarts */
 
-  /* Accent principal : bleu ciel foncé, cerulean / azur profond */
-  --color-accent: oklch(0.55 0.14 235);
-  --color-accent-soft: oklch(0.93 0.04 235);
-  --color-accent-deep: oklch(0.42 0.16 240);
+  /* Accent principal : bleu ciel doux #a9c7ee */
+  --color-accent: oklch(0.82 0.064 255);
+  --color-accent-soft: oklch(0.94 0.025 255);
+  --color-accent-deep: oklch(0.60 0.10 255);
 
   /* Accent secondaire : rose poudré (Regency / Bridgerton, détails délicats) */
   --color-rose: oklch(0.86 0.05 18);

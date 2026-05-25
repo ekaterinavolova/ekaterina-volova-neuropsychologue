@@ -8,36 +8,21 @@ import Ornament from "./Ornament.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const services = [
+const bilanSteps = [
   {
-    title: t("home.services.s1_title"),
-    desc: t("home.services.s1_desc"),
-    price: t("home.services.s1_price"),
+    title: t("about.section2_step1_title"),
+    desc: t("about.section2_step1_desc"),
   },
   {
-    title: t("home.services.s2_title"),
-    desc: t("home.services.s2_desc"),
-    price: t("home.services.s2_price"),
+    title: t("about.section2_step2_title"),
+    desc: t("about.section2_step2_desc"),
   },
   {
-    title: t("home.services.s3_title"),
-    desc: t("home.services.s3_desc"),
-    price: t("home.services.s3_price"),
-  },
-  {
-    title: t("home.services.s4_title"),
-    desc: t("home.services.s4_desc"),
-    price: t("home.services.s4_price"),
-    note: t("home.services.note_supervised"),
+    title: t("about.section2_step3_title"),
+    desc: t("about.section2_step3_desc"),
   },
 ];
 
-const processSteps = [
-  { title: t("home.process.step1_title"), desc: t("home.process.step1_desc") },
-  { title: t("home.process.step2_title"), desc: t("home.process.step2_desc") },
-  { title: t("home.process.step3_title"), desc: t("home.process.step3_desc") },
-  { title: t("home.process.step4_title"), desc: t("home.process.step4_desc") },
-];
 ---
 
 {/* Hero */}
@@ -69,136 +54,86 @@ const processSteps = [
   </Container>
 </Section>
 
-{/* Pour qui */}
-<Section tone="warm" spacing="normal" as="section" id="who">
+{/* Neuropsychologie + bilan */}
+<Section tone="warm" spacing="normal" as="section" id="discipline">
   <Container width="content">
     <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
-    <h2 class="font-serif italic text-center">{t("home.who.title")}</h2>
-    <p class="mt-8 text-[var(--color-ink-soft)] max-w-[44rem] mx-auto regency-dropcap">
-      {t("home.who.intro")}
-    </p>
 
-    <div class="mt-10 max-w-[44rem] mx-auto">
-      <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-3">
-        {t("home.who.indications_title")}
-      </p>
-      <p class="text-[var(--color-ink-soft)] leading-relaxed">{t("home.who.indications")}</p>
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section1_title")}
+    </h2>
+
+    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section1_p1")}</p>
     </div>
 
-    <p class="mt-8 text-sm text-[var(--color-ink-muted)] max-w-[44rem] mx-auto italic">
-      {t("home.who.note")}
-    </p>
-  </Container>
-</Section>
+    <h2 class="mt-10 font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section2_title")}
+    </h2>
 
-{/* Prestations */}
-<Section tone="paper" spacing="normal" as="section" id="services">
-  <Container width="wide">
-    <Ornament tone="gold" spacing="sm" class="!mt-0 !mb-12" />
-    <h2 class="font-serif italic text-center">{t("home.services.title")}</h2>
+    <div class="mt-6 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section2_p1")}</p>
+    </div>
 
-    <div class="mt-12 grid gap-px bg-[var(--color-rule-soft)] sm:grid-cols-2 border border-[var(--color-rule-soft)]">
-      {services.map((s) => (
-        <article class="bg-[var(--color-paper)] p-8 sm:p-10 flex flex-col">
-          <div class="flex items-baseline justify-between gap-4 mb-3">
-            <h3 class="font-serif text-[var(--color-ink)]">{s.title}</h3>
-            <span class="shrink-0 text-sm font-medium tabular-nums text-[var(--color-accent-deep)]">
-              {s.price}
+    <div class="mt-6 max-w-[44rem] mx-auto">
+      <h3 class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-ink)] mb-3">
+        {t("about.section2_steps_intro")}
+      </h3>
+      <ol class="space-y-4">
+        {bilanSteps.map((step, idx) => (
+          <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
+            <span class="font-serif italic text-3xl text-[var(--color-rose-deep)] tabular-nums">
+              {idx + 1}
             </span>
-          </div>
-          <p class="text-[var(--color-ink-soft)] leading-relaxed flex-1">{s.desc}</p>
-          {s.note && (
-            <p class="mt-4 font-serif italic text-xs tracking-wider text-[var(--color-rose-deep)]">
-              {s.note}
-            </p>
-          )}
-        </article>
-      ))}
-    </div>
-
-    <div class="mt-10 text-center">
-      <a
-        href={getLocalizedPath("/prestations", lang)}
-        class="text-[var(--color-ink)] text-[0.9375rem] decoration-[var(--color-rule)] hover:decoration-[var(--color-accent)]"
-      >
-        {t("home.services.cta")} →
-      </a>
+            <div>
+              <h3 class="font-serif text-base font-bold" set:html={step.title} />
+              <p class="mt-2 text-[var(--color-ink-soft)] leading-relaxed text-justify">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </Container>
 </Section>
 
-{/* Process */}
-<Section tone="warm" spacing="normal" as="section" id="process">
+
+
+
+{/* Contact */}
+<Section tone="warm" spacing="normal" as="section" id="contact">
   <Container width="content">
     <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
-    <h2 class="font-serif italic text-center">{t("home.process.title")}</h2>
+    <h2 class="font-serif italic text-center">{t("cta.contact")}</h2>
 
-    <ol class="mt-14 space-y-10">
-      {processSteps.map((step, idx) => (
-        <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
-          <span class="font-serif italic text-3xl text-[var(--color-rose-deep)] tabular-nums">
-            {String(idx + 1).padStart(2, "0")}
-          </span>
-          <div>
-            <h3 class="font-serif">{step.title}</h3>
-            <p class="mt-2 text-[var(--color-ink-soft)] leading-relaxed">{step.desc}</p>
-          </div>
-        </li>
-      ))}
-    </ol>
-  </Container>
-</Section>
-
-{/* Langues */}
-<Section tone="paper" spacing="normal" as="section" id="languages">
-  <Container width="content">
-    <Ornament tone="gold" spacing="sm" class="!mt-0 !mb-12" />
-    <h2 class="font-serif italic text-center">{t("home.languages.title")}</h2>
-
-    <ul class="mt-12 space-y-6 max-w-[42rem] mx-auto">
-      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="fr">Français</span>
-        <span class="text-[var(--color-ink-soft)]">{t("home.languages.fr").replace(/^Français — /, "").replace(/^Français - /, "")}</span>
+    <ul class="mt-10 space-y-6 max-w-[28rem] mx-auto">
+      <li class="flex items-center gap-4">
+        <svg class="w-5 h-5 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        <a href="tel:+33666074254" class="text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] no-underline">
+          +33 6 66 07 42 54
+        </a>
       </li>
-      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="ru">Русский</span>
-        <span class="text-[var(--color-ink-soft)]">{t("home.languages.ru").replace(/^Русский — /, "").replace(/^Русский - /, "")}</span>
+      <li class="flex items-center gap-4">
+        <svg class="w-5 h-5 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </svg>
+        <a href="mailto:volova.neuropsy@gmail.com" class="text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] no-underline">
+          volova.neuropsy@gmail.com
+        </a>
       </li>
-      <li class="grid grid-cols-[5rem_1fr] gap-4 items-baseline">
-        <span class="font-serif italic text-lg text-[var(--color-accent-deep)]" lang="en">English</span>
-        <span class="text-[var(--color-ink-soft)]">{t("home.languages.en").replace(/^English — /, "").replace(/^English - /, "")}</span>
+      <li class="flex items-start gap-4">
+        <svg class="w-5 h-5 shrink-0 text-[var(--color-accent-deep)] mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <address class="not-italic text-[var(--color-ink-soft)] leading-relaxed">
+          14 rue Nicolo<br />
+          75116 Paris
+        </address>
       </li>
     </ul>
-  </Container>
-</Section>
-
-{/* Prescripteurs + CTA finale */}
-<Section tone="deep" spacing="normal" as="section" id="prescribers">
-  <Container width="content">
-    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
-    <div class="grid gap-12 md:grid-cols-2 items-start">
-      <div>
-        <h2 class="font-serif italic">{t("home.prescribers.title")}</h2>
-        <p class="mt-4 text-[var(--color-ink-soft)]">{t("home.prescribers.desc")}</p>
-        <div class="mt-6">
-          <Button href={getLocalizedPath("/contact", lang)} variant="secondary">
-            {t("home.prescribers.cta")}
-          </Button>
-        </div>
-      </div>
-
-      <div class="md:border-l md:border-[var(--color-rose)] md:pl-12">
-        <p class="font-serif italic text-[0.8125rem] tracking-[0.08em] text-[var(--color-rose-deep)] mb-3">
-          {t("footer.cabinet_label")}
-        </p>
-        <address class="not-italic text-[var(--color-ink-soft)] leading-relaxed">
-          Cabinet Via SANA Parmentier<br />
-          4 rue Pierre Levée<br />
-          75011 Paris
-        </address>
-        <p class="mt-6 text-sm text-[var(--color-ink-muted)] italic">{t("footer.opening_note")}</p>
-      </div>
-    </div>
     <Ornament tone="gold" spacing="md" class="!mb-0" />
   </Container>
 </Section>

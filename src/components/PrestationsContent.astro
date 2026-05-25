@@ -1,0 +1,93 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Button from "./Button.astro";
+import Ornament from "./Ornament.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const bilansDetailles = [
+  {
+    title: t("prestations.bilan_1"),
+    desc: t("prestations.bilan_1_desc"),
+    price: t("prestations.bilan_1_price"),
+  },
+  {
+    title: t("prestations.bilan_2"),
+    desc: t("prestations.bilan_2_desc"),
+    price: t("prestations.bilan_2_price"),
+  },
+  {
+    title: t("prestations.bilan_3"),
+    desc: t("prestations.bilan_3_desc"),
+    price: t("prestations.bilan_3_price"),
+  },
+  {
+    title: t("prestations.bilan_4"),
+    desc: t("prestations.bilan_4_desc"),
+    price: t("prestations.bilan_4_price"),
+  },
+];
+
+---
+
+<Section tone="paper" spacing="loose" as="header">
+  <Container width="content">
+    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
+    <h1 class="font-serif italic text-center">{t("home.services.title")}</h1>
+    <p class="mt-6 text-center">
+      <a href={getLocalizedPath("/contact", lang)} class="font-medium text-[var(--color-accent-deep)] hover:underline">
+        {t("cta.book")}
+      </a>
+    </p>
+  </Container>
+</Section>
+
+{/* Premier entretien clinique */}
+<Section tone="warm" spacing="normal" as="section">
+  <Container width="content">
+    <div class="max-w-[44rem] mx-auto">
+      <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
+        <p class="font-serif text-[var(--color-ink)] text-center text-lg">{t("prestations.entretien_title")}</p>
+        <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{t("prestations.entretien_desc")}</p>
+        <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{t("prestations.entretien_price")}</p>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+{/* Bilans neuropsychologiques */}
+<Section tone="paper" spacing="normal" as="section">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("prestations.bilans_title")}
+    </h2>
+
+    <div class="mt-10 max-w-[44rem] mx-auto flex flex-col gap-4">
+      {bilansDetailles.map((b) => (
+        <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
+          <p class="font-serif text-[var(--color-ink)] text-center text-lg">{b.title}</p>
+          <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{b.desc}</p>
+          <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{b.price}</p>
+        </div>
+      ))}
+    </div>
+
+  </Container>
+</Section>
+
+{/* Remédiation et stimulation cognitive */}
+<Section tone="warm" spacing="normal" as="section">
+  <Container width="content">
+    <div class="max-w-[44rem] mx-auto">
+      <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
+        <p class="font-serif text-[var(--color-ink)] text-center text-lg">{t("prestations.remediation_title")}</p>
+        <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{t("prestations.remediation_desc")}</p>
+        <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{t("prestations.remediation_price")}</p>
+      </div>
+    </div>
+  </Container>
+</Section>
+
