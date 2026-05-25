@@ -23,49 +23,31 @@ const homeHref = getLocalizedPath("/", lang);
 ---
 
 <header class="sticky top-0 z-40">
-  {/* Top bar - dark */}
-  <div class="dark-surface bg-[var(--color-accent-deep)] border-b border-white/10">
+  {/* Top bar */}
+  <div class="bg-[#1E2D3F] text-white">
     <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8">
       <div class="flex items-center justify-between h-10 sm:h-11 text-[0.75rem]">
-
-        {/* Left: phone */}
-        <a
-          href="tel:+33666074254"
-          class="inline-flex items-center gap-2 no-underline text-white/70 hover:text-white transition-colors"
-          aria-label="Appeler le cabinet"
-        >
+        <a href="tel:+33666074254" class="inline-flex items-center gap-2 no-underline text-white/80 hover:text-white transition-colors" aria-label="Appeler le cabinet">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
           </svg>
           <span class="hidden sm:inline tabular-nums tracking-tight">06 66 07 42 54</span>
         </a>
-
-        {/* Center: address */}
-        <span class="hidden md:block font-sans text-[0.6875rem] uppercase tracking-[0.15em] text-white/50">
-          14 rue Nicolo, 75116 Paris
-        </span>
-
-        {/* Right: lang switcher */}
+        <span class="hidden md:block font-sans text-[0.6875rem] uppercase tracking-[0.15em] text-white/50">14 rue Nicolo, 75116 Paris</span>
         <LangSwitcher tone="dark" class="text-[0.75rem]" />
       </div>
     </div>
   </div>
 
-  {/* Nav bar - light */}
-  <div class="bg-[var(--color-paper)]/95 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
+  {/* Nav bar */}
+  <div class="bg-white border-b border-gray-200">
     <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8">
       <div class="flex items-center justify-between h-14 sm:h-16">
-
-        {/* Logo + name */}
-        <a
-          href={homeHref}
-          class="no-underline group shrink-0 flex items-center gap-2"
-          aria-label="Ekaterina Volova"
-        >
+        <a href={homeHref} class="no-underline group shrink-0 flex items-center gap-2" aria-label="Ekaterina Volova">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-7 h-7 shrink-0" aria-hidden="true">
-            <g fill="var(--color-accent-deep)" stroke="none">
-              <rect x="4" y="4" width="72" height="72" fill="none" stroke="var(--color-accent-deep)" stroke-width="1.8" />
-              <rect x="8" y="8" width="64" height="64" fill="none" stroke="var(--color-accent-deep)" stroke-width="0.5" />
+            <g fill="#3A5A72" stroke="none">
+              <rect x="4" y="4" width="72" height="72" fill="none" stroke="#3A5A72" stroke-width="1.8" />
+              <rect x="8" y="8" width="64" height="64" fill="none" stroke="#3A5A72" stroke-width="0.5" />
               <rect x="15" y="20" width="4" height="40" />
               <polygon points="13,20 15,20 15,21.2 13,21.2" />
               <polygon points="13,58.8 15,58.8 15,60 13,60" />
@@ -83,44 +65,33 @@ const homeHref = getLocalizedPath("/", lang);
               <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
             </g>
           </svg>
-          <span class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-accent-deep)] group-hover:text-[var(--color-ink)] transition-colors">
+          <span class="font-serif italic text-base sm:text-lg tracking-tight text-[#3A5A72] group-hover:text-[#2E4A62] transition-colors">
             Ekaterina Volova
           </span>
         </a>
 
-        {/* Desktop nav */}
         <nav aria-label="Navigation principale" class="hidden lg:flex items-center gap-6 text-[0.8125rem] uppercase tracking-[0.14em]">
-          {
-            navItems.map((item) => {
-              const href = getLocalizedPath(item.href, lang);
-              const active = isActive(item.href);
-              return (
-                <a
-                  href={href}
-                  class:list={[
-                    "py-2 px-1 no-underline transition-colors",
-                    active
-                      ? "text-[var(--color-accent-deep)]"
-                      : "text-[var(--color-ink-muted)] hover:text-[var(--color-accent-deep)]",
-                  ]}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {item.label}
-                </a>
-              );
-            })
-          }
+          {navItems.map((item) => {
+            const href = getLocalizedPath(item.href, lang);
+            const active = isActive(item.href);
+            return (
+              <a
+                href={href}
+                class:list={[
+                  "py-2 px-1 no-underline transition-colors",
+                  active
+                    ? "text-[#3A5A72] font-medium"
+                    : "text-gray-500 hover:text-[#3A5A72]",
+                ]}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
-        {/* Mobile burger */}
-        <button
-          type="button"
-          id="menu-toggle"
-          class="lg:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-[var(--color-ink)] hover:text-[var(--color-accent-deep)] transition-colors"
-          aria-label={t("header.menu_open")}
-          aria-expanded="false"
-          aria-controls="site-menu"
-        >
+        <button type="button" id="menu-toggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10 -mr-2 text-gray-700 hover:text-[#3A5A72] transition-colors" aria-label={t("header.menu_open")} aria-expanded="false" aria-controls="site-menu">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" aria-hidden="true">
             <line x1="3" y1="8" x2="19" y2="8"></line>
             <line x1="3" y1="14" x2="19" y2="14"></line>
@@ -128,34 +99,25 @@ const homeHref = getLocalizedPath("/", lang);
         </button>
       </div>
 
-      {/* Mobile drawer */}
-      <div
-        id="site-menu"
-        class="hidden lg:hidden border-t border-[var(--color-rule-soft)] py-5"
-        aria-hidden="true"
-      >
+      <div id="site-menu" class="hidden lg:hidden border-t border-gray-200 py-5" aria-hidden="true">
         <nav aria-label="Navigation principale" class="flex flex-col gap-1">
-          {
-            navItems.map((item) => {
-              const href = getLocalizedPath(item.href, lang);
-              const active = isActive(item.href);
-              return (
-                <a
-                  href={href}
-                  class:list={[
-                    "px-2 py-3.5 text-[0.875rem] uppercase tracking-[0.14em] no-underline transition-colors",
-                    active
-                      ? "text-[var(--color-accent-deep)]"
-                      : "text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]",
-                  ]}
-                  aria-current={active ? "page" : undefined}
-                >
-                  {item.label}
-                </a>
-              );
-            })
-          }
-          <div class="sm:hidden pt-4 mt-3 border-t border-[var(--color-rule-soft)]">
+          {navItems.map((item) => {
+            const href = getLocalizedPath(item.href, lang);
+            const active = isActive(item.href);
+            return (
+              <a
+                href={href}
+                class:list={[
+                  "px-2 py-3.5 text-[0.875rem] uppercase tracking-[0.14em] no-underline transition-colors",
+                  active ? "text-[#3A5A72]" : "text-gray-500 hover:text-gray-700",
+                ]}
+                aria-current={active ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+          <div class="sm:hidden pt-4 mt-3 border-t border-gray-200">
             <LangSwitcher tone="light" class="px-2" />
           </div>
         </nav>
@@ -167,7 +129,6 @@ const homeHref = getLocalizedPath("/", lang);
 <script>
   const toggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("site-menu");
-
   if (toggle && menu) {
     toggle.addEventListener("click", () => {
       const isOpen = toggle.getAttribute("aria-expanded") === "true";

@@ -9,15 +9,14 @@ const contactHref = getLocalizedPath("/contact", lang);
 const legalHref = getLocalizedPath("/mentions-legales", lang);
 ---
 
-<footer class="mt-auto dark-surface bg-[var(--color-accent-deep)] border-t border-white/10">
+<footer class="mt-auto bg-[#1E2D3F] text-white">
   <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-20 sm:py-28">
 
-    {/* Monogramme centre */}
     <div class="text-center mb-16">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" class="w-12 h-12 mx-auto opacity-40" aria-hidden="true">
-        <g fill="currentColor" stroke="none">
-          <rect x="4" y="4" width="72" height="72" fill="none" stroke="currentColor" stroke-width="1.8" />
-          <rect x="8" y="8" width="64" height="64" fill="none" stroke="currentColor" stroke-width="0.5" />
+        <g fill="white" stroke="none">
+          <rect x="4" y="4" width="72" height="72" fill="none" stroke="white" stroke-width="1.8" />
+          <rect x="8" y="8" width="64" height="64" fill="none" stroke="white" stroke-width="0.5" />
           <rect x="15" y="20" width="4" height="40" />
           <polygon points="13,20 15,20 15,21.2 13,21.2" />
           <polygon points="13,58.8 15,58.8 15,60 13,60" />
@@ -35,74 +34,38 @@ const legalHref = getLocalizedPath("/mentions-legales", lang);
           <polygon points="67.2,20 69,20 69,21.2 67.2,21.2" />
         </g>
       </svg>
-      <p class="mt-4 font-serif small-caps tracking-[0.08em] text-sm opacity-50">
+      <p class="mt-4 font-serif small-caps tracking-[0.08em] text-sm text-white/50">
         Ekaterina Volova
       </p>
     </div>
 
     <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-
-      {/* Colonne 1 : signature praticienne */}
       <div>
-        <p class="font-serif italic text-xl tracking-tight">
-          Ekaterina Volova
-        </p>
-        <p class="mt-2 font-sans text-[0.8125rem] opacity-70 leading-relaxed">
-          {t("footer.profession")}
-        </p>
-        <p class="mt-5 font-mono text-[0.8125rem] tabular-nums tracking-tight opacity-50">
-          {t("footer.rpps")}
-        </p>
+        <p class="font-serif italic text-xl text-white tracking-tight">Ekaterina Volova</p>
+        <p class="mt-2 font-sans text-[0.8125rem] text-white/70 leading-relaxed">{t("footer.profession")}</p>
+        <p class="mt-5 font-mono text-[0.8125rem] tabular-nums tracking-tight text-white/50">{t("footer.rpps")}</p>
       </div>
 
-      {/* Colonne 2 : cabinet */}
       <div>
-        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] opacity-50 mb-4">
-          {t("footer.cabinet_label")}
-        </p>
-        <address class="not-italic font-serif leading-relaxed">
-          14 rue Nicolo<br />
-          75116 Paris
-        </address>
-        <p class="mt-4 font-serif italic text-[0.9375rem] opacity-50">
-          {t("footer.opening_note")}
-        </p>
-        <p class="mt-2 font-serif text-[0.9375rem] opacity-70">
-          {t("cabinet.hours")}
-        </p>
+        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-white/50 mb-4">{t("footer.cabinet_label")}</p>
+        <address class="not-italic font-serif text-white leading-relaxed">14 rue Nicolo<br />75116 Paris</address>
+        <p class="mt-4 font-serif italic text-[0.9375rem] text-white/50">{t("footer.opening_note")}</p>
+        <p class="mt-2 font-serif text-[0.9375rem] text-white/70">{t("cabinet.hours")}</p>
       </div>
 
-      {/* Colonne 3 : prise de contact */}
       <div>
-        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] opacity-50 mb-4">
-          {t("footer.contact_label")}
-        </p>
-        <div class="font-serif leading-relaxed space-y-2">
-          <p>
-            <a href="tel:+33666074254" class="no-underline hover:opacity-70 transition-opacity">
-              06 66 07 42 54
-            </a>
-          </p>
-          <p>
-            <a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:opacity-70 transition-opacity">
-              volova.neuropsy@gmail.com
-            </a>
-          </p>
+        <p class="font-sans text-[0.8125rem] uppercase tracking-[0.16em] text-white/50 mb-4">{t("footer.contact_label")}</p>
+        <div class="font-serif text-white leading-relaxed space-y-2">
+          <p><a href="tel:+33666074254" class="no-underline text-white hover:text-white/70 transition-opacity">06 66 07 42 54</a></p>
+          <p><a href="mailto:volova.neuropsy@gmail.com" class="no-underline text-white hover:text-white/70 transition-opacity">volova.neuropsy@gmail.com</a></p>
         </div>
       </div>
     </div>
 
     <div class="mt-16 sm:mt-20 pt-6 border-t border-white/15">
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] opacity-40">
-        <p>
-          &copy; {currentYear} Ekaterina Volova
-        </p>
-        <a
-          href={legalHref}
-          class="no-underline hover:opacity-70 transition-opacity"
-        >
-          {t("footer.legal_link")}
-        </a>
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-[0.8125rem] uppercase tracking-[0.14em] text-white/40">
+        <p>&copy; {currentYear} Ekaterina Volova</p>
+        <a href={legalHref} class="no-underline text-white/40 hover:text-white/70 transition-opacity">{t("footer.legal_link")}</a>
       </div>
     </div>
   </div>
