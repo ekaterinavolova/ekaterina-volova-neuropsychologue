@@ -120,7 +120,7 @@ const schemaOrg = JSON.stringify({
 
     <Fragment set:html={`<script type="application/ld+json">${schemaOrg}</script>`} />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col cf-cache-bust">
     {!bare && <Header />}
     <main>
       <slot />
