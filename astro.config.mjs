@@ -31,6 +31,7 @@ export default defineConfig({
           en: "en-US",
         },
       },
+      serialize: (item) => ({ ...item, lastmod: new Date("2026-05-26") }),
     }),
   ],
 

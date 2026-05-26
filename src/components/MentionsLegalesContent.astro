@@ -1,0 +1,150 @@
+---
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header class="bg-[var(--color-paper)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 pt-10 sm:pt-14 pb-20 sm:pb-24">
+
+    <p class="font-sans text-[0.8125rem] sm:text-sm uppercase tracking-[0.14em] text-[var(--color-accent)] mb-12 sm:mb-16">
+      {t("nav.legal")}
+    </p>
+
+    <div class="max-w-[52rem]">
+      <h1
+        class="font-serif italic text-[var(--color-ink)] leading-[0.98] tracking-[-0.025em]"
+        style="font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);"
+      >
+        {t("legal.h1")}
+      </h1>
+    </div>
+  </div>
+</header>
+
+<section class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          01
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem] space-y-12">
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.editor_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("legal.editor_intro")}
+          </p>
+          <dl class="mt-4 space-y-1.5 font-serif text-[var(--color-ink-soft)]">
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_rpps")} :</dt>
+              <dd class="font-mono text-sm self-center tabular-nums">10111377833</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_siret")} :</dt>
+              <dd class="font-mono text-sm self-center tabular-nums">105 203 871 00014</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_ape")} :</dt>
+              <dd class="font-mono text-sm self-center tabular-nums">86.90F</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_address")} :</dt>
+              <dd>14 rue Nicolo, 75116 Paris</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_phone")} :</dt>
+              <dd><a href="tel:+33666074254" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">06 66 07 42 54</a></dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_email")} :</dt>
+              <dd><a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:text-[var(--color-accent-deep)] transition-colors">volova.neuropsy@gmail.com</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.director_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)]">Ekaterina Volova</p>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.host_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("legal.host_content")}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          02
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem] space-y-12">
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.ip_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("legal.ip_content")}
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.data_title")}</h2>
+          <div class="mt-3 space-y-4 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            <p>{t("legal.data_no_collection")}</p>
+            <p>{t("legal.data_analytics")}</p>
+            <p>{t("legal.data_rights")}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
+  <div class="mx-auto max-w-[var(--container-wide)] px-6 sm:px-8 py-24 sm:py-32">
+    <div class="grid gap-10 md:gap-16 md:grid-cols-[10rem_minmax(0,1fr)]">
+
+      <aside class="md:pt-3">
+        <p class="font-serif italic text-[var(--color-accent-deep)] text-5xl sm:text-6xl leading-none tracking-tight">
+          03
+        </p>
+      </aside>
+
+      <div class="max-w-[42rem] space-y-12">
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.liability_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("legal.liability_content")}
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-serif text-xl text-[var(--color-ink)]">{t("legal.law_title")}</h2>
+          <p class="mt-3 font-serif text-[var(--color-ink-soft)] leading-relaxed text-justify">
+            {t("legal.law_content")}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

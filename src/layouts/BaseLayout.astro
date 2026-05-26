@@ -31,6 +31,54 @@ const htmlLangAttr: Record<Lang, string> = {
   ru: "ru-RU",
   en: "en-US",
 };
+
+const siteUrl = Astro.site!.toString().replace(/\/$/, "");
+const ogImageUrl = `${siteUrl}/og-image.jpg`;
+
+const schemaOrg = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Ekaterina Volova",
+  alternateName: "Екатерина Волова",
+  description: ui.fr["site.description"],
+  url: siteUrl,
+  telephone: "+33666074254",
+  email: "volova.neuropsy@gmail.com",
+  image: ogImageUrl,
+  priceRange: "65€ - 550€",
+  currenciesAccepted: "EUR",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "14 rue Nicolo",
+    addressLocality: "Paris",
+    postalCode: "75116",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.858,
+    longitude: 2.278,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "09:30",
+    closes: "18:30",
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Paris",
+  },
+  knowsLanguage: ["fr", "ru", "en"],
+});
 ---
 
 <!doctype html>
@@ -56,13 +104,21 @@ const htmlLangAttr: Record<Lang, string> = {
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={htmlLangAttr[lang].replace("-", "_")} />
+    <meta property="og:site_name" content="Ekaterina Volova" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#1E2D3F" />
+
+    <Fragment set:html={`<script type="application/ld+json">${schemaOrg}</script>`} />
   </head>
   <body class="min-h-screen flex flex-col">
     {!bare && <Header />}
