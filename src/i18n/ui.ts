@@ -206,8 +206,8 @@ export const ui = {
     "about.experience_title": "Expérience professionnelle",
 
     "about.exp_1_dates": "Juillet 2025 - Juin 2026",
-    "about.exp_1_title": "Hôpital Fondation Adolphe de Rothschild, service de Neurologie",
-    "about.exp_1_desc": "Réalisation de bilans neuropsychologiques auprès de patients présentant des pathologies neurologiques diverses (maladie d'Alzheimer, maladie de Parkinson, dégénérescence lobaire fronto-temporale, maladie à corps de Lewy, sclérose en plaques, atrophie multisystématisée, épilepsie, paralysie supranucléaire progressive, AVC...) et participation aux réunions pluridisciplinaires.",
+    "about.exp_1_title": "Hôpital Fondation Adolphe de Rothschild, services de Neurologie et de Neurochirurgie",
+    "about.exp_1_desc": "Réalisation de bilans neuropsychologiques auprès de patients présentant des pathologies neurologiques diverses (maladie d'Alzheimer, maladie de Parkinson, dégénérescence lobaire fronto-temporale, maladie à corps de Lewy, sclérose en plaques, atrophie multisystématisée, épilepsie, paralysie supranucléaire progressive, AVC...), ainsi que de bilans neuropsychologiques pré-opératoires (pré-stimulation cérébrale profonde dans le cadre de la maladie de Parkinson et pré-dérivation pour l'hydrocéphalie à pression normale), et participation aux réunions pluridisciplinaires.",
 
     "about.exp_2_dates": "Octobre 2024 - Mai 2025",
     "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, service de Neurologie (Stage de 500h)",
@@ -228,7 +228,7 @@ export const ui = {
     "about.education_title": "Formation",
 
     "about.edu_1_dates": "2023 - 2025",
-    "about.edu_1_title": "Université Paris 8 Vincennes-Saint Denis - Master de psychologie, parcours Neuropsychologie",
+    "about.edu_1_title": "Université Paris 8 Vincennes-Saint Denis - Master de psychologie,<br />parcours Neuropsychologie",
     "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Mémoire Master 2 : Changements du fonctionnement cognitif et de la qualité de vie chez les patients atteints de la maladie de Parkinson bénéficiant de la stimulation cérébrale profonde.</span></li><li><span style='color:var(--color-ink-soft)'>Mémoire Master 1 : Fonctions de la pensée future épisodique dans le vieillissement normal.</span></li></ul>",
 
     "about.edu_2_dates": "2020 - 2023",
@@ -437,8 +437,8 @@ export const ui = {
     "about.experience_title": "Профессиональный опыт",
 
     "about.exp_1_dates": "Июль 2025 - июнь 2026",
-    "about.exp_1_title": "Больница Fondation Adolphe de Rothschild",
-    "about.exp_1_desc": "Проведение нейропсихологических обследований пациентов с различными неврологическими патологиями (болезнь Альцгеймера, болезнь Паркинсона, лобно-височная дегенерация, болезнь с тельцами Леви, рассеянный склероз, мультисистемная атрофия, эпилепсия, прогрессирующий супрануклеарный паралич, инсульт...) и участие в мультидисциплинарных совещаниях.",
+    "about.exp_1_title": "Больница Fondation Adolphe de Rothschild, отделения неврологии и нейрохирургии",
+    "about.exp_1_desc": "Проведение нейропсихологических обследований пациентов с различными неврологическими патологиями (болезнь Альцгеймера, болезнь Паркинсона, лобно-височная дегенерация, болезнь с тельцами Леви, рассеянный склероз, мультисистемная атрофия, эпилепсия, прогрессирующий супрануклеарный паралич, инсульт...), предоперационных нейропсихологических обследований (перед глубокой стимуляцией мозга при болезни Паркинсона и перед шунтированием при нормотензивной гидроцефалии) и участие в мультидисциплинарных совещаниях.",
 
     "about.exp_2_dates": "Октябрь 2024 - май 2025",
     "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, отделение неврологии (стажировка 500ч)",
@@ -459,7 +459,7 @@ export const ui = {
     "about.education_title": "Образование",
 
     "about.edu_1_dates": "2023 - 2025",
-    "about.edu_1_title": "Университет Paris 8 Vincennes-Saint Denis - Магистратура по психологии, направление Нейропсихология",
+    "about.edu_1_title": "Университет Paris 8 Vincennes-Saint Denis - Магистратура по психологии,<br />направление Нейропсихология",
     "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Диссертация Master 2 : Изменения когнитивного функционирования и качества жизни у пациентов с болезнью Паркинсона при глубокой стимуляции мозга.</span></li><li><span style='color:var(--color-ink-soft)'>Диссертация Master 1 : Функции эпизодического мышления о будущем при нормальном старении.</span></li></ul>",
 
     "about.edu_2_dates": "2020 - 2023",
@@ -664,8 +664,8 @@ export const ui = {
     "about.experience_title": "Professional experience",
 
     "about.exp_1_dates": "July 2025 - June 2026",
-    "about.exp_1_title": "Adolphe de Rothschild Foundation Hospital",
-    "about.exp_1_desc": "Neuropsychological assessments of patients with various neurological conditions (Alzheimer's disease, Parkinson's disease, frontotemporal lobar degeneration, Lewy body disease, multiple sclerosis, multiple system atrophy, epilepsy, progressive supranuclear palsy, stroke...) and participation in multidisciplinary meetings.",
+    "about.exp_1_title": "Adolphe de Rothschild Foundation Hospital, Departments of Neurology and Neurosurgery",
+    "about.exp_1_desc": "Neuropsychological assessments of patients with various neurological conditions (Alzheimer's disease, Parkinson's disease, frontotemporal lobar degeneration, Lewy body disease, multiple sclerosis, multiple system atrophy, epilepsy, progressive supranuclear palsy, stroke...), preoperative neuropsychological assessments (before deep brain stimulation for Parkinson's disease and before shunting for normal pressure hydrocephalus) and participation in multidisciplinary meetings.",
 
     "about.exp_2_dates": "October 2024 - May 2025",
     "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, Department of Neurology (500h internship)",
@@ -686,7 +686,7 @@ export const ui = {
     "about.education_title": "Education",
 
     "about.edu_1_dates": "2023 - 2025",
-    "about.edu_1_title": "Université Paris 8 Vincennes-Saint Denis - Master's in Psychology, Neuropsychology track",
+    "about.edu_1_title": "Université Paris 8 Vincennes-Saint Denis - Master's in Psychology,<br />Neuropsychology track",
     "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Master 2 thesis: Changes in cognitive functioning and quality of life in Parkinson's disease patients receiving deep brain stimulation.</span></li><li><span style='color:var(--color-ink-soft)'>Master 1 thesis: Functions of episodic future thinking in normal ageing.</span></li></ul>",
 
     "about.edu_2_dates": "2020 - 2023",

@@ -23,34 +23,37 @@ const bilanSteps = [
 ];
 ---
 
-<Section tone="paper" spacing="loose" as="header">
+<Section tone="paper" spacing="normal" as="header" class="!pt-6 !pb-0">
   <Container width="content">
-    <Ornament tone="accent" spacing="sm" class="!mt-0 !mb-12" />
-    <h1 class="font-serif italic text-center">{t("nav.neuropsychologie")}</h1>
+    <h1 class="sr-only">{t("nav.neuropsychologie")}</h1>
+    <div class="flex justify-center">
+      <img src="/images/brain.png" alt="" aria-hidden="true" class="w-28 sm:w-36 h-auto" />
+    </div>
   </Container>
 </Section>
 
 {/* Qu'est-ce que la neuropsychologie ? */}
-<Section tone="paper" spacing="normal" as="section" id="discipline">
+<Section tone="paper" spacing="normal" as="section" id="discipline" class="!pt-6 !pb-0">
   <Container width="content">
-    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
       {t("about.section1_title")}
     </h2>
 
-    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
       <p>{t("about.section1_p1")}</p>
     </div>
   </Container>
 </Section>
 
 {/* Qu'est-ce qu'un bilan neuropsychologique ? */}
-<Section tone="paper" spacing="normal" as="section" id="bilan">
+<Section tone="paper" spacing="normal" as="section" id="bilan" class="!py-0">
   <Container width="content">
-    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
       {t("about.section2_title")}
     </h2>
 
-    <div class="mt-6 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
+    <div class="mt-8 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
       <p>{t("about.section2_p1")}</p>
     </div>
 
@@ -76,17 +79,18 @@ const bilanSteps = [
 </Section>
 
 {/* Qu'est-ce qu'une remédiation et stimulation cognitive ? */}
-<Section tone="paper" spacing="normal" as="section" id="remediation">
+<Section tone="paper" spacing="normal" as="section" id="remediation" class="!pt-0 !pb-8">
   <Container width="content">
-    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
       {t("home.remediation.title")}
     </h2>
-    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
       <p>{t("home.remediation.desc")}</p>
     </div>
 
-    <p class="mt-12 text-center">
-      <a href={getLocalizedPath("/prestations", lang)} class="font-medium text-[var(--color-accent-deep)] hover:underline">
+    <p class="mt-6 text-center">
+      <a href={getLocalizedPath("/prestations", lang)} class="font-serif italic text-base sm:text-lg text-[var(--color-ink-muted)]! hover:text-[var(--color-ink)]! no-underline transition-colors">
         {t("home.tarifs.cta")}
       </a>
     </p>
