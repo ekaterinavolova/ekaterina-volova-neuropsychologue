@@ -1,0 +1,94 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Ornament from "./Ornament.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const bilanSteps = [
+  {
+    title: t("about.section2_step1_title"),
+    desc: t("about.section2_step1_desc"),
+  },
+  {
+    title: t("about.section2_step2_title"),
+    desc: t("about.section2_step2_desc"),
+  },
+  {
+    title: t("about.section2_step3_title"),
+    desc: t("about.section2_step3_desc"),
+  },
+];
+---
+
+<Section tone="paper" spacing="loose" as="header">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!mt-0 !mb-12" />
+    <h1 class="font-serif italic text-center">{t("nav.neuropsychologie")}</h1>
+  </Container>
+</Section>
+
+{/* Qu'est-ce que la neuropsychologie ? */}
+<Section tone="paper" spacing="normal" as="section" id="discipline">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section1_title")}
+    </h2>
+
+    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section1_p1")}</p>
+    </div>
+  </Container>
+</Section>
+
+{/* Qu'est-ce qu'un bilan neuropsychologique ? */}
+<Section tone="paper" spacing="normal" as="section" id="bilan">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("about.section2_title")}
+    </h2>
+
+    <div class="mt-6 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("about.section2_p1")}</p>
+    </div>
+
+    <div class="mt-10 max-w-[44rem] mx-auto">
+      <h3 class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-ink)] mb-3">
+        {t("about.section2_steps_intro")}
+      </h3>
+      <ol class="space-y-4">
+        {bilanSteps.map((step, idx) => (
+          <li class="grid grid-cols-[3rem_1fr] gap-6 items-baseline">
+            <span class="font-serif italic text-3xl text-[var(--color-accent-deep)] tabular-nums">
+              {idx + 1}
+            </span>
+            <div>
+              <h3 class="font-serif text-base font-bold" set:html={step.title} />
+              <p class="mt-2 text-[var(--color-ink-soft)] leading-relaxed text-justify">{step.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </Container>
+</Section>
+
+{/* Qu'est-ce qu'une remédiation et stimulation cognitive ? */}
+<Section tone="paper" spacing="normal" as="section" id="remediation">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
+      {t("home.remediation.title")}
+    </h2>
+    <div class="mt-6 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("home.remediation.desc")}</p>
+    </div>
+
+    <p class="mt-12 text-center">
+      <a href={getLocalizedPath("/prestations", lang)} class="font-medium text-[var(--color-accent-deep)] hover:underline">
+        {t("home.tarifs.cta")}
+      </a>
+    </p>
+  </Container>
+</Section>

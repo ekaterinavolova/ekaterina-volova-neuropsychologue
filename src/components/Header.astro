@@ -9,9 +9,9 @@ const currentPath = Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/";
 
 const navItems = [
   { href: "/", label: t("nav.home") },
+  { href: "/neuropsychologie", label: t("nav.neuropsychologie") },
   { href: "/a-propos", label: t("nav.about") },
   { href: "/prestations", label: t("nav.services") },
-  { href: "/cabinet", label: t("nav.office") },
   { href: "/contact", label: t("nav.contact") },
 ];
 
@@ -22,55 +22,90 @@ function isActive(href: string): boolean {
 
 const homeHref = getLocalizedPath("/", lang);
 const contactHref = getLocalizedPath("/contact", lang);
+
+// Sur l'accueil, le bouton "Réserver" du header n'apparaît
+// que lorsque le bouton de la section hero (#hero-cta) n'est plus visible (géré en JS).
+// On le masque donc au chargement pour éviter un flash; le script le révèle au scroll.
+const isHome = currentPath === "/";
+const headerCtaBase =
+  "header-cta-btn transition-[opacity,transform] duration-[var(--duration-medium)] ease-[var(--ease-out)]";
+const headerCtaInitial = isHome ? " opacity-0 -translate-y-1 pointer-events-none" : "";
 ---
 
-<header class="sticky top-0 z-40 bg-[var(--color-paper)]/90 backdrop-blur-sm border-b border-[var(--color-rule-soft)]">
+<header class="sticky top-0 z-40 bg-[var(--color-paper)] backdrop-blur-sm border-b border-[oklch(0.45_0.12_255)]">
   <div class="max-w-[var(--container-wide)] mx-auto px-4 sm:px-8">
-    <div class="grid grid-cols-[auto_1fr_auto] items-center h-16 sm:h-20 gap-3 sm:gap-6">
-
-      {/* Gauche : bouton burger + langues */}
-      <div class="flex items-center gap-1 sm:gap-2 -ml-2">
-        <button
-          type="button"
-          id="menu-toggle"
-          class="inline-flex items-center justify-center w-10 h-10 text-[var(--color-ink)] hover:text-[var(--color-accent-deep)] transition-colors"
-          aria-label={t("header.menu_open")}
-          aria-expanded="false"
-          aria-controls="site-menu"
-        >
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <line x1="3" y1="7" x2="19" y2="7"></line>
-            <line x1="3" y1="11" x2="19" y2="11"></line>
-            <line x1="3" y1="15" x2="19" y2="15"></line>
-          </svg>
-        </button>
-        <LangSwitcher />
-      </div>
-
-      {/* Centre : nom (lien vers accueil) */}
-      <a
-        href={homeHref}
-        class="justify-self-center no-underline group"
-        aria-label="Ekaterina Volova"
-      >
-        <span class="font-serif italic text-base sm:text-lg md:text-xl tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent-deep)] transition-colors">
+    {/* Desktop */}
+    <div class="hidden lg:flex items-center h-20 gap-6">
+      <a href={homeHref} class="no-underline group shrink-0">
+        <span class="font-serif italic text-lg xl:text-xl tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-ink-soft)] transition-colors">
           Ekaterina Volova
         </span>
       </a>
 
-      {/* Droite : bouton "Réserver" */}
-      <div class="flex items-center justify-self-end">
-        <Button href={contactHref} variant="secondary" size="md" class="!px-4 sm:!px-5 !py-2 text-[0.8125rem] sm:text-[0.9375rem]">
-          <span class="sm:hidden">{t("cta.book_short")}</span>
-          <span class="hidden sm:inline">{t("cta.book")}</span>
+      <nav class="flex flex-1 items-center justify-center gap-4">
+        {navItems.map((item) => {
+          const href = getLocalizedPath(item.href, lang);
+          const active = isActive(item.href);
+          return (
+            <a
+              href={href}
+              class:list={[
+                "px-2 py-1 text-sm no-underline transition-colors",
+                active
+                  ? "text-[var(--color-ink)] font-medium"
+                  : "text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]",
+              ]}
+              aria-current={active ? "page" : "false"}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <Button href={contactHref} variant="secondary" size="md" class={`!px-4 xl:!px-5 !py-2 text-[0.8125rem] xl:text-[0.9375rem] ${headerCtaBase}${headerCtaInitial}`}>
+        {t("cta.book")}
+      </Button>
+
+      <LangSwitcher />
+    </div>
+
+    {/* Mobile / Tablette */}
+    <div class="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center h-16 gap-3">
+      <button
+        type="button"
+        id="menu-toggle"
+        class="justify-self-start inline-flex items-center justify-center w-10 h-10 text-[var(--color-ink)] hover:text-[var(--color-ink-soft)] transition-colors -ml-2"
+        aria-label={t("header.menu_open")}
+        aria-expanded="false"
+        aria-controls="site-menu"
+      >
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="7" x2="19" y2="7"></line>
+          <line x1="3" y1="11" x2="19" y2="11"></line>
+          <line x1="3" y1="15" x2="19" y2="15"></line>
+        </svg>
+      </button>
+
+      <a href={homeHref} class="justify-self-center no-underline group">
+        <span class="font-serif italic text-base sm:text-lg tracking-tight text-[var(--color-ink)] group-hover:text-[var(--color-ink-soft)] transition-colors">
+          Ekaterina Volova
+        </span>
+      </a>
+
+      <div class="justify-self-end flex items-center gap-2 sm:gap-3">
+        <Button href={contactHref} variant="secondary" size="md" class={`!px-3 sm:!px-4 !py-1.5 sm:!py-2 !text-xs sm:!text-[0.8125rem] ${headerCtaBase}${headerCtaInitial}`}>
+          {t("cta.book_short")}
         </Button>
+
+        <LangSwitcher />
       </div>
     </div>
 
     {/* Drawer : nav links + langues (mobile) */}
     <div
       id="site-menu"
-      class="hidden border-t border-[var(--color-rule-soft)] py-4"
+      class="hidden lg:hidden border-t border-[var(--color-ink)]/15 py-4"
       aria-hidden="true"
     >
       <nav aria-label={t("nav.home")} class="flex flex-col gap-1">
@@ -84,8 +119,8 @@ const contactHref = getLocalizedPath("/contact", lang);
                 class:list={[
                   "px-3 py-3 text-base no-underline transition-colors rounded-[var(--radius-sm)]",
                   active
-                    ? "text-[var(--color-ink)] font-medium bg-[var(--color-paper-warm)]"
-                    : "text-[var(--color-ink-soft)] hover:bg-[var(--color-paper-warm)]",
+                    ? "text-[var(--color-ink)] font-medium bg-[var(--color-ink)]/10"
+                    : "text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)]",
                 ]}
                 aria-current={active ? "page" : "false"}
               >
@@ -94,6 +129,25 @@ const contactHref = getLocalizedPath("/contact", lang);
             );
           })
         }
+        <button
+          type="button"
+          id="lang-toggle"
+          class="px-3 py-3 text-base text-left text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)] transition-colors rounded-[var(--radius-sm)] flex items-center justify-between"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M2 12h20"></path>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <svg class="w-4 h-4 transition-transform" id="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div id="lang-submenu" class="hidden pl-6 flex flex-col gap-1">
+          <a href={lang === "fr" ? Astro.url.pathname : Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/"} class:list={["px-3 py-2 text-base no-underline transition-colors rounded-[var(--radius-sm)]", lang === "fr" ? "text-[var(--color-ink)] font-medium bg-[var(--color-ink)]/10" : "text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)]"]}>Français</a>
+          <a href={lang === "ru" ? Astro.url.pathname : "/ru" + (Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/")} class:list={["px-3 py-2 text-base no-underline transition-colors rounded-[var(--radius-sm)]", lang === "ru" ? "text-[var(--color-ink)] font-medium bg-[var(--color-ink)]/10" : "text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)]"]}>Русский</a>
+          <a href={lang === "en" ? Astro.url.pathname : "/en" + (Astro.url.pathname.replace(/^\/(ru|en)/, "") || "/")} class:list={["px-3 py-2 text-base no-underline transition-colors rounded-[var(--radius-sm)]", lang === "en" ? "text-[var(--color-ink)] font-medium bg-[var(--color-ink)]/10" : "text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)]"]}>English</a>
+        </div>
       </nav>
     </div>
   </div>
@@ -110,5 +164,37 @@ const contactHref = getLocalizedPath("/contact", lang);
       menu.setAttribute("aria-hidden", String(isOpen));
       menu.classList.toggle("hidden");
     });
+  }
+
+  const langToggle = document.getElementById("lang-toggle");
+  const langSubmenu = document.getElementById("lang-submenu");
+  const langChevron = document.getElementById("lang-chevron");
+
+  if (langToggle && langSubmenu && langChevron) {
+    langToggle.addEventListener("click", () => {
+      langSubmenu.classList.toggle("hidden");
+      langChevron.classList.toggle("rotate-180");
+    });
+  }
+
+  // Bouton "Réserver" du header : visible seulement quand le bouton hero (#hero-cta)
+  // n'est plus à l'écran. rootMargin négatif = on considère "caché" dès qu'il passe
+  // sous la hauteur du header sticky.
+  const heroCta = document.getElementById("hero-cta");
+  const headerCtas = document.querySelectorAll(".header-cta-btn");
+
+  if (heroCta && headerCtas.length) {
+    const hiddenClasses = ["opacity-0", "-translate-y-1", "pointer-events-none"];
+    const setHidden = (hidden: boolean) =>
+      headerCtas.forEach((btn) => {
+        if (hidden) btn.classList.add(...hiddenClasses);
+        else btn.classList.remove(...hiddenClasses);
+      });
+
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => setHidden(entry.isIntersecting)),
+      { rootMargin: "-80px 0px 0px 0px", threshold: 0 },
+    );
+    observer.observe(heroCta);
   }
 </script>

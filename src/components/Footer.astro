@@ -7,9 +7,9 @@ const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-auto bg-[var(--color-paper-warm)] border-t border-[var(--color-rule-soft)]">
-  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8 py-12 sm:py-16">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+<footer class="mt-auto bg-[var(--color-paper)] border-t border-[var(--color-rule-soft)]">
+  <div class="max-w-[var(--container-wide)] mx-auto px-6 sm:px-8 py-6 sm:py-8">
+    <div class="flex flex-col sm:flex-row sm:justify-center gap-10 sm:gap-24">
       <div>
         <p class="font-serif text-lg text-[var(--color-ink)]">
           Ekaterina Volova
@@ -17,41 +17,37 @@ const currentYear = new Date().getFullYear();
         <p class="text-sm text-[var(--color-ink-soft)] mt-1">
           {t("footer.profession")}
         </p>
-        <p class="text-xs text-[var(--color-ink-muted)] mt-3 font-mono tabular-nums tracking-tight">
-          {t("footer.rpps")}
+        <p class="text-xs text-[var(--color-accent-deep)] mt-3 font-mono tabular-nums tracking-tight">
+          RPPS : 10111377833
         </p>
       </div>
 
-      <div>
-        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
-          {t("footer.cabinet_label")}
-        </p>
-        <address class="not-italic text-sm text-[var(--color-ink-soft)] leading-relaxed">
-          14 rue Nicolo<br />
-          75116 Paris
-        </address>
-        <p class="text-xs text-[var(--color-ink-muted)] mt-3">
-          {t("footer.opening_note")}
-        </p>
-      </div>
-
-      <div>
-        <p class="text-[0.6875rem] uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2">
-          {t("footer.contact_label")}
-        </p>
-        <a
-          href={getLocalizedPath("/contact", lang)}
-          class="text-sm text-[var(--color-ink)] hover:text-[var(--color-accent-deep)]"
-        >
-          {t("cta.contact")}
+      <div class="flex flex-col gap-3 text-sm text-[var(--color-ink-soft)]">
+        <a href="tel:+33666074254" class="flex items-center gap-2 hover:text-[var(--color-ink)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          +33 6 66 07 42 54
         </a>
+        <a href="mailto:volova.neuropsy@gmail.com" class="flex items-center gap-2 hover:text-[var(--color-ink)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          volova.neuropsy@gmail.com
+        </a>
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <address class="not-italic">14 rue Nicolo, 75116 Paris</address>
+        </div>
       </div>
     </div>
 
-    <div class="mt-12 pt-6 border-t border-[var(--color-rule-soft)] flex flex-col sm:flex-row justify-between gap-3 text-xs text-[var(--color-ink-muted)]">
-      <p>
-        © {currentYear} Ekaterina Volova
-      </p>
+    <div class="mt-4 flex flex-col sm:flex-row justify-between gap-2 text-xs text-[var(--color-ink-muted)]">
+      <p>© {currentYear} Ekaterina Volova</p>
       <a
         href={getLocalizedPath("/mentions-legales", lang)}
         class="hover:text-[var(--color-ink)] transition-colors"

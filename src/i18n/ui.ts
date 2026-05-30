@@ -19,6 +19,7 @@ export type Lang = keyof typeof languages;
 export const ui = {
   fr: {
     "nav.home": "Accueil",
+    "nav.neuropsychologie": "Neuropsychologie",
     "nav.about": "À propos",
     "nav.services": "Prestations",
     "nav.office": "Cabinet",
@@ -37,6 +38,7 @@ export const ui = {
     "cta.read_more": "En savoir plus",
 
     "lang.switch_to": "Changer de langue",
+    "nav.languages": "Langues",
 
     "header.tagline": "Neuropsychologue à Paris",
     "header.menu_open": "Ouvrir le menu",
@@ -54,6 +56,10 @@ export const ui = {
     "home.lede": "Psychologue spécialisée en neuropsychologie",
     "home.cta_primary": "Prendre rendez-vous",
     "home.cta_secondary": "Réserver une consultation",
+
+    "home.hero.line1_pre": "Consultations pour ",
+    "home.hero.line1_em": "adultes à partir de 16 ans",
+    "home.hero.line2": "14 rue Nicolo, 75116 Paris",
 
     "home.who.title": "Pour qui je consulte",
     "home.who.intro":
@@ -88,6 +94,32 @@ export const ui = {
     "prestations.remediation_title": "Remédiation et stimulation cognitive",
     "prestations.remediation_desc": "Séances de 45 minutes visant à travailler et stimuler certaines fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou la vitesse de traitement à l'aide d'exercices adaptés au profil et aux difficultés du patient. La prise en charge a pour objectif de renforcer les capacités cognitives préservées, développer des stratégies de compensation et améliorer le fonctionnement au quotidien.",
     "prestations.remediation_price": "65 €",
+
+    "home.about.title": "Le cabinet",
+    "home.about.desc": "Le cabinet accueille une population adulte à partir de 16 ans pour des bilans neuropsychologiques diagnostiques, un accompagnement en remédiation et stimulation cognitive. Les consultations sont proposées en français, en russe et en anglais.",
+    "home.about.cta": "En savoir plus sur la neuropsychologie",
+
+    "home.intro.title": "Qui suis-je ?",
+    "home.intro.text":
+      "Psychologue spécialisée en neuropsychologie, j'accompagne les adultes dans l'évaluation et la compréhension de leurs difficultés cognitives et psycho-affectives, à travers des bilans neuropsychologiques approfondis.",
+    "home.intro.spec_1": "Bilan neuropsychologique",
+    "home.intro.spec_2": "Troubles mnésiques",
+    "home.intro.spec_3": "Troubles langagiers",
+    "home.intro.spec_4": "Troubles attentionnels",
+    "home.intro.spec_5": "AVC",
+    "home.intro.spec_6": "Maladies neurodégénératives",
+    "home.intro.spec_7": "Sclérose en plaques",
+    "home.intro.spec_8": "TDAH adulte",
+    "home.intro.spec_9": "Haut potentiel intellectuel",
+    "home.intro.spec_10": "IQ",
+    "home.intro.spec_11": "Hydrocéphalie à pression normale",
+    "home.intro.cta": "En savoir plus sur mon parcours",
+
+    "home.tarifs.title": "Tarifs",
+    "home.tarifs.cta": "Voir le détail des prestations",
+    "home.cabinet.title": "Le cabinet",
+    "home.cabinet.photo_placeholder": "Photo à venir",
+    "home.cabinet.map_link": "Voir sur la carte",
 
     "home.remediation.title": "Qu'est-ce qu'une remédiation et stimulation cognitive ?",
     "home.remediation.desc": "La remédiation et la stimulation cognitives sont des prises en charge visant à travailler différentes fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou le langage à l'aide d'exercices adaptés au profil du patient. Elles ont pour objectif de renforcer les capacités préservées, développer des stratégies de compensation et favoriser le maintien de l'autonomie au quotidien.",
@@ -136,6 +168,11 @@ export const ui = {
     "home.prescribers.desc":
       "Modèle d'ordonnance, exemple de compte rendu et parcours d'orientation détaillés.",
     "home.prescribers.cta": "Espace prescripteurs",
+
+    "neuropsychologie.title":
+      "La neuropsychologie et le bilan neuropsychologique - Ekaterina Volova",
+    "neuropsychologie.description":
+      "Qu'est-ce que la neuropsychologie, le bilan neuropsychologique et la remédiation cognitive ? Explications par Ekaterina Volova, psychologue spécialisée en neuropsychologie à Paris 16e.",
 
     "about.title":
       "À propos - Ekaterina Volova, psychologue spécialisée en neuropsychologie",
@@ -213,6 +250,7 @@ export const ui = {
   },
   ru: {
     "nav.home": "Главная",
+    "nav.neuropsychologie": "Нейропсихология",
     "nav.about": "Обо мне",
     "nav.services": "Услуги",
     "nav.office": "Кабинет",
@@ -231,6 +269,7 @@ export const ui = {
     "cta.read_more": "Подробнее",
 
     "lang.switch_to": "Сменить язык",
+    "nav.languages": "Языки",
 
     "header.tagline": "Нейропсихолог в Париже",
     "header.menu_open": "Открыть меню",
@@ -248,6 +287,10 @@ export const ui = {
     "home.lede": "Нейропсихолог",
     "home.cta_primary": "Записаться на приём",
     "home.cta_secondary": "Записаться на консультацию",
+
+    "home.hero.line1_pre": "Консультации для ",
+    "home.hero.line1_em": "взрослых с 16 лет",
+    "home.hero.line2": "14 rue Nicolo, 75116 Paris",
 
     "home.who.title": "Кому я могу помочь",
     "home.who.intro":
@@ -282,6 +325,32 @@ export const ui = {
     "prestations.remediation_title": "Когнитивная реабилитация и стимуляция",
     "prestations.remediation_desc": "Сеансы продолжительностью 45 минут, направленные на тренировку и стимуляцию определённых когнитивных функций, таких как память, внимание, исполнительные функции или скорость обработки информации, с помощью упражнений, адаптированных к профилю и трудностям пациента. Цель сопровождения - укрепить сохранные когнитивные способности, выработать компенсаторные стратегии и улучшить повседневное функционирование.",
     "prestations.remediation_price": "65 €",
+
+    "home.about.title": "Кабинет",
+    "home.about.desc": "Кабинет принимает взрослых пациентов с 16 лет для диагностических нейропсихологических обследований, сопровождения по программам когнитивной реабилитации и стимуляции. Консультации проводятся на французском, русском и английском языках.",
+    "home.about.cta": "Подробнее о нейропсихологии",
+
+    "home.intro.title": "Кто я?",
+    "home.intro.text":
+      "Психолог, специалист по нейропсихологии. Я сопровождаю взрослых в оценке и понимании их когнитивных и психоэмоциональных трудностей с помощью углублённых нейропсихологических обследований.",
+    "home.intro.spec_1": "Нейропсихологическое обследование",
+    "home.intro.spec_2": "Нарушения памяти",
+    "home.intro.spec_3": "Нарушения речи",
+    "home.intro.spec_4": "Нарушения внимания",
+    "home.intro.spec_5": "Инсульт",
+    "home.intro.spec_6": "Нейродегенеративные заболевания",
+    "home.intro.spec_7": "Рассеянный склероз",
+    "home.intro.spec_8": "СДВГ у взрослых",
+    "home.intro.spec_9": "Высокий интеллектуальный потенциал",
+    "home.intro.spec_10": "IQ",
+    "home.intro.spec_11": "Нормотензивная гидроцефалия",
+    "home.intro.cta": "Подробнее о моём пути",
+
+    "home.tarifs.title": "Тарифы",
+    "home.tarifs.cta": "Подробнее об услугах",
+    "home.cabinet.title": "Кабинет",
+    "home.cabinet.photo_placeholder": "Фото скоро",
+    "home.cabinet.map_link": "Открыть на карте",
 
     "home.remediation.title": "Что такое когнитивная реабилитация и стимуляция?",
     "home.remediation.desc": "Когнитивная реабилитация и стимуляция - это виды помощи, направленные на тренировку различных когнитивных функций, таких как память, внимание, исполнительные функции или речь, с помощью упражнений, адаптированных к профилю пациента. Их цель - укрепить сохранные способности, выработать компенсаторные стратегии и способствовать поддержанию самостоятельности в повседневной жизни.",
@@ -330,6 +399,11 @@ export const ui = {
     "home.prescribers.desc":
       "Образец направления, пример заключения и подробный порядок направления пациентов.",
     "home.prescribers.cta": "Раздел для направляющих специалистов",
+
+    "neuropsychologie.title":
+      "Нейропсихология и нейропсихологическое обследование - Екатерина Волова",
+    "neuropsychologie.description":
+      "Что такое нейропсихология, нейропсихологическое обследование и когнитивная реабилитация? Объяснения Екатерины Воловой, психолога-нейропсихолога в 16 округе Парижа.",
 
     "about.title":
       "Обо мне - Екатерина Волова, психолог-нейропсихолог",
@@ -407,6 +481,7 @@ export const ui = {
   },
   en: {
     "nav.home": "Home",
+    "nav.neuropsychologie": "Neuropsychology",
     "nav.about": "About",
     "nav.services": "Services",
     "nav.office": "Office",
@@ -425,6 +500,7 @@ export const ui = {
     "cta.read_more": "Learn more",
 
     "lang.switch_to": "Change language",
+    "nav.languages": "Languages",
 
     "header.tagline": "Neuropsychologist in Paris",
     "header.menu_open": "Open menu",
@@ -442,6 +518,10 @@ export const ui = {
     "home.lede": "Neuropsychologist",
     "home.cta_primary": "Book an appointment",
     "home.cta_secondary": "Book a consultation",
+
+    "home.hero.line1_pre": "Consultations for ",
+    "home.hero.line1_em": "adults aged 16 and over",
+    "home.hero.line2": "14 rue Nicolo, 75116 Paris",
 
     "home.who.title": "Who I see",
     "home.who.intro":
@@ -476,6 +556,28 @@ export const ui = {
     "prestations.remediation_title": "Cognitive remediation and stimulation",
     "prestations.remediation_desc": "45-minute sessions aimed at exercising and stimulating specific cognitive functions such as memory, attention, executive functions or processing speed, using exercises tailored to the patient's profile and difficulties. The goal is to strengthen preserved cognitive abilities, develop compensatory strategies and improve everyday functioning.",
     "prestations.remediation_price": "€65",
+
+    "home.intro.title": "Who am I?",
+    "home.intro.text":
+      "A psychologist specialising in neuropsychology, I support adults in assessing and understanding their cognitive and psycho-affective difficulties through in-depth neuropsychological assessments.",
+    "home.intro.spec_1": "Neuropsychological assessment",
+    "home.intro.spec_2": "Memory disorders",
+    "home.intro.spec_3": "Language disorders",
+    "home.intro.spec_4": "Attention disorders",
+    "home.intro.spec_5": "Stroke",
+    "home.intro.spec_6": "Neurodegenerative diseases",
+    "home.intro.spec_7": "Multiple sclerosis",
+    "home.intro.spec_8": "Adult ADHD",
+    "home.intro.spec_9": "High intellectual potential",
+    "home.intro.spec_10": "IQ",
+    "home.intro.spec_11": "Normal pressure hydrocephalus",
+    "home.intro.cta": "More about my background",
+
+    "home.tarifs.title": "Fees",
+    "home.tarifs.cta": "See full service details",
+    "home.cabinet.title": "The practice",
+    "home.cabinet.photo_placeholder": "Photo coming soon",
+    "home.cabinet.map_link": "View on map",
 
     "home.remediation.title": "What is cognitive remediation and stimulation?",
     "home.remediation.desc": "Cognitive remediation and stimulation are interventions aimed at exercising various cognitive functions such as memory, attention, executive functions or language, using exercises tailored to the patient's profile. Their goal is to strengthen preserved abilities, develop compensatory strategies and support the maintenance of everyday independence.",
@@ -524,6 +626,11 @@ export const ui = {
     "home.prescribers.desc":
       "Referral letter template, sample assessment report and detailed referral pathway.",
     "home.prescribers.cta": "Referrers section",
+
+    "neuropsychologie.title":
+      "Neuropsychology and the neuropsychological assessment - Ekaterina Volova",
+    "neuropsychologie.description":
+      "What is neuropsychology, the neuropsychological assessment and cognitive remediation? Explained by Ekaterina Volova, psychologist specialising in neuropsychology in Paris 16th.",
 
     "about.title":
       "About - Ekaterina Volova, psychologist specialising in neuropsychology",

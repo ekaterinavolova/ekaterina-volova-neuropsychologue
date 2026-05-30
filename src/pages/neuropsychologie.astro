@@ -1,0 +1,16 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import NeuropsychologieContent from "~/components/NeuropsychologieContent.astro";
+import { useTranslations, getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  canonicalPath="/neuropsychologie"
+  title={t("neuropsychologie.title")}
+  description={t("neuropsychologie.description")}
+>
+  <NeuropsychologieContent />
+</BaseLayout>
