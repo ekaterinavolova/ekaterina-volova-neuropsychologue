@@ -22,6 +22,16 @@ const rerStations = [
   { badge: "C", name: "Boulainvilliers", bg: "#FCD946", fg: "#1b1b1b" },
 ];
 const busLines = "22, 32, 63, 72";
+
+// Lignes du tableau des tarifs (libellé + prix, depuis i18n).
+const priceItems = [
+  { label: "prestations.entretien_title", price: "prestations.entretien_price" },
+  { label: "prestations.bilan_1", price: "prestations.bilan_1_price" },
+  { label: "prestations.bilan_2", price: "prestations.bilan_2_price" },
+  { label: "prestations.bilan_3", price: "prestations.bilan_3_price" },
+  { label: "prestations.bilan_4", price: "prestations.bilan_4_price" },
+  { label: "prestations.remediation_title", price: "prestations.remediation_price" },
+];
 ---
 
 {/* Hero */}
@@ -35,7 +45,7 @@ const busLines = "22, 32, 63, 72";
       />
 
       <div class="text-center">
-        <h1 class="font-serif italic text-[var(--color-accent-deep)]">{t("home.h1")}</h1>
+        <h1 id="hero-name" class="font-serif italic text-[var(--color-accent-deep)]">{t("home.h1")}</h1>
         <p class="mt-2 font-serif text-sm uppercase tracking-[0.15em] text-[var(--color-ink-muted)]">{t("home.lede")}</p>
         <p class="mt-4 font-serif italic text-base text-[var(--color-ink)]">
           {t("home.hero.line1_pre")}<span class="underline decoration-1 underline-offset-4">{t("home.hero.line1_em")}</span>
@@ -62,7 +72,7 @@ const busLines = "22, 32, 63, 72";
 
     <ul class="mt-6 flex flex-wrap justify-center gap-2.5 max-w-[40rem] mx-auto list-none p-0">
       {specialties.map((s) => (
-        <li class="inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-paper-warm)] px-4 py-1.5 text-sm text-[var(--color-ink-soft)]">
+        <li class="inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-4 py-1.5 text-sm text-[var(--color-ink-soft)]">
           {s}
         </li>
       ))}
@@ -82,31 +92,14 @@ const busLines = "22, 32, 63, 72";
     <Ornament tone="accent" spacing="sm" class="!my-12" />
     <h2 class="font-serif italic text-center">{t("home.tarifs.title")}</h2>
 
-    <div class="mt-10 max-w-[32rem] mx-auto space-y-3">
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.entretien_title")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.entretien_price")}</span>
-      </div>
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.bilan_1")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.bilan_1_price")}</span>
-      </div>
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.bilan_2")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.bilan_2_price")}</span>
-      </div>
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.bilan_3")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.bilan_3_price")}</span>
-      </div>
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.bilan_4")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.bilan_4_price")}</span>
-      </div>
-      <div class="flex justify-between items-baseline">
-        <span class="text-[var(--color-ink-soft)]">{t("prestations.remediation_title")}</span>
-        <span class="text-[var(--color-accent-deep)] font-medium tabular-nums">{t("prestations.remediation_price")}</span>
-      </div>
+    <div class="mt-10 max-w-[32rem] mx-auto space-y-4">
+      {priceItems.map((item) => (
+        <div class="flex items-baseline gap-3">
+          <span class="text-[var(--color-ink-soft)]">{t(item.label as any)}</span>
+          <span class="flex-1 translate-y-[-0.25em] border-b border-dotted border-[var(--color-rule)]" aria-hidden="true"></span>
+          <span class="whitespace-nowrap font-medium tabular-nums text-[var(--color-accent-deep)]">{t(item.price as any)}</span>
+        </div>
+      ))}
     </div>
 
     <p class="mt-6 text-center">

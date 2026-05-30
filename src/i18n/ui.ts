@@ -111,7 +111,7 @@ export const ui = {
     "home.intro.spec_7": "Sclérose en plaques",
     "home.intro.spec_8": "TDAH adulte",
     "home.intro.spec_9": "Haut potentiel intellectuel",
-    "home.intro.spec_10": "IQ",
+    "home.intro.spec_10": "QI",
     "home.intro.spec_11": "Hydrocéphalie à pression normale",
     "home.intro.cta": "En savoir plus sur mon parcours",
 
