@@ -1,0 +1,111 @@
+---
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Ornament from "./Ornament.astro";
+import Button from "./Button.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const email = "volova.neuropsy@gmail.com";
+const inputClass =
+  "w-full border border-[var(--color-rule)] bg-[var(--color-paper)] rounded-[var(--radius-md)] px-3 py-2 text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-accent-deep)] transition-colors";
+
+// Carte du cabinet via OpenStreetMap (embed sans cookie / sans tracker).
+const mapLat = "48.8587441";
+const mapLon = "2.2803554";
+const mapEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=2.2763554,48.8567441,2.2843554,48.8607441&layer=mapnik&marker=${mapLat},${mapLon}`;
+const mapLink = `https://www.openstreetmap.org/?mlat=${mapLat}&mlon=${mapLon}#map=17/${mapLat}/${mapLon}`;
+---
+
+<Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
+  <Container width="content">
+    <h1 class="font-serif italic text-center text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">{t("contact.heading")}</h1>
+  </Container>
+</Section>
+
+{/* Coordonnées */}
+<Section tone="paper" spacing="normal" as="section" class="!pt-12 !pb-0">
+  <Container width="content">
+    <div class="max-w-[50rem] mx-auto flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10">
+      <div class="flex shrink-0 flex-col items-center sm:items-start gap-4 text-[var(--color-ink-soft)]">
+        <a href="tel:+33666074254" class="flex items-center gap-2.5 hover:text-[var(--color-ink)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          +33 6 66 07 42 54
+        </a>
+        <a href={`mailto:${email}`} class="flex items-center gap-2.5 hover:text-[var(--color-ink)] transition-colors">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          {email}
+        </a>
+        <div class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <address class="not-italic">{t("footer.office_address")}</address>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-[22rem] shrink-0">
+        <iframe
+          title="Carte - 14 rue Nicolo, 75116 Paris"
+          src={mapEmbed}
+          loading="lazy"
+          class="w-full h-64 rounded-[var(--radius-md)] border border-[var(--color-rule-soft)]"
+        ></iframe>
+        <p class="mt-2 text-center">
+          <a href={mapLink} target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] no-underline transition-colors">{t("home.cabinet.map_link")}</a>
+        </p>
+      </div>
+    </div>
+  </Container>
+</Section>
+
+{/* Question */}
+<Section tone="paper" spacing="normal" as="section" class="!pt-0 !pb-8">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">{t("contact.form_heading")}</h2>
+    <p class="mt-4 max-w-[34rem] mx-auto text-center text-sm text-[var(--color-ink-muted)] leading-relaxed">{t("contact.form_intro")}</p>
+
+    <form id="question-form" class="mt-8 max-w-[34rem] mx-auto flex flex-col gap-4">
+      <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
+        {t("contact.name")}
+        <input type="text" name="name" required class={inputClass} />
+      </label>
+      <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
+        {t("contact.email")}
+        <input type="email" name="email" required class={inputClass} />
+      </label>
+      <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
+        {t("contact.message")}
+        <textarea name="message" rows="5" required class={`${inputClass} resize-y`}></textarea>
+      </label>
+      <div class="mt-2 text-center">
+        <Button type="submit" variant="primary">{t("contact.send")}</Button>
+      </div>
+    </form>
+  </Container>
+</Section>
+
+<script>
+  const form = document.getElementById("question-form") as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get("name") || "").toString().trim();
+      const visitorEmail = (data.get("email") || "").toString().trim();
+      const message = (data.get("message") || "").toString().trim();
+      const subject = encodeURIComponent("Question via le site - " + name);
+      const body = encodeURIComponent(message + "\n\n--\n" + name + "\n" + visitorEmail);
+      window.location.href = "mailto:volova.neuropsy@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  }
+</script>
