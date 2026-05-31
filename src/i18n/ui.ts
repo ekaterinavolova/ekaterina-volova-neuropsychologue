@@ -77,7 +77,7 @@ export const ui = {
     "prestations.entretien_desc": "Première consultation permettant de recueillir l'histoire clinique du patient (les antécédents médicaux et familiaux), le motif de consultation et les difficultés rencontrées au quotidien afin d'orienter l'évaluation neuropsychologique.",
     "prestations.entretien_price": "70 €",
 
-    "prestations.bilans_title": "Bilans neuropsychologiques pour les adultes (> 16 ans)",
+    "prestations.bilans_title": "Bilans neuropsychologiques pour les adultes (à partir de 16 ans)",
     "prestations.bilan_1": "Bilan neuropsychologique complet",
     "prestations.bilan_1_desc": "Evaluation approfondie du fonctionnement cognitif réalisée à l'aide de différentes épreuves neuropsychologiques standardisées permettant d'explorer la mémoire, l'attention, les fonctions exécutives, le langage, les capacités visuoconstructives, visuospatiales, visuoperceptives, praxiques ainsi que la cognition sociale. Cette évaluation vise à objectiver et caractériser les difficultés rapportées par le patient et à préciser le profil cognitif observé.",
     "prestations.bilan_1_price": "450 €",
@@ -308,7 +308,7 @@ export const ui = {
     "prestations.entretien_desc": "Первичная консультация, позволяющая собрать клиническую историю пациента (медицинский и семейный анамнез), причину обращения и повседневные трудности с целью определения направления нейропсихологической оценки.",
     "prestations.entretien_price": "70 €",
 
-    "prestations.bilans_title": "Нейропсихологические обследования для взрослых (> 16 лет)",
+    "prestations.bilans_title": "Нейропсихологические обследования для взрослых (с 16 лет)",
     "prestations.bilan_1": "Полное нейропсихологическое обследование",
     "prestations.bilan_1_desc": "Углублённая оценка когнитивного функционирования с помощью различных стандартизированных нейропсихологических проб, позволяющая исследовать память, внимание, исполнительные функции, речь, зрительно-конструктивные, зрительно-пространственные, зрительно-перцептивные и праксические способности, а также социальное познание. Данная оценка направлена на объективизацию и характеристику трудностей, о которых сообщает пациент, и на уточнение наблюдаемого когнитивного профиля.",
     "prestations.bilan_1_price": "450 €",
@@ -539,7 +539,7 @@ export const ui = {
     "prestations.entretien_desc": "Initial consultation to gather the patient's clinical history (medical and family background), the reason for consultation and everyday difficulties in order to guide the neuropsychological assessment.",
     "prestations.entretien_price": "€70",
 
-    "prestations.bilans_title": "Neuropsychological assessments for adults (> 16 years)",
+    "prestations.bilans_title": "Neuropsychological assessments for adults (aged 16 and over)",
     "prestations.bilan_1": "Comprehensive neuropsychological assessment",
     "prestations.bilan_1_desc": "In-depth assessment of cognitive functioning using various standardised neuropsychological tests exploring memory, attention, executive functions, language, visuoconstructive, visuospatial, visuoperceptive and praxic abilities, as well as social cognition. This assessment aims to objectify and characterise the difficulties reported by the patient and to clarify the observed cognitive profile.",
     "prestations.bilan_1_price": "€450",

@@ -1,8 +1,7 @@
 ---
-import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
 import Container from "./Container.astro";
 import Section from "./Section.astro";
-import Button from "./Button.astro";
 import Ornament from "./Ornament.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -13,81 +12,110 @@ const bilansDetailles = [
     title: t("prestations.bilan_1"),
     desc: t("prestations.bilan_1_desc"),
     price: t("prestations.bilan_1_price"),
+    img: "/images/bilan-complet.png",
+    imgSide: "right",
   },
   {
     title: t("prestations.bilan_2"),
     desc: t("prestations.bilan_2_desc"),
     price: t("prestations.bilan_2_price"),
+    img: "/images/bilan-qi.png",
+    imgSide: "left",
   },
   {
     title: t("prestations.bilan_3"),
     desc: t("prestations.bilan_3_desc"),
     price: t("prestations.bilan_3_price"),
+    img: "/images/bilan-attention.png",
+    imgSide: "right",
   },
   {
     title: t("prestations.bilan_4"),
     desc: t("prestations.bilan_4_desc"),
     price: t("prestations.bilan_4_price"),
+    img: "/images/bilan-suivi.png",
+    imgSide: "left",
   },
 ];
-
 ---
 
-<Section tone="paper" spacing="loose" as="header">
+<Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
   <Container width="content">
-    <Ornament tone="rose" spacing="sm" class="!mt-0 !mb-12" />
-    <h1 class="font-serif italic text-center">{t("home.services.title")}</h1>
-    <p class="mt-6 text-center">
-      <a href={getLocalizedPath("/contact", lang)} class="font-medium text-[var(--color-accent-deep)] hover:underline">
-        {t("cta.book")}
-      </a>
-    </p>
+    <h1 class="font-serif italic text-center text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">{t("home.services.title")}</h1>
   </Container>
 </Section>
 
 {/* Premier entretien clinique */}
-<Section tone="paper" spacing="normal" as="section">
+<Section tone="paper" spacing="normal" as="section" class="!pt-12 !pb-0">
   <Container width="content">
-    <div class="max-w-[44rem] mx-auto">
-      <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
-        <p class="font-serif text-[var(--color-ink)] text-center text-lg">{t("prestations.entretien_title")}</p>
-        <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{t("prestations.entretien_desc")}</p>
-        <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{t("prestations.entretien_price")}</p>
+    <div class="max-w-[40rem] mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
+      <img src="/images/entretien.png" alt="" aria-hidden="true" class="w-32 sm:w-40 shrink-0" />
+      <div>
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="font-serif text-lg font-semibold">{t("prestations.entretien_title")}</h2>
+          <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{t("prestations.entretien_price")}</span>
+        </div>
+        <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.entretien_desc")}</p>
       </div>
     </div>
   </Container>
 </Section>
 
 {/* Bilans neuropsychologiques */}
-<Section tone="paper" spacing="normal" as="section">
+<Section tone="paper" spacing="normal" as="section" class="!py-0">
   <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
     <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
       {t("prestations.bilans_title")}
     </h2>
 
-    <div class="mt-10 max-w-[44rem] mx-auto flex flex-col gap-4">
-      {bilansDetailles.map((b) => (
-        <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
-          <p class="font-serif text-[var(--color-ink)] text-center text-lg">{b.title}</p>
-          <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{b.desc}</p>
-          <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{b.price}</p>
-        </div>
+    <div class="mt-8 max-w-[40rem] mx-auto">
+      {bilansDetailles.map((b, i) => (
+        <>
+          {i > 0 && (
+            <div class="flex items-center justify-center gap-2 my-8 text-[var(--color-accent-deep)]" aria-hidden="true">
+              <span class="w-8 h-px bg-current opacity-40"></span>
+              <svg width="6" height="6" viewBox="0 0 6 6"><path d="M3 0 L6 3 L3 6 L0 3 Z" fill="currentColor" /></svg>
+              <span class="w-8 h-px bg-current opacity-40"></span>
+            </div>
+          )}
+          {b.img ? (
+            <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
+              <div>
+                <div class="flex items-center justify-between gap-4">
+                  <h3 class="font-serif text-lg font-semibold">{b.title}</h3>
+                  <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{b.price}</span>
+                </div>
+                <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{b.desc}</p>
+              </div>
+              <img src={b.img} alt="" aria-hidden="true" class:list={["w-32 sm:w-40 shrink-0", b.imgSide === "left" ? "order-first" : "order-first sm:order-last"]} />
+            </div>
+          ) : (
+            <div class="text-center max-w-[32rem] mx-auto">
+              <h3 class="font-serif text-lg font-semibold">{b.title}</h3>
+              <div class="mt-2 flex justify-center"><span class="inline-flex items-center rounded-none border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{b.price}</span></div>
+              <p class="mt-3 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{b.desc}</p>
+            </div>
+          )}
+        </>
       ))}
     </div>
-
   </Container>
 </Section>
 
 {/* Remédiation et stimulation cognitive */}
-<Section tone="paper" spacing="normal" as="section">
+<Section tone="paper" spacing="normal" as="section" class="!pt-0 !pb-8">
   <Container width="content">
-    <div class="max-w-[44rem] mx-auto">
-      <div class="bg-[var(--color-paper)] border border-[var(--color-rule-soft)] rounded-[var(--radius-md)] p-8">
-        <p class="font-serif text-[var(--color-ink)] text-center text-lg">{t("prestations.remediation_title")}</p>
-        <p class="mt-4 text-[var(--color-ink-soft)] leading-relaxed text-center">{t("prestations.remediation_desc")}</p>
-        <p class="mt-4 text-center font-medium tabular-nums text-[var(--color-accent-deep)]">{t("prestations.remediation_price")}</p>
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <div class="max-w-[40rem] mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
+      <div>
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="font-serif text-lg font-semibold">{t("prestations.remediation_title")}</h2>
+          <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{t("prestations.remediation_price")}</span>
+        </div>
+        <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.remediation_desc")}</p>
       </div>
+      <img src="/images/remediation.png" alt="" aria-hidden="true" class="w-32 sm:w-40 shrink-0 order-first sm:order-last" />
     </div>
   </Container>
 </Section>
-
