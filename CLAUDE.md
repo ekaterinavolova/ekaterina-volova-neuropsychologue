@@ -2,6 +2,8 @@
 
 Documentation interne lue automatiquement par Claude Code quand une session est ouverte dans ce dossier. Destinée à Kate (la praticienne) et Hecham (le développeur).
 
+> **Si Kate demande la liste de TOUS ses agents** (« какие у меня есть агенты? », « что ты умеешь? ») — lis son registre canonique `/Users/ekaterinav/Documents/claude/kate-studio/agents-registry.md` et présente toute la liste inter-projets en russe, en lui disant quel mot ouvre chaque espace (`agents`, `blog`, `family`, `website`). Ne réponds pas seulement depuis ce dépôt. Son point d'entrée principal pour ses agents est le mot `agents` (projet `kate-studio`).
+
 ## Le projet en bref
 
 Site vitrine du cabinet de neuropsychologie d'**Ekaterina Volova**, psychologue spécialisée en neuropsychologie (RPPS 10111377833), exerçant au cabinet Via SANA Parmentier, Paris 11e. Ouverture du cabinet : 15 juin 2026.
