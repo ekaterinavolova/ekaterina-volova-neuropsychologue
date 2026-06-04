@@ -1,0 +1,120 @@
+---
+// Carte du cabinet via OpenStreetMap (Leaflet, chargee en lazy, sans cookie / sans tracker).
+---
+
+<div class="w-full">
+  <div
+    id="cabinet-map"
+    class="w-full h-80 sm:h-96 rounded-[var(--radius-md)] border border-[var(--color-rule-soft)] z-0"
+    aria-label="Carte - 14 rue Nicolo, 75116 Paris"
+  >
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var mapEl = document.getElementById('cabinet-map');
+  if (!mapEl) return;
+
+  var loaded = false;
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !loaded) {
+      loaded = true;
+      observer.disconnect();
+      initMap();
+    }
+  }, { rootMargin: '200px' });
+  observer.observe(mapEl);
+
+  function initMap() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    var script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = function() { buildMap(); };
+    document.head.appendChild(script);
+  }
+
+  function buildMap() {
+    var L = window.L;
+    var map = L.map('cabinet-map', {
+      scrollWheelZoom: false,
+      attributionControl: false
+    }).setView([48.85824, 2.27980], 16);
+
+    L.control.attribution({
+      prefix: '<a href="https://leafletjs.com" target="_blank">Leaflet</a>'
+    }).addTo(map);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19
+    }).addTo(map);
+
+    function badge(color, label, shape, textColor, width) {
+      var w = width || 30;
+      var radius = shape === 'square' ? '3px' : '50%';
+      var tc = textColor || '#2c2c2c';
+      return L.divIcon({
+        className: '',
+        html: '<div style="' +
+          'width:' + w + 'px;height:30px;border-radius:' + radius + ';' +
+          'background:' + color + ';color:' + tc + ';' +
+          'display:flex;align-items:center;justify-content:center;' +
+          'font-family:Inter,sans-serif;font-weight:700;font-size:12px;' +
+          'box-shadow:0 2px 6px rgba(0,0,0,.35);border:2.5px solid #2c2c2c;' +
+          '">' + label + '</div>',
+        iconSize: [w, 30],
+        iconAnchor: [w / 2, 15]
+      });
+    }
+
+    var cabinetIcon = L.divIcon({
+      className: '',
+      html: '<div style="position:relative;width:44px;height:58px;">' +
+        '<svg width="44" height="58" viewBox="0 0 44 58" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<filter id="pin-shadow"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.35"/></filter>' +
+          '<path d="M22 56 C22 56 42 34 42 20 A20 20 0 0 0 2 20 C2 34 22 56 22 56Z" fill="#C0392B" stroke="#fff" stroke-width="2.5" filter="url(#pin-shadow)"/>' +
+          '<text x="22" y="27" text-anchor="middle" fill="#fff" font-family="serif" font-size="22" font-weight="400">&Psi;</text>' +
+        '</svg>' +
+      '</div>',
+      iconSize: [44, 58],
+      iconAnchor: [22, 56]
+    });
+    L.marker([48.85874, 2.28036], { icon: cabinetIcon })
+      .addTo(map)
+      .bindPopup('<b>Cabinet</b><br>14 rue Nicolo');
+
+    L.marker([48.85752, 2.28583], { icon: badge('#79BB92', '6', 'circle') })
+      .addTo(map).bindPopup('<b>Metro 6</b><br>Passy');
+    L.marker([48.85809, 2.27412], { icon: badge('#CDC932', '9', 'circle') })
+      .addTo(map).bindPopup('<b>Metro 9</b><br>La Muette');
+    L.marker([48.85773, 2.28024], { icon: badge('#E1A700', '32', 'square') })
+      .addTo(map).bindPopup('<b>Bus 32</b><br>Jean Bologne');
+    L.marker([48.85857, 2.27490], { icon: badge('#E1A700', '22&middot;52', 'square', null, 48) })
+      .addTo(map).bindPopup('<b>Bus 22, 52</b><br>La Muette-Boulainvilliers');
+    L.marker([48.85646, 2.27515], { icon: badge('#FCD946', 'C', 'square') })
+      .addTo(map).bindPopup('<b>RER C</b><br>Boulainvilliers');
+
+    var parkingIcon = L.divIcon({
+      className: '',
+      html: '<div style="' +
+        'width:30px;height:30px;border-radius:3px;' +
+        'background:#3b82f6;color:#fff;' +
+        'display:flex;align-items:center;justify-content:center;' +
+        'font-family:Inter,sans-serif;font-weight:700;font-size:14px;' +
+        'box-shadow:0 2px 6px rgba(0,0,0,.35);border:2.5px solid #2c2c2c;' +
+        '">P</div>',
+      iconSize: [30, 30],
+      iconAnchor: [15, 15]
+    });
+    L.marker([48.8581, 2.2828], { icon: parkingIcon })
+      .addTo(map).bindPopup('<b>Parking</b><br>19 rue de Passy');
+    L.marker([48.8582, 2.2752], { icon: parkingIcon })
+      .addTo(map).bindPopup('<b>Indigo Passy</b><br>80 rue de Passy<br>24h/24');
+  }
+})();
+</script>

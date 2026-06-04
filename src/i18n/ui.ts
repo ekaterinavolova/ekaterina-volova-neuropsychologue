@@ -43,6 +43,12 @@ export const ui = {
     "contact.email": "Email",
     "contact.message": "Votre question",
     "contact.send": "Envoyer",
+    "cabinet.pmr": "Cabinet en rez-de-chaussée, accessible PMR",
+    "contact.sending": "Envoi en cours...",
+    "contact.success":
+      "Votre message a bien été envoyé. Vous recevrez une réponse à l'adresse indiquée.",
+    "contact.error":
+      "L'envoi automatique a échoué : votre logiciel de messagerie va s'ouvrir avec votre message pré-rempli.",
     "cta.book_short": "Réserver",
     "cta.contact": "Me contacter",
     "cta.read_more": "En savoir plus",
@@ -257,6 +263,49 @@ export const ui = {
       "Pratique du bilan en français, en russe et en anglais.",
 
     "about.cta": "Réserver une consultation",
+
+    "legal.title":
+      "Mentions légales et politique de confidentialité - Ekaterina Volova",
+    "legal.description":
+      "Mentions légales, conditions d'utilisation et politique de confidentialité du site ekaterina-volova.com.",
+    "legal.h1": "Mentions légales et politique de confidentialité",
+
+    "legal.editor_title": "Éditeur du site",
+    "legal.editor_intro":
+      "Le site ekaterina-volova.com est édité par Ekaterina Volova, psychologue spécialisée en neuropsychologie.",
+
+    "legal.editor_label_rpps": "RPPS",
+    "legal.editor_label_siret": "SIRET",
+    "legal.editor_label_ape": "Code APE",
+    "legal.editor_label_address": "Cabinet",
+    "legal.editor_label_phone": "Téléphone",
+    "legal.editor_label_email": "Email",
+
+    "legal.director_title": "Directrice de la publication",
+
+    "legal.host_title": "Hébergeur",
+    "legal.host_content":
+      "Le site est hébergé par Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, États-Unis.",
+
+    "legal.ip_title": "Propriété intellectuelle",
+    "legal.ip_content":
+      "L'ensemble du contenu de ce site (textes, images, graphismes, logo, structure) est la propriété exclusive d'Ekaterina Volova, sauf mention contraire. Toute reproduction, représentation ou diffusion, en tout ou en partie, du contenu de ce site sur quelque support ou par tout procédé que ce soit est interdite sans l'autorisation préalable écrite d'Ekaterina Volova.",
+
+    "legal.data_title": "Données personnelles et cookies",
+    "legal.data_no_collection":
+      "Ce site ne stocke aucune donnée personnelle. Les messages envoyés via le formulaire de question sont transmis directement par email à Ekaterina Volova au moyen du service d'envoi Resend (Resend, Inc., États-Unis) : ils ne sont ni stockés sur le site ni utilisés à d'autres fins. Le formulaire est protégé contre les robots par Cloudflare Turnstile, qui ne dépose aucun cookie. Aucun cookie ni traceur publicitaire n'est utilisé.",
+    "legal.data_analytics":
+      "La mesure d'audience est réalisée par Cloudflare Web Analytics, un outil respectueux de la vie privée qui ne dépose aucun cookie et ne collecte aucune donnée personnelle identifiante. Aucun consentement n'est requis conformément aux recommandations de la CNIL.",
+    "legal.data_rights":
+      "Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, contactez : volova.neuropsy@gmail.com.",
+
+    "legal.liability_title": "Responsabilité",
+    "legal.liability_content":
+      "Ekaterina Volova s'efforce de fournir des informations exactes et à jour sur ce site. Toutefois, elle ne peut garantir l'exactitude, la complétude ou l'actualité des informations diffusées. Le contenu de ce site est fourni à titre informatif et ne saurait se substituer à un avis médical ou à une consultation professionnelle.",
+
+    "legal.law_title": "Droit applicable",
+    "legal.law_content":
+      "Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.",
   },
   ru: {
     "nav.home": "Главная",
@@ -284,6 +333,12 @@ export const ui = {
     "contact.email": "Email",
     "contact.message": "Ваш вопрос",
     "contact.send": "Отправить",
+    "cabinet.pmr": "Кабинет на первом этаже, доступен для МГН",
+    "contact.sending": "Отправка...",
+    "contact.success":
+      "Ваше сообщение успешно отправлено. Ответ придёт на указанный адрес.",
+    "contact.error":
+      "Автоматическая отправка не удалась: откроется ваша почтовая программа с заполненным сообщением.",
     "cta.book_short": "Записаться",
     "cta.contact": "Связаться со мной",
     "cta.read_more": "Подробнее",
@@ -498,6 +553,49 @@ export const ui = {
       "Обследование проводится на французском, русском и английском языках.",
 
     "about.cta": "Записаться на консультацию",
+
+    "legal.title":
+      "Правовая информация и политика конфиденциальности - Екатерина Волова",
+    "legal.description":
+      "Правовая информация, условия использования и политика конфиденциальности сайта ekaterina-volova.com.",
+    "legal.h1": "Правовая информация и политика конфиденциальности",
+
+    "legal.editor_title": "Издатель сайта",
+    "legal.editor_intro":
+      "Сайт ekaterina-volova.com издается Екатериной Воловой, психологом, специалистом по нейропсихологии.",
+
+    "legal.editor_label_rpps": "RPPS",
+    "legal.editor_label_siret": "SIRET",
+    "legal.editor_label_ape": "Код APE",
+    "legal.editor_label_address": "Кабинет",
+    "legal.editor_label_phone": "Телефон",
+    "legal.editor_label_email": "Email",
+
+    "legal.director_title": "Директор публикации",
+
+    "legal.host_title": "Хостинг",
+    "legal.host_content":
+      "Сайт размещен на серверах Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, США.",
+
+    "legal.ip_title": "Интеллектуальная собственность",
+    "legal.ip_content":
+      "Все содержание данного сайта (тексты, изображения, графика, логотип, структура) является исключительной собственностью Екатерины Воловой, если не указано иное. Любое воспроизведение, представление или распространение, полностью или частично, содержания данного сайта на любом носителе или любым способом запрещено без предварительного письменного разрешения Екатерины Воловой.",
+
+    "legal.data_title": "Персональные данные и файлы cookie",
+    "legal.data_no_collection":
+      "Данный сайт не хранит никаких персональных данных. Сообщения, отправленные через форму вопроса, передаются напрямую по электронной почте Екатерине Воловой через сервис отправки Resend (Resend, Inc., США): они не сохраняются на сайте и не используются в иных целях. Форма защищена от роботов с помощью Cloudflare Turnstile, который не использует файлы cookie. Файлы cookie и рекламные трекеры не используются.",
+    "legal.data_analytics":
+      "Измерение посещаемости осуществляется с помощью Cloudflare Web Analytics - инструмента, уважающего конфиденциальность, который не использует файлы cookie и не собирает идентифицирующие персональные данные. Согласие пользователя не требуется в соответствии с рекомендациями CNIL.",
+    "legal.data_rights":
+      "В соответствии с Общим регламентом по защите данных (RGPD) и законом об информатике и свободах от 6 января 1978 года с изменениями, вы имеете право на доступ, исправление и удаление касающихся вас данных. Для реализации этого права обращайтесь: volova.neuropsy@gmail.com.",
+
+    "legal.liability_title": "Ответственность",
+    "legal.liability_content":
+      "Екатерина Волова прилагает все усилия для предоставления точной и актуальной информации на данном сайте. Тем не менее, она не может гарантировать точность, полноту или актуальность распространяемой информации. Содержание данного сайта предоставляется в информационных целях и не может заменить медицинскую консультацию или профессиональную помощь.",
+
+    "legal.law_title": "Применимое право",
+    "legal.law_content":
+      "Настоящая правовая информация регулируется французским законодательством. В случае спора компетентными являются исключительно французские суды.",
   },
   en: {
     "nav.home": "Home",
@@ -525,6 +623,12 @@ export const ui = {
     "contact.email": "Email",
     "contact.message": "Your question",
     "contact.send": "Send",
+    "cabinet.pmr": "Ground-floor practice, wheelchair accessible",
+    "contact.sending": "Sending...",
+    "contact.success":
+      "Your message has been sent. You will receive a reply at the address provided.",
+    "contact.error":
+      "Automatic sending failed: your email client will open with your message pre-filled.",
     "cta.book_short": "Book",
     "cta.contact": "Get in touch",
     "cta.read_more": "Learn more",
@@ -735,6 +839,49 @@ export const ui = {
       "Assessments are conducted in French, Russian and English.",
 
     "about.cta": "Book a consultation",
+
+    "legal.title":
+      "Legal notice and privacy policy - Ekaterina Volova",
+    "legal.description":
+      "Legal notice, terms of use and privacy policy for ekaterina-volova.com.",
+    "legal.h1": "Legal notice and privacy policy",
+
+    "legal.editor_title": "Site publisher",
+    "legal.editor_intro":
+      "The website ekaterina-volova.com is published by Ekaterina Volova, psychologist specialising in neuropsychology.",
+
+    "legal.editor_label_rpps": "RPPS",
+    "legal.editor_label_siret": "SIRET",
+    "legal.editor_label_ape": "APE code",
+    "legal.editor_label_address": "Office",
+    "legal.editor_label_phone": "Phone",
+    "legal.editor_label_email": "Email",
+
+    "legal.director_title": "Publication director",
+
+    "legal.host_title": "Hosting provider",
+    "legal.host_content":
+      "The website is hosted by Cloudflare, Inc., 101 Townsend Street, San Francisco, CA 94107, United States.",
+
+    "legal.ip_title": "Intellectual property",
+    "legal.ip_content":
+      "All content on this website (text, images, graphics, logo, structure) is the exclusive property of Ekaterina Volova, unless otherwise stated. Any reproduction, representation or distribution, in whole or in part, of the content of this website on any medium or by any means is prohibited without the prior written consent of Ekaterina Volova.",
+
+    "legal.data_title": "Personal data and cookies",
+    "legal.data_no_collection":
+      "This website does not store any personal data. Messages sent via the question form are forwarded directly by email to Ekaterina Volova using the Resend sending service (Resend, Inc., United States): they are neither stored on the website nor used for any other purpose. The form is protected against robots by Cloudflare Turnstile, which does not set any cookies. No cookies or advertising trackers are used.",
+    "legal.data_analytics":
+      "Audience measurement is carried out by Cloudflare Web Analytics, a privacy-respecting tool that does not use cookies and does not collect any personally identifiable data. No user consent is required in accordance with CNIL recommendations.",
+    "legal.data_rights":
+      "In accordance with the General Data Protection Regulation (GDPR) and the French Data Protection Act of 6 January 1978 as amended, you have the right to access, rectify and delete data concerning you. To exercise this right, contact: volova.neuropsy@gmail.com.",
+
+    "legal.liability_title": "Liability",
+    "legal.liability_content":
+      "Ekaterina Volova endeavours to provide accurate and up-to-date information on this website. However, she cannot guarantee the accuracy, completeness or currency of the information provided. The content of this website is for informational purposes only and does not constitute medical advice or a substitute for professional consultation.",
+
+    "legal.law_title": "Applicable law",
+    "legal.law_content":
+      "These legal notices are governed by French law. In the event of a dispute, the French courts shall have sole jurisdiction.",
   },
 } as const;
 

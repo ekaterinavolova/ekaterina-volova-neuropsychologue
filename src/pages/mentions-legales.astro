@@ -1,0 +1,16 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import MentionsLegalesContent from "~/components/MentionsLegalesContent.astro";
+import { useTranslations, getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  canonicalPath="/mentions-legales"
+  title={t("legal.title")}
+  description={t("legal.description")}
+>
+  <MentionsLegalesContent />
+</BaseLayout>

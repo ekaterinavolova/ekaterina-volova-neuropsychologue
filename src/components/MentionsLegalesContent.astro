@@ -1,0 +1,100 @@
+---
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+import Ornament from "./Ornament.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const editorDetails = [
+  { label: t("legal.editor_label_rpps"), value: "10111377833", mono: true },
+  { label: t("legal.editor_label_siret"), value: "105 203 871 00014", mono: true },
+  { label: t("legal.editor_label_ape"), value: "86.90F", mono: true },
+  { label: t("legal.editor_label_address"), value: "14 rue Nicolo, 75116 Paris", mono: false },
+];
+---
+
+<Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
+  <Container width="content">
+    <h1 class="font-serif italic text-center text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">{t("legal.h1")}</h1>
+  </Container>
+</Section>
+
+{/* Éditeur du site */}
+<Section tone="paper" spacing="normal" as="section" class="!pt-12 !pb-0">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">{t("legal.editor_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed">
+      <p class="text-justify">{t("legal.editor_intro")}</p>
+      <dl class="mt-6 space-y-1.5">
+        {editorDetails.map((item) => (
+          <div class="flex gap-2">
+            <dt class="text-[var(--color-ink-muted)] shrink-0">{item.label} :</dt>
+            <dd class:list={[item.mono && "font-mono text-sm self-center tabular-nums"]}>{item.value}</dd>
+          </div>
+        ))}
+        <div class="flex gap-2">
+          <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_phone")} :</dt>
+          <dd><a href="tel:+33666074254" class="no-underline hover:text-[var(--color-ink)] transition-colors">06 66 07 42 54</a></dd>
+        </div>
+        <div class="flex gap-2">
+          <dt class="text-[var(--color-ink-muted)] shrink-0">{t("legal.editor_label_email")} :</dt>
+          <dd><a href="mailto:volova.neuropsy@gmail.com" class="no-underline hover:text-[var(--color-ink)] transition-colors">volova.neuropsy@gmail.com</a></dd>
+        </div>
+      </dl>
+      <p class="mt-6"><span class="text-[var(--color-ink-muted)]">{t("legal.director_title")} :</span> Ekaterina Volova</p>
+    </div>
+  </Container>
+</Section>
+
+{/* Hébergeur */}
+<Section tone="paper" spacing="normal" as="section" class="!py-0">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">{t("legal.host_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("legal.host_content")}</p>
+    </div>
+  </Container>
+</Section>
+
+{/* Propriété intellectuelle */}
+<Section tone="paper" spacing="normal" as="section" class="!py-0">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">{t("legal.ip_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("legal.ip_content")}</p>
+    </div>
+  </Container>
+</Section>
+
+{/* Données personnelles et cookies */}
+<Section tone="paper" spacing="normal" as="section" class="!py-0">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">{t("legal.data_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto space-y-4 text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("legal.data_no_collection")}</p>
+      <p>{t("legal.data_analytics")}</p>
+      <p>{t("legal.data_rights")}</p>
+    </div>
+  </Container>
+</Section>
+
+{/* Responsabilité et droit applicable */}
+<Section tone="paper" spacing="normal" as="section" class="!pt-0 !pb-16">
+  <Container width="content">
+    <Ornament tone="accent" spacing="sm" class="!my-12" />
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">{t("legal.liability_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("legal.liability_content")}</p>
+    </div>
+
+    <h2 class="mt-12 font-serif italic text-center text-xl sm:text-2xl">{t("legal.law_title")}</h2>
+    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+      <p>{t("legal.law_content")}</p>
+    </div>
+  </Container>
+</Section>

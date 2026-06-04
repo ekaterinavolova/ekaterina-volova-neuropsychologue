@@ -4,6 +4,8 @@ import Container from "./Container.astro";
 import Section from "./Section.astro";
 import Ornament from "./Ornament.astro";
 import Button from "./Button.astro";
+import CabinetMap from "./CabinetMap.astro";
+import TransportBadges from "./TransportBadges.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -11,17 +13,6 @@ const t = useTranslations(lang);
 const specialties = Array.from({ length: 11 }, (_, i) => t(`home.intro.spec_${i + 1}` as any));
 
 const contactHref = getLocalizedPath("/contact", lang);
-const mapUrl = "https://www.openstreetmap.org/search?query=" + encodeURIComponent("14 rue Nicolo, 75116 Paris");
-
-// Transports proches du cabinet. Couleurs officielles des lignes RATP.
-const metroStations = [
-  { badge: "9", name: "La Muette", bg: "#B6BD00", fg: "#1b1b1b" },
-  { badge: "6", name: "Passy", bg: "#6ECA97", fg: "#1b1b1b" },
-];
-const rerStations = [
-  { badge: "C", name: "Boulainvilliers", bg: "#FCD946", fg: "#1b1b1b" },
-];
-const busLines = "22, 32, 63, 72";
 
 // Lignes du tableau des tarifs (libellé + prix, depuis i18n).
 const priceItems = [
@@ -123,36 +114,12 @@ const priceItems = [
 
     <p class="mt-8 text-center text-[var(--color-ink-soft)]">{t("footer.office_address")}</p>
 
-    <div class="mt-6 flex justify-center gap-10 sm:gap-16 text-left">
-      {/* Colonne 1 : métro */}
-      <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
-        {metroStations.map((s) => (
-          <li class="flex items-center gap-2.5">
-            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full text-[0.8125rem] font-bold leading-none shrink-0" style={`background:${s.bg};color:${s.fg}`} aria-hidden="true">{s.badge}</span>
-            <span class="text-[var(--color-ink-soft)]">{s.name}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Colonne 2 : RER + bus */}
-      <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
-        {rerStations.map((s) => (
-          <li class="flex items-center gap-2.5">
-            <span class="inline-flex items-center justify-center w-6 h-6 rounded-[var(--radius-sm)] text-[0.8125rem] font-bold leading-none shrink-0" style={`background:${s.bg};color:${s.fg}`} aria-hidden="true">{s.badge}</span>
-            <span class="text-[var(--color-ink-soft)]">{s.name}</span>
-          </li>
-        ))}
-        <li class="flex items-center gap-2.5">
-          <span class="inline-flex items-center justify-center h-6 px-2 rounded-[var(--radius-sm)] text-[0.6875rem] font-bold uppercase tracking-wide leading-none bg-[var(--color-ink)] text-[var(--color-paper)] shrink-0" aria-hidden="true">Bus</span>
-          <span class="text-[var(--color-ink-soft)]">{busLines}</span>
-        </li>
-      </ul>
+    <div class="mt-6">
+      <TransportBadges />
     </div>
 
-    <p class="mt-6 text-center">
-      <a href={mapUrl} target="_blank" rel="noopener noreferrer" class="font-serif italic text-base sm:text-lg text-[var(--color-ink-muted)]! hover:text-[var(--color-ink)]! no-underline transition-colors">
-        {t("home.cabinet.map_link")}
-      </a>
-    </p>
+    <div class="mt-10">
+      <CabinetMap />
+    </div>
   </Container>
 </Section>

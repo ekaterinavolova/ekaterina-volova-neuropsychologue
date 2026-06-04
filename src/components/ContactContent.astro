@@ -4,6 +4,8 @@ import Container from "./Container.astro";
 import Section from "./Section.astro";
 import Ornament from "./Ornament.astro";
 import Button from "./Button.astro";
+import CabinetMap from "./CabinetMap.astro";
+import TransportBadges from "./TransportBadges.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -12,11 +14,9 @@ const email = "volova.neuropsy@gmail.com";
 const inputClass =
   "w-full border border-[var(--color-rule)] bg-[var(--color-paper)] rounded-[var(--radius-md)] px-3 py-2 text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-accent-deep)] transition-colors";
 
-// Carte du cabinet via OpenStreetMap (embed sans cookie / sans tracker).
-const mapLat = "48.8587441";
-const mapLon = "2.2803554";
-const mapEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=2.2763554,48.8567441,2.2843554,48.8607441&layer=mapnik&marker=${mapLat},${mapLon}`;
-const mapLink = `https://www.openstreetmap.org/?mlat=${mapLat}&mlon=${mapLon}#map=17/${mapLat}/${mapLon}`;
+// Cle publique Turnstile (anti-spam). En local, cle de test Cloudflare "toujours valide".
+const turnstileSiteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
 ---
 
 <Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
@@ -28,8 +28,8 @@ const mapLink = `https://www.openstreetmap.org/?mlat=${mapLat}&mlon=${mapLon}#ma
 {/* Coordonnées */}
 <Section tone="paper" spacing="normal" as="section" class="!pt-12 !pb-0">
   <Container width="content">
-    <div class="max-w-[50rem] mx-auto flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-10">
-      <div class="flex shrink-0 flex-col items-center sm:items-start gap-4 text-[var(--color-ink-soft)]">
+    <div class="max-w-[50rem] mx-auto flex flex-col items-center justify-center gap-10">
+      <div class="flex flex-col sm:flex-row items-center sm:items-baseline justify-center gap-4 sm:gap-10 text-[var(--color-ink-soft)]">
         <a href="tel:+33666074254" class="flex items-center gap-2.5 hover:text-[var(--color-ink)] transition-colors">
           <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -52,17 +52,9 @@ const mapLink = `https://www.openstreetmap.org/?mlat=${mapLat}&mlon=${mapLon}#ma
         </div>
       </div>
 
-      <div class="w-full sm:w-[22rem] shrink-0">
-        <iframe
-          title="Carte - 14 rue Nicolo, 75116 Paris"
-          src={mapEmbed}
-          loading="lazy"
-          class="w-full h-64 rounded-[var(--radius-md)] border border-[var(--color-rule-soft)]"
-        ></iframe>
-        <p class="mt-2 text-center">
-          <a href={mapLink} target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] no-underline transition-colors">{t("home.cabinet.map_link")}</a>
-        </p>
-      </div>
+      <TransportBadges />
+
+      <CabinetMap />
     </div>
   </Container>
 </Section>
@@ -74,38 +66,98 @@ const mapLink = `https://www.openstreetmap.org/?mlat=${mapLat}&mlon=${mapLon}#ma
     <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">{t("contact.form_heading")}</h2>
     <p class="mt-4 max-w-[34rem] mx-auto text-center text-sm text-[var(--color-ink-muted)] leading-relaxed">{t("contact.form_intro")}</p>
 
-    <form id="question-form" class="mt-8 max-w-[34rem] mx-auto flex flex-col gap-4">
+    <form
+      id="question-form"
+      class="mt-8 max-w-[34rem] mx-auto flex flex-col gap-4"
+      data-msg-sending={t("contact.sending")}
+      data-msg-success={t("contact.success")}
+      data-msg-error={t("contact.error")}
+    >
       <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
         {t("contact.name")}
-        <input type="text" name="name" required class={inputClass} />
+        <input type="text" name="name" required maxlength="200" class={inputClass} />
       </label>
       <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
         {t("contact.email")}
-        <input type="email" name="email" required class={inputClass} />
+        <input type="email" name="email" required maxlength="320" class={inputClass} />
       </label>
       <label class="flex flex-col gap-1.5 text-sm text-[var(--color-ink-soft)]">
         {t("contact.message")}
-        <textarea name="message" rows="5" required class={`${inputClass} resize-y`}></textarea>
+        <textarea name="message" rows="5" required maxlength="5000" class={`${inputClass} resize-y`}></textarea>
       </label>
+      {/* Honeypot anti-spam : invisible pour un humain, rempli par les bots */}
+      <div class="hidden" aria-hidden="true">
+        <label>
+          Website
+          <input type="text" name="website" tabindex="-1" autocomplete="off" />
+        </label>
+      </div>
+      <div class="flex justify-center">
+        <div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div>
+      </div>
       <div class="mt-2 text-center">
         <Button type="submit" variant="primary">{t("contact.send")}</Button>
       </div>
+      <p id="form-status" class="hidden text-center text-sm leading-relaxed" role="status"></p>
     </form>
   </Container>
 </Section>
 
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
 <script>
   const form = document.getElementById("question-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  function showStatus(text: string, kind: "info" | "success" | "error") {
+    if (!status) return;
+    status.textContent = text;
+    status.classList.remove("hidden", "text-[var(--color-ink-muted)]", "text-[var(--color-accent-deep)]", "text-red-700");
+    status.classList.add(
+      kind === "success"
+        ? "text-[var(--color-accent-deep)]"
+        : kind === "error"
+          ? "text-red-700"
+          : "text-[var(--color-ink-muted)]",
+    );
+  }
+
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const name = (data.get("name") || "").toString().trim();
       const visitorEmail = (data.get("email") || "").toString().trim();
       const message = (data.get("message") || "").toString().trim();
-      const subject = encodeURIComponent("Question via le site - " + name);
-      const body = encodeURIComponent(message + "\n\n--\n" + name + "\n" + visitorEmail);
-      window.location.href = "mailto:volova.neuropsy@gmail.com?subject=" + subject + "&body=" + body;
+      const website = (data.get("website") || "").toString().trim();
+      const turnstileToken = (data.get("cf-turnstile-response") || "").toString();
+
+      const submitBtn = form.querySelector<HTMLButtonElement>("button[type=submit]");
+      if (submitBtn) submitBtn.disabled = true;
+      showStatus(form.dataset.msgSending || "...", "info");
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email: visitorEmail, message, website, turnstileToken }),
+        });
+        const result = await res.json();
+        if (!result.ok) throw new Error(result.error || "send_failed");
+
+        form.reset();
+        (window as any).turnstile?.reset();
+        showStatus(form.dataset.msgSuccess || "OK", "success");
+      } catch {
+        // Fallback : ouverture du logiciel de messagerie du visiteur,
+        // son message pre-rempli (rien n'est perdu).
+        showStatus(form.dataset.msgError || "Erreur", "error");
+        const subject = encodeURIComponent("Question via le site - " + name);
+        const body = encodeURIComponent(message + "\n\n--\n" + name + "\n" + visitorEmail);
+        window.location.href = "mailto:volova.neuropsy@gmail.com?subject=" + subject + "&body=" + body;
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 </script>
