@@ -44,6 +44,7 @@ export const ui = {
     "contact.message": "Votre question",
     "contact.send": "Envoyer",
     "cabinet.pmr": "Cabinet en rez-de-chaussée, accessible PMR",
+    "cabinet.hours": "Tous les jours (y compris le week-end), 09h30 - 18h30",
     "contact.sending": "Envoi en cours...",
     "contact.success":
       "Votre message a bien été envoyé. Vous recevrez une réponse à l'adresse indiquée.",
@@ -334,6 +335,7 @@ export const ui = {
     "contact.message": "Ваш вопрос",
     "contact.send": "Отправить",
     "cabinet.pmr": "Кабинет на первом этаже, доступен для МГН",
+    "cabinet.hours": "Ежедневно (включая выходные), 09:30 - 18:30",
     "contact.sending": "Отправка...",
     "contact.success":
       "Ваше сообщение успешно отправлено. Ответ придёт на указанный адрес.",
@@ -624,6 +626,7 @@ export const ui = {
     "contact.message": "Your question",
     "contact.send": "Send",
     "cabinet.pmr": "Ground-floor practice, wheelchair accessible",
+    "cabinet.hours": "Every day (including weekends), 09:30 - 18:30",
     "contact.sending": "Sending...",
     "contact.success":
       "Your message has been sent. You will receive a reply at the address provided.",

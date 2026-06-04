@@ -25,25 +25,36 @@ const priceItems = [
 ];
 ---
 
-{/* Hero */}
-<section class="bg-[var(--color-paper)] pt-8 pb-0">
+{/* Hero - page de titre, façon belle édition, portrait à gauche */}
+<section class="bg-[var(--color-paper)] pt-12 sm:pt-16 pb-4">
   <Container width="wide">
-    <div class="flex flex-col items-center md:flex-row md:justify-center md:items-center gap-10 md:gap-14">
+    <div class="flex flex-col items-center md:flex-row md:justify-center md:items-center gap-10 md:gap-16">
       <img
         src="/images/portrait-ekaterina.jpg"
         alt="Ekaterina Volova"
         class="aspect-square w-full max-w-[15rem] shrink-0 object-cover object-[center_25%] rounded-full border border-[var(--color-rule-soft)]"
       />
 
-      <div class="text-center">
-        <h1 id="hero-name" class="font-serif italic text-[var(--color-accent-deep)]">{t("home.h1")}</h1>
-        <p class="mt-2 font-serif text-sm uppercase tracking-[0.15em] text-[var(--color-ink-muted)]">{t("home.lede")}</p>
-        <p class="mt-4 font-serif italic text-base text-[var(--color-ink)]">
-          {t("home.hero.line1_pre")}<span class="underline decoration-1 underline-offset-4">{t("home.hero.line1_em")}</span>
-        </p>
-        <p class="mt-1 font-serif italic text-base text-[var(--color-ink)]">{t("home.hero.line2")}</p>
+      <div class="flex flex-col items-center text-center max-w-[36rem]">
+        <h1 id="hero-name" class="font-serif italic text-[var(--color-accent-deep)] text-[clamp(2.5rem,3.5vw_+_1rem,3.75rem)]">
+          {t("home.h1")}
+        </h1>
 
-        <div id="hero-cta" class="mt-6">
+        {/* Sous-titre entre filets, façon page de titre */}
+        <div class="mt-6 flex items-center gap-4 sm:gap-6 w-full">
+          <span class="h-px flex-1 bg-[var(--color-rule)]" aria-hidden="true"></span>
+          <p class="font-sans text-[0.6875rem] sm:text-xs uppercase tracking-[0.22em] text-[var(--color-ink-muted)] text-center">
+            {t("home.lede")}
+          </p>
+          <span class="h-px flex-1 bg-[var(--color-rule)]" aria-hidden="true"></span>
+        </div>
+
+        <p class="mt-8 font-serif italic text-lg text-[var(--color-ink)]">
+          {t("home.hero.line1_pre")}<span class="underline decoration-1 underline-offset-4 decoration-[var(--color-accent)]">{t("home.hero.line1_em")}</span>
+        </p>
+        <p class="mt-1.5 font-serif text-[var(--color-ink-muted)]">{t("home.hero.line2")}</p>
+
+        <div id="hero-cta" class="mt-9">
           <Button href={contactHref} variant="secondary" size="md">{t("cta.book")}</Button>
         </div>
       </div>
@@ -51,17 +62,20 @@ const priceItems = [
   </Container>
 </section>
 
-{/* À propos - présentation courte */}
+{/* I. Qui suis-je - tête de chapitre + lettrine */}
 <Section tone="paper" spacing="normal" as="section" id="presentation" class="!py-0">
   <Container width="content">
-    <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center">{t("home.intro.title")}</h2>
+    <Ornament tone="accent" spacing="sm" class="!mt-16 !mb-14" />
 
-    <div class="mt-8 max-w-[44rem] mx-auto text-[var(--color-ink-soft)] leading-relaxed text-justify">
+    <h2 class="text-center font-serif italic">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("home.intro.title")}
+    </h2>
+
+    <div class="regency-dropcap mt-10 max-w-[40rem] mx-auto text-[var(--color-ink-soft)] leading-[1.85] text-left sm:text-justify">
       <p>{t("home.intro.text")}</p>
     </div>
 
-    <ul class="mt-6 flex flex-wrap justify-center gap-2.5 max-w-[40rem] mx-auto list-none p-0">
+    <ul class="mt-10 flex flex-wrap justify-center gap-x-2.5 gap-y-2.5 max-w-[40rem] mx-auto list-none p-0">
       {specialties.map((s) => (
         <li class="inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-4 py-1.5 text-sm text-[var(--color-ink-soft)]">
           {s}
@@ -69,7 +83,7 @@ const priceItems = [
       ))}
     </ul>
 
-    <p class="mt-6 text-center">
+    <p class="mt-9 text-center">
       <a href={getLocalizedPath("/a-propos", lang)} class="font-serif italic text-base sm:text-lg text-[var(--color-ink-muted)]! hover:text-[var(--color-ink)]! no-underline transition-colors">
         {t("home.intro.cta")}
       </a>
@@ -77,13 +91,16 @@ const priceItems = [
   </Container>
 </Section>
 
-{/* Tarifs */}
+{/* II. Tarifs */}
 <Section tone="paper" spacing="normal" as="section" id="tarifs" class="!py-0">
   <Container width="content">
-    <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center">{t("home.tarifs.title")}</h2>
+    <Ornament tone="accent" spacing="sm" class="!my-14" />
 
-    <div class="mt-10 max-w-[32rem] mx-auto space-y-4">
+    <h2 class="text-center font-serif italic">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("home.services.title")}
+    </h2>
+
+    <div class="mt-11 max-w-[32rem] mx-auto space-y-4">
       {priceItems.map((item) => (
         <div class="flex items-baseline gap-3">
           <span class="text-[var(--color-ink-soft)]">{t(item.label as any)}</span>
@@ -93,7 +110,7 @@ const priceItems = [
       ))}
     </div>
 
-    <p class="mt-6 text-center">
+    <p class="mt-9 text-center">
       <a href={getLocalizedPath("/prestations", lang)} class="font-serif italic text-base sm:text-lg text-[var(--color-ink-muted)]! hover:text-[var(--color-ink)]! no-underline transition-colors">
         {t("home.tarifs.cta")}
       </a>
@@ -101,24 +118,27 @@ const priceItems = [
   </Container>
 </Section>
 
-{/* Cabinet */}
-<Section tone="paper" spacing="normal" as="section" id="cabinet" class="!pt-0 !pb-8">
+{/* III. Le cabinet */}
+<Section tone="paper" spacing="normal" as="section" id="cabinet" class="!pt-0 !pb-16">
   <Container width="content">
-    <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center">{t("home.cabinet.title")}</h2>
+    <Ornament tone="accent" spacing="sm" class="!my-14" />
+
+    <h2 class="text-center font-serif italic">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">III.</span>{t("home.cabinet.title")}
+    </h2>
 
     {/* Emplacement photo - à remplacer la semaine prochaine */}
-    <div class="mt-10 max-w-[36rem] mx-auto aspect-[3/2] rounded-[var(--radius-md)] border border-dashed border-[var(--color-rule-soft)] bg-[var(--color-paper-warm)] flex items-center justify-center">
+    <div class="mt-11 max-w-[36rem] mx-auto aspect-[3/2] rounded-[var(--radius-md)] border border-dashed border-[var(--color-rule-soft)] bg-[var(--color-paper-warm)] flex items-center justify-center">
       <span class="font-serif italic text-sm text-[var(--color-ink-muted)]">{t("home.cabinet.photo_placeholder")}</span>
     </div>
 
-    <p class="mt-8 text-center text-[var(--color-ink-soft)]">{t("footer.office_address")}</p>
+    <p class="mt-9 text-center font-serif text-lg text-[var(--color-ink)]">{t("footer.office_address")}</p>
 
-    <div class="mt-6">
+    <div class="mt-7">
       <TransportBadges />
     </div>
 
-    <div class="mt-10">
+    <div class="mt-11">
       <CabinetMap />
     </div>
   </Container>

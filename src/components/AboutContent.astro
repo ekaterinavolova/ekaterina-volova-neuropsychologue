@@ -23,7 +23,9 @@ const education = Array.from({ length: 4 }, (_, i) => ({
 {/* Expérience professionnelle */}
 <Section tone="paper" spacing="normal" as="section" id="experience" class="!pt-12 !pb-0">
   <Container width="content">
-    <h2 class="font-serif italic text-center">{t("about.experience_title")}</h2>
+    <h2 class="font-serif italic text-center">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("about.experience_title")}
+    </h2>
 
     <p class="mt-8 max-w-[44rem] mx-auto text-sm text-[var(--color-ink-muted)] italic leading-relaxed text-center">
       {t("about.section3_intro")}
@@ -47,7 +49,9 @@ const education = Array.from({ length: 4 }, (_, i) => ({
 <Section tone="paper" spacing="normal" as="section" id="formation" class="!pt-0 !pb-8">
   <Container width="content">
     <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center">{t("about.education_title")}</h2>
+    <h2 class="font-serif italic text-center">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("about.education_title")}
+    </h2>
 
     <ol class="mt-8 max-w-[44rem] mx-auto space-y-8">
       {education.map((entry) => (

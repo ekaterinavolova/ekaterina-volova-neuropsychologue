@@ -52,7 +52,9 @@ const bilansDetailles = [
       <img src="/images/entretien.png" alt="" aria-hidden="true" class="w-32 sm:w-40 shrink-0" />
       <div>
         <div class="flex items-center justify-between gap-4">
-          <h2 class="font-serif text-lg font-semibold">{t("prestations.entretien_title")}</h2>
+          <h2 class="font-serif text-lg font-semibold">
+            <span class="font-normal text-[var(--color-accent-deep)] mr-2.5" aria-hidden="true">I.</span>{t("prestations.entretien_title")}
+          </h2>
           <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{t("prestations.entretien_price")}</span>
         </div>
         <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.entretien_desc")}</p>
@@ -65,8 +67,8 @@ const bilansDetailles = [
 <Section tone="paper" spacing="normal" as="section" class="!py-0">
   <Container width="content">
     <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center text-lg sm:text-xl text-[var(--color-ink-soft)]">
-      {t("prestations.bilans_title")}
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
+      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("prestations.bilans_title")}
     </h2>
 
     <div class="mt-8 max-w-[40rem] mx-auto">
@@ -110,7 +112,9 @@ const bilansDetailles = [
     <div class="max-w-[40rem] mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
       <div>
         <div class="flex items-center justify-between gap-4">
-          <h2 class="font-serif text-lg font-semibold">{t("prestations.remediation_title")}</h2>
+          <h2 class="font-serif text-lg font-semibold">
+            <span class="font-normal text-[var(--color-accent-deep)] mr-2.5" aria-hidden="true">III.</span>{t("prestations.remediation_title")}
+          </h2>
           <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{t("prestations.remediation_price")}</span>
         </div>
         <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.remediation_desc")}</p>
