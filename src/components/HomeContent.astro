@@ -29,11 +29,14 @@ const priceItems = [
 <section class="bg-[var(--color-paper)] pt-12 sm:pt-16 pb-4">
   <Container width="wide">
     <div class="flex flex-col items-center md:flex-row md:justify-center md:items-center gap-10 md:gap-16">
-      <img
-        src="/images/portrait-ekaterina.jpg"
-        alt="Ekaterina Volova"
-        class="aspect-square w-full max-w-[15rem] shrink-0 object-cover object-[center_25%] rounded-full border border-[var(--color-rule-soft)]"
-      />
+      {/* Portrait en cadre leger, format 3:4 */}
+      <div class="w-full max-w-[15rem] shrink-0 p-2 border border-[var(--color-rule)] rounded-[var(--radius-sm)] bg-[var(--color-paper)]">
+        <img
+          src="/images/portrait-ekaterina.jpg"
+          alt="Ekaterina Volova"
+          class="aspect-[3/4] w-full object-cover object-[center_25%]"
+        />
+      </div>
 
       <div class="flex flex-col items-center text-center max-w-[36rem]">
         <h1 id="hero-name" class="font-serif italic text-[var(--color-accent-deep)] text-[clamp(2.5rem,3.5vw_+_1rem,3.75rem)]">
@@ -68,10 +71,10 @@ const priceItems = [
     <Ornament tone="accent" spacing="sm" class="!mt-16 !mb-14" />
 
     <h2 class="text-center font-serif italic">
-      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("home.intro.title")}
+      <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("home.intro.title")}
     </h2>
 
-    <div class="regency-dropcap mt-10 max-w-[40rem] mx-auto text-[var(--color-ink-soft)] leading-[1.85] text-left sm:text-justify">
+    <div class="mt-10 max-w-[40rem] mx-auto text-[var(--color-ink-soft)] leading-[1.85] text-left sm:text-justify">
       <p>{t("home.intro.text")}</p>
     </div>
 
@@ -97,7 +100,7 @@ const priceItems = [
     <Ornament tone="accent" spacing="sm" class="!my-14" />
 
     <h2 class="text-center font-serif italic">
-      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("home.services.title")}
+      <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("home.services.title")}
     </h2>
 
     <div class="mt-11 max-w-[32rem] mx-auto space-y-4">
@@ -124,7 +127,7 @@ const priceItems = [
     <Ornament tone="accent" spacing="sm" class="!my-14" />
 
     <h2 class="text-center font-serif italic">
-      <span class="not-italic text-[var(--color-accent-deep)] mr-3" aria-hidden="true">III.</span>{t("home.cabinet.title")}
+      <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">III.</span>{t("home.cabinet.title")}
     </h2>
 
     {/* Emplacement photo - à remplacer la semaine prochaine */}
