@@ -8,15 +8,15 @@ const t = useTranslations(lang);
 const m = lang === "ru" ? "м" : "m";
 
 // Transports proches du cabinet. Couleurs officielles des lignes RATP.
-// Distances à pied depuis le 14 rue Nicolo.
+// Distances à pied depuis le 14 rue Nicolo, vérifiées par routage OSM (juin 2026).
 const railLines = [
-  { badge: "9", name: "La Muette", dist: `500 ${m}`, bg: "#B6BD00", fg: "#1b1b1b", shape: "circle" },
-  { badge: "6", name: "Passy", dist: `450 ${m}`, bg: "#6ECA97", fg: "#1b1b1b", shape: "circle" },
-  { badge: "C", name: "Boulainvilliers", dist: `400 ${m}`, bg: "#FCD946", fg: "#1b1b1b", shape: "square" },
+  { badge: "9", name: "La Muette", dist: `600 ${m}`, bg: "#B6BD00", fg: "#1b1b1b", shape: "circle" },
+  { badge: "6", name: "Passy", dist: `550 ${m}`, bg: "#6ECA97", fg: "#1b1b1b", shape: "circle" },
+  { badge: "C", name: "Boulainvilliers", dist: `650 ${m}`, bg: "#FCD946", fg: "#1b1b1b", shape: "square" },
 ];
 const busStops = [
-  { lines: "32", name: "Jean Bologne", dist: `50 ${m}` },
-  { lines: "22, 52", name: "La Muette-Boulainvilliers", dist: `450 ${m}` },
+  { lines: "32", name: "Jean Bologne", dist: `200 ${m}` },
+  { lines: "22, 52", name: "La Muette-Boulainvilliers", dist: `550 ${m}` },
 ];
 ---
 
@@ -45,15 +45,24 @@ const busStops = [
     </ul>
   </div>
 
-  {/* Accessibilité PMR */}
-  <p class="flex items-center gap-2.5 text-[var(--color-ink-soft)] m-0">
-    <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <circle cx="16" cy="4" r="1" />
-      <path d="m18 19 1-7-6 1" />
-      <path d="m5 8 3-3 5.5 3-2.36 3.5" />
-      <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
-      <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
-    </svg>
-    {t("cabinet.pmr")}
-  </p>
+  {/* Horaires + accessibilité PMR */}
+  <div class="flex flex-col items-center gap-2.5">
+    <p class="flex items-center gap-2.5 text-[var(--color-ink-soft)] m-0">
+      <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </svg>
+      {t("cabinet.hours")}
+    </p>
+    <p class="flex items-center gap-2.5 text-[var(--color-ink-soft)] m-0">
+      <svg class="w-4 h-4 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="16" cy="4" r="1" />
+        <path d="m18 19 1-7-6 1" />
+        <path d="m5 8 3-3 5.5 3-2.36 3.5" />
+        <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
+        <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
+      </svg>
+      {t("cabinet.pmr")}
+    </p>
+  </div>
 </div>
