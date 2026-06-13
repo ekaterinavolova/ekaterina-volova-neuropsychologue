@@ -61,7 +61,7 @@ const headerNameInitial = isHome ? " opacity-0 -translate-x-1 pointer-events-non
                   ? "text-[var(--color-ink)] font-medium"
                   : "text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]",
               ]}
-              aria-current={active ? "page" : "false"}
+              aria-current={active ? "page" : undefined}
             >
               {item.label}
             </a>
@@ -131,7 +131,7 @@ const headerNameInitial = isHome ? " opacity-0 -translate-x-1 pointer-events-non
                     ? "text-[var(--color-ink)] font-medium bg-[var(--color-ink)]/10"
                     : "text-[var(--color-ink-soft)] hover:bg-[var(--color-ink)]/10 hover:text-[var(--color-ink)]",
                 ]}
-                aria-current={active ? "page" : "false"}
+                aria-current={active ? "page" : undefined}
               >
                 {item.label}
               </a>
