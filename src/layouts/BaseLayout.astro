@@ -31,6 +31,47 @@ const htmlLangAttr: Record<Lang, string> = {
   ru: "ru-RU",
   en: "en-US",
 };
+
+// Image Open Graph typographique (générée par langue, 1200x630)
+const ogImage = new URL(`/images/og/og-${lang}.png`, Astro.site).href;
+
+// Données structurées Schema.org : cabinet (MedicalBusiness) + praticienne.
+// Adresse, horaires et coordonnées GPS identiques à la carte du site.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: `Ekaterina Volova - ${ui[lang]["footer.profession"]}`,
+  description: ui[lang]["site.description"],
+  url: alternates[lang],
+  image: ogImage,
+  telephone: "+33666074254",
+  email: "volova.neuropsy@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "14 rue Nicolo",
+    postalCode: "75116",
+    addressLocality: "Paris",
+    addressCountry: "FR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 48.85874,
+    longitude: 2.28036,
+  },
+  openingHours: "Mo-Su 09:30-18:30",
+  priceRange: "65-550 EUR",
+  founder: {
+    "@type": "Person",
+    name: "Ekaterina Volova",
+    jobTitle: ui[lang]["footer.profession"],
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "RPPS",
+      value: "10111377833",
+    },
+    knowsLanguage: ["fr", "ru", "en"],
+  },
+};
 ---
 
 <!doctype html>
@@ -42,7 +83,9 @@ const htmlLangAttr: Record<Lang, string> = {
 
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="fr-FR" href={alternates.fr} />
@@ -51,21 +94,37 @@ const htmlLangAttr: Record<Lang, string> = {
     <link rel="alternate" hreflang="x-default" href={alternates.fr} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ekaterina Volova" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={htmlLangAttr[lang].replace("-", "_")} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={pageTitle} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
 
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#fafaf8" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="min-h-screen flex flex-col bg-[var(--color-paper)]">
+    <a
+      href="#contenu"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--color-paper)] focus:text-[var(--color-ink)] focus:ring-1 focus:ring-[var(--color-ink)] focus:rounded-[var(--radius-md)] no-underline"
+    >
+      {t("a11y.skip")}
+    </a>
     {!bare && <Header />}
-    <slot />
+    <main id="contenu">
+      <slot />
+    </main>
     {!bare && <Footer />}
   </body>
 </html>

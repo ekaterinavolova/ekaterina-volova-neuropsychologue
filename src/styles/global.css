@@ -140,6 +140,27 @@ body {
   p {
     text-wrap: pretty;
   }
+
+  /* Texte justifié : césure automatique (selon la langue de la page)
+   * pour éviter les "rivières" d'espaces, comme dans une vraie édition. */
+  .text-justify {
+    hyphens: auto;
+  }
+}
+
+/* === Transition de page : fondu croisé doux (MPA view transitions) ===
+ * CSS pur, sans JavaScript : ignoré par les navigateurs non compatibles,
+ * désactivé si l'utilisateur préfère réduire les animations. */
+@media not (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+    animation-timing-function: var(--ease-out);
+  }
 }
 
 /* === Liens === */

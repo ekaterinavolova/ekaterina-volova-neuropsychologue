@@ -49,7 +49,7 @@ const bilansDetailles = [
 <Section tone="paper" spacing="normal" as="section" class="!pt-6 !pb-0">
   <Container width="content">
     <div class="max-w-[40rem] mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
-      <img src="/images/entretien.png" alt="" aria-hidden="true" class="w-32 sm:w-40 shrink-0" />
+      <img src="/images/entretien.png" alt="" aria-hidden="true" width="400" height="400" decoding="async" class="w-32 sm:w-40 shrink-0" />
       <div>
         <div class="flex items-center justify-between gap-4">
           <h2 class="font-serif text-lg font-semibold">
@@ -90,7 +90,7 @@ const bilansDetailles = [
                 </div>
                 <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{b.desc}</p>
               </div>
-              <img src={b.img} alt="" aria-hidden="true" class:list={["w-32 sm:w-40 shrink-0", b.imgSide === "left" ? "order-first" : "order-first sm:order-last"]} />
+              <img src={b.img} alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async" class:list={["w-32 sm:w-40 shrink-0", b.imgSide === "left" ? "order-first" : "order-first sm:order-last"]} />
             </div>
           ) : (
             <div class="text-center max-w-[32rem] mx-auto">
@@ -119,7 +119,7 @@ const bilansDetailles = [
         </div>
         <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.remediation_desc")}</p>
       </div>
-      <img src="/images/remediation.png" alt="" aria-hidden="true" class="w-32 sm:w-40 shrink-0 order-first sm:order-last" />
+      <img src="/images/remediation.png" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async" class="w-32 sm:w-40 shrink-0 order-first sm:order-last" />
     </div>
   </Container>
 </Section>

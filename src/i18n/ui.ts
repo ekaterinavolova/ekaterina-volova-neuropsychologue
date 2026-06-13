@@ -307,6 +307,13 @@ export const ui = {
     "legal.law_title": "Droit applicable",
     "legal.law_content":
       "Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.",
+
+    "a11y.skip": "Aller au contenu",
+
+    "notfound.title": "Page introuvable",
+    "notfound.text":
+      "La page que vous cherchez n'existe pas ou a été déplacée.",
+    "notfound.cta": "Retour à l'accueil",
   },
   ru: {
     "nav.home": "Главная",
@@ -598,6 +605,13 @@ export const ui = {
     "legal.law_title": "Применимое право",
     "legal.law_content":
       "Настоящая правовая информация регулируется французским законодательством. В случае спора компетентными являются исключительно французские суды.",
+
+    "a11y.skip": "Перейти к содержанию",
+
+    "notfound.title": "Страница не найдена",
+    "notfound.text":
+      "Страница, которую вы ищете, не существует или была перемещена.",
+    "notfound.cta": "Вернуться на главную",
   },
   en: {
     "nav.home": "Home",
@@ -885,6 +899,13 @@ export const ui = {
     "legal.law_title": "Applicable law",
     "legal.law_content":
       "These legal notices are governed by French law. In the event of a dispute, the French courts shall have sole jurisdiction.",
+
+    "a11y.skip": "Skip to content",
+
+    "notfound.title": "Page not found",
+    "notfound.text":
+      "The page you are looking for does not exist or has been moved.",
+    "notfound.cta": "Back to home",
   },
 } as const;
 

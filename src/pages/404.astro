@@ -1,0 +1,53 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Container from "~/components/Container.astro";
+import Ornament from "~/components/Ornament.astro";
+import Button from "~/components/Button.astro";
+import { ui } from "~/i18n/ui";
+
+// Page 404 unique (servie quelle que soit l'URL demandée) : le message
+// principal est en français, avec un rappel discret en russe et en anglais.
+const title = `${ui.fr["notfound.title"]} - Ekaterina Volova`;
+---
+
+<BaseLayout title={title} description={ui.fr["notfound.text"]} canonicalPath="/">
+  <section class="bg-[var(--color-paper)] py-[var(--spacing-section-lg)]">
+    <Container width="content">
+      <div class="flex justify-center">
+        <img
+          src="/images/cerveau-aquarelle.png"
+          alt=""
+          aria-hidden="true"
+          width="640"
+          height="640"
+          decoding="async"
+          class="w-32 sm:w-40 h-auto"
+        />
+      </div>
+
+      <p class="mt-6 text-center font-serif italic text-[clamp(3rem,6vw,4.5rem)] leading-none text-[var(--color-accent-deep)]" aria-hidden="true">
+        404
+      </p>
+
+      <Ornament tone="accent" spacing="sm" class="!my-10" />
+
+      <h1 class="text-center font-serif italic text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">
+        {ui.fr["notfound.title"]}
+      </h1>
+
+      <p class="mt-6 text-center text-[var(--color-ink-soft)]">
+        {ui.fr["notfound.text"]}
+      </p>
+      <p class="mt-3 text-center text-sm text-[var(--color-ink-muted)]" lang="ru">
+        {ui.ru["notfound.text"]}
+      </p>
+      <p class="mt-1 text-center text-sm text-[var(--color-ink-muted)]" lang="en">
+        {ui.en["notfound.text"]}
+      </p>
+
+      <div class="mt-10 flex justify-center">
+        <Button href="/" variant="secondary" size="md">{ui.fr["notfound.cta"]}</Button>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

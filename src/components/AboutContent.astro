@@ -20,10 +20,17 @@ const education = Array.from({ length: 4 }, (_, i) => ({
 }));
 ---
 
-{/* Expérience professionnelle */}
-<Section tone="paper" spacing="normal" as="section" id="experience" class="!pt-12 !pb-0">
+{/* Titre de page, même gabarit que Prestations / Contact */}
+<Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
   <Container width="content">
-    <h2 class="font-serif italic text-center">
+    <h1 class="font-serif italic text-center text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">{t("about.eyebrow")}</h1>
+  </Container>
+</Section>
+
+{/* Expérience professionnelle */}
+<Section tone="paper" spacing="normal" as="section" id="experience" class="!pt-8 !pb-0">
+  <Container width="content">
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
       <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("about.experience_title")}
     </h2>
 
@@ -49,7 +56,7 @@ const education = Array.from({ length: 4 }, (_, i) => ({
 <Section tone="paper" spacing="normal" as="section" id="formation" class="!pt-0 !pb-8">
   <Container width="content">
     <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <h2 class="font-serif italic text-center">
+    <h2 class="font-serif italic text-center text-xl sm:text-2xl">
       <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("about.education_title")}
     </h2>
 
