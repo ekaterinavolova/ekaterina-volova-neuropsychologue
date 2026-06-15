@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import { getLangFromUrl, useTranslations, getLocalizedPath, DOCTOLIB_URL } from "~/i18n/utils";
 import LangSwitcher from "./LangSwitcher.astro";
 import Button from "./Button.astro";
 
@@ -21,7 +21,6 @@ function isActive(href: string): boolean {
 }
 
 const homeHref = getLocalizedPath("/", lang);
-const contactHref = getLocalizedPath("/contact", lang);
 
 // Sur l'accueil, le bouton "Réserver" du header n'apparaît
 // que lorsque le bouton de la section hero (#hero-cta) n'est plus visible (géré en JS).
@@ -69,7 +68,7 @@ const headerNameInitial = isHome ? " opacity-0 -translate-x-1 pointer-events-non
         })}
       </nav>
 
-      <Button href={contactHref} variant="secondary" size="md" class={`!px-4 xl:!px-5 !py-2 text-[0.8125rem] xl:text-[0.9375rem] whitespace-nowrap ${headerCtaBase}${headerCtaInitial}`}>
+      <Button href={DOCTOLIB_URL} external variant="secondary" size="md" class={`!px-4 xl:!px-5 !py-2 text-[0.8125rem] xl:text-[0.9375rem] whitespace-nowrap ${headerCtaBase}${headerCtaInitial}`}>
         <span class="hidden xl:inline">{t("cta.book")}</span>
         <span class="xl:hidden">{t("cta.book_short")}</span>
       </Button>
@@ -103,7 +102,7 @@ const headerNameInitial = isHome ? " opacity-0 -translate-x-1 pointer-events-non
       </div>
 
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <Button href={contactHref} variant="secondary" size="md" class={`!px-3 sm:!px-4 !py-1.5 sm:!py-2 !text-xs sm:!text-[0.8125rem] ${headerCtaBase}${headerCtaInitial}`}>
+        <Button href={DOCTOLIB_URL} external variant="secondary" size="md" class={`!px-3 sm:!px-4 !py-1.5 sm:!py-2 !text-xs sm:!text-[0.8125rem] ${headerCtaBase}${headerCtaInitial}`}>
           {t("cta.book_short")}
         </Button>
 

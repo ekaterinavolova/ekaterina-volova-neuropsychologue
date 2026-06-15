@@ -1,6 +1,13 @@
 import { ui, defaultLang, type Lang, type TranslationKey } from "./ui";
 
 /**
+ * URL de prise de rendez-vous Doctolib (certifié HDS).
+ * Cible de tous les boutons « Réserver une consultation ».
+ */
+export const DOCTOLIB_URL =
+  "https://www.doctolib.fr/psychologue/paris/ekaterina-volova-paris";
+
+/**
  * Extrait la langue depuis une URL Astro.
  * `/ru/about` → `ru`, `/about` → `fr` (langue par défaut, pas de préfixe).
  */

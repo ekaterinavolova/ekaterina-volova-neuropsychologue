@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations, getLocalizedPath } from "~/i18n/utils";
+import { getLangFromUrl, useTranslations, getLocalizedPath, DOCTOLIB_URL } from "~/i18n/utils";
 import Container from "./Container.astro";
 import Section from "./Section.astro";
 import Ornament from "./Ornament.astro";
@@ -11,8 +11,6 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const specialties = Array.from({ length: 11 }, (_, i) => t(`home.intro.spec_${i + 1}` as any));
-
-const contactHref = getLocalizedPath("/contact", lang);
 
 // Lignes du tableau des tarifs (libellé + prix, depuis i18n).
 const priceItems = [
@@ -61,7 +59,7 @@ const priceItems = [
         <p class="mt-1.5 font-serif text-[var(--color-ink-muted)]">{t("home.hero.line2")}</p>
 
         <div id="hero-cta" class="mt-9">
-          <Button href={contactHref} variant="secondary" size="md">{t("cta.book")}</Button>
+          <Button href={DOCTOLIB_URL} external variant="secondary" size="md">{t("cta.book")}</Button>
         </div>
       </div>
     </div>
