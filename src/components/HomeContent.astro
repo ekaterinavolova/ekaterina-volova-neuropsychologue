@@ -14,12 +14,12 @@ const specialties = Array.from({ length: 11 }, (_, i) => t(`home.intro.spec_${i 
 
 // Lignes du tableau des tarifs (libellé + prix, depuis i18n).
 const priceItems = [
-  { label: "prestations.entretien_title", price: "prestations.entretien_price" },
-  { label: "prestations.bilan_1", price: "prestations.bilan_1_price" },
-  { label: "prestations.bilan_2", price: "prestations.bilan_2_price" },
-  { label: "prestations.bilan_3", price: "prestations.bilan_3_price" },
-  { label: "prestations.bilan_4", price: "prestations.bilan_4_price" },
-  { label: "prestations.remediation_title", price: "prestations.remediation_price" },
+  { label: "home.price.entretien", price: "prestations.entretien_price" },
+  { label: "home.price.bilan", price: "prestations.bilan_1_price" },
+  { label: "home.price.diva", price: "home.price.diva_price" },
+  { label: "home.price.attention", price: "prestations.bilan_3_price" },
+  { label: "home.price.iq", price: "prestations.bilan_2_price" },
+  { label: "home.price.suivi", price: "prestations.bilan_4_price" },
 ];
 ---
 
@@ -104,7 +104,7 @@ const priceItems = [
       <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">II.</span>{t("home.services.title")}
     </h2>
 
-    <div class="mt-11 max-w-[32rem] mx-auto space-y-4">
+    <div class="mt-11 max-w-[40rem] mx-auto space-y-4">
       {priceItems.map((item) => (
         <div class="flex items-baseline gap-3">
           <span class="text-[var(--color-ink-soft)]">{t(item.label as any)}</span>
