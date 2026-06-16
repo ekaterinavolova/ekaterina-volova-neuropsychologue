@@ -75,7 +75,7 @@ const priceItems = [
       <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">I.</span>{t("home.intro.title")}
     </h2>
 
-    <div class="mt-10 max-w-[40rem] mx-auto text-[var(--color-ink-soft)] leading-[1.85] text-left sm:text-justify">
+    <div class="mt-10 max-w-[40rem] mx-auto text-[var(--color-ink-soft)] leading-[1.85] text-center sm:text-justify">
       <p>{t("home.intro.text")}</p>
     </div>
 
@@ -106,10 +106,10 @@ const priceItems = [
 
     <div class="mt-11 max-w-[40rem] mx-auto space-y-4">
       {priceItems.map((item) => (
-        <div class="flex items-baseline gap-3">
-          <span class="text-[var(--color-ink-soft)]">{t(item.label as any)}</span>
-          <span class="flex-1 translate-y-[-0.25em] border-b border-dotted border-[var(--color-rule)]" aria-hidden="true"></span>
-          <span class="whitespace-nowrap font-medium tabular-nums text-[var(--color-accent-deep)]">{t(item.price as any)}</span>
+        <div class="flex items-baseline gap-2.5 sm:gap-3">
+          <span class="min-w-0 text-[0.8125rem] leading-snug sm:text-base text-[var(--color-ink-soft)]">{t(item.label as any)}</span>
+          <span class="flex-1 min-w-[1.25rem] translate-y-[-0.25em] border-b border-dotted border-[var(--color-rule)]" aria-hidden="true"></span>
+          <span class="whitespace-nowrap text-sm sm:text-base font-medium tabular-nums text-[var(--color-accent-deep)]">{t(item.price as any)}</span>
         </div>
       ))}
     </div>
