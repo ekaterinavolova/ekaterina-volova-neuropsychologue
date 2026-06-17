@@ -141,10 +141,10 @@ body {
     text-wrap: pretty;
   }
 
-  /* Texte justifié : césure automatique (selon la langue de la page)
-   * pour éviter les "rivières" d'espaces, comme dans une vraie édition. */
+  /* Texte justifié sans césure : pas de coupure de mots en fin de ligne,
+   * dans toutes les langues. */
   .text-justify {
-    hyphens: auto;
+    hyphens: none;
   }
 }
 

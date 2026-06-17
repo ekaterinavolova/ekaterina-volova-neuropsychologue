@@ -54,7 +54,7 @@ const bilanSteps = [
     </h2>
 
     <div class="mt-8 max-w-[44rem] mx-auto space-y-6 text-[var(--color-ink-soft)] leading-relaxed text-justify">
-      <p>{t("about.section2_p1")}</p>
+      {t("about.section2_p1").split("\n").map((para) => <p>{para}</p>)}
     </div>
 
     <div class="mt-10 max-w-[44rem] mx-auto">

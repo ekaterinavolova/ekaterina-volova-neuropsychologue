@@ -23,18 +23,25 @@ const bilansDetailles = [
     imgSide: "left",
   },
   {
+    title: t("prestations.diva"),
+    desc: t("prestations.diva_desc"),
+    price: t("prestations.diva_price"),
+    img: "/images/bilan-diva.png",
+    imgSide: "right",
+  },
+  {
     title: t("prestations.bilan_3"),
     desc: t("prestations.bilan_3_desc"),
     price: t("prestations.bilan_3_price"),
     img: "/images/bilan-attention.png",
-    imgSide: "right",
+    imgSide: "left",
   },
   {
     title: t("prestations.bilan_4"),
     desc: t("prestations.bilan_4_desc"),
     price: t("prestations.bilan_4_price"),
     img: "/images/bilan-suivi.png",
-    imgSide: "left",
+    imgSide: "right",
   },
 ];
 ---
@@ -64,7 +71,7 @@ const bilansDetailles = [
 </Section>
 
 {/* Bilans neuropsychologiques */}
-<Section tone="paper" spacing="normal" as="section" class="!py-0">
+<Section tone="paper" spacing="normal" as="section" class="!pt-0 !pb-8">
   <Container width="content">
     <Ornament tone="accent" spacing="sm" class="!my-12" />
     <h2 class="font-serif italic text-center text-xl sm:text-2xl">
@@ -95,7 +102,7 @@ const bilansDetailles = [
           ) : (
             <div class="text-center max-w-[32rem] mx-auto">
               <h3 class="font-serif text-lg font-semibold">{b.title}</h3>
-              <div class="mt-2 flex justify-center"><span class="inline-flex items-center rounded-none border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{b.price}</span></div>
+              <div class="mt-2 flex justify-center"><span class="inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{b.price}</span></div>
               <p class="mt-3 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{b.desc}</p>
             </div>
           )}
@@ -105,21 +112,3 @@ const bilansDetailles = [
   </Container>
 </Section>
 
-{/* Remédiation et stimulation cognitive */}
-<Section tone="paper" spacing="normal" as="section" class="!pt-0 !pb-8">
-  <Container width="content">
-    <Ornament tone="accent" spacing="sm" class="!my-12" />
-    <div class="max-w-[40rem] mx-auto flex flex-col sm:flex-row items-center gap-5 sm:gap-8 text-center sm:text-left">
-      <div>
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="font-serif text-lg font-semibold">
-            <span class="font-normal italic text-[var(--color-accent-deep)] mr-2.5" aria-hidden="true">III.</span>{t("prestations.remediation_title")}
-          </h2>
-          <span class="shrink-0 inline-flex items-center rounded-full border border-[var(--color-rule-soft)] bg-[var(--color-accent-soft)] px-3.5 py-1 text-sm font-medium tabular-nums text-[var(--color-ink)]">{t("prestations.remediation_price")}</span>
-        </div>
-        <p class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{t("prestations.remediation_desc")}</p>
-      </div>
-      <img src="/images/remediation.png" alt="" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async" class="w-32 sm:w-40 shrink-0 order-first sm:order-last" />
-    </div>
-  </Container>
-</Section>

@@ -101,6 +101,9 @@ export const ui = {
     "prestations.bilan_2": "Bilan neuropsychologique QI",
     "prestations.bilan_2_desc": "Evaluation du fonctionnement intellectuel global à l'aide d'outils standardisés tels que la WAIS-IV, permettant d'explorer différents indices cognitifs : compréhension verbale, raisonnement perceptif, mémoire de travail et vitesse de traitement. Ce bilan peut être réalisé dans le cadre d'un questionnement sur le haut potentiel intellectuel, ainsi qu'en présence de difficultés cognitives.",
     "prestations.bilan_2_price": "550 €",
+    "prestations.diva": "Entretien diagnostique TDAH (DIVA-5)",
+    "prestations.diva_desc": "Entretien diagnostique semi-structuré (DIVA-5) fondé sur les critères du DSM-5, explorant les manifestations du TDAH chez l'adolescent à partir de 17 ans et l'adulte, dans l'enfance comme à l'âge adulte. Il complète le bilan attentionnel afin de préciser le diagnostic.",
+    "prestations.diva_price": "550 €",
     "prestations.bilan_3": "Bilan attentionnel dans un contexte TDA/H",
     "prestations.bilan_3_desc": "Evaluation des fonctions attentionnelles et exécutives réalisée à l'aide d'épreuves neuropsychologiques standardisées et d'échelles cliniques validées, dans le cadre d'une suspicion de trouble du déficit de l'attention avec ou sans hyperactivité (TDAH) chez l'adolescent à partir de 16 ans et l'adulte.",
     "prestations.bilan_3_price": "550 €",
@@ -406,6 +409,9 @@ export const ui = {
     "prestations.bilan_2": "Нейропсихологическое обследование IQ",
     "prestations.bilan_2_desc": "Оценка общего интеллектуального функционирования с помощью стандартизированных инструментов, таких как WAIS-IV, позволяющая исследовать различные когнитивные индексы: вербальное понимание, перцептивное мышление, рабочую память и скорость обработки информации. Данное обследование может быть проведено в рамках вопроса о высоком интеллектуальном потенциале, а также при наличии когнитивных трудностей.",
     "prestations.bilan_2_price": "550 €",
+    "prestations.diva": "Диагностическое интервью СДВГ (DIVA-5)",
+    "prestations.diva_desc": "Полуструктурированное диагностическое интервью (DIVA-5), основанное на критериях DSM-5 и оценивающее проявления СДВГ у подростков с 17 лет и взрослых - как в детстве, так и во взрослом возрасте. Дополняет обследование внимания для уточнения диагноза.",
+    "prestations.diva_price": "550 €",
     "prestations.bilan_3": "Обследование внимания в контексте СДВГ",
     "prestations.bilan_3_desc": "Оценка функций внимания и исполнительных функций с помощью стандартизированных нейропсихологических проб и валидированных клинических шкал в рамках подозрения на синдром дефицита внимания с гиперактивностью или без неё (СДВГ) у подростков с 16 лет и взрослых.",
     "prestations.bilan_3_price": "550 €",
@@ -512,15 +518,15 @@ export const ui = {
 
     "about.section1_title": "Что такое нейропсихология?",
     "about.section1_p1":
-      "Нейропсихология - это дисциплина, изучающая взаимосвязь между мозгом, когнитивными функциями и поведением. Она позволяет лучше понять мнестические, аттенционные, речевые, исполнительные и эмоциональные трудности, в частности при неврологических, психиатрических или нейроразвитийных патологиях.",
+      "Нейропсихология - это дисциплина, изучающая взаимосвязь между мозгом, когнитивными функциями и поведением. Она помогает лучше понять нарушения памяти, внимания, речи, исполнительных функций и эмоциональной сферы, в частности при неврологических и психиатрических.",
 
     "about.section2_title": "Что такое нейропсихологическое обследование?",
     "about.section2_p1":
-      "Нейропсихологическое обследование - это подробная оценка когнитивного, поведенческого и психоэмоционального функционирования человека в определённый момент времени. Оно направлено на ответ на конкретный клинический вопрос: объективировать и охарактеризовать когнитивные жалобы, помочь в дифференциальной диагностике, оценить динамику нарушений или выявить функциональные последствия наблюдаемых трудностей. Оно предназначено для детей, подростков, взрослых и пожилых людей с когнитивными, психоэмоциональными или поведенческими нарушениями, в частности при неврологических, нейроразвитийных или психиатрических патологиях, с целью лучше понять их функционирование и определить направление помощи.",
+      "Нейропсихологическое обследование - это подробная оценка когнитивного, поведенческого и психоэмоционального функционирования человека в определённый момент времени. Оно направлено на ответ на конкретный клинический вопрос: объективизировать и охарактеризовать когнитивные жалобы, помочь в дифференциальной диагностике, оценить динамику нарушений или выявить функциональные последствия наблюдаемых трудностей.\nОбследование предназначено для подростков от 16 лет, взрослых и пожилых людей, испытывающих когнитивные, психоэмоциональные или поведенческие трудности, в частности в рамках неврологических или психиатрических расстройств. Его цель - лучше понять особенности функционирования человека и определить дальнейшие направления помощи.",
     "about.section2_steps_intro": "Три этапа нейропсихологического обследования :",
-    "about.section2_step1_title": "Клиническое интервью - <u>обязательный этап</u>",
+    "about.section2_step1_title": "Первичная консультация - <u>обязательный этап</u>",
     "about.section2_step1_desc":
-      "Первичная консультация продолжительностью около часа, позволяющая собрать клиническую историю пациента, причину обращения и повседневные трудности для определения направления нейропсихологической оценки.",
+      "Первичная консультация длится около одного часа и позволяет собрать клинический анамнез пациента, уточнить причину обращения и трудности, с которыми он сталкивается в повседневной жизни, чтобы определить наиболее подходящее направление нейропсихологического обследования.",
     "about.section2_step2_title": "Проведение тестов",
     "about.section2_step2_desc":
       "Около трёх часов проведения стандартизированных тестов, подобранных с учётом клинического запроса, возраста и социокультурного уровня пациента, для получения адаптированной и углублённой оценки когнитивного функционирования.",
@@ -535,8 +541,8 @@ export const ui = {
     "about.experience_title": "Профессиональный опыт",
 
     "about.exp_1_dates": "Июль 2025 - июнь 2026",
-    "about.exp_1_title": "Больница Fondation Adolphe de Rothschild, отделения неврологии и нейрохирургии",
-    "about.exp_1_desc": "Проведение нейропсихологических обследований пациентов с различными неврологическими патологиями (болезнь Альцгеймера, болезнь Паркинсона, лобно-височная дегенерация, болезнь с тельцами Леви, рассеянный склероз, мультисистемная атрофия, эпилепсия, прогрессирующий супрануклеарный паралич, инсульт...), предоперационных нейропсихологических обследований (перед глубокой стимуляцией мозга при болезни Паркинсона и перед шунтированием при нормотензивной гидроцефалии) и участие в мультидисциплинарных совещаниях.",
+    "about.exp_1_title": "Hôpital Fondation Adolphe de Rothschild, отделения неврологии и нейрохирургии",
+    "about.exp_1_desc": "Проведение нейропсихологических обследований пациентов с различными неврологическими патологиями (болезнь Альцгеймера, болезнь Паркинсона, лобно-височная дегенерация, болезнь диффузных телец Леви, рассеянный склероз, мультисистемная атрофия, эпилепсия, прогрессирующий супрануклеарный парез взора, инсульт...), предоперационных нейропсихологических обследований (перед глубокой стимуляцией мозга при болезни Паркинсона и перед шунтированием при нормотензивной гидроцефалии) и участие в мультидисциплинарных совещаниях.",
 
     "about.exp_2_dates": "Октябрь 2024 - май 2025",
     "about.exp_2_title": "Hôpital Fondation Adolphe de Rothschild, отделение неврологии (стажировка 500ч)",
@@ -557,19 +563,19 @@ export const ui = {
     "about.education_title": "Образование",
 
     "about.edu_1_dates": "2023 - 2025",
-    "about.edu_1_title": "Университет Paris 8 Vincennes-Saint Denis - Магистратура по психологии,<br />направление Нейропсихология",
-    "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Диссертация Master 2 : Изменения когнитивного функционирования и качества жизни у пациентов с болезнью Паркинсона при глубокой стимуляции мозга.</span></li><li><span style='color:var(--color-ink-soft)'>Диссертация Master 1 : Функции эпизодического мышления о будущем при нормальном старении.</span></li></ul>",
+    "about.edu_1_title": "Университет Paris 8 Vincennes-Saint Denis - Магистр психологии,<br />специализация Нейропсихология",
+    "about.edu_1_desc": "<ul style='list-style:disc;padding-left:1.2em;color:var(--color-accent);font-size:0.875rem;text-align:justify'><li><span style='color:var(--color-ink-soft)'>Дипломная работа на втором году : Изменения когнитивного функционирования и качества жизни у пациентов с болезнью Паркинсона при глубокой стимуляции мозга.</span></li><li><span style='color:var(--color-ink-soft)'>Дипломная работа на первом году : Функции эпизодического мышления о будущем при нормальном старении.</span></li></ul>",
 
     "about.edu_2_dates": "2020 - 2023",
-    "about.edu_2_title": "Université Montpellier III Paul Valéry - Бакалавриат по психологии",
+    "about.edu_2_title": "Université Montpellier III Paul Valéry - Бакалавр психологии",
     "about.edu_2_desc": "",
 
     "about.edu_3_dates": "2019 - 2020",
-    "about.edu_3_title": "Санкт-Петербургский государственный университет - Специализация по клинической психологии",
+    "about.edu_3_title": "Санкт-Петербургский государственный университет - Специалитет по клинической психологии",
     "about.edu_3_desc": "",
 
     "about.edu_4_dates": "2014 - 2018",
-    "about.edu_4_title": "Санкт-Петербургский государственный университет - Бакалавриат по экономике",
+    "about.edu_4_title": "Санкт-Петербургский государственный университет - Бакалавр экономики",
     "about.edu_4_desc": "",
 
     "about.languages_note":
@@ -711,6 +717,9 @@ export const ui = {
     "prestations.bilan_2": "IQ neuropsychological assessment",
     "prestations.bilan_2_desc": "Assessment of overall intellectual functioning using standardised tools such as the WAIS-IV, exploring different cognitive indices: verbal comprehension, perceptual reasoning, working memory and processing speed. This assessment can be carried out in the context of questions about high intellectual potential, as well as in the presence of cognitive difficulties.",
     "prestations.bilan_2_price": "€550",
+    "prestations.diva": "ADHD diagnostic interview (DIVA-5)",
+    "prestations.diva_desc": "Semi-structured diagnostic interview (DIVA-5) based on the DSM-5 criteria, exploring the manifestations of ADHD in adolescents aged 17 and over and adults, both in childhood and adulthood. It complements the attentional assessment to refine the diagnosis.",
+    "prestations.diva_price": "€550",
     "prestations.bilan_3": "Attentional assessment in the context of ADHD",
     "prestations.bilan_3_desc": "Assessment of attentional and executive functions using standardised neuropsychological tests and validated clinical scales, in the context of a suspected attention deficit hyperactivity disorder (ADHD) in adolescents aged 16 and over and adults.",
     "prestations.bilan_3_price": "€550",
