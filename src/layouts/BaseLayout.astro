@@ -35,6 +35,14 @@ const htmlLangAttr: Record<Lang, string> = {
 // Image Open Graph typographique (générée par langue, 1200x630)
 const ogImage = new URL(`/images/og/og-${lang}.png`, Astro.site).href;
 
+// Profils externes vérifiés : relient l'entité "Ekaterina Volova" à ses fiches
+// publiques pour désambiguïser dans les moteurs (Google, Brave) et éviter la
+// confusion avec une homonyme. Ajouter ici la fiche Google Business et le QID
+// Wikidata une fois créés.
+const sameAs = [
+  "https://www.doctolib.fr/psychologue/paris/ekaterina-volova-paris",
+];
+
 // Données structurées Schema.org : cabinet (MedicalBusiness) + praticienne.
 // Adresse, horaires et coordonnées GPS identiques à la carte du site.
 const jsonLd = {
@@ -58,6 +66,7 @@ const jsonLd = {
     latitude: 48.85874,
     longitude: 2.28036,
   },
+  sameAs,
   openingHours: "Mo-Su 09:30-18:30",
   priceRange: "65-550 EUR",
   founder: {
@@ -70,6 +79,7 @@ const jsonLd = {
       value: "10111377833",
     },
     knowsLanguage: ["fr", "ru", "en"],
+    sameAs,
   },
 };
 ---
