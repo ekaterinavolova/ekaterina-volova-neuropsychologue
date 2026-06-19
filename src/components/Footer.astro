@@ -48,12 +48,21 @@ const currentYear = new Date().getFullYear();
 
     <div class="mt-4 flex flex-col sm:flex-row justify-between gap-2 text-xs text-[var(--color-ink-muted)]">
       <p>© {currentYear} Ekaterina Volova</p>
-      <a
-        href={getLocalizedPath("/mentions-legales", lang)}
-        class="hover:text-[var(--color-ink)] transition-colors"
-      >
-        {t("footer.legal_link")}
-      </a>
+      <nav class="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <a
+          href={getLocalizedPath("/faq", lang)}
+          class="hover:text-[var(--color-ink)] transition-colors"
+        >
+          {t("nav.faq")}
+        </a>
+        <span class="text-[var(--color-rule-soft)]" aria-hidden="true">·</span>
+        <a
+          href={getLocalizedPath("/mentions-legales", lang)}
+          class="hover:text-[var(--color-ink)] transition-colors"
+        >
+          {t("footer.legal_link")}
+        </a>
+      </nav>
     </div>
   </div>
 </footer>

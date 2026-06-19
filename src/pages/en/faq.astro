@@ -1,0 +1,16 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import FaqContent from "~/components/FaqContent.astro";
+import { useTranslations, getLangFromUrl } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  canonicalPath="/faq"
+  title={t("faq.title")}
+  description={t("faq.description")}
+>
+  <FaqContent />
+</BaseLayout>

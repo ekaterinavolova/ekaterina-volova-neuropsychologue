@@ -324,6 +324,37 @@ export const ui = {
     "notfound.text":
       "La page que vous cherchez n'existe pas ou a été déplacée.",
     "notfound.cta": "Retour à l'accueil",
+
+    "nav.faq": "FAQ",
+    "faq.title": "Questions fréquentes - Ekaterina Volova, neuropsychologue à Paris 16e",
+    "faq.description":
+      "Réponses aux questions fréquentes sur les bilans neuropsychologiques au cabinet d'Ekaterina Volova (Paris 16e) : déroulé, tarifs, langues, prise de rendez-vous.",
+    "faq.heading": "Questions fréquentes",
+    "faq.q1": "Qu'est-ce qu'un bilan neuropsychologique ?",
+    "faq.a1":
+      "Un bilan neuropsychologique est une évaluation du fonctionnement cognitif (mémoire, attention, fonctions exécutives, langage, fonctions visuospatiales) réalisée à l'aide d'épreuves standardisées. Il vise à objectiver et caractériser les difficultés rapportées et à préciser le profil cognitif observé.",
+    "faq.q2": "À qui s'adressent les consultations ?",
+    "faq.a2":
+      "Le cabinet accueille une population adulte, à partir de 16 ans. Une exception est faite pour les bilans d'enfants russophones, un segment peu couvert en Île-de-France.",
+    "faq.q3": "Dans quelles langues se déroulent les consultations ?",
+    "faq.a3": "Les consultations sont proposées en français, en russe et en anglais.",
+    "faq.q4": "Où se trouve le cabinet et comment y accéder ?",
+    "faq.a4":
+      "Le cabinet est situé au 14 rue Nicolo, 75116 Paris (quartier Passy / La Muette), en rez-de-chaussée accessible aux personnes à mobilité réduite. Accès : métro 6 (Passy), métro 9 (La Muette), RER C (Boulainvilliers), bus 22, 32 et 52.",
+    "faq.q5": "Combien coûte un bilan neuropsychologique ?",
+    "faq.a5":
+      "Premier entretien clinique : 70 €. Bilan complet : 450 €. Bilan de QI (WAIS-IV) : 550 €. Bilan attentionnel dans un contexte de TDAH : 550 €. Bilan de suivi : 200 €. Séance de remédiation et stimulation cognitive : 65 €.",
+    "faq.q6": "Comment se déroule un bilan ?",
+    "faq.a6":
+      "Le bilan se déroule en trois rendez-vous : un premier entretien clinique, puis une séance de passation des épreuves, et enfin une restitution des résultats (gratuite). La restitution a lieu généralement le lendemain ou selon les disponibilités du patient. Un compte rendu écrit est transmis par e-mail au patient et, si besoin, à son médecin via Doctolib.",
+    "faq.q7": "Quels troubles peuvent amener à consulter ?",
+    "faq.a7":
+      "Troubles de la mémoire et de l'attention, maladies neurodégénératives (maladie d'Alzheimer, maladie de Parkinson), pathologies neurologiques (sclérose en plaques, épilepsie, séquelles d'AVC), TDAH de l'adulte, ou questionnement sur le haut potentiel intellectuel.",
+    "faq.q8": "Comment prendre rendez-vous ?",
+    "faq.a8": "La prise de rendez-vous se fait en ligne sur Doctolib.",
+    "faq.q9": "Les bilans sont-ils remboursés ?",
+    "faq.a9":
+      "Les consultations de psychologue en libéral ne sont pas remboursées par l'Assurance Maladie. Certaines mutuelles proposent une participation : il est conseillé de se renseigner auprès de sa complémentaire santé.",
   },
   ru: {
     "nav.home": "Главная",
@@ -632,6 +663,37 @@ export const ui = {
     "notfound.text":
       "Страница, которую вы ищете, не существует или была перемещена.",
     "notfound.cta": "Вернуться на главную",
+
+    "nav.faq": "Вопросы",
+    "faq.title": "Частые вопросы - Екатерина Волова, нейропсихолог в Париже (16-й округ)",
+    "faq.description":
+      "Ответы на частые вопросы о нейропсихологическом обследовании в кабинете Екатерины Воловой (Париж, 16-й округ): этапы, цены, языки, запись на приём.",
+    "faq.heading": "Частые вопросы",
+    "faq.q1": "Что такое нейропсихологическое обследование?",
+    "faq.a1":
+      "Нейропсихологическое обследование представляет собой оценку когнитивных функций (память, внимание, управляющие функции, речь, зрительно-пространственные функции) с помощью стандартизированных методик. Его цель: объективно описать имеющиеся трудности и уточнить когнитивный профиль.",
+    "faq.q2": "Кому подходят консультации?",
+    "faq.a2":
+      "Кабинет принимает взрослых, начиная с 16 лет. Исключение составляют обследования русскоязычных детей: это направление мало представлено в регионе Иль-де-Франс.",
+    "faq.q3": "На каких языках проходят консультации?",
+    "faq.a3": "Консультации проводятся на французском, русском и английском языках.",
+    "faq.q4": "Где находится кабинет и как до него добраться?",
+    "faq.a4":
+      "Кабинет расположен по адресу 14 rue Nicolo, 75116 Paris (район Passy / La Muette), на первом этаже с доступом для маломобильных людей. Транспорт: метро 6 (Passy), метро 9 (La Muette), RER C (Boulainvilliers), автобусы 22, 32 и 52.",
+    "faq.q5": "Сколько стоит нейропсихологическое обследование?",
+    "faq.a5":
+      "Первичная клиническая консультация: 70 €. Полное обследование: 450 €. Обследование IQ (WAIS-IV): 550 €. Обследование внимания при подозрении на СДВГ: 550 €. Контрольное обследование: 200 €. Сеанс когнитивной коррекции и стимуляции: 65 €.",
+    "faq.q6": "Как проходит обследование?",
+    "faq.a6":
+      "Обследование проходит в три приёма: первичная клиническая консультация, затем сеанс тестирования и, наконец, обсуждение результатов (бесплатно). Обсуждение результатов обычно проводится на следующий день или в удобное для пациента время. Письменное заключение направляется пациенту по электронной почте и, при необходимости, его врачу через Doctolib.",
+    "faq.q7": "С какими трудностями обращаются на консультацию?",
+    "faq.a7":
+      "Нарушения памяти и внимания, нейродегенеративные заболевания (болезнь Альцгеймера, болезнь Паркинсона), неврологические заболевания (рассеянный склероз, эпилепсия, последствия инсульта), СДВГ у взрослых или вопросы о высоком интеллектуальном потенциале.",
+    "faq.q8": "Как записаться на приём?",
+    "faq.a8": "Запись на приём осуществляется онлайн на Doctolib.",
+    "faq.q9": "Возмещаются ли расходы на обследование?",
+    "faq.a9":
+      "Консультации психолога в частной практике не возмещаются французской системой медицинского страхования (Assurance Maladie). Некоторые дополнительные страховки (mutuelle) предусматривают частичное возмещение: рекомендуется уточнить условия у своей страховой компании.",
   },
   en: {
     "nav.home": "Home",
@@ -936,6 +998,37 @@ export const ui = {
     "notfound.text":
       "The page you are looking for does not exist or has been moved.",
     "notfound.cta": "Back to home",
+
+    "nav.faq": "FAQ",
+    "faq.title": "Frequently asked questions - Ekaterina Volova, neuropsychologist in Paris",
+    "faq.description":
+      "Answers to frequently asked questions about neuropsychological assessments at Ekaterina Volova's practice (Paris 16e): process, fees, languages, booking.",
+    "faq.heading": "Frequently asked questions",
+    "faq.q1": "What is a neuropsychological assessment?",
+    "faq.a1":
+      "A neuropsychological assessment is an evaluation of cognitive functioning (memory, attention, executive functions, language, visuospatial functions) carried out using standardised tests. It aims to objectify and characterise the reported difficulties and to clarify the observed cognitive profile.",
+    "faq.q2": "Who are the consultations for?",
+    "faq.a2":
+      "The practice sees adults, from the age of 16. An exception is made for assessments of Russian-speaking children, an underserved segment in the Paris region.",
+    "faq.q3": "What languages are the consultations held in?",
+    "faq.a3": "Consultations are offered in French, Russian and English.",
+    "faq.q4": "Where is the practice and how do I get there?",
+    "faq.a4":
+      "The practice is located at 14 rue Nicolo, 75116 Paris (Passy / La Muette area), on the ground floor with wheelchair access. Access: metro 6 (Passy), metro 9 (La Muette), RER C (Boulainvilliers), buses 22, 32 and 52.",
+    "faq.q5": "How much does a neuropsychological assessment cost?",
+    "faq.a5":
+      "Initial clinical interview: 70 €. Full assessment: 450 €. IQ assessment (WAIS-IV): 550 €. Attention assessment in an ADHD context: 550 €. Follow-up assessment: 200 €. Cognitive remediation and stimulation session: 65 €.",
+    "faq.q6": "How does an assessment work?",
+    "faq.a6":
+      "The assessment takes place over three appointments: an initial clinical interview, then a testing session, and finally a feedback session (free of charge). Feedback usually takes place the next day or according to the patient's availability. A written report is sent by e-mail to the patient and, if needed, to their doctor via Doctolib.",
+    "faq.q7": "What difficulties might lead someone to consult?",
+    "faq.a7":
+      "Memory and attention difficulties, neurodegenerative diseases (Alzheimer's disease, Parkinson's disease), neurological conditions (multiple sclerosis, epilepsy, stroke sequelae), adult ADHD, or questions about high intellectual potential.",
+    "faq.q8": "How do I book an appointment?",
+    "faq.a8": "Appointments are booked online on Doctolib.",
+    "faq.q9": "Are assessments reimbursed?",
+    "faq.a9":
+      "Consultations with a psychologist in private practice are not reimbursed by the French health insurance (Assurance Maladie). Some complementary health insurers (mutuelles) offer partial coverage: it is advisable to check with your provider.",
   },
 } as const;
 

@@ -1,0 +1,52 @@
+---
+import { getLangFromUrl, useTranslations } from "~/i18n/utils";
+import type { TranslationKey } from "~/i18n/ui";
+import Container from "./Container.astro";
+import Section from "./Section.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// 9 questions/réponses, alimentées depuis i18n/ui.ts (FR/RU/EN).
+const faqItems = Array.from({ length: 9 }, (_, i) => ({
+  q: t(`faq.q${i + 1}` as TranslationKey),
+  a: t(`faq.a${i + 1}` as TranslationKey),
+}));
+
+// Données structurées Schema.org FAQPage : blocs Q/R extractibles par les
+// moteurs (Google) et les moteurs génératifs (ChatGPT, Perplexity).
+// Le texte des questions/réponses est identique au contenu visible ci-dessous.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+---
+
+<Section tone="paper" spacing="normal" as="header" class="!pt-12 !pb-0">
+  <Container width="content">
+    <h1 class="font-serif italic text-center text-[clamp(1.75rem,2vw_+_1rem,2.5rem)]">{t("faq.heading")}</h1>
+  </Container>
+</Section>
+
+<Section tone="paper" spacing="normal" as="section" class="!pt-8 !pb-12">
+  <Container width="content">
+    <dl class="max-w-[42rem] mx-auto">
+      {faqItems.map((item, i) => (
+        <div class:list={[i > 0 && "mt-8 pt-8 border-t border-[var(--color-rule-soft)]"]}>
+          <dt class="font-serif text-lg font-semibold text-[var(--color-ink)]">{item.q}</dt>
+          <dd class="mt-2 text-sm text-[var(--color-ink-soft)] leading-relaxed text-justify">{item.a}</dd>
+        </div>
+      ))}
+    </dl>
+  </Container>
+</Section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
