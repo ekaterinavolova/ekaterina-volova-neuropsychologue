@@ -20,8 +20,8 @@ const busStops = [
 ];
 ---
 
-<div class="flex flex-col items-center gap-5">
-  <div class="flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-12 text-left">
+<div class="flex flex-col items-center md:items-start gap-5">
+  <div class="flex flex-col gap-2.5 text-left">
     {/* Colonne 1 : métro + RER */}
     <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
       {railLines.map((s) => (
@@ -45,15 +45,15 @@ const busStops = [
   </div>
 
   {/* Horaires + accessibilité PMR */}
-  <div class="flex flex-col items-center gap-2.5">
-    <p class="flex items-start justify-center gap-2.5 text-[var(--color-ink-soft)] m-0">
+  <div class="flex flex-col items-center md:items-start gap-2.5">
+    <p class="flex items-start justify-start gap-2.5 text-[var(--color-ink-soft)] m-0">
       <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
       {t("cabinet.hours")}
     </p>
-    <p class="flex items-start justify-center gap-2.5 text-[var(--color-ink-soft)] m-0">
+    <p class="flex items-start justify-start gap-2.5 text-[var(--color-ink-soft)] m-0">
       <svg class="w-4 h-4 mt-1 shrink-0 text-[var(--color-accent-deep)]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="16" cy="4" r="1" />
         <path d="m18 19 1-7-6 1" />

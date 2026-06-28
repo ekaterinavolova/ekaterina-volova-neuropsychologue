@@ -130,15 +130,20 @@ const priceItems = [
       <span class="text-[var(--color-accent-deep)] mr-3" aria-hidden="true">III.</span>{t("home.cabinet.title")}
     </h2>
 
-    {/* Emplacement photo - à remplacer la semaine prochaine */}
-    <div class="mt-11 max-w-[36rem] mx-auto aspect-[3/2] rounded-[var(--radius-md)] border border-dashed border-[var(--color-rule-soft)] bg-[var(--color-paper-warm)] flex items-center justify-center">
-      <span class="font-serif italic text-sm text-[var(--color-ink-muted)]">{t("home.cabinet.photo_placeholder")}</span>
-    </div>
+    <div class="mt-11 max-w-[50rem] mx-auto w-full flex flex-col md:flex-row-reverse md:items-stretch justify-center gap-8 md:gap-10">
+      <img
+        src="/images/cabinet.jpg"
+        alt={t("contact.photo_alt")}
+        width="1400"
+        height="1867"
+        loading="lazy"
+        class="w-full md:w-[19rem] shrink-0 h-auto md:h-full md:object-cover rounded-[var(--radius-md)] border border-[var(--color-rule)]"
+      />
 
-    <p class="mt-9 text-center font-serif text-lg text-[var(--color-ink)]">{t("footer.office_address")}</p>
-
-    <div class="mt-7">
-      <TransportBadges />
+      <div class="flex flex-col items-center md:items-start gap-6">
+        <p class="font-serif text-lg font-semibold text-[var(--color-ink)] m-0">{t("footer.office_address")}</p>
+        <TransportBadges />
+      </div>
     </div>
 
     <div class="mt-11">
