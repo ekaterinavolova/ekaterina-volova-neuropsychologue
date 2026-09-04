@@ -8,6 +8,10 @@ const SITE_URL = "https://ekaterina-volova.com";
 export default defineConfig({
   site: SITE_URL,
 
+  // Une seule forme d'URL (avec slash final) : canonical, hreflang, sitemap et
+  // liens internes pointent tous vers la page servie, sans redirection 308.
+  trailingSlash: "always",
+
   i18n: {
     defaultLocale: "fr",
     locales: ["fr", "ru", "en"],
@@ -26,9 +30,9 @@ export default defineConfig({
       i18n: {
         defaultLocale: "fr",
         locales: {
-          fr: "fr-FR",
-          ru: "ru-RU",
-          en: "en-US",
+          fr: "fr",
+          ru: "ru",
+          en: "en",
         },
       },
     }),

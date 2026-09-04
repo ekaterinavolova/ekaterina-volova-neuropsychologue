@@ -29,13 +29,15 @@ export function useTranslations(lang: Lang) {
 
 /**
  * Construit un chemin vers une page dans la langue donnée.
- * `fr` est la langue par défaut sans préfixe : `/`, `/contact`.
- * Autres langues : `/ru/`, `/ru/contact`.
+ * Toujours avec slash final (config `trailingSlash: "always"`) :
+ * `fr` est la langue par défaut sans préfixe : `/`, `/contact/`.
+ * Autres langues : `/ru/`, `/ru/contact/`.
  */
 export function getLocalizedPath(path: string, lang: Lang): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  if (lang === defaultLang) return cleanPath === "/" ? "/" : cleanPath;
-  return cleanPath === "/" ? `/${lang}/` : `/${lang}${cleanPath}`;
+  const withSlash = cleanPath.endsWith("/") ? cleanPath : `${cleanPath}/`;
+  if (lang === defaultLang) return withSlash;
+  return withSlash === "/" ? `/${lang}/` : `/${lang}${withSlash}`;
 }
 
 /**

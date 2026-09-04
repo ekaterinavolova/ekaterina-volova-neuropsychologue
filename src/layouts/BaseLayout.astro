@@ -45,6 +45,17 @@ const sameAs = [
   "https://maps.app.goo.gl/r9LTXad5SvuE3Cmb9",
 ];
 
+// Catalogue des prestations : mêmes libellés que la page Prestations, prix en EUR
+// (source : catalogue Indy de Kate, septembre 2026).
+const services = [
+  { name: t("prestations.entretien_title"), price: 70 },
+  { name: t("prestations.bilan_1"), price: 450 },
+  { name: t("prestations.bilan_2"), price: 550 },
+  { name: t("prestations.bilan_3"), price: 550 },
+  { name: t("prestations.diva"), price: 250 },
+  { name: t("prestations.bilan_4"), price: 300 },
+];
+
 // Données structurées Schema.org : cabinet (MedicalBusiness) + praticienne.
 // Adresse, horaires et coordonnées GPS identiques à la carte du site.
 const jsonLd = {
@@ -69,8 +80,19 @@ const jsonLd = {
     longitude: 2.28036,
   },
   sameAs,
-  openingHours: "Mo-Su 09:30-18:30",
-  priceRange: "65-550 EUR",
+  openingHours: "Mo-Sa 10:00-19:00",
+  priceRange: "70-550 EUR",
+  availableLanguage: ["fr", "ru", "en"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: ui[lang]["home.services.title"],
+    itemListElement: services.map((s) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: s.name },
+      price: s.price,
+      priceCurrency: "EUR",
+    })),
+  },
   founder: {
     "@type": "Person",
     name: "Ekaterina Volova",
@@ -100,9 +122,9 @@ const jsonLd = {
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="fr-FR" href={alternates.fr} />
-    <link rel="alternate" hreflang="ru-RU" href={alternates.ru} />
-    <link rel="alternate" hreflang="en-US" href={alternates.en} />
+    <link rel="alternate" hreflang="fr" href={alternates.fr} />
+    <link rel="alternate" hreflang="ru" href={alternates.ru} />
+    <link rel="alternate" hreflang="en" href={alternates.en} />
     <link rel="alternate" hreflang="x-default" href={alternates.fr} />
 
     <meta property="og:type" content="website" />

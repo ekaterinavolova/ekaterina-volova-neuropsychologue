@@ -45,7 +45,7 @@ export const ui = {
     "contact.message": "Votre question",
     "contact.send": "Envoyer",
     "cabinet.pmr": "Cabinet en rez-de-chaussée, accessible PMR",
-    "cabinet.hours": "Tous les jours (y compris le week-end), 10h - 19h",
+    "cabinet.hours": "Du lundi au samedi, 10h - 19h (fermé le dimanche)",
     "contact.sending": "Envoi en cours...",
     "contact.success":
       "Votre message a bien été envoyé. Vous recevrez une réponse à l'adresse indiquée.",
@@ -89,7 +89,7 @@ export const ui = {
       "Le cabinet ne propose pas de suivi psychothérapeutique long et n'exerce pas en pédiatrie générale francophone. Une exception est faite pour les bilans d'enfants russophones, ce segment étant peu couvert en Île-de-France.",
 
     "prestations.title": "Prestations et tarifs - Ekaterina Volova, neuropsychologue",
-    "prestations.description": "Tarifs des bilans neuropsychologiques, remédiation cognitive et thérapies cognitivo-comportementales. Cabinet de neuropsychologie à Paris 16e.",
+    "prestations.description": "Tarifs des bilans neuropsychologiques pour adultes : premier entretien, bilan complet, bilan de QI (WAIS-IV), bilan attentionnel et entretien diagnostique DIVA-5 dans un contexte de TDAH, bilan de suivi. Cabinet de neuropsychologie à Paris 16e.",
 
     "prestations.entretien_title": "Premier entretien clinique (obligatoire)",
     "prestations.entretien_desc": "Première consultation permettant de recueillir l'histoire clinique du patient (les antécédents médicaux et familiaux), le motif de consultation et les difficultés rencontrées au quotidien afin d'orienter l'évaluation neuropsychologique.",
@@ -105,9 +105,12 @@ export const ui = {
     "prestations.bilan_3": "Bilan attentionnel dans un contexte TDA/H",
     "prestations.bilan_3_desc": "Evaluation des fonctions attentionnelles et exécutives réalisée à l'aide d'épreuves neuropsychologiques standardisées et d'échelles cliniques validées, dans le cadre d'une suspicion de trouble du déficit de l'attention avec ou sans hyperactivité (TDAH) chez l'adolescent à partir de 16 ans et l'adulte.",
     "prestations.bilan_3_price": "550 €",
+    "prestations.diva": "Entretien diagnostique TDAH (DIVA-5)",
+    "prestations.diva_desc": "Entretien diagnostique semi-structuré (DIVA-5) fondé sur les critères du DSM-5, explorant les manifestations du TDAH chez l'adolescent à partir de 17 ans et l'adulte, dans l'enfance comme à l'âge adulte. Il complète le bilan attentionnel afin de préciser le diagnostic.",
+    "prestations.diva_price": "250 €",
     "prestations.bilan_4": "Bilan de suivi",
     "prestations.bilan_4_desc": "Evaluation réalisée à distance d'un premier bilan neuropsychologique (minimum 6 mois) afin d'apprécier l'évolution du fonctionnement cognitif au cours du temps. Le bilan de suivi permet de comparer les performances aux évaluations précédentes, d'objectiver une éventuelle évolution des troubles et d'adapter les recommandations de prise en charge en fonction du profil cognitif observé.",
-    "prestations.bilan_4_price": "200 €",
+    "prestations.bilan_4_price": "300 €",
 
     "prestations.remediation_title": "Remédiation et stimulation cognitive",
     "prestations.remediation_desc": "Séances de 45 minutes visant à travailler et stimuler certaines fonctions cognitives telles que la mémoire, l'attention, les fonctions exécutives ou la vitesse de traitement à l'aide d'exercices adaptés au profil et aux difficultés du patient. La prise en charge a pour objectif de renforcer les capacités cognitives préservées, développer des stratégies de compensation et améliorer le fonctionnement au quotidien.",
@@ -138,6 +141,7 @@ export const ui = {
     "home.price.bilan": "Bilan neuropsychologique",
     "home.price.entretien": "Premier entretien clinique (obligatoire)",
     "home.price.attention": "Bilan attentionnel dans un contexte TDA/H",
+    "home.price.diva": "Entretien diagnostique TDAH (DIVA-5)",
     "home.price.iq": "Bilan neuropsychologique QI",
     "home.price.suivi": "Bilan de suivi",
     "home.cabinet.title": "Le cabinet",
@@ -339,7 +343,7 @@ export const ui = {
       "Le cabinet est situé au 14 rue Nicolo, 75116 Paris (quartier Passy / La Muette), en rez-de-chaussée accessible aux personnes à mobilité réduite. Accès : métro 6 (Passy), métro 9 (La Muette), RER C (Boulainvilliers), bus 22, 32 et 52.",
     "faq.q5": "Combien coûte un bilan neuropsychologique ?",
     "faq.a5":
-      "Premier entretien clinique : 70 €. Bilan complet : 450 €. Bilan de QI (WAIS-IV) : 550 €. Bilan attentionnel dans un contexte de TDAH : 550 €. Bilan de suivi : 200 €. Séance de remédiation et stimulation cognitive : 65 €.",
+      "Premier entretien clinique : 70 €. Bilan neuropsychologique complet : 450 €. Bilan de QI (WAIS-IV) : 550 €. Bilan attentionnel dans un contexte de TDAH : 550 €. Entretien diagnostique TDAH (DIVA-5) : 250 €. Bilan de suivi : 300 €.",
     "faq.q6": "Comment se déroule un bilan ?",
     "faq.a6":
       "Le bilan se déroule en trois rendez-vous : un premier entretien clinique, puis une séance de passation des épreuves, et enfin une restitution des résultats (gratuite). La restitution a lieu généralement le lendemain ou selon les disponibilités du patient. Un compte rendu écrit est transmis par e-mail au patient et, si besoin, à son médecin via Doctolib.",
@@ -380,7 +384,7 @@ export const ui = {
     "contact.message": "Ваш вопрос",
     "contact.send": "Отправить",
     "cabinet.pmr": "Кабинет на первом этаже, доступен для маломобильных людей",
-    "cabinet.hours": "Ежедневно (включая выходные), 10:00 - 19:00",
+    "cabinet.hours": "С понедельника по субботу, 10:00 - 19:00 (воскресенье - выходной)",
     "contact.sending": "Отправка...",
     "contact.success":
       "Ваше сообщение успешно отправлено. Ответ придёт на указанный адрес.",
@@ -424,7 +428,7 @@ export const ui = {
       "Кабинет не проводит длительную психотерапевтическую работу и не специализируется на детской франкоязычной практике. Исключение составляют обследования русскоязычных детей, так как этот сегмент мало охвачен в регионе Иль-де-Франс.",
 
     "prestations.title": "Услуги и тарифы - Екатерина Волова, нейропсихолог",
-    "prestations.description": "Тарифы на нейропсихологические обследования, когнитивную реабилитацию и когнитивно-поведенческую терапию. Кабинет нейропсихологии в 16 округе Парижа.",
+    "prestations.description": "Тарифы на нейропсихологические обследования для взрослых: первичная консультация, полное обследование, обследование IQ (WAIS-IV), обследование внимания и диагностическое интервью DIVA-5 при подозрении на СДВГ, контрольное обследование. Кабинет нейропсихологии в 16 округе Парижа.",
 
     "prestations.entretien_title": "Первичное клиническое интервью (обязательно)",
     "prestations.entretien_desc": "Первичная консультация, позволяющая собрать клиническую историю пациента (медицинский и семейный анамнез), причину обращения и повседневные трудности с целью определения направления нейропсихологической оценки.",
@@ -440,9 +444,12 @@ export const ui = {
     "prestations.bilan_3": "Обследование внимания в контексте СДВГ",
     "prestations.bilan_3_desc": "Оценка функций внимания и исполнительных функций с помощью стандартизированных нейропсихологических проб и валидированных клинических шкал в рамках подозрения на синдром дефицита внимания с гиперактивностью или без неё (СДВГ) у подростков с 16 лет и взрослых.",
     "prestations.bilan_3_price": "550 €",
+    "prestations.diva": "Диагностическое интервью СДВГ (DIVA-5)",
+    "prestations.diva_desc": "Полуструктурированное диагностическое интервью (DIVA-5), основанное на критериях DSM-5 и оценивающее проявления СДВГ у подростков с 17 лет и взрослых - как в детстве, так и во взрослом возрасте. Дополняет обследование внимания для уточнения диагноза.",
+    "prestations.diva_price": "250 €",
     "prestations.bilan_4": "Контрольное обследование",
     "prestations.bilan_4_desc": "Обследование, проводимое через определённое время после первичного нейропсихологического обследования (минимум 6 месяцев) с целью оценки динамики когнитивного функционирования. Контрольное обследование позволяет сопоставить результаты с предыдущими оценками, объективизировать возможную эволюцию нарушений и адаптировать рекомендации по дальнейшему сопровождению в соответствии с наблюдаемым когнитивным профилем.",
-    "prestations.bilan_4_price": "200 €",
+    "prestations.bilan_4_price": "300 €",
 
     "prestations.remediation_title": "Когнитивная реабилитация и стимуляция",
     "prestations.remediation_desc": "Сеансы продолжительностью 45 минут, направленные на тренировку и стимуляцию определённых когнитивных функций, таких как память, внимание, исполнительные функции или скорость обработки информации, с помощью упражнений, адаптированных к профилю и трудностям пациента. Цель сопровождения - укрепить сохранные когнитивные способности, выработать компенсаторные стратегии и улучшить повседневное функционирование.",
@@ -473,6 +480,7 @@ export const ui = {
     "home.price.bilan": "Комплексное нейропсихологическое обследование",
     "home.price.entretien": "Первичная обязательная консультация",
     "home.price.attention": "Когнитивное обследование при подозрении на СДВГ",
+    "home.price.diva": "Диагностическое интервью СДВГ у взрослых (DIVA-5)",
     "home.price.iq": "Оценка интеллектуальных способностей (IQ)",
     "home.price.suivi": "Повторное нейропсихологическое обследование",
     "home.cabinet.title": "Кабинет",
@@ -674,7 +682,7 @@ export const ui = {
       "Кабинет расположен по адресу 14 rue Nicolo, 75116 Paris (район Passy / La Muette), на первом этаже с доступом для маломобильных людей. Транспорт: метро 6 (Passy), метро 9 (La Muette), RER C (Boulainvilliers), автобусы 22, 32 и 52.",
     "faq.q5": "Сколько стоит нейропсихологическое обследование?",
     "faq.a5":
-      "Первичная клиническая консультация: 70 €. Полное обследование: 450 €. Обследование IQ (WAIS-IV): 550 €. Обследование внимания при подозрении на СДВГ: 550 €. Контрольное обследование: 200 €. Сеанс когнитивной коррекции и стимуляции: 65 €.",
+      "Первичная клиническая консультация: 70 €. Полное нейропсихологическое обследование: 450 €. Обследование IQ (WAIS-IV): 550 €. Обследование внимания при подозрении на СДВГ: 550 €. Диагностическое интервью СДВГ (DIVA-5): 250 €. Контрольное обследование: 300 €.",
     "faq.q6": "Как проходит обследование?",
     "faq.a6":
       "Обследование проходит в три приёма: первичная клиническая консультация, затем сеанс тестирования и, наконец, обсуждение результатов (бесплатно). Обсуждение результатов обычно проводится на следующий день или в удобное для пациента время. Письменное заключение направляется пациенту по электронной почте и, при необходимости, его врачу через Doctolib.",
@@ -715,7 +723,7 @@ export const ui = {
     "contact.message": "Your question",
     "contact.send": "Send",
     "cabinet.pmr": "Ground-floor practice, wheelchair accessible",
-    "cabinet.hours": "Every day (including weekends), 10:00 - 19:00",
+    "cabinet.hours": "Monday to Saturday, 10:00 - 19:00 (closed on Sunday)",
     "contact.sending": "Sending...",
     "contact.success":
       "Your message has been sent. You will receive a reply at the address provided.",
@@ -759,7 +767,7 @@ export const ui = {
       "The practice does not offer long-term psychotherapeutic follow-up and does not work in general French-speaking paediatrics. An exception is made for Russian-speaking children, as this segment is poorly served in the Île-de-France region.",
 
     "prestations.title": "Services and fees - Ekaterina Volova, neuropsychologist",
-    "prestations.description": "Fees for neuropsychological assessments, cognitive remediation and cognitive behavioural therapy. Neuropsychology practice in Paris 16th.",
+    "prestations.description": "Fees for adult neuropsychological assessments: initial interview, full assessment, IQ assessment (WAIS-IV), attentional assessment and DIVA-5 diagnostic interview in an ADHD context, follow-up assessment. Neuropsychology practice in Paris 16th.",
 
     "prestations.entretien_title": "Initial clinical interview (mandatory)",
     "prestations.entretien_desc": "Initial consultation to gather the patient's clinical history (medical and family background), the reason for consultation and everyday difficulties in order to guide the neuropsychological assessment.",
@@ -775,9 +783,12 @@ export const ui = {
     "prestations.bilan_3": "Attentional assessment in the context of ADHD",
     "prestations.bilan_3_desc": "Assessment of attentional and executive functions using standardised neuropsychological tests and validated clinical scales, in the context of a suspected attention deficit hyperactivity disorder (ADHD) in adolescents aged 16 and over and adults.",
     "prestations.bilan_3_price": "€550",
+    "prestations.diva": "ADHD diagnostic interview (DIVA-5)",
+    "prestations.diva_desc": "Semi-structured diagnostic interview (DIVA-5) based on the DSM-5 criteria, exploring the manifestations of ADHD in adolescents aged 17 and over and adults, both in childhood and adulthood. It complements the attentional assessment to refine the diagnosis.",
+    "prestations.diva_price": "€250",
     "prestations.bilan_4": "Follow-up assessment",
     "prestations.bilan_4_desc": "Assessment carried out some time after an initial neuropsychological assessment (minimum 6 months) to evaluate the evolution of cognitive functioning over time. The follow-up assessment compares performance with previous evaluations, objectifies any changes in difficulties and adapts care recommendations based on the observed cognitive profile.",
-    "prestations.bilan_4_price": "€200",
+    "prestations.bilan_4_price": "€300",
 
     "prestations.remediation_title": "Cognitive remediation and stimulation",
     "prestations.remediation_desc": "45-minute sessions aimed at exercising and stimulating specific cognitive functions such as memory, attention, executive functions or processing speed, using exercises tailored to the patient's profile and difficulties. The goal is to strengthen preserved cognitive abilities, develop compensatory strategies and improve everyday functioning.",
@@ -804,6 +815,7 @@ export const ui = {
     "home.price.bilan": "Neuropsychological assessment",
     "home.price.entretien": "Initial clinical interview (mandatory)",
     "home.price.attention": "Attentional assessment in the context of ADHD",
+    "home.price.diva": "ADHD diagnostic interview (DIVA-5)",
     "home.price.iq": "IQ neuropsychological assessment",
     "home.price.suivi": "Follow-up assessment",
     "home.cabinet.title": "The practice",
@@ -1005,7 +1017,7 @@ export const ui = {
       "The practice is located at 14 rue Nicolo, 75116 Paris (Passy / La Muette area), on the ground floor with wheelchair access. Access: metro 6 (Passy), metro 9 (La Muette), RER C (Boulainvilliers), buses 22, 32 and 52.",
     "faq.q5": "How much does a neuropsychological assessment cost?",
     "faq.a5":
-      "Initial clinical interview: 70 €. Full assessment: 450 €. IQ assessment (WAIS-IV): 550 €. Attention assessment in an ADHD context: 550 €. Follow-up assessment: 200 €. Cognitive remediation and stimulation session: 65 €.",
+      "Initial clinical interview: 70 €. Full neuropsychological assessment: 450 €. IQ assessment (WAIS-IV): 550 €. Attention assessment in an ADHD context: 550 €. ADHD diagnostic interview (DIVA-5): 250 €. Follow-up assessment: 300 €.",
     "faq.q6": "How does an assessment work?",
     "faq.a6":
       "The assessment takes place over three appointments: an initial clinical interview, then a testing session, and finally a feedback session (free of charge). Feedback usually takes place the next day or according to the patient's availability. A written report is sent by e-mail to the patient and, if needed, to their doctor via Doctolib.",

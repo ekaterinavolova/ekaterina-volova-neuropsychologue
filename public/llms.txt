@@ -14,14 +14,15 @@
 - Téléphone : 06 66 07 42 54
 - Accès : métro 6 (Passy), métro 9 (La Muette), RER C (Boulainvilliers), bus 22, 32, 52
 - Prise de rendez-vous : https://www.doctolib.fr/psychologue/paris/ekaterina-volova-paris
+- Horaires : du lundi au samedi, 10h - 19h (fermé le dimanche)
 
 ## Prestations et tarifs
 - Premier entretien clinique (obligatoire) : 70 €
 - Bilan neuropsychologique complet : 450 €
 - Bilan neuropsychologique de QI (WAIS-IV) : 550 €
 - Bilan attentionnel dans un contexte de TDAH : 550 €
-- Bilan de suivi (à au moins 6 mois) : 200 €
-- Remédiation et stimulation cognitive (séance de 45 minutes) : 65 €
+- Entretien diagnostique TDAH (DIVA-5) : 250 €
+- Bilan de suivi (à au moins 6 mois) : 300 €
 
 ## Populations et indications
 - Adultes à partir de 16 ans
@@ -34,7 +35,7 @@
 - Spécificité : bilans pour une population russophone, segment peu couvert en Île-de-France
 
 ## Périmètre
-- Le cabinet réalise des bilans neuropsychologiques diagnostiques et un accompagnement de remédiation ou de stimulation cognitive.
+- Le cabinet réalise des bilans neuropsychologiques diagnostiques et des entretiens diagnostiques du TDAH de l'adulte (DIVA-5).
 - Le cabinet ne propose pas de suivi psychothérapeutique long et n'exerce pas en pédiatrie générale francophone. Une exception est faite pour les bilans d'enfants russophones.
 
 ## Pages
