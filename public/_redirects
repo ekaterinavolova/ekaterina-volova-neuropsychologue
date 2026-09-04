@@ -6,3 +6,11 @@ https://www.ekaterina-volova.fr/* https://ekaterina-volova.com/:splat 301
 https://volova-neuropsy.fr/* https://ekaterina-volova.com/:splat 301
 https://www.volova-neuropsy.fr/* https://ekaterina-volova.com/:splat 301
 https://www.ekaterina-volova.com/* https://ekaterina-volova.com/:splat 301
+
+# Ancienne page /cabinet (juin 2026), encore connue de Google : vers Contact, qui décrit le cabinet
+/cabinet /contact/ 301
+/cabinet/ /contact/ 301
+/ru/cabinet /ru/contact/ 301
+/ru/cabinet/ /ru/contact/ 301
+/en/cabinet /en/contact/ 301
+/en/cabinet/ /en/contact/ 301
