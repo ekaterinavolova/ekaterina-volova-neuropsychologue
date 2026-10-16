@@ -34,7 +34,8 @@ export const ui = {
 
     "cta.book": "Réserver une consultation",
     "contact.title": "Contact - Ekaterina Volova, neuropsychologue",
-    "contact.description": "Contacter le cabinet de neuropsychologie d'Ekaterina Volova à Paris 16e : téléphone, email, adresse et formulaire de question. Consultations en français, russe et anglais.",
+    "contact.description":
+      "Contacter Ekaterina Volova, psychologue spécialisée en neuropsychologie à Paris 16e : téléphone, email, adresse, formulaire. Français, russe, anglais.",
     "contact.heading": "Contact",
     "contact.photo_alt": "Le cabinet de consultation : bureau lumineux avec fauteuils et parquet",
     "contact.coords": "Coordonnées",
@@ -68,7 +69,7 @@ export const ui = {
 
     "site.title": "Ekaterina Volova - Neuropsychologue à Paris 16e",
     "site.description":
-      "Cabinet de neuropsychologie à Paris 16e. Bilans diagnostiques, remédiation et stimulation cognitive, suivi à 6 mois. Adultes 16 ans et plus, prise en charge en français, russe et anglais.",
+      "Psychologue spécialisée en neuropsychologie à Paris 16e. Bilans pour adultes dès 16 ans : mémoire, attention, TDAH, QI. En français, russe et anglais.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Psychologue spécialisée en neuropsychologie",
@@ -89,7 +90,8 @@ export const ui = {
       "Le cabinet ne propose pas de suivi psychothérapeutique long et n'exerce pas en pédiatrie générale francophone. Une exception est faite pour les bilans d'enfants russophones, ce segment étant peu couvert en Île-de-France.",
 
     "prestations.title": "Prestations et tarifs - Ekaterina Volova, neuropsychologue",
-    "prestations.description": "Tarifs des bilans neuropsychologiques pour adultes : premier entretien, bilan complet, bilan de QI (WAIS-IV), bilan attentionnel et entretien diagnostique DIVA-5 dans un contexte de TDAH, bilan de suivi. Cabinet de neuropsychologie à Paris 16e.",
+    "prestations.description":
+      "Tarifs des bilans neuropsychologiques pour adultes à Paris 16e : premier entretien, bilan complet, QI (WAIS-IV), attention et TDAH (DIVA-5), suivi.",
 
     "prestations.entretien_title": "Premier entretien clinique (obligatoire)",
     "prestations.entretien_desc": "Première consultation permettant de recueillir l'histoire clinique du patient (les antécédents médicaux et familiaux), le motif de consultation et les difficultés rencontrées au quotidien afin d'orienter l'évaluation neuropsychologique.",
@@ -199,12 +201,12 @@ export const ui = {
     "neuropsychologie.title":
       "La neuropsychologie et le bilan neuropsychologique - Ekaterina Volova",
     "neuropsychologie.description":
-      "Qu'est-ce que la neuropsychologie, le bilan neuropsychologique et la remédiation cognitive ? Explications par Ekaterina Volova, psychologue spécialisée en neuropsychologie à Paris 16e.",
+      "La neuropsychologie, le bilan neuropsychologique et la remédiation cognitive expliqués par Ekaterina Volova, psychologue à Paris 16e.",
 
     "about.title":
       "À propos - Ekaterina Volova, psychologue spécialisée en neuropsychologie",
     "about.description":
-      "Présentation d'Ekaterina Volova, psychologue spécialisée en neuropsychologie. Définition du bilan neuropsychologique, formation universitaire Paris 8, expérience à l'Hôpital Fondation Adolphe de Rothschild.",
+      "Ekaterina Volova, psychologue spécialisée en neuropsychologie à Paris 16e. Formée à Paris 8, expérience à l'Hôpital Fondation Adolphe de Rothschild.",
 
     "about.eyebrow": "À propos",
 
@@ -373,7 +375,8 @@ export const ui = {
 
     "cta.book": "Записаться на консультацию",
     "contact.title": "Контакты - Екатерина Волова, нейропсихолог",
-    "contact.description": "Связаться с кабинетом нейропсихологии Екатерины Воловой в 16 округе Парижа: телефон, email, адрес и форма для вопроса. Консультации на французском, русском и английском.",
+    "contact.description":
+      "Связаться с Екатериной Воловой, психологом-нейропсихологом в 16 округе Парижа: телефон, email, адрес, форма. Приём на русском, французском, английском.",
     "contact.heading": "Контакты",
     "contact.photo_alt": "Кабинет для консультаций: светлый кабинет с креслами и паркетом",
     "contact.coords": "Контакты",
@@ -407,7 +410,7 @@ export const ui = {
 
     "site.title": "Екатерина Волова - Нейропсихолог в Париже, 16 округ",
     "site.description":
-      "Кабинет нейропсихологии в 16 округе Парижа. Диагностические обследования, когнитивная реабилитация и стимуляция, контрольное обследование через 6 месяцев. Взрослые с 16 лет, приём на французском, русском и английском языках.",
+      "Психолог-нейропсихолог в 16 округе Парижа. Обследования для взрослых с 16 лет: память, внимание, СДВГ, IQ. Приём на русском, французском и английском.",
 
     "home.h1": "Екатерина Волова",
     "home.lede": "Нейропсихолог",
@@ -428,7 +431,8 @@ export const ui = {
       "Кабинет не проводит длительную психотерапевтическую работу и не специализируется на детской франкоязычной практике. Исключение составляют обследования русскоязычных детей, так как этот сегмент мало охвачен в регионе Иль-де-Франс.",
 
     "prestations.title": "Услуги и тарифы - Екатерина Волова, нейропсихолог",
-    "prestations.description": "Тарифы на нейропсихологические обследования для взрослых: первичная консультация, полное обследование, обследование IQ (WAIS-IV), обследование внимания и диагностическое интервью DIVA-5 при подозрении на СДВГ, контрольное обследование. Кабинет нейропсихологии в 16 округе Парижа.",
+    "prestations.description":
+      "Тарифы на нейропсихологические обследования для взрослых в 16 округе Парижа: первичная консультация, полное обследование, IQ (WAIS-IV), СДВГ (DIVA-5).",
 
     "prestations.entretien_title": "Первичное клиническое интервью (обязательно)",
     "prestations.entretien_desc": "Первичная консультация, позволяющая собрать клиническую историю пациента (медицинский и семейный анамнез), причину обращения и повседневные трудности с целью определения направления нейропсихологической оценки.",
@@ -538,12 +542,12 @@ export const ui = {
     "neuropsychologie.title":
       "Нейропсихология и нейропсихологическое обследование - Екатерина Волова",
     "neuropsychologie.description":
-      "Что такое нейропсихология, нейропсихологическое обследование и когнитивная реабилитация? Объяснения Екатерины Воловой, психолога-нейропсихолога в 16 округе Парижа.",
+      "Нейропсихология, нейропсихологическое обследование и когнитивная реабилитация: объясняет Екатерина Волова, психолог в 16 округе Парижа.",
 
     "about.title":
       "Обо мне - Екатерина Волова, психолог-нейропсихолог",
     "about.description":
-      "Представление Екатерины Воловой, психолога, специалиста по нейропсихологии. Определение нейропсихологического обследования, образование в Университете Paris 8, опыт работы в больнице Fondation Adolphe de Rothschild.",
+      "Екатерина Волова, психолог, специалист по нейропсихологии в 16 округе Парижа. Образование Paris 8, опыт в больнице Fondation Adolphe de Rothschild.",
 
     "about.eyebrow": "Обо мне",
 
@@ -712,7 +716,8 @@ export const ui = {
 
     "cta.book": "Book a consultation",
     "contact.title": "Contact - Ekaterina Volova, neuropsychologist",
-    "contact.description": "Get in touch with Ekaterina Volova's neuropsychology practice in Paris 16th: phone, email, address and question form. Consultations in French, Russian and English.",
+    "contact.description":
+      "Contact Ekaterina Volova, psychologist specialising in neuropsychology in Paris 16th: phone, email, address and question form. French, Russian, English.",
     "contact.heading": "Contact",
     "contact.photo_alt": "The consultation office: a bright room with armchairs and wooden flooring",
     "contact.coords": "Contact details",
@@ -746,7 +751,7 @@ export const ui = {
 
     "site.title": "Ekaterina Volova - Neuropsychologist in Paris 16th",
     "site.description":
-      "Neuropsychology practice in Paris 16th. Diagnostic assessments, cognitive remediation and stimulation, 6-month follow-up. Adults 16 and older, consultations in French, Russian and English.",
+      "Psychologist specialising in neuropsychology in Paris 16th. Assessments for adults 16+: memory, attention, ADHD, IQ. In French, Russian and English.",
 
     "home.h1": "Ekaterina Volova",
     "home.lede": "Neuropsychologist",
@@ -767,7 +772,8 @@ export const ui = {
       "The practice does not offer long-term psychotherapeutic follow-up and does not work in general French-speaking paediatrics. An exception is made for Russian-speaking children, as this segment is poorly served in the Île-de-France region.",
 
     "prestations.title": "Services and fees - Ekaterina Volova, neuropsychologist",
-    "prestations.description": "Fees for adult neuropsychological assessments: initial interview, full assessment, IQ assessment (WAIS-IV), attentional assessment and DIVA-5 diagnostic interview in an ADHD context, follow-up assessment. Neuropsychology practice in Paris 16th.",
+    "prestations.description":
+      "Fees for adult neuropsychological assessments in Paris 16th: initial interview, full assessment, IQ (WAIS-IV), attention and ADHD (DIVA-5), follow-up.",
 
     "prestations.entretien_title": "Initial clinical interview (mandatory)",
     "prestations.entretien_desc": "Initial consultation to gather the patient's clinical history (medical and family background), the reason for consultation and everyday difficulties in order to guide the neuropsychological assessment.",
@@ -873,12 +879,12 @@ export const ui = {
     "neuropsychologie.title":
       "Neuropsychology and the neuropsychological assessment - Ekaterina Volova",
     "neuropsychologie.description":
-      "What is neuropsychology, the neuropsychological assessment and cognitive remediation? Explained by Ekaterina Volova, psychologist specialising in neuropsychology in Paris 16th.",
+      "Neuropsychology, the neuropsychological assessment and cognitive remediation, explained by Ekaterina Volova, psychologist in Paris 16th.",
 
     "about.title":
       "About - Ekaterina Volova, psychologist specialising in neuropsychology",
     "about.description":
-      "Introduction to Ekaterina Volova, psychologist specialising in neuropsychology. Definition of the neuropsychological assessment, university training at Paris 8, experience at the Adolphe de Rothschild Foundation Hospital.",
+      "Ekaterina Volova, psychologist specialising in neuropsychology in Paris 16th. Trained at Paris 8, experience at the Adolphe de Rothschild Foundation Hospital.",
 
     "about.eyebrow": "About",
 
