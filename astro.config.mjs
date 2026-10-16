@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import markdown from "./integrations/markdown.mjs";
 
 // Domaine principal — autres domaines (volova-neuropsy.com, .fr × 2) en redirect 301
 const SITE_URL = "https://ekaterina-volova.com";
@@ -36,6 +37,7 @@ export default defineConfig({
         },
       },
     }),
+    markdown(),
   ],
 
   vite: {

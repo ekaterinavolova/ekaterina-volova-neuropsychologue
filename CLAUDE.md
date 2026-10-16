@@ -151,6 +151,10 @@ Les fonts sont auto-hébergées via Fontsource (RGPD-clean). Pas d'iframe YouTub
 
 Le site est une **vitrine** uniquement. Aucun formulaire qui stocke des données médicales. La prise de RDV passe par **Doctolib** (lien externe, certifié HDS). Le formulaire de question de la page Contact est un **pur relais** : la Pages Function `functions/api/contact.js` vérifie Cloudflare Turnstile (anti-spam) puis transmet le message par email à Kate via Resend - rien n'est stocké côté site. Si la fonction échoue, le front bascule en `mailto:`. Les env vars `RESEND_API_KEY`, `TURNSTILE_SECRET_KEY` (secrets) et `PUBLIC_TURNSTILE_SITE_KEY` vivent dans les settings Cloudflare Pages, jamais dans le repo.
 
+### Agents IA (Markdown, llms.txt, Content-Signal)
+
+Au build, `integrations/markdown.mjs` écrit une copie Markdown de chaque page (`dist/**/index.md`, contenu de `<main>`). Une règle Cloudflare (Rules > Transform Rules > URL Rewrite, « Markdown pour les agents ») réécrit `/chemin/` en `/chemin/index.md` quand la requête envoie `Accept: text/markdown` ; les navigateurs reçoivent toujours le HTML. Pas de Pages Function à la racine : elle court-circuiterait `_redirects` et `_headers`. `public/_headers` annonce `llms.txt` (en-tête `Link`) et le type `text/markdown` ; `robots.txt` porte la ligne `Content-Signal`. Ne pas oublier de mettre à jour `public/llms.txt` quand les prestations ou tarifs changent.
+
 ## Tokens design system
 
 Définis dans `src/styles/global.css` sous `@theme`. À respecter, ne pas réinventer :

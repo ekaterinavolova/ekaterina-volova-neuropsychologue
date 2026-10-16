@@ -1,5 +1,7 @@
+# Content signals (https://contentsignals.org) : recherche, reponses IA et entrainement IA autorises.
 User-agent: *
 Allow: /
 Disallow: /api/
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 
 Sitemap: https://ekaterina-volova.com/sitemap-index.xml

@@ -1,0 +1,10 @@
+# Agents IA : llms.txt decrit le site, et chaque page existe aussi en Markdown
+# (dist/**/index.md, ecrit par integrations/markdown.mjs). Une regle Cloudflare
+# (Rules > Transform Rules > URL Rewrite) sert la copie Markdown quand la
+# requete envoie `Accept: text/markdown` ; d'ou le Vary.
+/*
+  Link: </llms.txt>; rel="describedby"; type="text/plain"
+  Vary: Accept
+
+/*.md
+  Content-Type: text/markdown; charset=utf-8
