@@ -59,7 +59,7 @@ export const ui = {
     "lang.switch_to": "Changer de langue",
     "nav.languages": "Langues",
 
-    "header.tagline": "Neuropsychologue à Paris",
+    "header.tagline": "Psychologue TCC et neuropsychologue à Paris",
     "header.menu_open": "Ouvrir le menu",
     "header.menu_close": "Fermer le menu",
 
@@ -67,12 +67,11 @@ export const ui = {
     "footer.contact_label": "Prendre rendez-vous",
     "footer.opening_note": "Ouverture du cabinet le 15 juin 2026",
 
-    "site.title": "Ekaterina Volova - Neuropsychologue à Paris 16e",
-    "site.description":
-      "Psychologue spécialisée en neuropsychologie à Paris 16e. Bilans pour adultes dès 16 ans : mémoire, attention, TDAH, QI. En français, russe et anglais.",
+    "site.title": "Ekaterina Volova - Psychologue TCC et neuropsychologue à Paris 16e",
+    "site.description": "Psychologue TCC et neuropsychologue à Paris 16e. Thérapies TCC et bilans pour adultes dès 16 ans : mémoire, attention, TDAH, QI. Français, russe, anglais.",
 
     "home.h1": "Ekaterina Volova",
-    "home.lede": "Psychologue spécialisée en neuropsychologie",
+    "home.lede": "Psychologue TCC et neuropsychologue",
     "home.cta_primary": "Prendre rendez-vous",
     "home.cta_secondary": "Réserver une consultation",
 
@@ -400,7 +399,7 @@ export const ui = {
     "lang.switch_to": "Сменить язык",
     "nav.languages": "Языки",
 
-    "header.tagline": "Нейропсихолог в Париже",
+    "header.tagline": "Психолог КПТ и нейропсихолог в Париже",
     "header.menu_open": "Открыть меню",
     "header.menu_close": "Закрыть меню",
 
@@ -408,12 +407,11 @@ export const ui = {
     "footer.contact_label": "Записаться на приём",
     "footer.opening_note": "Открытие кабинета 15 июня 2026 года",
 
-    "site.title": "Екатерина Волова - Нейропсихолог в Париже, 16 округ",
-    "site.description":
-      "Психолог-нейропсихолог в 16 округе Парижа. Обследования для взрослых с 16 лет: память, внимание, СДВГ, IQ. Приём на русском, французском и английском.",
+    "site.title": "Екатерина Волова - Психолог КПТ и нейропсихолог в Париже, 16 округ",
+    "site.description": "Психолог КПТ и нейропсихолог в 16 округе Парижа. КПТ и обследования для взрослых с 16 лет: память, внимание, СДВГ, IQ. На русском, французском, английском.",
 
     "home.h1": "Екатерина Волова",
-    "home.lede": "Нейропсихолог",
+    "home.lede": "Психолог КПТ и нейропсихолог",
     "home.cta_primary": "Записаться на приём",
     "home.cta_secondary": "Записаться на консультацию",
 
@@ -741,7 +739,7 @@ export const ui = {
     "lang.switch_to": "Change language",
     "nav.languages": "Languages",
 
-    "header.tagline": "Neuropsychologist in Paris",
+    "header.tagline": "CBT psychologist and neuropsychologist in Paris",
     "header.menu_open": "Open menu",
     "header.menu_close": "Close menu",
 
@@ -749,12 +747,11 @@ export const ui = {
     "footer.contact_label": "Book an appointment",
     "footer.opening_note": "Office opens on 15 June 2026",
 
-    "site.title": "Ekaterina Volova - Neuropsychologist in Paris 16th",
-    "site.description":
-      "Psychologist specialising in neuropsychology in Paris 16th. Assessments for adults 16+: memory, attention, ADHD, IQ. In French, Russian and English.",
+    "site.title": "Ekaterina Volova - CBT psychologist and neuropsychologist in Paris 16th",
+    "site.description": "CBT psychologist and neuropsychologist in Paris 16th. CBT and assessments for adults 16+: memory, attention, ADHD, IQ. In French, Russian and English.",
 
     "home.h1": "Ekaterina Volova",
-    "home.lede": "Neuropsychologist",
+    "home.lede": "CBT psychologist and neuropsychologist",
     "home.cta_primary": "Book an appointment",
     "home.cta_secondary": "Book a consultation",
 

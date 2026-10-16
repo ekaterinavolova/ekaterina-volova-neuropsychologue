@@ -61,7 +61,8 @@ const services = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  name: `Ekaterina Volova - ${ui[lang]["footer.profession"]}`,
+  // même nom que la fiche Google Business Profile (et Bing Places, synchronisée)
+  name: `Ekaterina Volova - ${ui[lang]["home.lede"]}`,
   description: ui[lang]["site.description"],
   url: alternates[lang],
   image: ogImage,
